@@ -4,7 +4,7 @@
 
 The Harp.Core library provides the following operators:
 
-![Harp.Core Operators](./Assets/core-operators.svg)
+![Harp.Core Operators](./../Assets/core-operators.svg)
 
 It is critical to conceptually understand the function of each of these operators as they are the building blocks of any Harp application. Additionally, when interfacing, using bonsai, with a particular model of an `Harp Device`, device-specific variants of these operators can be accessed to expose a device-specific, high-level, interface to the user.
 
@@ -39,13 +39,13 @@ Payload: 10
 
 To generate it, one could use the [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) operator:
 
-![CreateMessage](./Assets/create-message.svg)
+![CreateMessage](./../Assets/create-message.svg)
 
 ### [`Format`](xref:Bonsai.Harp.Format)
 
 or, equivalently, the the following [`Format`](xref:Bonsai.Harp.Format) operator:
 
-![FormatMessage](./Assets/format.svg)
+![FormatMessage](./../Assets/format.svg)
 
 ## [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) & [`Parse`](xref:Bonsai.Harp.Parse) operators
 
@@ -57,13 +57,13 @@ In its simplest form, [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) function
 
 For instance, if one would be interested in listening to the echo emitted from the device after the previous [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) or [`Format`](xref:Bonsai.Harp.Format) operators, one could use the following [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) operator:
 
-![FilterMessage](./Assets/filter-message.svg)
+![FilterMessage](./../Assets/filter-message.svg)
 
 ### [`Parse`](xref:Bonsai.Harp.Parse)
 
 While [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) can be used to filter incoming messages, the value of every single `HarpMessage` in the sequence will return unchanged. However, in many cases, one might be interested in extracting, and converting, the value of the message's payload. This is where the [`Parse`](xref:Bonsai.Harp.Parse) operator comes handy. This operator will extract and parse the payload of any incoming message and return a new sequence of parsed values. The type of the parsed values will depend on the `PayloadType` of the incoming message. For instance, if the `PayloadType` is `U16`, the operator will return a sequence of `ushort` values. The following workflow shows how to parse the payload of the previous example:
 
-![Parse](./Assets/parse.svg)
+![Parse](./../Assets/parse.svg)
 
 It should be noted that if an [`Address`](xref:Bonsai.Harp.Parse.Address), or [`MessageType`](xref:Bonsai.Harp.Parse.MessageType), are defined, the node will additionally filter the incoming sequence of messages prior to the parsing operation.
 ## Registers and Names blah blah
