@@ -8,6 +8,8 @@ The Harp.Core library provides the following operators:
 
 It is critical to conceptually understand the function of each of these operators as they are the building blocks of any Harp application. Additionally, when interfacing, using bonsai, with a particular model of an `Harp Device`, device-specific variants of these operators can be accessed to expose a device-specific, high-level, interface to the user.
 
+---
+
 ## The `Device` operator
 
 The [`Device`](xref:Bonsai.Harp.Device) is the first node you likely add to your workflow when using any `Harp Device`. It is responsible for establishing a serial connection with the device and for providing an interface that can be used to send and receive messages, in the form of [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects(xref:Bonsai.Harp.HarpMessage). Messages sent by the board to the host will correspond to notifications(or replies), whereas messages sent from the host to the node will result in commands(or requests) being sent to the device.
@@ -20,6 +22,8 @@ The current specification of the `Harp Protocol` defines three [`HarpMessage typ
 - `Event`: The only message type that is emitted from the device to the host without a corresponding prior command. These messages are used to notify the host of events that occur on the device, such as a periodic computations (*e.g.* ADC reads), or other sporadic events (*e.g.* toggle on a digital input pin).
 
 The following `Bonsai.Harp` operators provide the core functionality for generating [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects (to issue commands), and for processing `HarpMessages` (to handle notifications).
+
+---
 
 ## [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) & [`Format`](xref:Bonsai.Harp.Format) operators
 
@@ -47,6 +51,8 @@ or, equivalently, the the following [`Format`](xref:Bonsai.Harp.Format) operator
 
 ![FormatMessage](./../Assets/format.svg)
 
+---
+
 ## [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) & [`Parse`](xref:Bonsai.Harp.Parse) operators
 
 As opposed to the previous dyad of operators, the following are used to process [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects that are received from the device. These operators can be used to filter, parse, and transform incoming messages.
@@ -66,4 +72,27 @@ While [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) can be used to filter in
 ![Parse](./../Assets/parse.svg)
 
 It should be noted that if an [`Address`](xref:Bonsai.Harp.Parse.Address), or [`MessageType`](xref:Bonsai.Harp.Parse.MessageType), are defined, the node will additionally filter the incoming sequence of messages prior to the parsing operation.
-## Registers and Names blah blah
+
+---
+
+## Interacting with registers using the high-level Bonsai interface
+
+All the previous examples assume the users knows the `Address` they would like to target. However, as the number of register and different boards grow, it becomes increasingly difficult to keep track of what function each `Address` corresponds to. To address this issue, all the previous nodes were created as `Polymorphic operators`. In short, by modifying the `Payload` property from the `*MessagePayload` default to a specific register name, the operator will automatically refresh its properties, in order to match the `Payload` structure of the message for the selected `Address` name.
+
+This *morphing* behavior:
+
+- Affords the creation of `Harp Messages` of any type without previous knowledge of register specifications:
+![whoami-read](./../Assets/whoami_read.png)
+
+- For registers with `Enum`-like inputs, allows users easy access to available inputs via a drop-down menu:
+![resetdevice-write](./../Assets/resetdevice-write.png)
+
+- For registers with a complex structure, allows users to easily, and simultaneously, manipulate the different fields to compose a message:
+![opcontrol-write](./../Assets/opcontrol-write.png)
+
+
+The aforementioned high-level operators only expose the `Core` registers, common to all `Harp devices`. To access device-specific functionality, users will have to download Bonsai packages targeting specific `Harp devices`. Once installed, the packages will expose additional operators in the toolbox, identical, in name and syntax, to the others previously described here. These device-specific operators will show-up with a different namespace, and will be able to target device-specific registers (or `Application` registers). [Such an example can be found here.](TODO fill in with behavior)
+
+## Saving harp messages
+
+## Updating firmware
