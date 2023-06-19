@@ -12,7 +12,7 @@ It is critical to conceptually understand the function of each of these operator
 
 ## The `Device` operator
 
-The [`Device`](xref:Bonsai.Harp.Device) is the first node you likely add to your workflow when using any `Harp Device`. It is responsible for establishing a serial connection with the device and for providing an interface that can be used to send and receive messages, in the form of [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects(xref:Bonsai.Harp.HarpMessage). Messages sent by the board to the host will correspond to notifications(or replies), whereas messages sent from the host to the node will result in commands(or requests) being sent to the device.
+The [`Device`](xref:Bonsai.Harp.Device) is the first node you likely add to your workflow when using any `Harp Device`. It is responsible for establishing a serial connection with the device and for providing an interface that can be used to send and receive messages, in the form of [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects(xref:Bonsai.Harp.HarpMessage). Messages sent by the board to the host will correspond to replies(or requests), whereas messages sent from the host to the node will result in commands(or requests) being sent to the device.
 Finally, the `Device` node also provides, via its default-editor (double-click the node while bonsai is not running), a user-interface that allows the user to configure core device settings as well as upload firmware `.hex` files to the device. (see #ref.... TODO)
 
 The current specification of the `Harp Protocol` defines three [`HarpMessage types`](xref:Bonsai.Harp.MessageType):
@@ -84,7 +84,7 @@ This *morphing* behavior:
 - Affords the creation of `Harp Messages` of any type without previous knowledge of register specifications:
 ![whoami-read](./../Assets/whoami_read.png)
 
-- For registers with `Enum`-like inputs, allows users easy access to available inputs via a drop-down menu:
+- For registers with `Enumerable`-like inputs, allows users easy access to available inputs via a drop-down menu:
 ![resetdevice-write](./../Assets/resetdevice-write.png)
 
 - For registers with a complex structure, allows users to easily, and simultaneously, manipulate the different fields to compose a message:
