@@ -93,6 +93,22 @@ This *morphing* behavior:
 
 The aforementioned high-level operators only expose the `Core` registers, common to all `Harp devices`. To access device-specific functionality, users will have to download Bonsai packages targeting specific `Harp devices`. Once installed, the packages will expose additional operators in the toolbox, identical, in name and syntax, to the others previously described here. These device-specific operators will show-up with a different namespace, and will be able to target device-specific registers (or `Application` registers). [Such an example can be found here.](TODO fill in with behavior)
 
-## Saving harp messages
+## The `Harp Device` pattern
 
-## Updating firmware
+The previous sections covered the basic functionality of the `Bonsai.Harp` library. In theory, all the previous operators could function, in parallel, by branching/merging `HarpMessages` data streams from/to the `Harp Device`. For example:
+
+![device-pattern-nosubjects](./../Assets/device-pattern-nosubjects.svg)
+
+
+However, as workflows grow, this pattern will quickly become cumbersome to manage. To address this issue, we recommend using [Subjects](https://bonsai-rx.org/docs/articles/subjects.html) to interact with the Device.
+As such, we start by adding a [`PublishSubject`](https://bonsai-rx.org/docs/articles/subjects.html#publishsubject) to the right side of the `Harp Device`. This subject, will allow us to receive the stream of `HarpMessages` in multiple places of our workflow, which eliminates the need for explicitly branching the original data stream:
+
+![device-pattern-publish](./../Assets/device-pattern-publish-output.svg)
+
+This pattern takes care of the output of the `Harp Device` (*i.e.* incoming messages). However, the same way that we might want *read* the stream of `Harp Messages` from multiple places in our workflow, we might also want to send (or *write*) `Commands` to the device from several parallel branches. To address this issue, we will add a second subject, but this time to the input of the `Device` node. This [`Source`](https://bonsai-rx.org/docs/articles/subjects.html#source-subjects) [`Behavior Subject`](https://bonsai-rx.org/docs/articles/subjects.html#behaviorsubject) can be referenced, and written to, from anywhere in your workflow by simply [Multicasting](https://bonsai-rx.org/docs/articles/subjects.html#multicastsubject) a `Harp Message` to it:
+
+![device-pattern-multicast](./../Assets/device-pattern-multicast.svg)
+
+>Note:
+>
+>We tend to favor `BehaviorSubject` over `PublishSubject` since the `Device` node will terminate the connection with the `Harp Device` if it receives a `OnComplete` event. `BehaviorSubjects` always discard this event, and therefore, will never terminate the connection with the `Harp Device` while your workflow is running.
