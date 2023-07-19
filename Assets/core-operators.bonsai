@@ -16,8 +16,15 @@
           <harp:PortName>COMx</harp:PortName>
         </Combinator>
       </Expression>
-      <Expression xsi:type="harp:FilterMessage">
-        <harp:Register xsi:type="harp:FilterMessageAddress">
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="harp:FilterMessageType">
+          <harp:FilterType>Include</harp:FilterType>
+          <harp:MessageType xsi:nil="true" />
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="harp:FilterRegister">
+        <harp:FilterType>Include</harp:FilterType>
+        <harp:Register xsi:type="harp:FilterRegisterAddress">
           <harp:Address xsi:nil="true" />
         </harp:Register>
       </Expression>
@@ -30,16 +37,16 @@
       <Expression xsi:type="harp:Format">
         <harp:MessageType>Write</harp:MessageType>
         <harp:Register xsi:type="harp:FormatMessagePayload">
-          <harp:Address>32</harp:Address>
+          <harp:Address xsi:nil="true" />
           <harp:PayloadType>U8</harp:PayloadType>
         </harp:Register>
       </Expression>
       <Expression xsi:type="harp:CreateMessage">
+        <harp:MessageType>Write</harp:MessageType>
         <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:MessageType>Write</harp:MessageType>
           <harp:Address>32</harp:Address>
-          <harp:PayloadType>U16</harp:PayloadType>
-          <harp:Value>10</harp:Value>
+          <harp:PayloadType>U8</harp:PayloadType>
+          <harp:Value>0</harp:Value>
         </harp:Payload>
       </Expression>
     </Nodes>

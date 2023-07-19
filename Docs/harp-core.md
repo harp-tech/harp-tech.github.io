@@ -1,10 +1,10 @@
 # Bonsai.Harp
 
-[Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the [`Harp Protocol`](https://harp-tech.org/About/How-HARP-works/index.html) via which they can communicate with an host PC. The `Bonsai.Core` library provides an implementation of the `Harp Protocol` that can be used to interface these devices.
+[Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the [`Harp Protocol`](https://harp-tech.org/About/How-HARP-works/index.html) via which they can communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the `Harp Protocol` that can be used to interface these devices.
 
-The Harp.Core library provides the following operators:
+The `Bonsai.Harp` library provides the following operators:
 
-![Harp.Core Operators](./../Assets/core-operators.svg)
+![Bonsai.Harp Operators](./../Assets/core-operators.svg)
 
 It is critical to conceptually understand the function of each of these operators as they are the building blocks of any Harp application. Additionally, when interfacing, using bonsai, with a particular model of an `Harp Device`, device-specific variants of these operators can be accessed to expose a device-specific, high-level, interface to the user.
 
@@ -53,17 +53,23 @@ or, equivalently, the the following [`Format`](xref:Bonsai.Harp.Format) operator
 
 ---
 
-## [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) & [`Parse`](xref:Bonsai.Harp.Parse) operators
+## [`FilterMessageType`](xref:Bonsai.Harp.FilterMessageType) / [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) & [`Parse`](xref:Bonsai.Harp.Parse) operators
 
 As opposed to the previous dyad of operators, the following are used to process [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects that are received from the device. These operators can be used to filter, parse, and transform incoming messages.
 
-### [`FilterMessage`](xref:Bonsai.Harp.FilterMessage)
+### [`FilterMessageType`](xref:Bonsai.Harp.FilterMessage) / [`FilterRegister`](xref:Bonsai.Harp.FilterRegister)
 
-In its simplest form, [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) functions as a [`Condition`](xref:Bonsai.Core.Reactive.Condition) that checks, for each incoming message, whether the message's type and address match the ones specified in the property grid. If the condition is met, the message is passed through the operator, otherwise it is discarded.
+In its simplest form, [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) functions as a [`Condition`](xref:Bonsai.Core.Reactive.Condition) that checks, for each incoming message, whether the message's address matches the ones specified in the property grid  If the condition is met, the message is passed through the operator, otherwise it is discarded. It should be noted that the default filtering behavior can be inverted by modifying the `FilterType` property. *I.e.* "Allow every message that does **not** match to pass.
 
-For instance, if one would be interested in listening to the echo emitted from the device after the previous [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) or [`Format`](xref:Bonsai.Harp.Format) operators, one could use the following [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) operator:
+For instance, one could construct a filter to listen for the 1 Hertz heartbeat events from an `Harp Device` by:
 
 ![FilterMessage](./../Assets/filter-message.svg)
+
+
+Sometimes it is also useful to filter message types, on top of the address. To match that need, an additional operator, `FilterMessageType`, is provided. This operator will filter messages based on their `MessageType` property and can be used in combination with the previous operator. For instance, if one would be interested in listening to the echo emitted from the device (*i.e.* a `Write` message) after the previous [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) or [`Format`](xref:Bonsai.Harp.Format) operators, one could use the following [`FilterMessageRegister`](xref:Bonsai.Harp.FilterMessage) operator:
+
+![FilterMessage](./../Assets/filter-messagetype-register.svg)
+
 
 ### [`Parse`](xref:Bonsai.Harp.Parse)
 
