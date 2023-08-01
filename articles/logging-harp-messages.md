@@ -4,11 +4,7 @@ As any other device that is used to record and control an experiment, data strea
 In the case of `Harp Devices`, the decision as to what to log is somewhat easy. Since all the communication between the peripheral and the host is made via `Harp Messages`, these are the only piece of information one would need to reconstruct the state of the experiment (as seen by the `Harp device` at least) at any given point in time.
 Moreover, since `Harp Messages` follow a simple binary protocol, they can be efficiently (both in time and space) logged into disk using a simple flat binary file. The next sections will cover how one can achieve this, and what the current best practices are for logging data streams from `Harp Devices`.
 
-
----
-
-
-## Logging the full stream of `Harp Messages` from a `Harp Device`
+## MessageWriter
 
 Since the `Harp` is a binary protocol, any `Harp Message` can be logged by simply saving its raw binary representation. The binary representation (as a `byte[]`) can be accessed via the `MessageBytes` member. Finally, to log the raw binary stream, use a [`MatrixWriter`](xref:Bonsai.Dsp.MatrixWriter) node. Alternatively, the `Bonsai.Harp` package also provides a [`MessageWriter`](xref:Bonsai.Harp.MessageWriter) operator that replicates the previous pattern:
 
@@ -18,9 +14,7 @@ Since the `Harp` is a binary protocol, any `Harp Message` can be logged by simpl
 
 Since the logging takes place on top of any `Harp Message` stream, the writers can also be used to: log multiple devices in parallel, log filtered streams (e.g. after applying [`FilterRegister`](xref:Bonsai.Harp.FilterRegister)) or even save host-generated commands (e.g. after a [`CreateMessage`](xref:Bonsai.Harp.CreateMessage)).
 
----
-
-## Logging using a `Demux` pattern
+## GroupByRegister
 
 While logging all `Harp Messages` to a single binary is certainly possible, it is not always the most convenient way to log data. For instance, if one is interested in logging only a subset of the `Harp Messages` (e.g. only the `ADC` messages), then the previous approach would require a post-processing step to filter out the messages of interest. Moreoever, each address has potentially different data formats (e.g. `U8` vs `U16`) or length. As a result, while parsing a binary file, the user will have to read and parse a single message at a time. Alternatively, one can use a `Demux` pattern to log the `Harp Messages`, from different addresses, into separate files. This way, one can ensure that all messages on a single file have the same format and length and can thus be read and parsed in one pass.
 
@@ -33,7 +27,6 @@ A possible implementation of this pattern is shown below:
 The single-register log files can then be loaded using the following Python routine:
 
 ```Python
-
 import numpy as np
 import pandas as pd
 
@@ -81,5 +74,4 @@ def read_harp_bin(file):
         ret_pd.index.names = ['Seconds']
 
     return ret_pd
-
 ```
