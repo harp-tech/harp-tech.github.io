@@ -16,7 +16,7 @@ Since the `Harp` is a binary protocol, any `Harp Message` can be logged by simpl
 ![LogAllMessages](~/workflows/log-all-messages.bonsai)
 :::
 
-Since the logging takes place on top of any `Harp Message` stream, the writers can also be used to: log multiple devices in parallel, log filtered streams (e.g. after applying [`FilterMessage`](xref:Bonsai.Harp.FilterMessage)) or even save host-generated commands (e.g. after a [`CreateMessage`](xref:Bonsai.Harp.CreateMessage)).
+Since the logging takes place on top of any `Harp Message` stream, the writers can also be used to: log multiple devices in parallel, log filtered streams (e.g. after applying [`FilterRegister`](xref:Bonsai.Harp.FilterRegister)) or even save host-generated commands (e.g. after a [`CreateMessage`](xref:Bonsai.Harp.CreateMessage)).
 
 ---
 

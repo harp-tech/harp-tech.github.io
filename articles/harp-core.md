@@ -12,7 +12,7 @@ It is critical to conceptually understand the function of each of these operator
 
 ## The `Device` operator
 
-The [`Device`](xref:Bonsai.Harp.Device) is the first node you likely add to your workflow when using any `Harp Device`. It is responsible for establishing a serial connection with the device and for providing an interface that can be used to send and receive messages, in the form of [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects(xref:Bonsai.Harp.HarpMessage). Messages sent by the board to the host will correspond to replies(or requests), whereas messages sent from the host to the node will result in commands(or requests) being sent to the device.
+The [`Device`](xref:Bonsai.Harp.Device) is the first node you likely add to your workflow when using any `Harp Device`. It is responsible for establishing a serial connection with the device and for providing an interface that can be used to send and receive messages, in the form of [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects. Messages sent by the board to the host will correspond to replies(or requests), whereas messages sent from the host to the node will result in commands(or requests) being sent to the device.
 Finally, the `Device` node also provides, via its default-editor (double-click the node while bonsai is not running), a user-interface that allows the user to configure core device settings as well as upload firmware `.hex` files to the device. (see #ref.... TODO)
 
 The current specification of the `Harp Protocol` defines three [`HarpMessage types`](xref:Bonsai.Harp.MessageType):
@@ -61,31 +61,31 @@ or, equivalently, the the following [`Format`](xref:Bonsai.Harp.Format) operator
 
 As opposed to the previous dyad of operators, the following are used to process [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects that are received from the device. These operators can be used to filter, parse, and transform incoming messages.
 
-### [`FilterMessageType`](xref:Bonsai.Harp.FilterMessage) / [`FilterRegister`](xref:Bonsai.Harp.FilterRegister)
+### [`FilterMessageType`](xref:Bonsai.Harp.FilterMessageType) / [`FilterRegister`](xref:Bonsai.Harp.FilterRegister)
 
-In its simplest form, [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) functions as a [`Condition`](xref:Bonsai.Core.Reactive.Condition) that checks, for each incoming message, whether the message's address matches the ones specified in the property grid  If the condition is met, the message is passed through the operator, otherwise it is discarded. It should be noted that the default filtering behavior can be inverted by modifying the `FilterType` property. *I.e.* "Allow every message that does **not** match to pass.
+In its simplest form, [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) functions as a [`Condition`](xref:Bonsai.Reactive.Condition) that checks, for each incoming message, whether the message's address matches the ones specified in the property grid  If the condition is met, the message is passed through the operator, otherwise it is discarded. It should be noted that the default filtering behavior can be inverted by modifying the `FilterType` property. *I.e.* "Allow every message that does **not** match to pass.
 
 For instance, one could construct a filter to listen for the 1 Hertz heartbeat events from an `Harp Device` by:
 
 :::workflow
-![FilterMessage](~/workflows/filter-message.bonsai)
+![FilterRegister](~/workflows/filter-message.bonsai)
 :::
 
-Sometimes it is also useful to filter message types, on top of the address. To match that need, an additional operator, `FilterMessageType`, is provided. This operator will filter messages based on their `MessageType` property and can be used in combination with the previous operator. For instance, if one would be interested in listening to the echo emitted from the device (*i.e.* a `Write` message) after the previous [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) or [`Format`](xref:Bonsai.Harp.Format) operators, one could use the following [`FilterMessageRegister`](xref:Bonsai.Harp.FilterMessage) operator:
+Sometimes it is also useful to filter message types, on top of the address. To match that need, an additional operator, `FilterMessageType`, is provided. This operator will filter messages based on their `MessageType` property and can be used in combination with the previous operator. For instance, if one would be interested in listening to the echo emitted from the device (*i.e.* a `Write` message) after the previous [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) or [`Format`](xref:Bonsai.Harp.Format) operators, one could use the following [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) operator:
 
 :::workflow
-![FilterMessage](~/workflows/filter-messagetype-register.bonsai)
+![FilterRegister](~/workflows/filter-messagetype-register.bonsai)
 :::
 
 ### [`Parse`](xref:Bonsai.Harp.Parse)
 
-While [`FilterMessage`](xref:Bonsai.Harp.FilterMessage) can be used to filter incoming messages, the value of every single `HarpMessage` in the sequence will return unchanged. However, in many cases, one might be interested in extracting, and converting, the value of the message's payload. This is where the [`Parse`](xref:Bonsai.Harp.Parse) operator comes handy. This operator will extract and parse the payload of any incoming message and return a new sequence of parsed values. The type of the parsed values will depend on the `PayloadType` of the incoming message. For instance, if the `PayloadType` is `U16`, the operator will return a sequence of `ushort` values. The following workflow shows how to parse the payload of the previous example:
+While [`FilterRegister`](xref:Bonsai.Harp.FilterRegister) can be used to filter incoming messages, the value of every single `HarpMessage` in the sequence will return unchanged. However, in many cases, one might be interested in extracting, and converting, the value of the message's payload. This is where the [`Parse`](xref:Bonsai.Harp.Parse) operator comes handy. This operator will extract and parse the payload of any incoming message and return a new sequence of parsed values. The type of the parsed values will depend on the `PayloadType` of the incoming message. For instance, if the `PayloadType` is `U16`, the operator will return a sequence of `ushort` values. The following workflow shows how to parse the payload of the previous example:
 
 :::workflow
 ![Parse](~/workflows/parse.bonsai)
 :::
 
-It should be noted that if an [`Address`](xref:Bonsai.Harp.Parse.Address), or [`MessageType`](xref:Bonsai.Harp.Parse.MessageType), are defined, the node will additionally filter the incoming sequence of messages prior to the parsing operation.
+It should be noted that if an [`Address`](xref:Bonsai.Harp.ParseMessagePayload.Address) is defined, the node will additionally filter the incoming sequence of messages prior to the parsing operation.
 
 ---
 
