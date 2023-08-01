@@ -12,7 +12,9 @@ Moreover, since `Harp Messages` follow a simple binary protocol, they can be eff
 
 Since the `Harp` is a binary protocol, any `Harp Message` can be logged by simply saving its raw binary representation. The binary representation (as a `byte[]`) can be accessed via the `MessageBytes` member. Finally, to log the raw binary stream, use a [`MatrixWriter`](xref:Bonsai.Dsp.MatrixWriter) node. Alternatively, the `Bonsai.Harp` package also provides a [`MessageWriter`](xref:Bonsai.Harp.MessageWriter) operator that replicates the previous pattern:
 
-![Log-raw-stream](./../Assets/log-all-messages.svg)
+:::workflow
+![LogAllMessages](~/workflows/log-all-messages.bonsai)
+:::
 
 Since the logging takes place on top of any `Harp Message` stream, the writers can also be used to: log multiple devices in parallel, log filtered streams (e.g. after applying [`FilterMessage`](xref:Bonsai.Harp.FilterMessage)) or even save host-generated commands (e.g. after a [`CreateMessage`](xref:Bonsai.Harp.CreateMessage)).
 
@@ -24,7 +26,9 @@ While logging all `Harp Messages` to a single binary is certainly possible, it i
 
 A possible implementation of this pattern is shown below:
 
-![Log-demux](./../Assets/log-demux.svg)
+:::workflow
+![LogDemux](~/workflows/log-demux.bonsai)
+:::
 
 The single-register log files can then be loaded using the following Python routine:
 
