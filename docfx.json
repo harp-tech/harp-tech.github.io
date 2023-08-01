@@ -4,7 +4,8 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "src/harp/**.csproj",
+            "src/device.*/Interface/Harp.*/**.csproj"
           ],
           "exclude": [
             "**/bin/**",
