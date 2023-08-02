@@ -1,0 +1,33 @@
+[submodule "src/harp"]
+	path = src/harp
+	url = https://github.com/bonsai-rx/harp
+[submodule "src/device.behavior"]
+	path = src/device.behavior
+	url = https://github.com/harp-tech/device.behavior.git
+[submodule "src/device.analoginput"]
+	path = src/device.analoginput
+	url = https://github.com/harp-tech/device.analoginput.git
+[submodule "src/device.synchronizer"]
+	path = src/device.synchronizer
+	url = https://github.com/harp-tech/device.synchronizer.git
+[submodule "src/device.ledarray"]
+	path = src/device.ledarray
+	url = https://github.com/harp-tech/device.ledarray.git
+[submodule "src/device.loadcells"]
+	path = src/device.loadcells
+	url = https://github.com/harp-tech/device.loadcells.git
+[submodule "src/device.soundcard"]
+	path = src/device.soundcard
+	url = https://github.com/harp-tech/device.soundcard.git
+[submodule "src/device.cameracontrollergen2"]
+	path = src/device.cameracontrollergen2
+	url = https://github.com/harp-tech/device.cameracontrollergen2.git
+[submodule "src/device.timestampgeneratorgen3"]
+	path = src/device.timestampgeneratorgen3
+	url = https://github.com/harp-tech/device.timestampgeneratorgen3.git
+[submodule "src/device.syringepump"]
+	path = src/device.syringepump
+	url = https://github.com/harp-tech/device.syringepump.git
+[submodule "src/device.outputexpander"]
+	path = src/device.outputexpander
+	url = https://github.com/harp-tech/device.outputexpander.git
