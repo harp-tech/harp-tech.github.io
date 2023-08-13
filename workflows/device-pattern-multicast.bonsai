@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.3"
+<WorkflowBuilder Version="2.8.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
@@ -43,8 +43,8 @@
         </Combinator>
       </Expression>
       <Expression xsi:type="harp:CreateMessage">
+        <harp:MessageType>Write</harp:MessageType>
         <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:MessageType>Write</harp:MessageType>
           <harp:Address>32</harp:Address>
           <harp:PayloadType>U8</harp:PayloadType>
           <harp:Value>1</harp:Value>
@@ -59,8 +59,8 @@
         </Combinator>
       </Expression>
       <Expression xsi:type="harp:CreateMessage">
+        <harp:MessageType>Write</harp:MessageType>
         <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:MessageType>Write</harp:MessageType>
           <harp:Address>32</harp:Address>
           <harp:PayloadType>U8</harp:PayloadType>
           <harp:Value>0</harp:Value>
