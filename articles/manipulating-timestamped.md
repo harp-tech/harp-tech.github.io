@@ -26,3 +26,27 @@ If you are interested in simultaneously parse the data and timestamp information
 :::workflow
 ![ParseTimestampData](~/workflows/parse-timestamp-data.bonsai)
 :::
+
+## Timestamp generic data
+
+The timestamp provided by each `HarpMessage` is often a result of a device operation and will thus be assigned in hardware. However, it is often useful to also assign a timestamp to events that occur in software, in the host side. For example, when a user presses a mouse button, it is useful to know when the button was pressed, ideally with a somewhat meaningful temporal reference to the acquired Harp data. Unfortunately, the host PC does not run the same clock synchronization protocol as the Harp Devices, and thus cannot use this clock to timestamp events. However, we can still assign a timestamp to an event by using the timestamp from the latest available message to the board. Since the round-trip delay between host and device is typically small and with low jitter (<5ms) we can use this strategy to timestamp software events. Finally, the result of `WithLatestFrom` can be readily converted into a `Harp.Timestamped<T>` type using the [`CreateTimestamped`](xref:Bonsai.Harp.CreateTimestamped) operator:
+
+:::workflow
+![WithLatestTimestamp](~/workflows/withlatest-timestamp.bonsai)
+:::
+
+Critically, users must keep in mind that this strategy is not ideal for high-precision timing applications, and comes with a few caveats that must be kept in mind:
+
+- The Harp Device runs a real-time operating system (RTOS) where event timestamping takes a high priority. The host PC, on the other hand, runs a non-RTOS operating system where event timestamping is not a priority. This might result in a larger than expected jitter, and users are encouraged to benchmark it before using it.
+
+- This strategy rests on the assumption that the host has access to a steady stream of messages from the device. However, while some devices provide high-frequency events (e.g. Behavior board via ADC reads), other boards are typically silent. In these cases, the temporal stream will be non-homogenous and with poor resolution, and users should use an alternative strategy.
+
+:::workflow
+![WithLatestTimestampFiltered](~/workflows/withlatest-timestamp-filtered.bonsai)
+:::
+
+- An alternative strategy is to, on each software event to be timestamped, request a `Read` operation from any register from the board. Since each `Read` message is also timestamped, this can be assigned to the software event using a sort of asynchronous "request-timestamp" strategy.
+
+:::workflow
+![AsyncRequestTimestamp](~/workflows/timestamp-async.bonsai)
+:::
