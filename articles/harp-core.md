@@ -122,3 +122,4 @@ This pattern takes care of the output of the `Harp Device` (*i.e.* incoming mess
 
 > [!Note]
 > We tend to favor `BehaviorSubject` over `PublishSubject` since the `Device` node will terminate the connection with the `Harp Device` if it receives a `OnComplete` event. `BehaviorSubjects` always discard this event, and therefore, will never terminate the connection with the `Harp Device` while your workflow is running.
+
