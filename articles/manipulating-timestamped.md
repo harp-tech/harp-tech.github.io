@@ -1,20 +1,14 @@
-# Manipulating HarpMessages
-
-## Modifying `HarpMessage`
-
-
-## Timestamped messages
+# Manipulating timestamped streams
 
 While the `Timestamped` portion of an Harp Message is optional, it is often useful to have access to it. Afteral, it provides temporal information on `Events` and `Commands`, and can be used to perform time-based operations on the data. The `Bonsai.Harp` library provides a set of operators that can be used to manipulate the `Timestamped` portion of a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage).
 
-### Accessing the `Timestamp` portion of an HarpMessage payload.
+## Accessing the `Timestamp` portion of an HarpMessage payload.
 
 As per protocol specifications, the `Payload` portion of an Harp Message might contain information pertaining to the timestamp of the message as given by the device. To access this information, we use the [`Parse`](xref:Bonsai.Harp.Parse) as shown in the previous tutorial. In its simplest form, the [`Parse`](xref:Bonsai.Harp.Parse) can, for any `HarpMessage`, extract the timestamp information by setting the `Payload` property to `Timestamp`.
 
 :::workflow
 ![ParseTimestamp](~/workflows/parse-timestamp.bonsai)
 :::
-
 
 It is important to keep in mind that:
 
@@ -32,7 +26,7 @@ If you are interested in simultaneously parse the data and timestamp information
 ![ParseTimestampData](~/workflows/parse-timestamp-data.bonsai)
 :::
 
-### Timestamping generic data
+## Timestamping generic data
 
 The timestamp provided by each `HarpMessage` is often a result of a device operation and will thus be assigned in hardware. However, it is often useful to also assign a timestamp to events that occur in software, in the host side. For example, when a user presses a mouse button, it is useful to know when the button was pressed, ideally with a somewhat meaningful temporal reference to the acquired Harp data. Unfortunately, the host PC does not run the same clock synchronization protocol as the Harp Devices, and thus cannot use this clock to timestamp events. However, we can still assign a timestamp to an event by using the timestamp from the latest available message to the board. Since the round-trip delay between host and device is typically small and with low jitter (<5ms) we can use this strategy to timestamp software events. Finally, the result of `WithLatestFrom` can be readily converted into a `Harp.Timestamped<T>` type using the [`CreateTimestamped`](xref:Bonsai.Harp.CreateTimestamped) operator, as shown below.
 
@@ -52,7 +46,7 @@ Critically, users must keep in mind that this strategy is not ideal for high-pre
 ![AsyncRequestTimestamp](~/workflows/timestamp-async.bonsai)
 :::
 
-#### Creating Timestamped<T> types
+### Creating Timestamped<T> types
 
 Similarly to the [`Timestamped<T>`](xref:System.Reactive.Timestamped) types present part of Bonsai Core, `Bonsai.Harp` also provides its own [`Timestamped<T>`](xref:Bonsai.Harp.Timestamped) type. This type can be created using the [`CreateTimestamped`](xref:Bonsai.Harp.CreateTimestamped) operator, which takes as input a `Timestamp` and a `Value` and outputs a [`Timestamped<T>`](xref:Bonsai.Harp.Timestamped) type. This type is the basis for several timestamped operations in `Bonsai.Harp`, including the ability to create `HarpMessages` with a timestamped `Payload` field.
 
@@ -60,9 +54,22 @@ Similarly to the [`Timestamped<T>`](xref:System.Reactive.Timestamped) types pres
 ![CreateTimestamped](~/workflows/create-timestamped.bonsai)
 :::
 
-### `HarpMessages` with a timestamped `Payload`
+## Maintaining temporal metadata in processing pipeline
 
-#### Using `CreateMessage`
+When using timestamped messages arriving from an `Harp Device`, we often want to compute some transformation on the incoming data (say a value from the ADC that we might want to convert) while maintaining the timestamp of the data that gave rise to it. While one could use core reactive operators such as [`WithLatestFrom`](xref:Bonsai.Reactive.WithLatestFrom) to achieve such result, `Bonsai.Harp` provides the nested operator, [`ConvertTimestamped`](xref:Bonsai.Harp.ConvertTimestamped),  that makes this process easier. This operator takes as input a [`Timestamped<T>`](xref:Bonsai.Harp.Timestamped), for instance the result of a [`Parse`](xref:Bonsai.Harp.Parse) operation and allows the user to define any necessary logic inside the operator.
+
+All operations inside the operator should be synchronous in nature as to not induce a mis-pairing between the timestamp and the data. In other words, the nested operations should behave as a `Transform` operator.
+
+For example, manipulating the value of a register, and reassigning the original timestamp, can be done as follows:
+
+:::workflow
+![FormatTimestamped](~/workflows/convert-timestamped.bonsai)
+:::
+
+## Creating `HarpMessages` with a timestamped `Payload`
+
+### Using `CreateMessage`
+
 So far, we have only covered cases where the timestamp is extracted from an existing `HarpMessage`. However, in certain cases it might also be useful to create a `HarpMessage` with a `Timestamp` in the `Payload` field. Paralleling its use to generate `HarpMessages`, [`CreateMessage`](xref:Bonsai.Harp.CreateMessage) can also be used to *inject* a timestamped. We achieve this by:
 
 1. Setting the `PayloadType` (or `Payload`) property to a `Timestamped` type (e.g. `TimestampedU8`);
@@ -80,14 +87,3 @@ The same way we previously used [`Format`](xref:Bonsai.Harp.Format) to create a 
 ![FormatTimestamped](~/workflows/format-timestamped.bonsai)
 :::
 
-### Maintaining temporal metadata in processed pipeline
-
-When using timestamped messages arriving from an `Harp Device`, we often want to compute some transformation on the incoming data (say a value from the ADC that we might want to convert) while maintaining the timestamp of the data that gave rise to it. While one could use core reactive operators such as [`WithLatestFrom`](xref:Bonsai.Reactive.WithLatestFrom) to achieve such result, `Bonsai.Harp` provides the nested operator, [`ConvertTimestamped`](xref:Bonsai.Harp.ConvertTimestamped),  that makes this process easier. This operator takes as input a [`Timestamped<T>`](xref:Bonsai.Harp.Timestamped), for instance the result of a [`Parse`](xref:Bonsai.Harp.Parse) operation and allows the user to define any necessary logic inside the operator.
-
-All operations inside the operator should be synchronous in nature as to not induce a mis-pairing between the timestamp and the data. In other words, the nested operations should behave as a `Transform` operator.
-
-For example, manipulating the value of a register, and reassigning the original timestamp, can be done as follows:
-
-:::workflow
-![FormatTimestamped](~/workflows/convert-timestamped.bonsai)
-:::
