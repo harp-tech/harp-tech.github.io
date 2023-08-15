@@ -54,6 +54,12 @@ Similarly to the [`Timestamped<T>`](xref:System.Reactive.Timestamped) types pres
 ![CreateTimestamped](~/workflows/create-timestamped.bonsai)
 :::
 
+Alternatively, [`Timestamped<T>`](xref:System.Reactive.Timestamped) can also be created by replacing the time source by an `HarpMessage`. In this case, the temporal information will be extracted from the message of the second input. This is useful when the user wants to create a timestamped value from a message that already contains a timestamp, for instance, from an Harp Device:
+
+:::workflow
+![CreateTimestamped](~/workflows/create-timestamped-from-message.bonsai)
+:::
+
 ## Maintaining temporal metadata in processing pipeline
 
 When using timestamped messages arriving from an `Harp Device`, we often want to compute some transformation on the incoming data (say a value from the ADC that we might want to convert) while maintaining the timestamp of the data that gave rise to it. While one could use core reactive operators such as [`WithLatestFrom`](xref:Bonsai.Reactive.WithLatestFrom) to achieve such result, `Bonsai.Harp` provides the nested operator, [`ConvertTimestamped`](xref:Bonsai.Harp.ConvertTimestamped),  that makes this process easier. This operator takes as input a [`Timestamped<T>`](xref:Bonsai.Harp.Timestamped), for instance the result of a [`Parse`](xref:Bonsai.Harp.Parse) operation and allows the user to define any necessary logic inside the operator.
