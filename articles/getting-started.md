@@ -8,7 +8,7 @@ The process to set up your system to be able to use the Bonsai.Harp package is s
 
 3 - Download the latest release of Bonsai.Harp package through the Bonsai Package Manager. [Detailed instructions can be found here](https://bonsai-rx.org/docs/articles/packages.html)
 
-4 - Install the device specific package for the Harp device you are using. To achieve this, change `package source` to `nuget.org`. In the search bar, look for your device by typing: `harp.<device>`. For instance, for the Harp Behavior board, you would get:
+4 - Install the device specific package for the Harp device you are using. First change `package source` to `nuget.org` then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the Harp Behavior board, you would get:
 
 ![HarpDevicePackage](~/images/../../../images/behaviorpackage.png)
 
