@@ -1,6 +1,6 @@
 # Manipulating timestamped streams
 
-While the `Timestamped` portion of an Harp Message is optional, it is often useful to have access to it. Afteral, it provides temporal information on `Events` and `Commands`, and can be used to perform time-based operations on the data. The `Bonsai.Harp` library provides a set of operators that can be used to manipulate the `Timestamped` portion of a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage).
+While the `Timestamped` portion of an Harp Message is optional, it is often useful to have access to it. After all, it provides temporal information on `Events` and `Commands`, and can be used to perform time-based operations on the data. The `Bonsai.Harp` library provides a set of operators that can be used to manipulate the `Timestamped` portion of a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage).
 
 ## Accessing the `Timestamp` portion of an HarpMessage payload.
 
@@ -34,7 +34,7 @@ Critically, users must keep in mind that this strategy is not ideal for high-pre
 
 - The Harp Device runs a real-time operating system (RTOS) where event timestamping takes a high priority. The host PC, on the other hand, runs a non-RTOS operating system where event timestamping is not a priority. This might result in a larger than expected jitter, and users are encouraged to benchmark it before using it.
 
-- This strategy rests on the assumption that the host has access to a steady stream of messages from the device. However, while some devices provide high-frequency events (e.g. Behavior board via ADC reads), other boards are typically silent. In these cases, the temporal stream will be non-homogenous and with poor resolution, and users should use an alternative strategy.
+- This strategy rests on the assumption that the host has access to a steady stream of messages from the device. However, while some devices provide high-frequency events (e.g. 1kHz Analog read events from a Behavior board), other boards are typically silent. In these cases, the temporal stream will be non-homogenous and with poor resolution, and users should use an alternative strategy.
 
 :::workflow
 ![WithLatestTimestampFiltered](~/workflows/withlatest-timestamp-filtered.bonsai)
