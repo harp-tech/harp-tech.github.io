@@ -1,15 +1,21 @@
-# Getting started with Bonsai.Harp
+Getting Started with Bonsai - Harp
+==================================
 
-The process of setting up your system to be able to use the `Bonsai.Harp` package is simple, and documented in the next few steps:
+All [Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the [Harp Protocol](https://harp-tech.org/About/How-HARP-works/index.html) to communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
 
-1. Install Bonsai (if not already installed) by following the instructions available [here](https://bonsai-rx.org/docs/articles/installation.html).
+## Pre-requisites
 
-2. Install the FTDI drivers necessary for the USB communication between Harp device and the host PC. For Windows, these can be found [here](https://www.ftdichip.com/old2020/Drivers/CDM/CDM%20v2.12.26%20WHQL%20Certified.zip).
+1. [Bonsai](https://bonsai-rx.org)
+2. [FTDI D2XX Drivers](https://www.ftdichip.com/old2020/Drivers/CDM/CDM%20v2.12.26%20WHQL%20Certified.zip)
 
-3. Download the latest release of the `Bonsai.Harp` package through the Bonsai Package Manager. [Detailed instructions can be found here.](https://bonsai-rx.org/docs/articles/packages.html) We also advise you to download the `Bonsai.Harp.Design` package that adds useful functionality to the package such has additional dialogs and visualizers.
+## How to install
 
-4. Install the device specific package for the Harp device you are using. First, change `package source` to `nuget.org` then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the Harp Behavior board, you would get:
+The latest release of the Bonsai.Harp can be downloaded and installed through the Bonsai package manager (see [here](https://bonsai-rx.org/docs/articles/packages.html) for details on how to install Bonsai packages). We also recommend installing the `Bonsai.Harp.Design` package which provides useful additional functionality such as dialogs for updating device firmware and visualizers.
+
+## Device specific packages
+
+A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the Harp Behavior board, you should find the following package:
 
 ![HarpDevicePackage](~/images/behaviorpackage.png)
 
-5. The device nodes should now be available in the Bonsai Toolbox. You can now start using them in your workflows.
+The device nodes should now be available in the Bonsai Toolbox. You can now start using them in your workflows.
