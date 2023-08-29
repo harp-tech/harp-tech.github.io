@@ -31,7 +31,7 @@ $(function() {
             return workflowPath.replace(/\.[^.]+$/, ".svg");
         });
         var $codeHeader = createCodeHeader("Workflow");
-        $(this).first().before($codeHeader);
+        $(this).first().before($codeHeader).wrap("<p></p>");
         $codeHeader.find("button").click(function() {
             var $button = $(this);
             fetch(workflowPath).then(req => req.text()).then(contents => {
@@ -43,7 +43,10 @@ $(function() {
 
     $("code.hljs").each(function() {
         var $this = $(this);
-        var language = /lang-(.+?)(\s|$)/.exec($this.attr("class"))[1].toUpperCase();
+        var languageClass = /lang-(.+?)(\s|$)/.exec($this.attr("class"))
+        if (!languageClass) return true;
+
+        var language = languageClass[1].toUpperCase();
         if (language === 'CS' || language === 'CSHARP') {
             language = "C#";
         }
@@ -52,7 +55,7 @@ $(function() {
         }
         var $codeHeader = createCodeHeader(language);
         var $codeElement = $this.closest("pre");
-        $codeElement.before($codeHeader);
+        $codeElement.before($codeHeader).wrap("<p></p>");
         $codeHeader.find("button").click(function() {
             navigator.clipboard.writeText($codeElement.text());
             setCopyAlert($(this));
