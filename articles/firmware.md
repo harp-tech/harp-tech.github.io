@@ -1,4 +1,6 @@
-# Firmware update
+# Firmware
+
+## Updating device firmware
 
 As `Harp Devices` are updated, new features are added and bugs are fixed. To ensure that your device is running the latest firmware, you can use the `Device Setup` tool available in Bonsai. This tool will be available with the `Bonsai.Harp.Design` package. To launch it, simply add a generic `Device` node to your workflow, and open its default editor (by double-clicking on the node). If an `Harp Device` is detected on the currently selected `COM port`, the following dialog will appear:
 

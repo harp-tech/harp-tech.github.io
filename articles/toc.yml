@@ -1,9 +1,10 @@
 - name: Getting Started
-  href: harp-core.md
   items:
+    - name: Quickstart
+      href: intro.md
     - name: Operators
-      href: harp-core.md
+      href: operators.md
     - name: Firmware Updates
-      href: firmware-updates.md
+      href: firmware.md
     - name: Logging
-      href: logging-harp-messages.md
+      href: logging.md

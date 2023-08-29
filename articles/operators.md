@@ -1,6 +1,6 @@
-# Bonsai.Harp
+# Operators
 
-All [Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the [Harp Protocol](https://harp-tech.org/About/How-HARP-works/index.html) via which they can communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
+All [Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the [Harp Protocol](https://harp-tech.org/About/How-HARP-works/index.html) to communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
 
 The `Bonsai.Harp` library provides the following operators:
 
@@ -13,7 +13,7 @@ It is crucial to understand the function of each of these operators as they are 
 The [`Device`](xref:Bonsai.Harp.Device) operator is the first node you will probably add to your workflow when using any Harp Device. This source is responsible for establishing a serial connection link with the device and providing an interface that can be used to send and receive messages, represented by [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) objects. Messages sent from the host application into the node represent commands to be sent to the device, whereas message objects emitted by the device node represent command replies or events sent by the device to the host.
 
 > [!Note]
-> The `Device` node also provides a default editor that allows you to configure core device settings and upload new firmware to the board in the form of `.hex` files. To open this dialog you can simply double-click the node while bonsai is not running.
+> The `Device` node also provides a default editor that allows you to configure core device settings and upload new firmware to the board in the form of `.hex` files. To open this dialog you can simply double-click the node while the workflow is not running.
 
 The current specification of the `Harp Protocol` defines three [`HarpMessage types`](xref:Bonsai.Harp.MessageType):
 
