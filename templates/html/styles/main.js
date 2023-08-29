@@ -55,7 +55,7 @@ $(function() {
         }
         var $codeHeader = createCodeHeader(language);
         var $codeElement = $this.closest("pre");
-        $codeElement.before($codeHeader).wrap("<p></p>");
+        $codeElement.before($codeHeader);
         $codeHeader.find("button").click(function() {
             navigator.clipboard.writeText($codeElement.text());
             setCopyAlert($(this));
