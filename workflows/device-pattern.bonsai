@@ -1,17 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.3"
+<WorkflowBuilder Version="2.8.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
-      <Expression xsi:type="harp:CreateMessage">
-        <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:Address>32</harp:Address>
-          <harp:PayloadType>U8</harp:PayloadType>
-          <harp:Value>0</harp:Value>
-        </harp:Payload>
+      <Expression xsi:type="rx:BehaviorSubject" TypeArguments="harp:HarpMessage">
+        <rx:Name>DeviceCommands</rx:Name>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="harp:Device">
@@ -19,14 +15,13 @@
           <harp:OperationLed>On</harp:OperationLed>
           <harp:DumpRegisters>true</harp:DumpRegisters>
           <harp:VisualIndicators>On</harp:VisualIndicators>
-          <harp:Heartbeat>Enabled</harp:Heartbeat>
+          <harp:Heartbeat>Disabled</harp:Heartbeat>
           <harp:IgnoreErrors>false</harp:IgnoreErrors>
           <harp:PortName>COMx</harp:PortName>
         </Combinator>
       </Expression>
-      <Expression xsi:type="harp:FilterRegister">
-        <harp:FilterType>Include</harp:FilterType>
-        <harp:Register xsi:type="harp:TimestampSeconds" />
+      <Expression xsi:type="rx:PublishSubject">
+        <Name>DeviceEvents</Name>
       </Expression>
     </Nodes>
     <Edges>

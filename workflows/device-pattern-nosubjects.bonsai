@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.3"
+<WorkflowBuilder Version="2.8.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
@@ -7,8 +7,8 @@
   <Workflow>
     <Nodes>
       <Expression xsi:type="harp:CreateMessage">
+        <harp:MessageType>Write</harp:MessageType>
         <harp:Payload xsi:type="harp:CreateOperationControlPayload">
-          <harp:MessageType>Write</harp:MessageType>
           <harp:OperationMode>Standby</harp:OperationMode>
           <harp:DumpRegisters>false</harp:DumpRegisters>
           <harp:MuteReplies>false</harp:MuteReplies>
@@ -40,17 +40,18 @@
           <harp:PortName>COMx</harp:PortName>
         </Combinator>
       </Expression>
-      <Expression xsi:type="harp:FilterMessage">
+      <Expression xsi:type="harp:FilterRegister">
+        <harp:FilterType>Include</harp:FilterType>
         <harp:Register xsi:type="harp:CoreVersionHigh" />
       </Expression>
       <Expression xsi:type="harp:Parse">
         <harp:Register xsi:type="harp:TimestampedDeviceName" />
       </Expression>
       <Expression xsi:type="MemberSelector">
-        <Selector>Seconds</Selector>
+        <Selector>Value</Selector>
       </Expression>
       <Expression xsi:type="MemberSelector">
-        <Selector>Value</Selector>
+        <Selector>Seconds</Selector>
       </Expression>
     </Nodes>
     <Edges>

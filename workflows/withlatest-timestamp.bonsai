@@ -24,17 +24,14 @@
       <Expression xsi:type="rx:PublishSubject">
         <Name>DeviceEvents</Name>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="IntProperty">
-          <Value>0</Value>
-        </Combinator>
+      <Expression xsi:type="harp:Parse">
+        <harp:Register xsi:type="harp:ParseMessagePayload">
+          <harp:PayloadType>Timestamp</harp:PayloadType>
+          <harp:IsArray>false</harp:IsArray>
+        </harp:Register>
       </Expression>
-      <Expression xsi:type="harp:Format">
-        <harp:MessageType>Write</harp:MessageType>
-        <harp:Register xsi:type="harp:TimestampSeconds" />
-      </Expression>
-      <Expression xsi:type="MulticastSubject">
-        <Name>DeviceCommands</Name>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>HarpTimestamp</Name>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="wie:KeyDown">
@@ -42,44 +39,32 @@
           <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
         </Combinator>
       </Expression>
-      <Expression xsi:type="harp:CreateMessage">
-        <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:Address>32</harp:Address>
-          <harp:PayloadType>U8</harp:PayloadType>
-          <harp:Value>1</harp:Value>
-        </harp:Payload>
-      </Expression>
-      <Expression xsi:type="MulticastSubject">
-        <Name>DeviceCommands</Name>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>HarpTimestamp</Name>
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Delay">
-          <rx:DueTime>PT0.5S</rx:DueTime>
-        </Combinator>
+        <Combinator xsi:type="rx:WithLatestFrom" />
       </Expression>
-      <Expression xsi:type="harp:CreateMessage">
-        <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="harp:CreateMessagePayload">
-          <harp:Address>32</harp:Address>
-          <harp:PayloadType>U8</harp:PayloadType>
-          <harp:Value>0</harp:Value>
-        </harp:Payload>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="harp:CreateTimestamped" />
       </Expression>
-      <Expression xsi:type="MulticastSubject">
-        <Name>DeviceCommands</Name>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Seconds</Selector>
       </Expression>
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
       <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
       <Edge From="3" To="4" Label="Source1" />
-      <Edge From="4" To="5" Label="Source1" />
-      <Edge From="6" To="7" Label="Source1" />
+      <Edge From="5" To="7" Label="Source1" />
+      <Edge From="6" To="7" Label="Source2" />
       <Edge From="7" To="8" Label="Source1" />
       <Edge From="8" To="9" Label="Source1" />
-      <Edge From="9" To="10" Label="Source1" />
-      <Edge From="10" To="11" Label="Source1" />
+      <Edge From="8" To="10" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

@@ -9,20 +9,16 @@
         <harp:MessageType>Write</harp:MessageType>
         <harp:Payload xsi:type="harp:CreateMessagePayload">
           <harp:Address>32</harp:Address>
-          <harp:PayloadType>U16</harp:PayloadType>
-          <harp:Value>10</harp:Value>
+          <harp:PayloadType>S8</harp:PayloadType>
+          <harp:Value>123</harp:Value>
         </harp:Payload>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="harp:Device">
-          <harp:OperationMode>Active</harp:OperationMode>
-          <harp:OperationLed>On</harp:OperationLed>
-          <harp:DumpRegisters>true</harp:DumpRegisters>
-          <harp:VisualIndicators>On</harp:VisualIndicators>
-          <harp:Heartbeat>Disabled</harp:Heartbeat>
-          <harp:IgnoreErrors>false</harp:IgnoreErrors>
-          <harp:PortName>COMx</harp:PortName>
-        </Combinator>
+      <Expression xsi:type="harp:Format">
+        <harp:MessageType xsi:nil="true" />
+        <harp:Register xsi:type="harp:FormatMessagePayload">
+          <harp:Address>2</harp:Address>
+          <harp:PayloadType xsi:nil="true" />
+        </harp:Register>
       </Expression>
     </Nodes>
     <Edges>
