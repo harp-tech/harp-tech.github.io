@@ -8,3 +8,5 @@
       href: firmware.md
     - name: Logging
       href: logging.md
+    - name: Message Manipulation
+      href: message-manipulation.md
