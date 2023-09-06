@@ -6,7 +6,7 @@ All [Harp Devices](https://harp-tech.org/Devices/device_list.html) implement the
 ## Pre-requisites
 
 1. [Bonsai](https://bonsai-rx.org)
-2. [FTDI D2XX Drivers](https://www.ftdichip.com/old2020/Drivers/CDM/CDM%20v2.12.26%20WHQL%20Certified.zip)
+2. [FTDI D2XX Drivers](https://ftdichip.com/wp-content/uploads/2021/08/CDM212364_Setup.zip)
 
 ## How to install
 
