@@ -69,5 +69,5 @@ foreach (var item in deviceModel.registers)
 }
 
 var output = builder.ToString();
-if (args.Length > 1) File.WriteAllText(args[1], output);
+if (args.Length > 1) File.WriteAllText(Path.Combine(args[1], $"Harp_{deviceModel.device}_Device.md"), output);
 else Console.WriteLine(output);
