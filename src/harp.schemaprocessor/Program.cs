@@ -50,6 +50,12 @@ foreach (var item in deviceModel.registers)
     var interfaceType = register.maskType
         ?? register.interfaceType
         ?? (register.payloadSpec != null ? $"{name}Payload" : null);
+    var access = register.access;
+    if (access is List<object> accessList)
+    {
+        access = string.Join(", ", accessList);
+    }
+
     var range = "";
     if (register.minValue != null || register.maxValue != null)
     {
@@ -62,7 +68,7 @@ foreach (var item in deviceModel.registers)
         $"| {register.address} " +
         $"| {register.type} " +
         $"| {register.length} " +
-        $"| {register.access} " +
+        $"| {access} " +
         $"| {register.description} " +
         $"| {range} " +
         (interfaceType != null ? $"| [{interfaceType}](xref:Harp.{deviceModel.device}.{interfaceType}) |" : "| |"));
