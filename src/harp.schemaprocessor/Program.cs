@@ -50,6 +50,10 @@ foreach (var item in deviceModel.registers)
     var interfaceType = register.maskType
         ?? register.interfaceType
         ?? (register.payloadSpec != null ? $"{name}Payload" : null);
+    var interfaceTypeRef = (string)interfaceType == "EnableFlag"
+        ? "Bonsai.Harp.EnableFlag"
+        : $"Harp.{deviceModel.device}.{interfaceType}";
+
     var access = register.access;
     if (access is List<object> accessList)
     {
@@ -71,7 +75,7 @@ foreach (var item in deviceModel.registers)
         $"| {access} " +
         $"| {register.description} " +
         $"| {range} " +
-        (interfaceType != null ? $"| [{interfaceType}](xref:Harp.{deviceModel.device}.{interfaceType}) |" : "| |"));
+        (interfaceType != null ? $"| [{interfaceType}](xref:{interfaceTypeRef}) |" : "| |"));
 }
 
 var output = builder.ToString();
