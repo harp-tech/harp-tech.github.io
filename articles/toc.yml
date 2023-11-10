@@ -1,4 +1,16 @@
-- name: Getting Started
+- name: About
+  items:
+    - name: What is Harp
+      href: about.md
+- name: Protocol
+  items:
+    - name: Binary Protocol
+      href: ~/protocol/BinaryProtocol-8bit.md
+    - name: Common Registers
+      href: ~/protocol/Device.md
+    - name: Synchronization Clock
+      href: ~/protocol/SynchronizationClock.md
+- name: Interface
   items:
     - name: Quickstart
       href: intro.md

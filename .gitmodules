@@ -31,3 +31,6 @@
 [submodule "src/device.outputexpander"]
 	path = src/device.outputexpander
 	url = https://github.com/harp-tech/device.outputexpander.git
+[submodule "protocol"]
+	path = protocol
+	url = https://github.com/harp-tech/protocol.git

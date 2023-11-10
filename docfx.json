@@ -34,8 +34,12 @@
           "articles/**/toc.yml",
           "tutorials/**.md",
           "tutorials/**/toc.yml",
+          "protocol/**.md",
           "toc.yml",
           "*.md"
+        ],
+        "exclude": [
+          "protocol/README.md"
         ]
       }
     ],
@@ -46,6 +50,9 @@
           "favicon.ico",
           "src/device.*/Assets/*.png",
           "src/device.*/Assets/*.jpg",
+          "protocol/Assets/**",
+          "protocol/Logo/*.svg",
+          "protocol/*.pdf",
           "images/**",
           "workflows/**"
         ]
