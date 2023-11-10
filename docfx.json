@@ -44,7 +44,8 @@
         "files": [
           "logo.svg",
           "favicon.ico",
-          "editor/index.html",
+          "src/device.*/Assets/*.png",
+          "src/device.*/Assets/*.jpg",
           "images/**",
           "workflows/**"
         ]
@@ -53,7 +54,8 @@
     "overwrite": [
       {
         "files": [
-          "apidoc/**.md"
+          "apidoc/**.md",
+          "apispec/**.md"
         ],
         "exclude": [
           "obj/**",
@@ -88,7 +90,7 @@
     "keepFileLink": false,
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
-    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
+    "xrefService": [ "https://learn.microsoft.com/api/xref/query?uid={uid}" ],
     "xref": [
       "https://bonsai-rx.org/docs/xrefmap.yml",
       "https://horizongir.github.io/opencv.net/xrefmap.yml",
