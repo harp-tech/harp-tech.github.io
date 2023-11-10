@@ -83,7 +83,8 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "templates/html"
+      "modern",
+      "template"
     ],
     "postProcessors": [ "ExtractSearchIndex" ],
     "markdownEngineName": "markdig",
@@ -97,7 +98,6 @@
     "keepFileLink": false,
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
-    "xrefService": [ "https://learn.microsoft.com/api/xref/query?uid={uid}" ],
     "xref": [
       "https://bonsai-rx.org/docs/xrefmap.yml",
       "https://horizongir.github.io/opencv.net/xrefmap.yml",
