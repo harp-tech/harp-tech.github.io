@@ -44,7 +44,8 @@
         "files": [
           "logo.svg",
           "favicon.ico",
-          "editor/index.html",
+          "src/device.*/Assets/*.png",
+          "src/device.*/Assets/*.jpg",
           "images/**",
           "workflows/**"
         ]

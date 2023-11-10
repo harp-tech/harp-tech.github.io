@@ -11,7 +11,7 @@ dynamic deviceModel = deserializer.Deserialize<ExpandoObject>(parser);
 
 var builder = new StringBuilder();
 builder.AppendLine($@"---
-uid: Harp.{deviceModel.device}
+uid: Harp.{deviceModel.device}.Device
 ---
 
 <table>
@@ -81,11 +81,13 @@ foreach (var item in deviceModel.registers)
 var output = builder.ToString();
 if (args.Length > 1)
 {
-    File.WriteAllText(Path.Combine(args[1], $"Harp_{deviceModel.device}.md"), output);
-    File.WriteAllText(Path.Combine(args[1], $"Harp_{deviceModel.device}_Device.md"), $@"---
-uid: Harp.{deviceModel.device}.Device
+    File.WriteAllText(Path.Combine(args[1], $"Harp_{deviceModel.device}_Device.md"), output);
+    File.WriteAllText(Path.Combine(args[1], $"Harp_{deviceModel.device}.md"), $@"---
+uid: Harp.{deviceModel.device}
 ---
 
-[!include[Device](./Harp_{deviceModel.device}.md)]");
+[!include[README](~/src/device.{deviceModel.device.ToLowerInvariant()}/README.md)]
+
+[!include[RegisterTables](./Harp_{deviceModel.device}_Device.md)]");
 }
 else Console.WriteLine(output);
