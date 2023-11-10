@@ -1,3 +1,7 @@
+- name: About
+  items:
+    - name: What is Harp
+      href: about.md
 - name: Getting Started
   items:
     - name: Quickstart
