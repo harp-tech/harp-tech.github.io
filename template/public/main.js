@@ -49,6 +49,7 @@ var WorkflowContainer = {
 }
 
 export default {
+    defaultTheme: 'light',
     iconLinks: [{
         icon: 'github',
         href: 'https://github.com/harp-tech',
