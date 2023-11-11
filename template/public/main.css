@@ -26,3 +26,9 @@
   flex-grow: 1;
   line-height: 26px;
 }
+
+.wrap-right > p > img,
+.wrap-right > p > a > img {
+  max-width: 50%;
+  float: inline-end;
+}
