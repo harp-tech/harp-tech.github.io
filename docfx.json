@@ -16,6 +16,7 @@
       ],
       "dest": "api",
       "filter": "filter.yml",
+      "enumSortOrder": "declaringOrder",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
