@@ -34,3 +34,4 @@
 [submodule "protocol"]
 	path = protocol
 	url = https://github.com/harp-tech/protocol.git
+	branch = doc-generation

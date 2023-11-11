@@ -16,6 +16,6 @@ The latest release of the Bonsai.Harp can be downloaded and installed through th
 
 A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the Harp Behavior board, you should find the following package:
 
-![HarpDevicePackage](~/images/behaviorpackage.png)
+![HarpDevicePackage](~/images/behavior-package.png)
 
 The device nodes should now be available in the Bonsai Toolbox. You can now start using them in your workflows.

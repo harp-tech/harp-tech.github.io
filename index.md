@@ -1,6 +1,12 @@
 # **Harp** Documentation
 
-Harp is a family of devices that configure, control, and collect data from a wide range of peripheral devices such as cameras, LEDs, nosepokes, and motors. Combining Harp devices is an easy way to extend experimental setup functionality with integrated timestamp synchronisation across devices.
+[!include[what-is-harp](./articles/what-is-harp.md)]
+
+## Quick Start
+
+* [What is Harp](./articles/about.md)
+* [Binary Protocol](./protocol/BinaryProtocol-8bit.md)
+* [Bonsai Interface](./articles/intro.md)
 
 > [!Warning]
 > These docs are under active development, feel free to contribute by either [raising an issue](https://github.com/harp-tech/docs/issues) or following the links saying **Improve this Doc**.
