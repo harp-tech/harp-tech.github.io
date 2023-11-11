@@ -9,4 +9,4 @@
 * [Bonsai Interface](./articles/intro.md)
 
 > [!Warning]
-> These docs are under active development, feel free to contribute by either [raising an issue](https://github.com/harp-tech/docs/issues) or following the links saying **Improve this Doc**.
+> These docs are under active development, feel free to contribute by either [raising an issue](https://github.com/orgs/harp-tech/discussions) or following the links saying **Improve this Doc**.
