@@ -35,3 +35,6 @@
 	path = protocol
 	url = https://github.com/harp-tech/protocol.git
 	branch = doc-generation
+[submodule "reflex-generator"]
+	path = draft-01
+	url = https://github.com/harp-tech/reflex-generator.git
