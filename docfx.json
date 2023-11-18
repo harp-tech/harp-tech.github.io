@@ -54,6 +54,7 @@
           "protocol/Assets/**",
           "protocol/Logo/*.svg",
           "protocol/*.pdf",
+          "draft-01/schema/*.json",
           "images/**",
           "workflows/**"
         ]
