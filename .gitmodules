@@ -38,3 +38,6 @@
 [submodule "reflex-generator"]
 	path = draft-02
 	url = https://github.com/harp-tech/reflex-generator.git
+[submodule "python"]
+	path = python
+	url = https://github.com/harp-tech/harp-python.git
