@@ -10,7 +10,7 @@
       href: ~/protocol/Device.md
     - name: Synchronization Clock
       href: ~/protocol/SynchronizationClock.md
-- name: Interface
+- name: Control Interface
   items:
     - name: Quickstart
       href: intro.md
@@ -22,3 +22,7 @@
       href: logging.md
     - name: Message Manipulation
       href: message-manipulation.md
+- name: Data Interface
+  items:
+    - name: Python
+      href: python.md
