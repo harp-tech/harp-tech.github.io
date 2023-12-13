@@ -58,7 +58,8 @@
         ]
       },
       {
-        "files": "protocol/schema/*.json",
+        "files": "schema/*.json",
+        "src": "protocol",
         "dest": "draft-02"
       }
     ],
