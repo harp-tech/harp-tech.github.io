@@ -1,0 +1,3276 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AsyncDevice
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AsyncDevice
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Harp_CameraControllerGen2_AsyncDevice.md&amp;value=---%0Auid%3A%20Harp.CameraControllerGen2.AsyncDevice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.CameraControllerGen2.AsyncDevice">
+
+
+
+  <h1 id="Harp_CameraControllerGen2_AsyncDevice" data-uid="Harp.CameraControllerGen2.AsyncDevice" class="text-break">
+    Class AsyncDevice
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.CameraControllerGen2.html">CameraControllerGen2</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.CameraControllerGen2.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an asynchronous API to configure and interface with CameraControllerGen2 devices.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AsyncDevice : AsyncDevice, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Bonsai.Harp.AsyncDevice.html">AsyncDevice</a></div>
+      <div><span class="xref">AsyncDevice</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadWhoAmIAsync_System_Threading_CancellationToken_">AsyncDevice.ReadWhoAmIAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadHardwareVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadHardwareVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadAssemblyVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadAssemblyVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadCoreVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadCoreVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadFirmwareVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadFirmwareVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadTimestampSecondsAsync_System_Threading_CancellationToken_">AsyncDevice.ReadTimestampSecondsAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadTimestampMicrosecondsAsync_System_Threading_CancellationToken_">AsyncDevice.ReadTimestampMicrosecondsAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadOperationControlAsync_System_Threading_CancellationToken_">AsyncDevice.ReadOperationControlAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadResetDeviceAsync_System_Threading_CancellationToken_">AsyncDevice.ReadResetDeviceAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadDeviceNameAsync_System_Threading_CancellationToken_">AsyncDevice.ReadDeviceNameAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSerialNumberAsync_System_Threading_CancellationToken_">AsyncDevice.ReadSerialNumberAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadClockConfigurationAsync_System_Threading_CancellationToken_">AsyncDevice.ReadClockConfigurationAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadByteAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadByteAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadByteArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadByteArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSByteAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSByteAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSByteArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSByteArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt16Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt16Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt16ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt16ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt16Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt16Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt16ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt16ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt32Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt32Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt32ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt32ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt32Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt32Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt32ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt32ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt64Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt64Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt64ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt64ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt64Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt64Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt64ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt64ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSingleAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSingleAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSingleArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSingleArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteTimestampSecondsAsync_System_UInt32_System_Threading_CancellationToken_">AsyncDevice.WriteTimestampSecondsAsync(uint, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteResetDeviceAsync_Bonsai_Harp_ResetFlags_System_Threading_CancellationToken_">AsyncDevice.WriteResetDeviceAsync(ResetFlags, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteDeviceNameAsync_System_String_System_Threading_CancellationToken_">AsyncDevice.WriteDeviceNameAsync(string, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteClockConfigurationAsync_Bonsai_Harp_ClockConfigurationFlags_System_Threading_CancellationToken_">AsyncDevice.WriteClockConfigurationAsync(ClockConfigurationFlags, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteByteAsync_System_Int32_System_Byte_System_Threading_CancellationToken_">AsyncDevice.WriteByteAsync(int, byte, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteByteAsync_System_Int32_System_Byte___System_Threading_CancellationToken_">AsyncDevice.WriteByteAsync(int, byte[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSByteAsync_System_Int32_System_SByte_System_Threading_CancellationToken_">AsyncDevice.WriteSByteAsync(int, sbyte, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSByteAsync_System_Int32_System_SByte___System_Threading_CancellationToken_">AsyncDevice.WriteSByteAsync(int, sbyte[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt16Async_System_Int32_System_UInt16_System_Threading_CancellationToken_">AsyncDevice.WriteUInt16Async(int, ushort, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt16Async_System_Int32_System_UInt16___System_Threading_CancellationToken_">AsyncDevice.WriteUInt16Async(int, ushort[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt16Async_System_Int32_System_Int16_System_Threading_CancellationToken_">AsyncDevice.WriteInt16Async(int, short, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt16Async_System_Int32_System_Int16___System_Threading_CancellationToken_">AsyncDevice.WriteInt16Async(int, short[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt32Async_System_Int32_System_UInt32_System_Threading_CancellationToken_">AsyncDevice.WriteUInt32Async(int, uint, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt32Async_System_Int32_System_UInt32___System_Threading_CancellationToken_">AsyncDevice.WriteUInt32Async(int, uint[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt32Async_System_Int32_System_Int32_System_Threading_CancellationToken_">AsyncDevice.WriteInt32Async(int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt32Async_System_Int32_System_Int32___System_Threading_CancellationToken_">AsyncDevice.WriteInt32Async(int, int[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt64Async_System_Int32_System_UInt64_System_Threading_CancellationToken_">AsyncDevice.WriteUInt64Async(int, ulong, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt64Async_System_Int32_System_UInt64___System_Threading_CancellationToken_">AsyncDevice.WriteUInt64Async(int, ulong[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt64Async_System_Int32_System_Int64_System_Threading_CancellationToken_">AsyncDevice.WriteInt64Async(int, long, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt64Async_System_Int32_System_Int64___System_Threading_CancellationToken_">AsyncDevice.WriteInt64Async(int, long[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSingleAsync_System_Int32_System_Single_System_Threading_CancellationToken_">AsyncDevice.WriteSingleAsync(int, float, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSingleAsync_System_Int32_System_Single___System_Threading_CancellationToken_">AsyncDevice.WriteSingleAsync(int, float[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_CommandAsync_Bonsai_Harp_HarpMessage_System_Threading_CancellationToken_">AsyncDevice.CommandAsync(HarpMessage, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_Dispose">AsyncDevice.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadCam0EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadCam0EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadCam0EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadCam0EventAsync(System.Threading.CancellationToken)">
+  ReadCam0EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the Cam0Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CameraEvents&gt; ReadCam0EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraEvents.html">CameraEvents</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadCam1EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadCam1EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadCam1EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadCam1EventAsync(System.Threading.CancellationToken)">
+  ReadCam1EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the Cam1Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CameraEvents&gt; ReadCam1EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraEvents.html">CameraEvents</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureCam0EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureCam0EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureCam0EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureCam0EventAsync(System.Threading.CancellationToken)">
+  ReadConfigureCam0EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the ConfigureCam0Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;EventConfiguration&gt; ReadConfigureCam0EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureCam1EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureCam1EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureCam1EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureCam1EventAsync(System.Threading.CancellationToken)">
+  ReadConfigureCam1EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the ConfigureCam1Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;EventConfiguration&gt; ReadConfigureCam1EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureOutput0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureOutput0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureOutput0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureOutput0Async(System.Threading.CancellationToken)">
+  ReadConfigureOutput0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L858"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the ConfigureOutput0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;OutputConfiguration&gt; ReadConfigureOutput0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureOutput1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureOutput1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadConfigureOutput1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadConfigureOutput1Async(System.Threading.CancellationToken)">
+  ReadConfigureOutput1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L904"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the ConfigureOutput1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;OutputConfiguration&gt; ReadConfigureOutput1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadInputStateAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadInputStateAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadInputStateAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadInputStateAsync(System.Threading.CancellationToken)">
+  ReadInputStateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the InputState register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;DigitalInputs&gt; ReadInputStateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalInputs.html">DigitalInputs</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputClearAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputClearAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputClearAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputClearAsync(System.Threading.CancellationToken)">
+  ReadOutputClearAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L996"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the OutputClear register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;DigitalOutputs&gt; ReadOutputClearAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputSetAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputSetAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputSetAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputSetAsync(System.Threading.CancellationToken)">
+  ReadOutputSetAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L950"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the OutputSet register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;DigitalOutputs&gt; ReadOutputSetAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputStateAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputStateAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputStateAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputStateAsync(System.Threading.CancellationToken)">
+  ReadOutputStateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1088"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the OutputState register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;DigitalOutputs&gt; ReadOutputStateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputToggleAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputToggleAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadOutputToggleAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadOutputToggleAsync(System.Threading.CancellationToken)">
+  ReadOutputToggleAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1042"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the OutputToggle register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;DigitalOutputs&gt; ReadOutputToggleAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStartAndStopAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartAndStopAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStartAndStopAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartAndStopAsync(System.Threading.CancellationToken)">
+  ReadStartAndStopAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StartAndStop register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CameraFlags&gt; ReadStartAndStopAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStartAndStopTimestampedAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartAndStopTimestampedAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStartAndStopTimestampedAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartAndStopTimestampedAsync(System.Threading.CancellationToken)">
+  ReadStartAndStopTimestampedAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StartAndStopTimestamped register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CameraFlags&gt; ReadStartAndStopTimestampedAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStartTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStartTimestampAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStartTimestampAsync(System.Threading.CancellationToken)">
+  ReadStartTimestampAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StartTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;uint&gt; ReadStartTimestampAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStopTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStopTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStopTimestampAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStopTimestampAsync(System.Threading.CancellationToken)">
+  ReadStopTimestampAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StopTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;uint&gt; ReadStopTimestampAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStrobeSourceCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStrobeSourceCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStrobeSourceCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStrobeSourceCam0Async(System.Threading.CancellationToken)">
+  ReadStrobeSourceCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L490"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StrobeSourceCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StrobeSource&gt; ReadStrobeSourceCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadStrobeSourceCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStrobeSourceCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadStrobeSourceCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadStrobeSourceCam1Async(System.Threading.CancellationToken)">
+  ReadStrobeSourceCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L720"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the StrobeSourceCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;StrobeSource&gt; ReadStrobeSourceCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedCam0EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedCam0EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedCam0EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedCam0EventAsync(System.Threading.CancellationToken)">
+  ReadTimestampedCam0EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the Cam0Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;CameraEvents&gt;&gt; ReadTimestampedCam0EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraEvents.html">CameraEvents</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedCam1EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedCam1EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedCam1EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedCam1EventAsync(System.Threading.CancellationToken)">
+  ReadTimestampedCam1EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the Cam1Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;CameraEvents&gt;&gt; ReadTimestampedCam1EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraEvents.html">CameraEvents</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureCam0EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureCam0EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureCam0EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureCam0EventAsync(System.Threading.CancellationToken)">
+  ReadTimestampedConfigureCam0EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the ConfigureCam0Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;EventConfiguration&gt;&gt; ReadTimestampedConfigureCam0EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureCam1EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureCam1EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureCam1EventAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureCam1EventAsync(System.Threading.CancellationToken)">
+  ReadTimestampedConfigureCam1EventAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the ConfigureCam1Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;EventConfiguration&gt;&gt; ReadTimestampedConfigureCam1EventAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureOutput0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureOutput0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureOutput0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureOutput0Async(System.Threading.CancellationToken)">
+  ReadTimestampedConfigureOutput0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L874"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the ConfigureOutput0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;OutputConfiguration&gt;&gt; ReadTimestampedConfigureOutput0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureOutput1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureOutput1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedConfigureOutput1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedConfigureOutput1Async(System.Threading.CancellationToken)">
+  ReadTimestampedConfigureOutput1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L920"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the ConfigureOutput1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;OutputConfiguration&gt;&gt; ReadTimestampedConfigureOutput1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedInputStateAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedInputStateAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedInputStateAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedInputStateAsync(System.Threading.CancellationToken)">
+  ReadTimestampedInputStateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the InputState register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;DigitalInputs&gt;&gt; ReadTimestampedInputStateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalInputs.html">DigitalInputs</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputClearAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputClearAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputClearAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputClearAsync(System.Threading.CancellationToken)">
+  ReadTimestampedOutputClearAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1012"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the OutputClear register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;DigitalOutputs&gt;&gt; ReadTimestampedOutputClearAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputSetAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputSetAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputSetAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputSetAsync(System.Threading.CancellationToken)">
+  ReadTimestampedOutputSetAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L966"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the OutputSet register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;DigitalOutputs&gt;&gt; ReadTimestampedOutputSetAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputStateAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputStateAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputStateAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputStateAsync(System.Threading.CancellationToken)">
+  ReadTimestampedOutputStateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the OutputState register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;DigitalOutputs&gt;&gt; ReadTimestampedOutputStateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputToggleAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputToggleAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedOutputToggleAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedOutputToggleAsync(System.Threading.CancellationToken)">
+  ReadTimestampedOutputToggleAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1058"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the OutputToggle register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;DigitalOutputs&gt;&gt; ReadTimestampedOutputToggleAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartAndStopAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartAndStopAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartAndStopAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartAndStopAsync(System.Threading.CancellationToken)">
+  ReadTimestampedStartAndStopAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StartAndStop register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;CameraFlags&gt;&gt; ReadTimestampedStartAndStopAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartAndStopTimestampedAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartAndStopTimestampedAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartAndStopTimestampedAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartAndStopTimestampedAsync(System.Threading.CancellationToken)">
+  ReadTimestampedStartAndStopTimestampedAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StartAndStopTimestamped register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;CameraFlags&gt;&gt; ReadTimestampedStartAndStopTimestampedAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStartTimestampAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStartTimestampAsync(System.Threading.CancellationToken)">
+  ReadTimestampedStartTimestampAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StartTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;uint&gt;&gt; ReadTimestampedStartTimestampAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStopTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStopTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStopTimestampAsync_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStopTimestampAsync(System.Threading.CancellationToken)">
+  ReadTimestampedStopTimestampAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L368"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StopTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;uint&gt;&gt; ReadTimestampedStopTimestampAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStrobeSourceCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStrobeSourceCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStrobeSourceCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStrobeSourceCam0Async(System.Threading.CancellationToken)">
+  ReadTimestampedStrobeSourceCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L506"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StrobeSourceCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;StrobeSource&gt;&gt; ReadTimestampedStrobeSourceCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStrobeSourceCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStrobeSourceCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedStrobeSourceCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedStrobeSourceCam1Async(System.Threading.CancellationToken)">
+  ReadTimestampedStrobeSourceCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L736"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the StrobeSourceCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;StrobeSource&gt;&gt; ReadTimestampedStrobeSourceCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerConfigCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerConfigCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerConfigCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerConfigCam0Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerConfigCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerConfigCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;TriggerSource&gt;&gt; ReadTimestampedTriggerConfigCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerConfigCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerConfigCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerConfigCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerConfigCam1Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerConfigCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L644"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerConfigCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;TriggerSource&gt;&gt; ReadTimestampedTriggerConfigCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerDurationCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerDurationCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerDurationCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerDurationCam0Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerDurationCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L598"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerDurationCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedTriggerDurationCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerDurationCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerDurationCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerDurationCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerDurationCam1Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerDurationCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L828"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerDurationCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedTriggerDurationCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerFrequencyCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerFrequencyCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerFrequencyCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerFrequencyCam0Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerFrequencyCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L552"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerFrequencyCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedTriggerFrequencyCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerFrequencyCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerFrequencyCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerFrequencyCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerFrequencyCam1Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerFrequencyCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L782"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerFrequencyCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedTriggerFrequencyCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerInvertedCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerInvertedCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerInvertedCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerInvertedCam0Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerInvertedCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L460"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerInvertedCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;TriggerInverted&gt;&gt; ReadTimestampedTriggerInvertedCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerInvertedCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerInvertedCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTimestampedTriggerInvertedCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTimestampedTriggerInvertedCam1Async(System.Threading.CancellationToken)">
+  ReadTimestampedTriggerInvertedCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L690"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the TriggerInvertedCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;TriggerInverted&gt;&gt; ReadTimestampedTriggerInvertedCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerConfigCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerConfigCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerConfigCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerConfigCam0Async(System.Threading.CancellationToken)">
+  ReadTriggerConfigCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L398"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerConfigCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TriggerSource&gt; ReadTriggerConfigCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerConfigCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerConfigCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerConfigCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerConfigCam1Async(System.Threading.CancellationToken)">
+  ReadTriggerConfigCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L628"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerConfigCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TriggerSource&gt; ReadTriggerConfigCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerDurationCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerDurationCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerDurationCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerDurationCam0Async(System.Threading.CancellationToken)">
+  ReadTriggerDurationCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerDurationCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadTriggerDurationCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerDurationCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerDurationCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerDurationCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerDurationCam1Async(System.Threading.CancellationToken)">
+  ReadTriggerDurationCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L812"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerDurationCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadTriggerDurationCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerFrequencyCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerFrequencyCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerFrequencyCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerFrequencyCam0Async(System.Threading.CancellationToken)">
+  ReadTriggerFrequencyCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L536"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerFrequencyCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadTriggerFrequencyCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerFrequencyCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerFrequencyCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerFrequencyCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerFrequencyCam1Async(System.Threading.CancellationToken)">
+  ReadTriggerFrequencyCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L766"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerFrequencyCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadTriggerFrequencyCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerInvertedCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerInvertedCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerInvertedCam0Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerInvertedCam0Async(System.Threading.CancellationToken)">
+  ReadTriggerInvertedCam0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L444"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerInvertedCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TriggerInverted&gt; ReadTriggerInvertedCam0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerInvertedCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerInvertedCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_ReadTriggerInvertedCam1Async_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.ReadTriggerInvertedCam1Async(System.Threading.CancellationToken)">
+  ReadTriggerInvertedCam1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L674"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the TriggerInvertedCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TriggerInverted&gt; ReadTriggerInvertedCam1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureCam0EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureCam0EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureCam0EventAsync_Harp_CameraControllerGen2_EventConfiguration_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureCam0EventAsync(Harp.CameraControllerGen2.EventConfiguration,System.Threading.CancellationToken)">
+  WriteConfigureCam0EventAsync(EventConfiguration, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the ConfigureCam0Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteConfigureCam0EventAsync(EventConfiguration value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureCam1EventAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureCam1EventAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureCam1EventAsync_Harp_CameraControllerGen2_EventConfiguration_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureCam1EventAsync(Harp.CameraControllerGen2.EventConfiguration,System.Threading.CancellationToken)">
+  WriteConfigureCam1EventAsync(EventConfiguration, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the ConfigureCam1Event register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteConfigureCam1EventAsync(EventConfiguration value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.EventConfiguration.html">EventConfiguration</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureOutput0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureOutput0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureOutput0Async_Harp_CameraControllerGen2_OutputConfiguration_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureOutput0Async(Harp.CameraControllerGen2.OutputConfiguration,System.Threading.CancellationToken)">
+  WriteConfigureOutput0Async(OutputConfiguration, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L888"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the ConfigureOutput0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteConfigureOutput0Async(OutputConfiguration value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureOutput1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureOutput1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteConfigureOutput1Async_Harp_CameraControllerGen2_OutputConfiguration_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteConfigureOutput1Async(Harp.CameraControllerGen2.OutputConfiguration,System.Threading.CancellationToken)">
+  WriteConfigureOutput1Async(OutputConfiguration, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L934"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the ConfigureOutput1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteConfigureOutput1Async(OutputConfiguration value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.OutputConfiguration.html">OutputConfiguration</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputClearAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputClearAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputClearAsync_Harp_CameraControllerGen2_DigitalOutputs_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputClearAsync(Harp.CameraControllerGen2.DigitalOutputs,System.Threading.CancellationToken)">
+  WriteOutputClearAsync(DigitalOutputs, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1026"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the OutputClear register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteOutputClearAsync(DigitalOutputs value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputSetAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputSetAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputSetAsync_Harp_CameraControllerGen2_DigitalOutputs_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputSetAsync(Harp.CameraControllerGen2.DigitalOutputs,System.Threading.CancellationToken)">
+  WriteOutputSetAsync(DigitalOutputs, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L980"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the OutputSet register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteOutputSetAsync(DigitalOutputs value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputStateAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputStateAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputStateAsync_Harp_CameraControllerGen2_DigitalOutputs_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputStateAsync(Harp.CameraControllerGen2.DigitalOutputs,System.Threading.CancellationToken)">
+  WriteOutputStateAsync(DigitalOutputs, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the OutputState register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteOutputStateAsync(DigitalOutputs value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputToggleAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputToggleAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteOutputToggleAsync_Harp_CameraControllerGen2_DigitalOutputs_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteOutputToggleAsync(Harp.CameraControllerGen2.DigitalOutputs,System.Threading.CancellationToken)">
+  WriteOutputToggleAsync(DigitalOutputs, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L1072"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the OutputToggle register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteOutputToggleAsync(DigitalOutputs value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.DigitalOutputs.html">DigitalOutputs</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStartAndStopAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartAndStopAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStartAndStopAsync_Harp_CameraControllerGen2_CameraFlags_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartAndStopAsync(Harp.CameraControllerGen2.CameraFlags,System.Threading.CancellationToken)">
+  WriteStartAndStopAsync(CameraFlags, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StartAndStop register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStartAndStopAsync(CameraFlags value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStartAndStopTimestampedAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartAndStopTimestampedAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStartAndStopTimestampedAsync_Harp_CameraControllerGen2_CameraFlags_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartAndStopTimestampedAsync(Harp.CameraControllerGen2.CameraFlags,System.Threading.CancellationToken)">
+  WriteStartAndStopTimestampedAsync(CameraFlags, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StartAndStopTimestamped register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStartAndStopTimestampedAsync(CameraFlags value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.CameraFlags.html">CameraFlags</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStartTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStartTimestampAsync_System_UInt32_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStartTimestampAsync(System.UInt32,System.Threading.CancellationToken)">
+  WriteStartTimestampAsync(uint, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StartTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStartTimestampAsync(uint value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStopTimestampAsync_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStopTimestampAsync*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStopTimestampAsync_System_UInt32_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStopTimestampAsync(System.UInt32,System.Threading.CancellationToken)">
+  WriteStopTimestampAsync(uint, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L382"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StopTimestamp register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStopTimestampAsync(uint value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStrobeSourceCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStrobeSourceCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStrobeSourceCam0Async_Harp_CameraControllerGen2_StrobeSource_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStrobeSourceCam0Async(Harp.CameraControllerGen2.StrobeSource,System.Threading.CancellationToken)">
+  WriteStrobeSourceCam0Async(StrobeSource, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L520"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StrobeSourceCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStrobeSourceCam0Async(StrobeSource value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteStrobeSourceCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStrobeSourceCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteStrobeSourceCam1Async_Harp_CameraControllerGen2_StrobeSource_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteStrobeSourceCam1Async(Harp.CameraControllerGen2.StrobeSource,System.Threading.CancellationToken)">
+  WriteStrobeSourceCam1Async(StrobeSource, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L750"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the StrobeSourceCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteStrobeSourceCam1Async(StrobeSource value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.StrobeSource.html">StrobeSource</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerConfigCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerConfigCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerConfigCam0Async_Harp_CameraControllerGen2_TriggerSource_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerConfigCam0Async(Harp.CameraControllerGen2.TriggerSource,System.Threading.CancellationToken)">
+  WriteTriggerConfigCam0Async(TriggerSource, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L428"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerConfigCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerConfigCam0Async(TriggerSource value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerConfigCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerConfigCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerConfigCam1Async_Harp_CameraControllerGen2_TriggerSource_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerConfigCam1Async(Harp.CameraControllerGen2.TriggerSource,System.Threading.CancellationToken)">
+  WriteTriggerConfigCam1Async(TriggerSource, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L658"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerConfigCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerConfigCam1Async(TriggerSource value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.TriggerSource.html">TriggerSource</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerDurationCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerDurationCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerDurationCam0Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerDurationCam0Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteTriggerDurationCam0Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L612"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerDurationCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerDurationCam0Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerDurationCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerDurationCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerDurationCam1Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerDurationCam1Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteTriggerDurationCam1Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerDurationCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerDurationCam1Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerFrequencyCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerFrequencyCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerFrequencyCam0Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerFrequencyCam0Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteTriggerFrequencyCam0Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L566"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerFrequencyCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerFrequencyCam0Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerFrequencyCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerFrequencyCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerFrequencyCam1Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerFrequencyCam1Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteTriggerFrequencyCam1Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L796"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerFrequencyCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerFrequencyCam1Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerInvertedCam0Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerInvertedCam0Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerInvertedCam0Async_Harp_CameraControllerGen2_TriggerInverted_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerInvertedCam0Async(Harp.CameraControllerGen2.TriggerInverted,System.Threading.CancellationToken)">
+  WriteTriggerInvertedCam0Async(TriggerInverted, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L474"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerInvertedCam0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerInvertedCam0Async(TriggerInverted value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerInvertedCam1Async_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerInvertedCam1Async*"></a>
+
+  <h3 id="Harp_CameraControllerGen2_AsyncDevice_WriteTriggerInvertedCam1Async_Harp_CameraControllerGen2_TriggerInverted_System_Threading_CancellationToken_" data-uid="Harp.CameraControllerGen2.AsyncDevice.WriteTriggerInvertedCam1Async(Harp.CameraControllerGen2.TriggerInverted,System.Threading.CancellationToken)">
+  WriteTriggerInvertedCam1Async(TriggerInverted, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L704"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the TriggerInvertedCam1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteTriggerInvertedCam1Async(TriggerInverted value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.CameraControllerGen2.TriggerInverted.html">TriggerInverted</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.cameracontrollergen2\Interface\Harp.CameraControllerGen2\AsyncDevice.Generated.cs/#L41" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

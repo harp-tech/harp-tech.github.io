@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class FilterRegister
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class FilterRegister
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Harp_OutputExpander_FilterRegister.md&amp;value=---%0Auid%3A%20Harp.OutputExpander.FilterRegister%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.OutputExpander.FilterRegister">
+
+
+
+  <h1 id="Harp_OutputExpander_FilterRegister" data-uid="Harp.OutputExpander.FilterRegister" class="text-break">
+    Class FilterRegister
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.outputexpander\Interface\Harp.OutputExpander\Device.Generated.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.OutputExpander.html">OutputExpander</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.OutputExpander.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.OutputExpander.html">Harp.OutputExpander</a> device.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FilterRegister : FilterRegisterBuilder, IExpressionBuilder, ICustomTypeDescriptor, INamedElement</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html">ExpressionBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.HarpCombinatorBuilder.html">HarpCombinatorBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html">RegisterCombinatorBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.FilterRegisterBuilder.html">FilterRegisterBuilder</a></div>
+      <div><span class="xref">FilterRegister</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.IExpressionBuilder.html">IExpressionBuilder</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.icustomtypedescriptor">ICustomTypeDescriptor</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.INamedElement.html">INamedElement</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.FilterRegisterBuilder.html#Bonsai_Harp_FilterRegisterBuilder_FilterType">FilterRegisterBuilder.FilterType</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.FilterRegisterBuilder.html#Bonsai_Harp_FilterRegisterBuilder_Register">FilterRegisterBuilder.Register</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html#Bonsai_Harp_RegisterCombinatorBuilder_Build_System_Collections_Generic_IEnumerable_System_Linq_Expressions_Expression__">RegisterCombinatorBuilder.Build(IEnumerable&lt;Expression&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html#Bonsai_Harp_RegisterCombinatorBuilder_ArgumentRange">RegisterCombinatorBuilder.ArgumentRange</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_ToString">ExpressionBuilder.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_Unwrap_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.Unwrap(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetWorkflowElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetWorkflowElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerMappings_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerMappings(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.FromWorkflowElement(object, ElementCategory)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ExpressionBuilder.GetElementDisplayName(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.GetElementDisplayName(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Harp_OutputExpander_FilterRegister__ctor_" data-uid="Harp.OutputExpander.FilterRegister.#ctor*"></a>
+
+  <h3 id="Harp_OutputExpander_FilterRegister__ctor" data-uid="Harp.OutputExpander.FilterRegister.#ctor">
+  FilterRegister()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.outputexpander\Interface\Harp.OutputExpander\Device.Generated.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Harp.OutputExpander.FilterRegister.html">FilterRegister</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FilterRegister()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="Harp.OutputExpander.AuxInState.html">AuxInState</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.AuxInRisingEdge.html">AuxInRisingEdge</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.AuxInFallingEdge.html">AuxInFallingEdge</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OutputSet.html">OutputSet</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OutputClear.html">OutputClear</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OutputToggle.html">OutputToggle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OutputState.html">OutputState</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmAndStimEnable.html">PwmAndStimEnable</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmAndStimDisable.html">PwmAndStimDisable</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmAndStimState.html">PwmAndStimState</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0Frequency.html">Pwm0Frequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0DutyCycle.html">Pwm0DutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0PulseCount.html">Pwm0PulseCount</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0ActualFrequency.html">Pwm0ActualFrequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0ActualDutyCycle.html">Pwm0ActualDutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0AcquisitionMode.html">Pwm0AcquisitionMode</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0TriggerSource.html">Pwm0TriggerSource</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm0EventConfig.html">Pwm0EventConfig</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1Frequency.html">Pwm1Frequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1DutyCycle.html">Pwm1DutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1PulseCount.html">Pwm1PulseCount</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1ActualFrequency.html">Pwm1ActualFrequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1ActualDutyCycle.html">Pwm1ActualDutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1AcquisitionMode.html">Pwm1AcquisitionMode</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1TriggerSource.html">Pwm1TriggerSource</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm1EventConfig.html">Pwm1EventConfig</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2Frequency.html">Pwm2Frequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2DutyCycle.html">Pwm2DutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2PulseCount.html">Pwm2PulseCount</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2ActualFrequency.html">Pwm2ActualFrequency</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2ActualDutyCycle.html">Pwm2ActualDutyCycle</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2AcquisitionMode.html">Pwm2AcquisitionMode</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2TriggerSource.html">Pwm2TriggerSource</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Pwm2EventConfig.html">Pwm2EventConfig</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmStart.html">PwmStart</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmStop.html">PwmStop</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.PwmRiseEvent.html">PwmRiseEvent</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Stim0PulseOnTime.html">Stim0PulseOnTime</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Stim0PulseOffTime.html">Stim0PulseOffTime</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Stim0PulseCount.html">Stim0PulseCount</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Stim0AcquisitionMode.html">Stim0AcquisitionMode</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Stim0TriggerSource.html">Stim0TriggerSource</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.StimStart.html">StimStart</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.StimStop.html">StimStop</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OutputPulse.html">OutputPulse</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out0PulseWidth.html">Out0PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out1PulseWidth.html">Out1PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out2PulseWidth.html">Out2PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out3PulseWidth.html">Out3PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out4PulseWidth.html">Out4PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out5PulseWidth.html">Out5PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out6PulseWidth.html">Out6PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out7PulseWidth.html">Out7PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out8PulseWidth.html">Out8PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Out9PulseWidth.html">Out9PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.ExpansionBoard.html">ExpansionBoard</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.MagneticEncoder.html">MagneticEncoder</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRate.html">MagneticEncoderSampleRate</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.ServoPeriod.html">ServoPeriod</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Servo0PulseWidth.html">Servo0PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Servo1PulseWidth.html">Servo1PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.Servo2PulseWidth.html">Servo2PulseWidth</a></div>
+    <div><a class="xref" href="Harp.OutputExpander.OpticalFlow.html">OpticalFlow</a></div>
+    </dd>
+  </dl>
+
+
+  <h2 id="seealso">See Also</h2>
+  <div class="seealso">
+      <div><a class="xref" href="Harp.OutputExpander.AuxInState.html">AuxInState</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.AuxInRisingEdge.html">AuxInRisingEdge</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.AuxInFallingEdge.html">AuxInFallingEdge</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OutputSet.html">OutputSet</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OutputClear.html">OutputClear</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OutputToggle.html">OutputToggle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OutputState.html">OutputState</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmAndStimEnable.html">PwmAndStimEnable</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmAndStimDisable.html">PwmAndStimDisable</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmAndStimState.html">PwmAndStimState</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0Frequency.html">Pwm0Frequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0DutyCycle.html">Pwm0DutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0PulseCount.html">Pwm0PulseCount</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0ActualFrequency.html">Pwm0ActualFrequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0ActualDutyCycle.html">Pwm0ActualDutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0AcquisitionMode.html">Pwm0AcquisitionMode</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0TriggerSource.html">Pwm0TriggerSource</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm0EventConfig.html">Pwm0EventConfig</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1Frequency.html">Pwm1Frequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1DutyCycle.html">Pwm1DutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1PulseCount.html">Pwm1PulseCount</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1ActualFrequency.html">Pwm1ActualFrequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1ActualDutyCycle.html">Pwm1ActualDutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1AcquisitionMode.html">Pwm1AcquisitionMode</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1TriggerSource.html">Pwm1TriggerSource</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm1EventConfig.html">Pwm1EventConfig</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2Frequency.html">Pwm2Frequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2DutyCycle.html">Pwm2DutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2PulseCount.html">Pwm2PulseCount</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2ActualFrequency.html">Pwm2ActualFrequency</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2ActualDutyCycle.html">Pwm2ActualDutyCycle</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2AcquisitionMode.html">Pwm2AcquisitionMode</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2TriggerSource.html">Pwm2TriggerSource</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Pwm2EventConfig.html">Pwm2EventConfig</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmStart.html">PwmStart</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmStop.html">PwmStop</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.PwmRiseEvent.html">PwmRiseEvent</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Stim0PulseOnTime.html">Stim0PulseOnTime</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Stim0PulseOffTime.html">Stim0PulseOffTime</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Stim0PulseCount.html">Stim0PulseCount</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Stim0AcquisitionMode.html">Stim0AcquisitionMode</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Stim0TriggerSource.html">Stim0TriggerSource</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.StimStart.html">StimStart</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.StimStop.html">StimStop</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OutputPulse.html">OutputPulse</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out0PulseWidth.html">Out0PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out1PulseWidth.html">Out1PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out2PulseWidth.html">Out2PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out3PulseWidth.html">Out3PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out4PulseWidth.html">Out4PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out5PulseWidth.html">Out5PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out6PulseWidth.html">Out6PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out7PulseWidth.html">Out7PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out8PulseWidth.html">Out8PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Out9PulseWidth.html">Out9PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.ExpansionBoard.html">ExpansionBoard</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.MagneticEncoder.html">MagneticEncoder</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRate.html">MagneticEncoderSampleRate</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.ServoPeriod.html">ServoPeriod</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Servo0PulseWidth.html">Servo0PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Servo1PulseWidth.html">Servo1PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.Servo2PulseWidth.html">Servo2PulseWidth</a></div>
+      <div><a class="xref" href="Harp.OutputExpander.OpticalFlow.html">OpticalFlow</a></div>
+  </div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.outputexpander\Interface\Harp.OutputExpander\Device.Generated.cs/#L194" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

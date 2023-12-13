@@ -1,0 +1,1416 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HarpCommand
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HarpCommand
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Bonsai_Harp_HarpCommand.md&amp;value=---%0Auid%3A%20Bonsai.Harp.HarpCommand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.Harp.HarpCommand">
+
+
+
+  <h1 id="Bonsai_Harp_HarpCommand" data-uid="Bonsai.Harp.HarpCommand" class="text-break">
+    Class HarpCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bonsai.html">Bonsai</a>.<a class="xref" href="Bonsai.Harp.html">Harp</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bonsai.Harp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides static methods for creating Harp command messages.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class HarpCommand</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">HarpCommand</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bonsai_Harp_HarpCommand_Read_" data-uid="Bonsai.Harp.HarpCommand.Read*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_Read_System_Int32_Bonsai_Harp_PayloadType_" data-uid="Bonsai.Harp.HarpCommand.Read(System.Int32,Bonsai.Harp.PayloadType)">
+  Read(int, PayloadType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for the specified address and payload type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage Read(int address, PayloadType payloadType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+    <dt><code>payloadType</code> <a class="xref" href="Bonsai.Harp.PayloadType.html">PayloadType</a></dt>
+    <dd><p>The type of data available in the register.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command with the specified address and payload type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadByte_" data-uid="Bonsai.Harp.HarpCommand.ReadByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadByte_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadByte(System.Int32)">
+  ReadByte(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for an 8-bit unsigned integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadByte(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for an 8-bit unsigned integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadInt16_" data-uid="Bonsai.Harp.HarpCommand.ReadInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadInt16_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadInt16(System.Int32)">
+  ReadInt16(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 16-bit signed integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadInt16(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 16-bit signed integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadInt32_" data-uid="Bonsai.Harp.HarpCommand.ReadInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadInt32_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadInt32(System.Int32)">
+  ReadInt32(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 32-bit signed integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadInt32(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 32-bit signed integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadInt64_" data-uid="Bonsai.Harp.HarpCommand.ReadInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadInt64_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadInt64(System.Int32)">
+  ReadInt64(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 64-bit signed integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadInt64(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 64-bit signed integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadSByte_" data-uid="Bonsai.Harp.HarpCommand.ReadSByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadSByte_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadSByte(System.Int32)">
+  ReadSByte(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for an 8-bit signed integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadSByte(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for an 8-bit signed integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadSingle_" data-uid="Bonsai.Harp.HarpCommand.ReadSingle*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadSingle_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadSingle(System.Int32)">
+  ReadSingle(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a single-precision floating point
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadSingle(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a single-precision floating point
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadUInt16_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadUInt16_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt16(System.Int32)">
+  ReadUInt16(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 16-bit unsigned integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadUInt16(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 16-bit unsigned integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadUInt32_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadUInt32_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt32(System.Int32)">
+  ReadUInt32(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 32-bit unsigned integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadUInt32(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 32-bit unsigned integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_ReadUInt64_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_ReadUInt64_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.ReadUInt64(System.Int32)">
+  ReadUInt64(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 64-bit unsigned integer
+register with the specified address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage ReadUInt64(int address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> read command for a 64-bit unsigned integer
+register with the specified address.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_Write_" data-uid="Bonsai.Harp.HarpCommand.Write*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_Write_System_Int32_Bonsai_Harp_PayloadType_System_ArraySegment_System_Byte__" data-uid="Bonsai.Harp.HarpCommand.Write(System.Int32,Bonsai.Harp.PayloadType,System.ArraySegment{System.Byte})">
+  Write(int, PayloadType, ArraySegment&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and payload
+data stored in the specified array segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage Write(int address, PayloadType payloadType, ArraySegment&lt;byte&gt; payload)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>payloadType</code> <a class="xref" href="Bonsai.Harp.PayloadType.html">PayloadType</a></dt>
+    <dd><p>The type of data available in the message payload.</p>
+</dd>
+    <dt><code>payload</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>An array segment containing the raw binary representation of the payload data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_Write_" data-uid="Bonsai.Harp.HarpCommand.Write*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_Write_System_Int32_Bonsai_Harp_PayloadType_System_Byte___" data-uid="Bonsai.Harp.HarpCommand.Write(System.Int32,Bonsai.Harp.PayloadType,System.Byte[])">
+  Write(int, PayloadType, params byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage Write(int address, PayloadType payloadType, params byte[] payload)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>payloadType</code> <a class="xref" href="Bonsai.Harp.PayloadType.html">PayloadType</a></dt>
+    <dd><p>The type of data available in the message payload.</p>
+</dd>
+    <dt><code>payload</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The raw binary representation of the payload data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteByte_" data-uid="Bonsai.Harp.HarpCommand.WriteByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteByte_System_Int32_System_Byte_" data-uid="Bonsai.Harp.HarpCommand.WriteByte(System.Int32,System.Byte)">
+  WriteByte(int, byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 8-bit unsigned integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteByte(int address, byte value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteByte_" data-uid="Bonsai.Harp.HarpCommand.WriteByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteByte_System_Int32_System_Byte___" data-uid="Bonsai.Harp.HarpCommand.WriteByte(System.Int32,System.Byte[])">
+  WriteByte(int, params byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 8-bit unsigned integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteByte(int address, params byte[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt16_" data-uid="Bonsai.Harp.HarpCommand.WriteInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt16_System_Int32_System_Int16_" data-uid="Bonsai.Harp.HarpCommand.WriteInt16(System.Int32,System.Int16)">
+  WriteInt16(int, short)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 16-bit signed integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt16(int address, short value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt16_" data-uid="Bonsai.Harp.HarpCommand.WriteInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt16_System_Int32_System_Int16___" data-uid="Bonsai.Harp.HarpCommand.WriteInt16(System.Int32,System.Int16[])">
+  WriteInt16(int, params short[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 16-bit signed integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt16(int address, params short[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt32_" data-uid="Bonsai.Harp.HarpCommand.WriteInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt32_System_Int32_System_Int32_" data-uid="Bonsai.Harp.HarpCommand.WriteInt32(System.Int32,System.Int32)">
+  WriteInt32(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L375"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 32-bit signed integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt32(int address, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt32_" data-uid="Bonsai.Harp.HarpCommand.WriteInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt32_System_Int32_System_Int32___" data-uid="Bonsai.Harp.HarpCommand.WriteInt32(System.Int32,System.Int32[])">
+  WriteInt32(int, params int[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 32-bit signed integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt32(int address, params int[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt64_" data-uid="Bonsai.Harp.HarpCommand.WriteInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt64_System_Int32_System_Int64_" data-uid="Bonsai.Harp.HarpCommand.WriteInt64(System.Int32,System.Int64)">
+  WriteInt64(int, long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L431"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 64-bit signed integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt64(int address, long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteInt64_" data-uid="Bonsai.Harp.HarpCommand.WriteInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteInt64_System_Int32_System_Int64___" data-uid="Bonsai.Harp.HarpCommand.WriteInt64(System.Int32,System.Int64[])">
+  WriteInt64(int, params long[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L445"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 64-bit signed integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteInt64(int address, params long[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteSByte_" data-uid="Bonsai.Harp.HarpCommand.WriteSByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteSByte_System_Int32_System_SByte_" data-uid="Bonsai.Harp.HarpCommand.WriteSByte(System.Int32,System.SByte)">
+  WriteSByte(int, sbyte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 8-bit signed integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteSByte(int address, sbyte value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteSByte_" data-uid="Bonsai.Harp.HarpCommand.WriteSByte*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteSByte_System_Int32_System_SByte___" data-uid="Bonsai.Harp.HarpCommand.WriteSByte(System.Int32,System.SByte[])">
+  WriteSByte(int, params sbyte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 8-bit signed integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteSByte(int address, params sbyte[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">sbyte</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteSingle_" data-uid="Bonsai.Harp.HarpCommand.WriteSingle*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteSingle_System_Int32_System_Single___" data-uid="Bonsai.Harp.HarpCommand.WriteSingle(System.Int32,System.Single[])">
+  WriteSingle(int, params float[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L459"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of single-precision floating point numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteSingle(int address, params float[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt16_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt16_System_Int32_System_UInt16_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt16(System.Int32,System.UInt16)">
+  WriteUInt16(int, ushort)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 16-bit unsigned integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt16(int address, ushort value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt16_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt16*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt16_System_Int32_System_UInt16___" data-uid="Bonsai.Harp.HarpCommand.WriteUInt16(System.Int32,System.UInt16[])">
+  WriteUInt16(int, params ushort[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 16-bit unsigned integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt16(int address, params ushort[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt32_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt32_System_Int32_System_UInt32_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt32(System.Int32,System.UInt32)">
+  WriteUInt32(int, uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 32-bit unsigned integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt32(int address, uint value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt32_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt32*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt32_System_Int32_System_UInt32___" data-uid="Bonsai.Harp.HarpCommand.WriteUInt32(System.Int32,System.UInt32[])">
+  WriteUInt32(int, params uint[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 32-bit unsigned integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt32(int address, params uint[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt64_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt64_System_Int32_System_UInt64_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt64(System.Int32,System.UInt64)">
+  WriteUInt64(int, ulong)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and a
+single value 64-bit unsigned integer payload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt64(int address, ulong value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd><p>The value to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_HarpCommand_WriteUInt64_" data-uid="Bonsai.Harp.HarpCommand.WriteUInt64*"></a>
+
+  <h3 id="Bonsai_Harp_HarpCommand_WriteUInt64_System_Int32_System_UInt64___" data-uid="Bonsai.Harp.HarpCommand.WriteUInt64(System.Int32,System.UInt64[])">
+  WriteUInt64(int, params ulong[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address, and an
+array payload of 64-bit unsigned integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HarpMessage WriteUInt64(int address, params ulong[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The address of the register to which the Harp message refers to.</p>
+</dd>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a>[]</dt>
+    <dd><p>The values to be stored in the payload.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+    <dd><p>A valid <a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a> write command with the specified address and payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\HarpCommand.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

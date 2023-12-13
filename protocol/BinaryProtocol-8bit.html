@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Binary Protocol 8-bit (harp-1.0) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Binary Protocol 8-bit (harp-1.0) ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../articles/toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\BinaryProtocol-8bit.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<img src="assets/HarpLogo.svg" width="200">
+<h1 id="binary-protocol-8-bit-harp-10">Binary Protocol 8-bit (harp-1.0)</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Harp Protocol is a binary communication protocol created in order to facilitate and unify the interaction between different devices. It was designed with efficiency and ease of parsing in mind.</p>
+<p>The protocol is based on addresses. Each address points to a certain memory position available in the device. These positions are called registers. Each register is defined by a data type and some meaningful functionality attached to the data.</p>
+<p>The Harp Binary Protocol is commonly used for all exchanges between a <code>Controller</code> and a <code>Device</code>. The controller can be a computer, or a server and the device can be a data acquisition or actuator microcontroller.</p>
+<p>The available packets are:</p>
+<ul>
+<li><code>Command</code>: Sent by the Controller to the Device. Command messages can be used to read or write the register contents.</li>
+<li><code>Reply</code>: Sent by the Device in response to a Command.</li>
+<li><code>Event</code>: Sent by the Device when an external or internal event of interest happens. An Event message will always carry the contents of the register that the event refers to.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The Harp Binary Protocol uses Little-Endian byte ordering.</p>
+</blockquote>
+<h2 id="harp-message-specification">Harp Message specification</h2>
+<p>The Harp Message contains a minimal amount of information to execute a well-defined exchange of data. It follows the structure below.</p>
+<table>
+<thead>
+<tr>
+<th>Harp Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MessageType</td>
+</tr>
+<tr>
+<td>Length</td>
+</tr>
+<tr>
+<td>Address</td>
+</tr>
+<tr>
+<td>Port</td>
+</tr>
+<tr>
+<td>PayloadType</td>
+</tr>
+<tr>
+<td>Payload</td>
+</tr>
+<tr>
+<td>Checksum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="messagetype-1-byte">MessageType (1 byte)</h3>
+<p>Specifies the type of the Harp Message.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 (<code>Read</code>)</td>
+<td>Read the content of the register with address [<code>RegisterAddress</code>]</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 (<code>Write</code>)</td>
+<td>Write the content to the register with address [<code>RegisterAddress</code>]</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 (<code>Event</code>)</td>
+<td>Send the content of the register with address [<code>RegisterAddress</code>]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="length-1-byte">Length (1 byte)</h3>
+<p>Contains the number of bytes that are still available and need to be read to complete the Harp message (i.e. number of bytes after the field [<code>Length</code>]).</p>
+<h3 id="address-1-byte">Address (1 byte)</h3>
+<p>Contains the address of the register to which the Harp Message refers to.</p>
+<h3 id="port-1-byte">Port (1 byte)</h3>
+<p>If the device is a Hub of Harp Devices, it indicates the origin or destination of the Harp Message. If the field is not used or it’s equal to <code>0xFF</code>, it points to the device itself.</p>
+<h3 id="payloadtype-1-byte">PayloadType (1 byte)</h3>
+<p>Indicates the type of data available on the [<code>Payload</code>].
+The structure of this byte follows the following specification:</p>
+<table>
+<tr>
+    <th align="center">7</th>
+    <th align="center">6</th>
+    <th align="center">5</th>
+    <th align="center">4</th>
+    <th align="center">3</th>
+    <th align="center">2</th>
+    <th align="center">1</th>
+    <th align="center">0</th>
+</tr>
+<tr>
+    <td align="center">IsSigned</td>
+    <td align="center">IsFloat</td>
+    <td align="center">0</td>
+    <td align="center">HasTimestamp</td>
+    <td align="center" colspan="4">Type</td>
+</tr>
+</table>
+<h4 id="type-4-bits">Type (4 bits)</h4>
+<p>Specifies the size of the word in the [<code>Payload</code>].</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Value</th>
+<th style="text-align: right;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">8 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">16 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">32 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">64 bits</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hastimestamp-1-bit">HasTimestamp (1 bit)</h4>
+<p>If this bit is set the Harp Message contains a timestamp. In this case the fields [<code>Seconds</code>] and [<code>Microseconds</code>] must be present in the message.</p>
+<h4 id="isfloat-1-bit">IsFloat (1 bit)</h4>
+<p>This bit indicates whether the [<code>Payload</code>] represents fractional values. If the bit is not set, the payload contains integers.</p>
+<h4 id="issigned-1-bit">IsSigned (1 bit)</h4>
+<p>If the bit is set, indicates that the [<code>Payload</code>] contains integers with signal.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The bits [<code>IsFloat</code>] and [<code>IsSigned</code>] must never be set simultaneously.</p>
+</blockquote>
+<h3 id="payload--bytes">Payload (? bytes)</h3>
+<p>The content of the Harp Message.</p>
+<p>If the [<code>HasTimestamp</code>] flag is set, the following optional fields are present at the beginning of the message payload:</p>
+<h4 id="seconds-4-bytes">Seconds (4 bytes)</h4>
+<p>Contains the number of seconds (<code>U32</code>) of the Harp Timestamp clock. This field is optional. In order to indicate that this field is available, the bit [<code>HasTimestamp</code>] in the field [<code>PayloadType</code>] needs to be set.</p>
+<h4 id="microseconds-2-bytes">Microseconds (2 bytes)</h4>
+<p>It contains the fractional part of the Harp Timestamp clock in microseconds (<code>U16</code> containing the number of microseconds divided by 32).</p>
+<p>This field is optional. In order to indicate that this field is available, the bit [<code>HasTimestamp</code>] in the field [<code>PayloadType</code>] needs to be set.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The full timestamp information can thus be retrieved using the formula:
+Timestamp(s) = [<code>Seconds</code>] + [<code>Microseconds</code>] * 32 * 10-6</p>
+</blockquote>
+<h3 id="checksum-1-byte">Checksum (1 byte)</h3>
+<p>The sum of all bytes (<code>U8</code>) contained in the Harp Message.
+The receiver of the message should calculate the checksum and compare it with the received. If they don’t match, the Harp Message should be discarded.</p>
+<hr>
+<h2 id="features-and-code-examples">Features and Code Examples</h2>
+<p>Some of the fields described on the previous chapter have special features. These are presented next.</p>
+<h3 id="messagetype-and-errorflag">MessageType and ErrorFlag</h3>
+<p>The field [<code>Command</code>] has an Error flag on the 4th least significant bit. When this bit is set it means that an error has occured.
+Examples of possible errors cane be:</p>
+<ol>
+<li>The controller tries to read from a register that doesn’t exist;</li>
+<li>The controller tries to write invalid data to a certain register;</li>
+<li>The [<code>PayloadType</code>] doesn’t match the target register specification.</li>
+</ol>
+<p>A simple code in C to check for error will be:</p>
+<pre><code class="lang-C">    int errorMask = 0x08;
+
+    if (Command &amp; errorMask)
+    {
+    printf(“Error detected.\n”);
+    }
+</code></pre>
+<h3 id="harp-message-length">Harp Message Length</h3>
+<p>If one byte is not enough to express the length of the Harp Message, use [<code>Length</code>] equal to 255 and add after an unsigned 16 bits word with the Harp Message length.</p>
+<p>Replace the [<code>Length</code>] with:
+[255] (1 byte) [<code>ExtendedLength</code>] (2 bytes)</p>
+<h3 id="parsing-payloadtype">Parsing PayloadType</h3>
+<p>For the definition of the <code>PayloadType</code> types, a <code>C#</code> code snippet is presented.</p>
+<p>Note that the time information can appear without an element Timestamp&lt;&gt;.</p>
+<pre><code class="lang-C#">  int isUnsigned = 0x00;
+  int isSigned = 0x80;
+  int isFloat = 0x40;
+  int hasTimestamp = 0x10;
+
+  enum PayloadType 
+  {
+      U8  = (isUnsigned | 1),
+      S8  = (isSigned   | 1),
+      U16 = (isUnsigned | 2),
+      S16 = (isSigned   | 2),
+      U32 = (isUnsigned | 4),
+      S32 = (isSigned   | 4),
+      U64 = (isUnsigned | 8),
+      S64 = (isSigned   | 8),
+      Float = (isFloat  | 4),
+      Timestamp = hasTimestamp,
+      TimestampedU8  = (hasTimestamp | U8),
+      TimestampedS8  = (hasTimestamp | S8),
+      TimestampedU16 = (hasTimestamp | U16),
+      TimestampedS16 = (hasTimestamp | S16),
+      TimestampedU32 = (hasTimestamp | U32),
+      TimestampedS32 = (hasTimestamp | S32),
+      TimestampedU64 = (hasTimestamp | U64),
+      TimestampedS64 = (hasTimestamp | S64),
+      TimestampedFloat = (hasTimestamp | Float)
+  }
+</code></pre>
+<p>The field <code>PayloadType</code> has a flag on the 5th least significant bit that indicates if the time information is available on the Harp Message. The existence of this flag is useful to know if the fields [<code>Seconds</code>] and [<code>Microseconds</code>] are present on the Harp Message.
+In <code>C</code> one can check if the time information is avaible by using the following snippet:</p>
+<pre><code class="lang-C">int hasTimestamp = 0x10;
+
+if (PayloadType &amp;  hasTimestamp )
+{
+    printf(“The time information is available on the Harp Message’s Payload.\n”);
+}
+</code></pre>
+<h3 id="using-checksum-to-validate-communication-integrity">Using Checksum to validate communication integrity</h3>
+<p>The [<code>Checksum</code>] field is the sum of all bytes contained in the Harp Message. The receiver of the message should calculate the checksum and compare it with the received. If they don’t match, the Harp Message should be discarded.
+Example on how to calculate the [<code>Checksum</code>] in C language:</p>
+<pre><code class="lang-C">unsigned char Checksum = 0;
+int i = 0;
+for (; i &lt; Length + 1; i++ )
+{
+    Checksum += HarpMessage(i);
+}
+</code></pre>
+<h3 id="parsing-payload-with-arrays">Parsing [Payload] with Arrays</h3>
+<p>The [<code>Payload</code>] element can contain a single, or an array of values of the same type. The first step to parse these payloads is to first find the number of values contained on the [<code>Payload</code>] element. This can be done using the following <code>C</code> code example:</p>
+<pre><code class="lang-C">int arrayLength;
+int hasTimestamp = 0x10;
+int sizeMask = 0x0F;
+
+if (PayloadType &amp; hasTimestamp)
+{
+    // Harp Message has time information
+    arrayLength = (Length – 10) / (PayloadType &amp; sizeMask )
+}
+else
+{
+    // Harp Message doesn’t have time information
+    arrayLength = (Length – 4) / (PayloadType &amp; sizeMask )
+}
+</code></pre>
+<hr>
+<h2 id="typical-usage">Typical usage</h2>
+<h3 id="commands">Commands</h3>
+<p>The device that implements this Harp Protocol receives <code>Write</code> and <code>Read</code> commands from the controller, and replies with a copy of the message, timestamped with the hardware time at which the command was applied.</p>
+<p>Some Harp Messages are shown below to demonstrate the typical usage of the protocol between a device and a controller. Note that timestamp information is usually omitted in messages sent from the controller to the device, since actions are expected to run as soon as possible.</p>
+<p>We will use the following abbreviations:</p>
+<ul>
+<li>[CMD] is a Command (From the Controller to the Device);</li>
+<li>[RPL] is a Reply (From Device to the Controller)</li>
+<li>[EVT] is an Event. (A message sent from the Device to the Controller without a command (<em>i.e.</em> request) from the Controller)</li>
+</ul>
+<h4 id="write-message">Write Message</h4>
+<ul>
+<li>[CMD] <strong>Controller</strong>:       <code>2</code>  <code>Length</code> <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>T</code> <code>Checksum</code></li>
+<li>[RPL] <strong>Device</strong>: <code>2</code>  <code>Length</code> <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Timestamp&lt;T&gt;</code> <code>Checksum</code>       OK</li>
+<li>[RPL] <strong>Device</strong>: <code>10</code> <code>Length</code> <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Timestamp&lt;T&gt;</code> <code>Checksum</code>       ERROR</li>
+</ul>
+<p>The timestamp information in the [RPL] represents the time when the register with [Address] was updated.</p>
+<h3 id="read-message">Read Message</h3>
+<ul>
+<li>[CMD] <strong>Controller</strong>: <code>1</code> <code>4</code>      <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Checksum</code></li>
+<li>[RPL] <strong>Device</strong>: <code>1</code> <code>Length</code> <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Timestamp&lt;T&gt;</code> <code>Checksum</code>       OK</li>
+<li>[RPL] <strong>Device</strong>: <code>9</code> <code>10</code>     <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Timestamp&lt;T&gt;</code> <code>Checksum</code>        ERROR</li>
+</ul>
+<p>The timestamp information in the [RPL] represents the time when the register with [Address] was read.</p>
+<h3 id="event-message">Event message</h3>
+<ul>
+<li>[EVT] <strong>Device</strong>: <code>3</code> <code>Length</code> <code>Address</code> <code>Port</code> <code>PayloadType</code> <code>Timestamp&lt;T&gt;</code> <code>Checksum</code>      OK</li>
+</ul>
+<p>The timestamp information in [EVT] represents the time when the register with [Address] was read.</p>
+<hr>
+<h2 id="release-notes">Release notes:</h2>
+<ul>
+<li><p>v0.1</p>
+<ul>
+<li>First draft.</li>
+</ul>
+</li>
+<li><p>v0.2</p>
+<ul>
+<li>Changed Event Command to 3.</li>
+</ul>
+</li>
+<li><p>v0.3</p>
+<ul>
+<li>Cleaned up document and added C code examples.</li>
+<li>First release.</li>
+</ul>
+</li>
+<li><p>v1.0</p>
+<ul>
+<li>Updating naming of the protocol fields, etc, to latest naming review.</li>
+<li>Major release.</li>
+</ul>
+</li>
+<li><p>v1.1</p>
+<ul>
+<li>Corrected [<code>PayloadType</code>] list on page 2.</li>
+</ul>
+</li>
+<li><p>v1.2</p>
+<ul>
+<li>Changed device naming to Controller and Peripheral.</li>
+</ul>
+</li>
+<li><p>v1.3</p>
+<ul>
+<li>Minor corrections.</li>
+</ul>
+</li>
+<li><p>v1.4.0</p>
+<ul>
+<li>Refactor documentation to markdown format.</li>
+<li>Minor typo corrections.</li>
+<li>Improve clarity of some sections.</li>
+<li>Adopt semantic versioning.</li>
+</ul>
+</li>
+<li><p>v1.4.1</p>
+<ul>
+<li>Remove table of contents to avoid redundancy with doc generators.</li>
+<li>Avoid using verbatim literals in titles.</li>
+<li>Change device naming to Controller and Device.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\BinaryProtocol-8bit.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

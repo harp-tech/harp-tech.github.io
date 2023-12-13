@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Operators </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Operators ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/articles\operators.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="operators">Operators</h1>
+
+<p>The <code>Bonsai.Harp</code> package provides the following operators:</p>
+<p><img src="../images/core-operators.svg" alt="Bonsai.Harp Operators"></p>
+<p>It is fundamental to understand the function of each of these operators as they are the building blocks of any Harp application. Furthermore, when working with a particular model of a Harp device using Bonsai, device-specific variants of these same operators are provided in the high-level interface for that device.</p>
+<p>Together, these operators provide all core functionality for generating and processing <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> sequences. These operators allow issuing commands to, and handling sequences of notifications from, the <a href="#device">Device</a> node.</p>
+<p>In order to generate messages and issue commands to the device two core operators are provided: <a href="#createmessage">CreateMessage</a> and <a href="#format">Format</a>. Both operators receive a single input and are able to generate a <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> object. However, they differ on how the message is generated.</p>
+<p>Conversely, the <a href="#filterregister">FilterRegister</a>, <a href="#filtermessagetype">FilterMessageType</a>, and <a href="#parse">Parse</a> operators can be used to filter and convert incoming messages.</p>
+<h2 id="device">Device</h2>
+<p>The <a class="xref" href="../api/Bonsai.Harp.Device.html"><code>Device</code></a> operator is the first node you will probably add to your workflow when using any Harp Device. This source is responsible for establishing a serial connection link with the device and providing an interface that can be used to send and receive messages, represented by <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> objects. Messages sent from the host application into the node represent commands to be sent to the device, whereas message objects emitted by the device node represent command replies or events sent by the device to the host.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>Device</code> node also provides a default editor that allows you to configure core device settings and upload new firmware to the board in the form of <code>.hex</code> files. To open this dialog you can simply double-click the node while the workflow is not running.</p>
+</div>
+<p>The current specification of the <a href="https://harp-tech.org/About/How-HARP-works/index.html">Harp Protocol</a> defines three <a class="xref" href="../api/Bonsai.Harp.MessageType.html">Harp Message Types</a>:</p>
+<ul>
+<li><code>Read</code>: A command from the host to the device requesting a read from a register. The device should respond with a <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> object containing the value stored in the specified register. All registers are expected to allow read access, as by protocol specification.</li>
+<li><code>Write</code>: A command issued by the host to the device to request the update of a particular register value. As per the protocol standard, if the write operation is completed successfully, the device should return a timestamped <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> of the <code>Write</code> type indicating the moment when the register was set to the new value.</li>
+<li><code>Event</code>: The only message type that is emitted by the device to the host without a corresponding request command. These messages are used to notify the host of events that occur on the device, such as periodic computations (<em>e.g.</em> ADC reads), or other sporadic events (<em>e.g.</em> toggle on a digital input pin).</li>
+</ul>
+<h2 id="createmessage">CreateMessage</h2>
+<p>The <a class="xref" href="../api/Bonsai.Harp.CreateMessage.html"><code>CreateMessage</code></a> operator will construct a <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a> object using the operator properties. The message will be constructed whenever the input sequence emits a value, or once at the start if no input is specified.</p>
+<p>Take as example the following hypothetical <a class="xref" href="../api/Bonsai.Harp.HarpMessage.html"><code>HarpMessage</code></a>:</p>
+<pre><code>Address: 32
+MessageType: Write
+Length: 1
+PayloadType: U16
+Payload: 10
+</code></pre>
+<p>To generate and send the above message payload to the device, we can use <code>CreateMessage</code> as follows:</p>
+<div class="workflow"><p><img src="../workflows/create-message.bonsai" alt="CreateMessage"></p>
+</div>
+<h2 id="format">Format</h2>
+<p>The <a class="xref" href="../api/Bonsai.Harp.Format.html"><code>Format</code></a> operator will use the values in the input sequence to generate the <code>HarpMessage</code> payload. Conceptually, the latter operator is similar to other conversion and serialization methods present in several programming languages, such as <a href="https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-7.0"><code>String.Format</code></a> in <code>C#</code>.</p>
+<p>For example, to generate and send the above message payload to the device, we can also use <code>Format</code> as follows:</p>
+<div class="workflow"><p><img src="../workflows/format.bonsai" alt="FormatMessage"></p>
+</div>
+<h2 id="filterregister">FilterRegister</h2>
+<p>In its simplest form, <a class="xref" href="../api/Bonsai.Harp.FilterRegister.html"><code>FilterRegister</code></a> works as a <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Reactive.Condition.html">Condition</a> operator that checks, for each incoming message, whether the message address matches the one specified in the operator properties. If the condition is not met, the message is discarded.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default filtering behavior can be inverted by changing the <a class="xref" href="../api/Bonsai.Harp.FilterType.html"><code>FilterType</code></a> property, <em>i.e.</em> to allow every message that does <strong>not</strong> match the specified address, set the filter type to <code>Exclude</code>.</p>
+</div>
+<p>For example, the below workflow implements a filter that accepts only the 1 Hz heartbeat events from any Harp device:</p>
+<div class="workflow"><p><img src="../workflows/filter-register.bonsai" alt="FilterRegister"></p>
+</div>
+<h2 id="filtermessagetype">FilterMessageType</h2>
+<p>It can be useful to filter only specific message types, in addition to filtering specific registers, e.g. selecting only the <code>Read</code> messages. The <a class="xref" href="../api/Bonsai.Harp.FilterMessageType.html"><code>FilterMessageType</code></a> operator will filter messages based on their <code>MessageType</code> property and can be used in combination with the previous operator.</p>
+<p>For example, to listen only to the echo emitted from the device (<em>i.e.</em> a <code>Write</code> message) after a preceding <a class="xref" href="../api/Bonsai.Harp.CreateMessage.html"><code>CreateMessage</code></a> or <a class="xref" href="../api/Bonsai.Harp.Format.html"><code>Format</code></a> operators, one could use the following workflow:</p>
+<div class="workflow"><p><img src="../workflows/filter-messagetype-register.bonsai" alt="FilterMessageType"></p>
+</div>
+<h2 id="parse">Parse</h2>
+<p>While <a href="#filterregister">FilterRegister</a> can be used to filter incoming messages from specific registers, every single <code>HarpMessage</code> object in the sequence will be returned in its raw format. However, in most cases we are interested in extracting, and converting, the value of the message payload to a native value that we can more easily manipulate.</p>
+<p>This is where the <a class="xref" href="../api/Bonsai.Harp.Parse.html"><code>Parse</code></a> operator comes handy. This operator will extract and parse the payload of any incoming message and return a new sequence of parsed values. The type of the parsed value will depend on the <a class="xref" href="../api/Bonsai.Harp.PayloadType.html"><code>PayloadType</code></a> of the incoming message.</p>
+<p>For instance, if the <code>PayloadType</code> is <code>U16</code>, the operator will return a sequence of <code>ushort</code> values. The following workflow implements this example conversion:</p>
+<div class="workflow"><p><img src="../workflows/parse.bonsai" alt="Parse"></p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the <a class="xref" href="../api/Bonsai.Harp.ParseMessagePayload.html#Bonsai_Harp_ParseMessagePayload_Address"><code>Address</code></a> property is specified, the <code>Parse</code> operator will filter the incoming sequence for matching messages prior to applying the conversion operation.</p>
+</div>
+<h2 id="high-level-device-interfaces">High-level device interfaces</h2>
+<p>All the previous examples assume that you know the <code>Address</code> of the register you are trying to manipulate. However, given the growing number of registers, and the number of different boards, it becomes increasingly difficult to keep track of what function each <code>Address</code> corresponds to. To help with this issue, all the previous nodes are defined as <strong>polymorphic operators</strong>.</p>
+<p>Polymorphic operators are operators that can change their function and properties depending on their specific type. For example, changing the <a class="xref" href="../api/Bonsai.Harp.CreateMessage.html#Bonsai_Harp_CreateMessage_Payload"><code>Payload</code></a> property of the <code>CreateMessage</code> operator to a specific register name will cause the operator to automatically refresh its properties to match the <code>Payload</code> structure of the register specification.</p>
+<p>This <em>morphing</em> behavior:</p>
+<ul>
+<li><p>Allows creating Harp messages of any type without previous knowledge of register specification. For example to create a <code>Read</code> payload for the <code>WhoAmI</code> register it is sufficient to set the following properties:</p>
+<pre><code class="lang-avrasm">MessageType: Read
+Payload: WhoAmIPayload
+---
+Value: 0
+</code></pre>
+</li>
+<li><p>For registers with <code>Enum</code>-like payloads, allows easy access to available values via a drop-down menu:<br>
+<img src="../images/resetdevice-write.png" alt="resetdevice-write" style="max-height: 300px;width: auto"></p>
+</li>
+<li><p>For registers with a complex structure, allows easily, and simultaneously, manipulating the different fields to compose a message. For example, the following properties are exposed when selecting the payload for the <code>OperationControl</code> register:</p>
+<pre><code class="lang-avrasm">MessageType: Write
+Payload: OperationControlPayload
+---
+DumpRegisters: False
+Heartbeat: Disabled
+MuteReplies: False
+OperationLed: Off
+OperationMode: Standby
+VisualIndicators: Off
+</code></pre>
+</li>
+</ul>
+<p>The above polymorphic operators in <code>Bonsai.Harp</code> expose access only to the set of core registers, i.e. the <a href="https://harp-tech.org/About/How-HARP-works/common_registers_operation_devices.html">Harp common registers</a> that all devices must implement.</p>
+<p>To access device-specific functionality, you need to download and install Bonsai packages targeting each specific Harp device. Once installed, the packages will expose additional operators in the toolbox, identical, in name and syntax, to the others previously described here. These device-specific operators will show-up with a different namespace, and will be able to target device-specific registers.</p>
+<h2 id="device-pattern">Device pattern</h2>
+<p>The previous sections covered the basic functionality of the <code>Bonsai.Harp</code> library. In theory, all the previous operators could function, in parallel, by branching and merging <code>HarpMessage</code> data streams to and from the <code>Device</code> node. For example:</p>
+<div class="workflow"><p><img src="../workflows/device-pattern-nosubjects.bonsai" alt="DevicePattern"></p>
+</div>
+<p>However, as a workflow grows, this pattern can quickly become too cumbersome to manage. To address this issue, we recommend using <a href="https://bonsai-rx.org/docs/articles/subjects.html">Subjects</a> to interact with the <code>Device</code> node using the pattern below:</p>
+<div class="workflow"><p><img src="../workflows/device-pattern.svg" alt="DevicePattern"></p>
+</div>
+<p>The pattern is assembled by first adding a <a href="https://bonsai-rx.org/docs/articles/subjects.html#publishsubject"><code>PublishSubject</code></a> to the right side of the <code>Device</code> node. This will allow us to receive the stream of <code>HarpMessage</code> objects from that specific device in multiple places in our workflow, which eliminates the need for explicitly branching the original data stream:</p>
+<div class="workflow"><p><img src="../workflows/device-pattern-publish.bonsai" alt="DevicePatternPublish"></p>
+</div>
+<p>While the <code>PublishSubject</code> takes care of sharing the output of the <code>Device</code> node (<em>i.e.</em> to handle incoming messages), we usually also want to send (or <em>write</em>) commands to the device from several independent branches.</p>
+<p>To allow for this, we will add a <a href="https://bonsai-rx.org/docs/articles/subjects.html#behaviorsubject"><code>Behavior Subject</code></a> to the left of the <code>Device</code> node, as an input. This <a href="https://bonsai-rx.org/docs/articles/subjects.html#source-subjects">source subject</a> can be referenced, and written to, from anywhere in your workflow by using <a href="https://bonsai-rx.org/docs/articles/subjects.html#multicastsubject">MulticastSubject</a> to send <code>HarpMessage</code> values:</p>
+<div class="workflow"><p><img src="../workflows/device-pattern-multicast.bonsai" alt="DevicePatternMulticast"></p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We tend to prefer <code>BehaviorSubject</code> over <code>PublishSubject</code> for the command source. The <code>Device</code> node will terminate the connection with the Harp device if it receives any <code>OnComplete</code> event. <code>BehaviorSubject</code> will discard this event, and is disposed only at the end of its enclosing scope. Therefore by using a <code>BehaviorSubject</code> we ensure that the connection with the Harp device will never terminate while your workflow is running.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/articles\operators.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

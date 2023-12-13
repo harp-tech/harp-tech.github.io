@@ -1,0 +1,734 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Bonsai.Harp
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Bonsai.Harp
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.Harp">
+
+  <h1 id="Bonsai_Harp" data-uid="Bonsai.Harp" class="text-break">Namespace Bonsai.Harp
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.AssemblyVersion.html">AssemblyVersion</a></dt>
+      <dd><p>Represents a register that specifies the version of the assembled components in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with Harp devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Bootloader.html">Bootloader</a></dt>
+      <dd><p>Provides asynchronous operations to update a device firmware using the dedicated bootloader protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ClockConfiguration.html">ClockConfiguration</a></dt>
+      <dd><p>Represents a register that specifies the configuration for the device synchronization clock.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ConvertFromMessageBytes.html">ConvertFromMessageBytes</a></dt>
+      <dd><p>Represents a transform operator which converts an observable sequence of byte arrays into a sequence of Harp messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ConvertTimestamped.html">ConvertTimestamped</a></dt>
+      <dd><p>Represents an expression builder which converts a timestamped payload value
+into a new form while keeping the original timestamp.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CoreVersionHigh.html">CoreVersionHigh</a></dt>
+      <dd><p>Represents a register that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CoreVersionLow.html">CoreVersionLow</a></dt>
+      <dd><p>Represents a register that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateAssemblyVersionPayload.html">CreateAssemblyVersionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the version of the assembled components in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateClockConfigurationPayload.html">CreateClockConfigurationPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the configuration for the device synchronization clock.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateCoreVersionHighPayload.html">CreateCoreVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateCoreVersionLowPayload.html">CreateCoreVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateDeviceNamePayload.html">CreateDeviceNamePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stores the user-specified device name.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateFirmwareVersionHighPayload.html">CreateFirmwareVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateFirmwareVersionLowPayload.html">CreateFirmwareVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateHardwareVersionHighPayload.html">CreateHardwareVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the major hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateHardwareVersionLowPayload.html">CreateHardwareVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the minor hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates a sequence of standard message payloads
+for Harp devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html">CreateMessageBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to create
+specific Harp device message payloads.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateMessagePayload.html">CreateMessagePayload</a></dt>
+      <dd><p>Represents an operator which creates a sequence of Harp messages with
+the specified payload.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateOperationControlPayload.html">CreateOperationControlPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stores the configuration mode of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateResetDevicePayload.html">CreateResetDevicePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that resets the device and saves non-volatile registers.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateSerialNumberPayload.html">CreateSerialNumberPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the unique serial number of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampMicrosecondsPayload.html">CreateTimestampMicrosecondsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stores the fractional part of the system timestamp, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampSecondsPayload.html">CreateTimestampSecondsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stores the integral part of the system timestamp, in seconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestamped.html">CreateTimestamped</a></dt>
+      <dd><p>Represents an operator that creates a sequence of timestamped payload values from a
+sequence of value-timestamp pairs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedAssemblyVersionPayload.html">CreateTimestampedAssemblyVersionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the version of the assembled components in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedClockConfigurationPayload.html">CreateTimestampedClockConfigurationPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the configuration for the device synchronization clock.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedCoreVersionHighPayload.html">CreateTimestampedCoreVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedCoreVersionLowPayload.html">CreateTimestampedCoreVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedDeviceNamePayload.html">CreateTimestampedDeviceNamePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stores the user-specified device name.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedFirmwareVersionHighPayload.html">CreateTimestampedFirmwareVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedFirmwareVersionLowPayload.html">CreateTimestampedFirmwareVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedHardwareVersionHighPayload.html">CreateTimestampedHardwareVersionHighPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the major hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedHardwareVersionLowPayload.html">CreateTimestampedHardwareVersionLowPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the minor hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedOperationControlPayload.html">CreateTimestampedOperationControlPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stores the configuration mode of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedResetDevicePayload.html">CreateTimestampedResetDevicePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that resets the device and saves non-volatile registers.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedSerialNumberPayload.html">CreateTimestampedSerialNumberPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the unique serial number of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedTimestampMicrosecondsPayload.html">CreateTimestampedTimestampMicrosecondsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stores the fractional part of the system timestamp, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedTimestampSecondsPayload.html">CreateTimestampedTimestampSecondsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stores the integral part of the system timestamp, in seconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateTimestampedWhoAmIPayload.html">CreateTimestampedWhoAmIPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the identity class of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.CreateWhoAmIPayload.html">CreateWhoAmIPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the identity class of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.DeviceFirmware.html">DeviceFirmware</a></dt>
+      <dd><p>Represents a hardware control firmware image which can be uploaded into a Harp device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.DeviceName.html">DeviceName</a></dt>
+      <dd><p>Represents a register that stores the user-specified device name.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.DeviceTypeDescriptionProvider-1.html">DeviceTypeDescriptionProvider&lt;TElement&gt;</a></dt>
+      <dd><p>Provides dynamic device description data based on a private or internal <code>Description</code> property.
+As long as such a property exists, this type description provider will use it to override the default
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.descriptionattribute">DescriptionAttribute</a> of the class.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FileDevice.html">FileDevice</a></dt>
+      <dd><p>Represents an operator which produces an observable sequence of Harp messages from a previously recorded data file.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FilterMessageType.html">FilterMessageType</a></dt>
+      <dd><p>Represents an operator that filters the sequence for valid Harp messages
+matching the specified message type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters the sequence for Harp messages matching
+the specified register address.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FilterRegisterAddress.html">FilterRegisterAddress</a></dt>
+      <dd><p>Represents an operator that filters the sequence for Harp messages matching
+the specified address.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FilterRegisterBuilder.html">FilterRegisterBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to filter
+a sequence of Harp messages matching the specified register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+      <dd><p>Represents information about the device, firmware version and hardware version numbers
+contained in a particular device or hex file.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FirmwareVersionHigh.html">FirmwareVersionHigh</a></dt>
+      <dd><p>Represents a register that specifies the major version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FirmwareVersionLow.html">FirmwareVersionLow</a></dt>
+      <dd><p>Represents a register that specifies the minor version of the Harp core implemented by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as
+standard Harp device messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FormatBuilder.html">FormatBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to format
+a sequence of values as specific Harp device register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FormatMessagePayload.html">FormatMessagePayload</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as Harp messages
+with the specified address and payload type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups a sequence of Harp messages by register address.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HardwareVersionHigh.html">HardwareVersionHigh</a></dt>
+      <dd><p>Represents a register that specifies the major hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HardwareVersionLow.html">HardwareVersionLow</a></dt>
+      <dd><p>Represents a register that specifies the minor hardware version of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpCombinator.html">HarpCombinator</a></dt>
+      <dd><p>Provides the abstract base class for operators used to manipulate
+Harp device messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpCombinatorBuilder.html">HarpCombinatorBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to manipulate
+Harp device messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpCommand.html">HarpCommand</a></dt>
+      <dd><p>Provides static methods for creating Harp command messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpException.html">HarpException</a></dt>
+      <dd><p>Represents errors that are reported by Harp devices at runtime.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a></dt>
+      <dd><p>Represents a single message of the Harp protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+      <dd><p>Represents the major and minor version of Harp firmware or hardware.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.MessageWriter.html">MessageWriter</a></dt>
+      <dd><p>Represents an operator that writes each Harp message in the sequence
+to a raw binary file.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ObservableExtensions.html">ObservableExtensions</a></dt>
+      <dd><p>Provides a set of static extension methods to aid in writing queries over observable Harp message sequences.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.OffsetTimestamp.html">OffsetTimestamp</a></dt>
+      <dd><p>Represents an operator that shifts the timestamps of a sequence of timestamped payload
+values by the specified time interval.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.OperationControl.html">OperationControl</a></dt>
+      <dd><p>Represents a register that stores the configuration mode of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects standard Harp
+messages reported by the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ParseBuilder.html">ParseBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to filter
+and select messages from specific registers in a Harp device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ParseMessagePayload.html">ParseMessagePayload</a></dt>
+      <dd><p>Represents an operator which extracts the payload data from an observable sequence of Harp messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.PortNameConverter.html">PortNameConverter</a></dt>
+      <dd><p>Provides a type converter to convert port name strings to and from
+other representations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html">RegisterCombinatorBuilder</a></dt>
+      <dd><p>Provides the abstract base class for polymorphic operators used to filter
+and select a sequence of Harp messages matching the specified register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ResetDevice.html">ResetDevice</a></dt>
+      <dd><p>Represents a register that resets the device and saves non-volatile registers.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.SerialNumber.html">SerialNumber</a></dt>
+      <dd><p>Represents a register that specifies the unique serial number of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.SynchronizeTimestamp.html">SynchronizeTimestamp</a></dt>
+      <dd><p>Represents an operator that creates a command message to set the value of
+the timestamp register in the Harp device to the current UTC time of the host.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampMicroseconds.html">TimestampMicroseconds</a></dt>
+      <dd><p>Represents a register that stores the fractional part of the system timestamp, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampSeconds.html">TimestampSeconds</a></dt>
+      <dd><p>Represents a register that stores the integral part of the system timestamp, in seconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Timestamped.html">Timestamped</a></dt>
+      <dd><p>Provides static methods for creating timestamped payload objects.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedAssemblyVersion.html">TimestampedAssemblyVersion</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AssemblyVersion register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedClockConfiguration.html">TimestampedClockConfiguration</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ClockConfiguration register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedCoreVersionHigh.html">TimestampedCoreVersionHigh</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+CoreVersionHigh register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedCoreVersionLow.html">TimestampedCoreVersionLow</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+CoreVersionLow register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedDeviceName.html">TimestampedDeviceName</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DeviceName register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedFirmwareVersionHigh.html">TimestampedFirmwareVersionHigh</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+FirmwareVersionHigh register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedFirmwareVersionLow.html">TimestampedFirmwareVersionLow</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+FirmwareVersionLow register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedHardwareVersionHigh.html">TimestampedHardwareVersionHigh</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+HardwareVersionHigh register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedHardwareVersionLow.html">TimestampedHardwareVersionLow</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+HardwareVersionLow register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedOperationControl.html">TimestampedOperationControl</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OperationControl register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedResetDevice.html">TimestampedResetDevice</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ResetDevice register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedSerialNumber.html">TimestampedSerialNumber</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SerialNumber register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedTimestampMicroseconds.html">TimestampedTimestampMicroseconds</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+TimestampMicroseconds register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedTimestampSeconds.html">TimestampedTimestampSeconds</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+TimestampSeconds register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.TimestampedWhoAmI.html">TimestampedWhoAmI</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+WhoAmI register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.WhoAmI.html">WhoAmI</a></dt>
+      <dd><p>Represents a register that specifies the identity class of the device.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.OperationControlPayload.html">OperationControlPayload</a></dt>
+      <dd><p>Represents the payload of the OperationControl register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped&lt;T&gt;</a></dt>
+      <dd><p>Represents a timestamped payload value.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ClockConfigurationFlags.html">ClockConfigurationFlags</a></dt>
+      <dd><p>Specifies configuration flags for the device synchronization clock.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></dt>
+      <dd><p>Specifies whether a specific register flag is enabled or disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.FilterType.html">FilterType</a></dt>
+      <dd><p>Specifies how the message filter will use the matching criteria.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.LedState.html">LedState</a></dt>
+      <dd><p>Specifies the state of an LED on the Harp device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.MessageType.html">MessageType</a></dt>
+      <dd><p>Specifies the type of a Harp device message.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.OperationMode.html">OperationMode</a></dt>
+      <dd><p>Specifies the operation mode of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.PayloadType.html">PayloadType</a></dt>
+      <dd><p>Specifies the type of data available in the message payload.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Bonsai.Harp.ResetFlags.html">ResetFlags</a></dt>
+      <dd><p>Specifies the behavior of the non-volatile registers when resetting the device.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

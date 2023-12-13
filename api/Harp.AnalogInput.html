@@ -1,0 +1,1218 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.AnalogInput
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.AnalogInput
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_AnalogInput.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.AnalogInput">
+
+  <h1 id="Harp_AnalogInput" data-uid="Harp.AnalogInput" class="text-break">Namespace Harp.AnalogInput
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-analog-input">Harp Analog Input</h2>
+<p>This device samples simultaneously up to 4 analog signals with 16 bits resolution, low noise and and analog input range of ±10 V for all channels.</p>
+<p><img src="../src/device.analoginput/Assets/pcb.png" alt="harpanaloginput"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>4 ADC channels</li>
+<li>16bit resolution with an input range of +-10V</li>
+<li>Simultaneous acquisition of all channels</li>
+<li>Threshold detection and event generation</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>4 BNC connectors for analog input</li>
+<li>I/O connector for TTL signals</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp board can be done through <a href="https://bonsai-rx.org/">Bonsai</a></p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">AnalogInput</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1236</td></tr>
+    <tr><td>firmwareVersion</td><td>1.2</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.AcquisitionState.html">AcquisitionState</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the data acquisition.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.AnalogData.html">AnalogData</a></td>
+<td>33</td>
+<td>S16</td>
+<td>4</td>
+<td>Event</td>
+<td>Value from a single read of all ADC channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.AnalogDataPayload.html">AnalogDataPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DigitalInputState.html">DigitalInputState</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>State of the digital input pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.RangeAndFilter.html">RangeAndFilter</a></td>
+<td>37</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the range and LowPass filter cutoff of the ADC.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.RangeAndFilterConfig.html">RangeAndFilterConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.SamplingRate.html">SamplingRate</a></td>
+<td>38</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the sampling frequency of the ADC.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.SamplingRateMode.html">SamplingRateMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DI0Trigger.html">DI0Trigger</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital input pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.TriggerConfig.html">TriggerConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0Sync.html">DO0Sync</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital output pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.SyncConfig.html">SyncConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0PulseWidth.html">DO0PulseWidth</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</td>
+<td>[1:250]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputSet.html">DigitalOutputSet</a></td>
+<td>42</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputClear.html">DigitalOutputClear</a></td>
+<td>43</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputToggle.html">DigitalOutputToggle</a></td>
+<td>44</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputState.html">DigitalOutputState</a></td>
+<td>45</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.SyncOutput.html">SyncOutput</a></td>
+<td>48</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Digital output that will be set when acquisition starts.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.StartSyncOutputTarget.html">StartSyncOutputTarget</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0TargetChannel.html">DO0TargetChannel</a></td>
+<td>58</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target ADC channel that will be used to trigger a threshold event on DO0 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.AdcChannel.html">AdcChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO1TargetChannel.html">DO1TargetChannel</a></td>
+<td>59</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target ADC channel that will be used to trigger a threshold event on DO1 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.AdcChannel.html">AdcChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO2TargetChannel.html">DO2TargetChannel</a></td>
+<td>60</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target ADC channel that will be used to trigger a threshold event on DO2 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.AdcChannel.html">AdcChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO3TargetChannel.html">DO3TargetChannel</a></td>
+<td>61</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target ADC channel that will be used to trigger a threshold event on DO3 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.AnalogInput.AdcChannel.html">AdcChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0Threshold.html">DO0Threshold</a></td>
+<td>66</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold an ADC read, and trigger DO0 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO1Threshold.html">DO1Threshold</a></td>
+<td>67</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold an ADC read, and trigger DO1 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO2Threshold.html">DO2Threshold</a></td>
+<td>68</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold an ADC read, and trigger DO2 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO3Threshold.html">DO3Threshold</a></td>
+<td>69</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold an ADC read, and trigger DO3 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0TimeAboveThreshold.html">DO0TimeAboveThreshold</a></td>
+<td>74</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO0 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO1TimeAboveThreshold.html">DO1TimeAboveThreshold</a></td>
+<td>75</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO1 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO2TimeAboveThreshold.html">DO2TimeAboveThreshold</a></td>
+<td>76</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO2 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO3TimeAboveThreshold.html">DO3TimeAboveThreshold</a></td>
+<td>77</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO3 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO0TimeBelowThreshold.html">DO0TimeBelowThreshold</a></td>
+<td>82</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO0 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO1TimeBelowThreshold.html">DO1TimeBelowThreshold</a></td>
+<td>83</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO1 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO2TimeBelowThreshold.html">DO2TimeBelowThreshold</a></td>
+<td>84</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO2 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.AnalogInput.DO3TimeBelowThreshold.html">DO3TimeBelowThreshold</a></td>
+<td>85</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO3 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.AcquisitionState.html">AcquisitionState</a></dt>
+      <dd><p>Represents a register that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.AnalogData.html">AnalogData</a></dt>
+      <dd><p>Represents a register that value from a single read of all ADC channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with AnalogInput devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateAcquisitionStatePayload.html">CreateAcquisitionStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateAnalogDataPayload.html">CreateAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value from a single read of all ADC channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDI0TriggerPayload.html">CreateDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0PulseWidthPayload.html">CreateDO0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0SyncPayload.html">CreateDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0TargetChannelPayload.html">CreateDO0TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target ADC channel that will be used to trigger a threshold event on DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0ThresholdPayload.html">CreateDO0ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold an ADC read, and trigger DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0TimeAboveThresholdPayload.html">CreateDO0TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO0TimeBelowThresholdPayload.html">CreateDO0TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO1TargetChannelPayload.html">CreateDO1TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target ADC channel that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO1ThresholdPayload.html">CreateDO1ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold an ADC read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO1TimeAboveThresholdPayload.html">CreateDO1TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO1TimeBelowThresholdPayload.html">CreateDO1TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO2TargetChannelPayload.html">CreateDO2TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target ADC channel that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO2ThresholdPayload.html">CreateDO2ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold an ADC read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO2TimeAboveThresholdPayload.html">CreateDO2TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO2TimeBelowThresholdPayload.html">CreateDO2TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO3TargetChannelPayload.html">CreateDO3TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target ADC channel that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO3ThresholdPayload.html">CreateDO3ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold an ADC read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO3TimeAboveThresholdPayload.html">CreateDO3TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDO3TimeBelowThresholdPayload.html">CreateDO3TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that state of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDigitalOutputClearPayload.html">CreateDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDigitalOutputSetPayload.html">CreateDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDigitalOutputStatePayload.html">CreateDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateDigitalOutputTogglePayload.html">CreateDigitalOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+AnalogInput device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateRangeAndFilterPayload.html">CreateRangeAndFilterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the range and LowPass filter cutoff of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateSamplingRatePayload.html">CreateSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the sampling frequency of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateSyncOutputPayload.html">CreateSyncOutputPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that digital output that will be set when acquisition starts.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedAcquisitionStatePayload.html">CreateTimestampedAcquisitionStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedAnalogDataPayload.html">CreateTimestampedAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value from a single read of all ADC channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDI0TriggerPayload.html">CreateTimestampedDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0PulseWidthPayload.html">CreateTimestampedDO0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0SyncPayload.html">CreateTimestampedDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0TargetChannelPayload.html">CreateTimestampedDO0TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target ADC channel that will be used to trigger a threshold event on DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0ThresholdPayload.html">CreateTimestampedDO0ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold an ADC read, and trigger DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0TimeAboveThresholdPayload.html">CreateTimestampedDO0TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO0TimeBelowThresholdPayload.html">CreateTimestampedDO0TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO1TargetChannelPayload.html">CreateTimestampedDO1TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target ADC channel that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO1ThresholdPayload.html">CreateTimestampedDO1ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold an ADC read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO1TimeAboveThresholdPayload.html">CreateTimestampedDO1TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO1TimeBelowThresholdPayload.html">CreateTimestampedDO1TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO2TargetChannelPayload.html">CreateTimestampedDO2TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target ADC channel that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO2ThresholdPayload.html">CreateTimestampedDO2ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold an ADC read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO2TimeAboveThresholdPayload.html">CreateTimestampedDO2TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO2TimeBelowThresholdPayload.html">CreateTimestampedDO2TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO3TargetChannelPayload.html">CreateTimestampedDO3TargetChannelPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target ADC channel that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO3ThresholdPayload.html">CreateTimestampedDO3ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold an ADC read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO3TimeAboveThresholdPayload.html">CreateTimestampedDO3TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDO3TimeBelowThresholdPayload.html">CreateTimestampedDO3TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that state of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDigitalOutputClearPayload.html">CreateTimestampedDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDigitalOutputSetPayload.html">CreateTimestampedDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDigitalOutputStatePayload.html">CreateTimestampedDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedDigitalOutputTogglePayload.html">CreateTimestampedDigitalOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedRangeAndFilterPayload.html">CreateTimestampedRangeAndFilterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the range and LowPass filter cutoff of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedSamplingRatePayload.html">CreateTimestampedSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the sampling frequency of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.CreateTimestampedSyncOutputPayload.html">CreateTimestampedSyncOutputPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that digital output that will be set when acquisition starts.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DI0Trigger.html">DI0Trigger</a></dt>
+      <dd><p>Represents a register that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0PulseWidth.html">DO0PulseWidth</a></dt>
+      <dd><p>Represents a register that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0Sync.html">DO0Sync</a></dt>
+      <dd><p>Represents a register that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0TargetChannel.html">DO0TargetChannel</a></dt>
+      <dd><p>Represents a register that target ADC channel that will be used to trigger a threshold event on DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0Threshold.html">DO0Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold an ADC read, and trigger DO0 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0TimeAboveThreshold.html">DO0TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO0TimeBelowThreshold.html">DO0TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO0 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO1TargetChannel.html">DO1TargetChannel</a></dt>
+      <dd><p>Represents a register that target ADC channel that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO1Threshold.html">DO1Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold an ADC read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO1TimeAboveThreshold.html">DO1TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO1TimeBelowThreshold.html">DO1TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO2TargetChannel.html">DO2TargetChannel</a></dt>
+      <dd><p>Represents a register that target ADC channel that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO2Threshold.html">DO2Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold an ADC read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO2TimeAboveThreshold.html">DO2TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO2TimeBelowThreshold.html">DO2TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO3TargetChannel.html">DO3TargetChannel</a></dt>
+      <dd><p>Represents a register that target ADC channel that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO3Threshold.html">DO3Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold an ADC read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO3TimeAboveThreshold.html">DO3TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DO3TimeBelowThreshold.html">DO3TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that state of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalOutputClear.html">DigitalOutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalOutputSet.html">DigitalOutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalOutputState.html">DigitalOutputState</a></dt>
+      <dd><p>Represents a register that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalOutputToggle.html">DigitalOutputToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.AnalogInput.html">Harp.AnalogInput</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+AnalogInput register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.AnalogInput.html">Harp.AnalogInput</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the AnalogInput device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.RangeAndFilter.html">RangeAndFilter</a></dt>
+      <dd><p>Represents a register that sets the range and LowPass filter cutoff of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.SamplingRate.html">SamplingRate</a></dt>
+      <dd><p>Represents a register that sets the sampling frequency of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.SyncOutput.html">SyncOutput</a></dt>
+      <dd><p>Represents a register that digital output that will be set when acquisition starts.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedAcquisitionState.html">TimestampedAcquisitionState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AcquisitionState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedAnalogData.html">TimestampedAnalogData</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AnalogData register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDI0Trigger.html">TimestampedDI0Trigger</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DI0Trigger register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0PulseWidth.html">TimestampedDO0PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0Sync.html">TimestampedDO0Sync</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0Sync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0TargetChannel.html">TimestampedDO0TargetChannel</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0TargetChannel register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0Threshold.html">TimestampedDO0Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0TimeAboveThreshold.html">TimestampedDO0TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO0TimeBelowThreshold.html">TimestampedDO0TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO1TargetChannel.html">TimestampedDO1TargetChannel</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TargetChannel register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO1Threshold.html">TimestampedDO1Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO1TimeAboveThreshold.html">TimestampedDO1TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO1TimeBelowThreshold.html">TimestampedDO1TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO2TargetChannel.html">TimestampedDO2TargetChannel</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TargetChannel register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO2Threshold.html">TimestampedDO2Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO2TimeAboveThreshold.html">TimestampedDO2TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO2TimeBelowThreshold.html">TimestampedDO2TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO3TargetChannel.html">TimestampedDO3TargetChannel</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TargetChannel register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO3Threshold.html">TimestampedDO3Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO3TimeAboveThreshold.html">TimestampedDO3TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDO3TimeBelowThreshold.html">TimestampedDO3TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDigitalOutputClear.html">TimestampedDigitalOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDigitalOutputSet.html">TimestampedDigitalOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDigitalOutputState.html">TimestampedDigitalOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedDigitalOutputToggle.html">TimestampedDigitalOutputToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedRangeAndFilter.html">TimestampedRangeAndFilter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+RangeAndFilter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedSamplingRate.html">TimestampedSamplingRate</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SamplingRate register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TimestampedSyncOutput.html">TimestampedSyncOutput</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SyncOutput register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.AnalogDataPayload.html">AnalogDataPayload</a></dt>
+      <dd><p>Represents the payload of the AnalogData register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.AdcChannel.html">AdcChannel</a></dt>
+      <dd><p>Available target analog channels to be targeted for threshold events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Available digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of port digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.RangeAndFilterConfig.html">RangeAndFilterConfig</a></dt>
+      <dd><p>Available settings to set the range (Volt) and LowPass filter cutoff (Hz) of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.SamplingRateMode.html">SamplingRateMode</a></dt>
+      <dd><p>Available sampling frequency settings of the ADC.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.StartSyncOutputTarget.html">StartSyncOutputTarget</a></dt>
+      <dd><p>Available digital output pins that are able to be triggered on acquisition start.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.SyncConfig.html">SyncConfig</a></dt>
+      <dd><p>Available configurations when using DO0 pin to report firmware events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.AnalogInput.TriggerConfig.html">TriggerConfig</a></dt>
+      <dd><p>Available configurations for when using DI0 as an acquisition trigger.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_AnalogInput.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
