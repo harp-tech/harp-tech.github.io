@@ -51,13 +51,15 @@
           "favicon.ico",
           "src/device.*/Assets/*.png",
           "src/device.*/Assets/*.jpg",
-          "protocol/Assets/**",
-          "protocol/Logo/*.svg",
+          "protocol/assets/**",
           "protocol/*.pdf",
-          "draft-02/schema/*.json",
           "images/**",
           "workflows/**"
         ]
+      },
+      {
+        "files": "protocol/schema/*.json",
+        "dest": "draft-02"
       }
     ],
     "overwrite": [
