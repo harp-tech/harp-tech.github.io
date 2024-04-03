@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.Synchronizer
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.Synchronizer
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_Synchronizer.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.Synchronizer">
+
+  <h1 id="Harp_Synchronizer" data-uid="Harp.Synchronizer" class="text-break">Namespace Harp.Synchronizer
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-synchronizer">Harp Synchronizer</h2>
+<p>Used to synchronize and align the different apparatus and devices present in a complex setup. It timestamps each rising or falling edge of the 9 digital input signals. The sampling of the inputs can also be configured to use a ﬁxed sampling frequency.</p>
+<p><img src="../src/device.synchronizer/Assets/pcb.png" alt="harpsynchronizer"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Receives and timestamps up to 9 digital input signals</li>
+<li>Sampling on signal transitions or fixed sampling frequency up to 2kHz</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1x clock sync input (CLKIN) [stereo jack]</li>
+<li>1x USB (for computer) [USB type B]</li>
+<li>9x digital inputs (DIN0 to DIN5) [BNC], (DIN6 to DIN8) [screw terminal]</li>
+<li>1x digital output (DOUT0) [screw terminal]</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp board can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<p>In order to use this GUI, there are some software that needs to be installed:</p>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/UsbDriver-2.12.26.zip">drivers</a>.</p>
+<p>2 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Runtime-1.0.zip">runtime</a>.</p>
+<p>3 - Reboot the computer.</p>
+<p>4 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp%20Synchronizer%20v1.2.0.zip">GUI</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">Synchronizer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1104</td></tr>
+    <tr><td>firmwareVersion</td><td>1.7</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputState.html">DigitalInputState</a></td>
+<td>32</td>
+<td>U16</td>
+<td></td>
+<td>Event</td>
+<td>State of the digital input pins. An event will be emitted when the value of any digital input pin changes.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalOutputState.html">DigitalOutputState</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Status of the digital output pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingMode.html">DigitalInputsSamplingMode</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the sampling mode for digital input pins.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingConfig.html">DigitalInputsSamplingConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DO0Config.html">DO0Config</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures how the DO0 pin behaves.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DO0ConfigMode.html">DO0ConfigMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.EnableEvents.html">EnableEvents</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies all the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.SynchronizerEvents.html">SynchronizerEvents</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with Synchronizer devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateDO0ConfigPayload.html">CreateDO0ConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures how the DO0 pin behaves.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateDigitalInputsSamplingModePayload.html">CreateDigitalInputsSamplingModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the sampling mode for digital input pins.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateDigitalOutputStatePayload.html">CreateDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateEnableEventsPayload.html">CreateEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+Synchronizer device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateTimestampedDO0ConfigPayload.html">CreateTimestampedDO0ConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures how the DO0 pin behaves.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateTimestampedDigitalInputsSamplingModePayload.html">CreateTimestampedDigitalInputsSamplingModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the sampling mode for digital input pins.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateTimestampedDigitalOutputStatePayload.html">CreateTimestampedDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.CreateTimestampedEnableEventsPayload.html">CreateTimestampedEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DO0Config.html">DO0Config</a></dt>
+      <dd><p>Represents a register that configures how the DO0 pin behaves.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingMode.html">DigitalInputsSamplingMode</a></dt>
+      <dd><p>Represents a register that sets the sampling mode for digital input pins.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalOutputState.html">DigitalOutputState</a></dt>
+      <dd><p>Represents a register that status of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.EnableEvents.html">EnableEvents</a></dt>
+      <dd><p>Represents a register that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.Synchronizer.html">Harp.Synchronizer</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+Synchronizer register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.Synchronizer.html">Harp.Synchronizer</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the Synchronizer device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.TimestampedDO0Config.html">TimestampedDO0Config</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0Config register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.TimestampedDigitalInputsSamplingMode.html">TimestampedDigitalInputsSamplingMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputsSamplingMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.TimestampedDigitalOutputState.html">TimestampedDigitalOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.TimestampedEnableEvents.html">TimestampedEnableEvents</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEvents register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DO0ConfigMode.html">DO0ConfigMode</a></dt>
+      <dd><p>Available configuration for the DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Specifies the state of digital input port lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingConfig.html">DigitalInputsSamplingConfig</a></dt>
+      <dd><p>Available modes for catching/sampling the digital inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of digital output port lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Synchronizer.SynchronizerEvents.html">SynchronizerEvents</a></dt>
+      <dd><p>The events that can be enabled/disabled.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_Synchronizer.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

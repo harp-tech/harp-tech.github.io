@@ -1,0 +1,1735 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.SoundCard
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.SoundCard
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_SoundCard.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.SoundCard">
+
+  <h1 id="Harp_SoundCard" data-uid="Harp.SoundCard" class="text-break">Namespace Harp.SoundCard
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-soundcard">Harp Soundcard</h2>
+<p>This is a high performance sound card with two output channels using 24 bits DACs at 192kHz sample rate.</p>
+<p><img src="../src/device.soundcard/Assets/pcb.png" alt="HarpSoundcard"></p>
+<h3 id="hardware-compatibility">Hardware Compatibility</h3>
+<table>
+<thead>
+<tr>
+<th>HW Version</th>
+<th>Board</th>
+<th>Board HW Version</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>All</strong></td>
+<td><a href="https://github.com/harp-tech/peripheral.audioamp">Peripheral.AudioAmp</a></td>
+<td>&gt;= 2.0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="firmware-compatibility">Firmware Compatibility</h3>
+<table>
+<thead>
+<tr>
+<th>FW Version</th>
+<th>Board</th>
+<th>Board HW Version</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&gt;= 2.2</strong></td>
+<td><a href="https://github.com/harp-tech/device.soundcard">Device.SoundCard</a></td>
+<td>&gt;= 1.0</td>
+<td>Bpod serial communication not supported</td>
+</tr>
+<tr>
+<td><strong>&lt;= 2.2</strong></td>
+<td><a href="https://github.com/harp-tech/device.soundcard">Device.SoundCard</a></td>
+<td>&gt;= 1.0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Internal memory to store sounds, enabling low-latency sound delivery</li>
+<li>Pre-selected sounds can be triggered using an external TTL</li>
+<li>Internal wave generator allows the user to configure a pure tone without loading a sound file</li>
+<li>Stereo 24 bit @ 192 kHz maximum sampling rate outputs</li>
+<li>THD: -111dB (1 kHz @ 2 V rms)</li>
+<li>Noise Floor:	20 µV rms | -94 dB (20 Hz – 80 kHz)</li>
+<li>SNR:	100 dB | 113 dbA (20 Hz – 80 kHz @ 2 V rms)</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1x clock sync input (CLKIN) [stereo jack]</li>
+<li>1x USB (for computer communication) [USB Mini-B]</li>
+<li>1x micro USB (for sounds loading) [USB Micro-B]</li>
+<li>1x 12V supply [barrel connector jack]</li>
+<li>1x reset button [tactile switch]</li>
+<li>1x output for the left channel [RCA]</li>
+<li>1x output for the right channel [RCA]</li>
+<li>3x general purpose digital outputs (3.3V or 5V) (OUT0-OUT2) [screw terminal]</li>
+<li>3x general purpose digital inputs (5V tolerant) (IN0-IN2) [screw terminal]</li>
+<li>2x analog inputs (3.3V máx - 5V tolerant) (ADC0-ADC1) [screw terminal]</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp Soundcard can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<h3 id="install-graphical-user-interface-gui">Install Graphical User Interface (GUI)</h3>
+<p>In order to use this GUI, there are some software that needs to be installed:</p>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/UsbDriver-2.12.26.zip">drivers</a>.</p>
+<p>2 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Runtime-1.0.zip">runtime</a>.</p>
+<p>3 - Reboot the computer.</p>
+<p>4 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp%20Sound%20Card%20v1.2.1.zip">GUI</a>.</p>
+<h3 id="install-drivers">Install Drivers</h3>
+<p>To install the proper drivers to interface with the device, follow the next steps in sequence.</p>
+<p>1 - Connect both Harp Sound Card's USB ports to the computer.</p>
+<p>2 - Launch the previously installed Harp Sound Card GUI.</p>
+<p>3 - Click on the button Open Drivers folder and launch the zadig-2.3.exe.</p>
+<p>4 - (1) Select the Harp Sound Card from the list. If the device is not available, go to Options -&gt; List All Devices.</p>
+<p>5 - (2) Select the WinUSB driver and click Install WCID Driver.</p>
+<p><img src="../src/device.soundcard/Assets/zadig.png" alt="Zadig"></p>
+<h2 id="firmware">Firmware</h2>
+<h3 id="tagging-scheme">Tagging Scheme</h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SoundCard-*</td>
+<td>Firmware for the sound card's microcontroller (8 bits processor)</td>
+</tr>
+<tr>
+<td>SoundCard.PIC32-*</td>
+<td>Firmware for the sound card's 32 bits processor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="firmware-update">Firmware Update</h3>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp_Convert_To_CSV_v1.8.3.zip">Harp Converto to CSV</a>.</p>
+<p>2 - Open the Harp Convert to CSV application and write <em>bootloader</em> under List box on the Options tab</p>
+<p>3 - Select the correspondent COM port and then select the firmware to be loaded for both microcontrollers</p>
+<h1 id="licensing">Licensing</h1>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">SoundCard</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1280</td></tr>
+    <tr><td>firmwareVersion</td><td>2.2</td></tr>
+    <tr><td>hardwareTargets</td><td>1.1</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.PlaySoundOrFrequency.html">PlaySoundOrFrequency</a></td>
+<td>32</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Starts the sound index (if less than 32) or frequency (if greater or equal than 32)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.Stop.html">Stop</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Any value will stop the current sound</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationLeft.html">AttenuationLeft</a></td>
+<td>34</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configure left channel's attenuation (1 LSB is 0.1dB)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationRight.html">AttenuationRight</a></td>
+<td>35</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configure right channel's attenuation (1 LSB is 0.1dB)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationBoth.html">AttenuationBoth</a></td>
+<td>36</td>
+<td>U16</td>
+<td>2</td>
+<td>Write</td>
+<td>Configures both attenuation on right and left channels [Att R] [Att L]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndPlaySoundOrFreq.html">AttenuationAndPlaySoundOrFreq</a></td>
+<td>37</td>
+<td>U16</td>
+<td>3</td>
+<td>Write</td>
+<td>Configures attenuation and plays sound index [Att R] [Att L] [Index]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.InputState.html">InputState</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>State of the digital inputs</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDI0.html">ConfigureDI0</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital input 0 (DI0)</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalInputConfiguration.html">DigitalInputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDI1.html">ConfigureDI1</a></td>
+<td>42</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital input 1 (DI1)</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalInputConfiguration.html">DigitalInputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDI2.html">ConfigureDI2</a></td>
+<td>43</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital input 2 (DI2)</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalInputConfiguration.html">DigitalInputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.SoundIndexDI0.html">SoundIndexDI0</a></td>
+<td>44</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound index to be played when triggering DI0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.SoundIndexDI1.html">SoundIndexDI1</a></td>
+<td>45</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound index to be played when triggering DI1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.SoundIndexDI2.html">SoundIndexDI2</a></td>
+<td>46</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound index to be played when triggering DI2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.FrequencyDI0.html">FrequencyDI0</a></td>
+<td>47</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound frequency to be played when triggering DI0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.FrequencyDI1.html">FrequencyDI1</a></td>
+<td>48</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound frequency to be played when triggering DI1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.FrequencyDI2.html">FrequencyDI2</a></td>
+<td>49</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the sound frequency to be played when triggering DI2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationLeftDI0.html">AttenuationLeftDI0</a></td>
+<td>50</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Left channel's attenuation (1 LSB is 0.5dB) when triggering DI0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationLeftDI1.html">AttenuationLeftDI1</a></td>
+<td>51</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Left channel's attenuation (1 LSB is 0.5dB) when triggering DI1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationLeftDI2.html">AttenuationLeftDI2</a></td>
+<td>52</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Left channel's attenuation (1 LSB is 0.5dB) when triggering DI2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationRightDI0.html">AttenuationRightDI0</a></td>
+<td>53</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Right channel's attenuation (1 LSB is 0.5dB) when triggering DI0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationRightDI1.html">AttenuationRightDI1</a></td>
+<td>54</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Right channel's attenuation (1 LSB is 0.5dB) when triggering DI1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationRightDI2.html">AttenuationRightDI2</a></td>
+<td>55</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Right channel's attenuation (1 LSB is 0.5dB) when triggering DI2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI0.html">AttenuationAndSoundIndexDI0</a></td>
+<td>56</td>
+<td>U16</td>
+<td>3</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI0 [Att R] [Att L] [Index]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI1.html">AttenuationAndSoundIndexDI1</a></td>
+<td>57</td>
+<td>U16</td>
+<td>3</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI1 [Att R] [Att L] [Index]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI2.html">AttenuationAndSoundIndexDI2</a></td>
+<td>58</td>
+<td>U16</td>
+<td>3</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI2 [Att R] [Att L] [Index]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI0.html">AttenuationAndFrequencyDI0</a></td>
+<td>59</td>
+<td>U16</td>
+<td>2</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI0 [Att BOTH] [Frequency]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI1.html">AttenuationAndFrequencyDI1</a></td>
+<td>60</td>
+<td>U16</td>
+<td>2</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI1 [Att BOTH] [Frequency]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI2.html">AttenuationAndFrequencyDI2</a></td>
+<td>61</td>
+<td>U16</td>
+<td>2</td>
+<td>Write</td>
+<td>Sound index and attenuation to be played when triggering DI2 [Att BOTH] [Frequency]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDO0.html">ConfigureDO0</a></td>
+<td>65</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital output 0 (DO0)</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputConfiguration.html">DigitalOutputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDO1.html">ConfigureDO1</a></td>
+<td>66</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital output 1 (DO1)</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputConfiguration.html">DigitalOutputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureDO2.html">ConfigureDO2</a></td>
+<td>67</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital output 2 (DO2</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputConfiguration.html">DigitalOutputConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.PulseDO0.html">PulseDO0</a></td>
+<td>68</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Pulse for the digital output 0 (DO0)</td>
+<td>[1:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.PulseDO1.html">PulseDO1</a></td>
+<td>69</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Pulse for the digital output 1 (DO1)</td>
+<td>[1:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.PulseDO2.html">PulseDO2</a></td>
+<td>70</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Pulse for the digital output 2 (DO2)</td>
+<td>[1:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.OutputSet.html">OutputSet</a></td>
+<td>74</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.OutputClear.html">OutputClear</a></td>
+<td>75</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.OutputToggle.html">OutputToggle</a></td>
+<td>76</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.OutputState.html">OutputState</a></td>
+<td>77</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of all digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.ConfigureAdc.html">ConfigureAdc</a></td>
+<td>80</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of Analog Inputs</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.AdcConfiguration.html">AdcConfiguration</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.AnalogData.html">AnalogData</a></td>
+<td>81</td>
+<td>U16</td>
+<td>5</td>
+<td>Event</td>
+<td>Contains sampled analog input data or dynamic sound parameters controlled by the ADC channels. Values are zero if not used.</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.AnalogDataPayload.html">AnalogDataPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.Commands.html">Commands</a></td>
+<td>82</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Send commands to PIC32 micro-controller</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.ControllerCommand.html">ControllerCommand</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SoundCard.EnableEvents.html">EnableEvents</a></td>
+<td>86</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the active events in the SoundCard device</td>
+<td></td>
+<td><a class="xref" href="Harp.SoundCard.SoundCardEvents.html">SoundCardEvents</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AnalogData.html">AnalogData</a></dt>
+      <dd><p>Represents a register that contains sampled analog input data or dynamic sound parameters controlled by the ADC channels. Values are zero if not used.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with SoundCard devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI0.html">AttenuationAndFrequencyDI0</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI0 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI1.html">AttenuationAndFrequencyDI1</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI1 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndFrequencyDI2.html">AttenuationAndFrequencyDI2</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI2 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndPlaySoundOrFreq.html">AttenuationAndPlaySoundOrFreq</a></dt>
+      <dd><p>Represents a register that configures attenuation and plays sound index [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI0.html">AttenuationAndSoundIndexDI0</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI0 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI1.html">AttenuationAndSoundIndexDI1</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI1 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationAndSoundIndexDI2.html">AttenuationAndSoundIndexDI2</a></dt>
+      <dd><p>Represents a register that sound index and attenuation to be played when triggering DI2 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationBoth.html">AttenuationBoth</a></dt>
+      <dd><p>Represents a register that configures both attenuation on right and left channels [Att R] [Att L].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationLeft.html">AttenuationLeft</a></dt>
+      <dd><p>Represents a register that configure left channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationLeftDI0.html">AttenuationLeftDI0</a></dt>
+      <dd><p>Represents a register that left channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationLeftDI1.html">AttenuationLeftDI1</a></dt>
+      <dd><p>Represents a register that left channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationLeftDI2.html">AttenuationLeftDI2</a></dt>
+      <dd><p>Represents a register that left channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationRight.html">AttenuationRight</a></dt>
+      <dd><p>Represents a register that configure right channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationRightDI0.html">AttenuationRightDI0</a></dt>
+      <dd><p>Represents a register that right channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationRightDI1.html">AttenuationRightDI1</a></dt>
+      <dd><p>Represents a register that right channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AttenuationRightDI2.html">AttenuationRightDI2</a></dt>
+      <dd><p>Represents a register that right channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.Commands.html">Commands</a></dt>
+      <dd><p>Represents a register that send commands to PIC32 micro-controller.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureAdc.html">ConfigureAdc</a></dt>
+      <dd><p>Represents a register that configuration of Analog Inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDI0.html">ConfigureDI0</a></dt>
+      <dd><p>Represents a register that configuration of the digital input 0 (DI0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDI1.html">ConfigureDI1</a></dt>
+      <dd><p>Represents a register that configuration of the digital input 1 (DI1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDI2.html">ConfigureDI2</a></dt>
+      <dd><p>Represents a register that configuration of the digital input 2 (DI2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDO0.html">ConfigureDO0</a></dt>
+      <dd><p>Represents a register that configuration of the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDO1.html">ConfigureDO1</a></dt>
+      <dd><p>Represents a register that configuration of the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ConfigureDO2.html">ConfigureDO2</a></dt>
+      <dd><p>Represents a register that configuration of the digital output 2 (DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAnalogDataPayload.html">CreateAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains sampled analog input data or dynamic sound parameters controlled by the ADC channels. Values are zero if not used.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndFrequencyDI0Payload.html">CreateAttenuationAndFrequencyDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI0 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndFrequencyDI1Payload.html">CreateAttenuationAndFrequencyDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI1 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndFrequencyDI2Payload.html">CreateAttenuationAndFrequencyDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI2 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndPlaySoundOrFreqPayload.html">CreateAttenuationAndPlaySoundOrFreqPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures attenuation and plays sound index [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndSoundIndexDI0Payload.html">CreateAttenuationAndSoundIndexDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI0 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndSoundIndexDI1Payload.html">CreateAttenuationAndSoundIndexDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI1 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationAndSoundIndexDI2Payload.html">CreateAttenuationAndSoundIndexDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sound index and attenuation to be played when triggering DI2 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationBothPayload.html">CreateAttenuationBothPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures both attenuation on right and left channels [Att R] [Att L].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationLeftDI0Payload.html">CreateAttenuationLeftDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationLeftDI1Payload.html">CreateAttenuationLeftDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationLeftDI2Payload.html">CreateAttenuationLeftDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationLeftPayload.html">CreateAttenuationLeftPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configure left channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationRightDI0Payload.html">CreateAttenuationRightDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationRightDI1Payload.html">CreateAttenuationRightDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationRightDI2Payload.html">CreateAttenuationRightDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateAttenuationRightPayload.html">CreateAttenuationRightPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configure right channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateCommandsPayload.html">CreateCommandsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that send commands to PIC32 micro-controller.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureAdcPayload.html">CreateConfigureAdcPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of Analog Inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDI0Payload.html">CreateConfigureDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital input 0 (DI0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDI1Payload.html">CreateConfigureDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital input 1 (DI1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDI2Payload.html">CreateConfigureDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital input 2 (DI2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDO0Payload.html">CreateConfigureDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDO1Payload.html">CreateConfigureDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateConfigureDO2Payload.html">CreateConfigureDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital output 2 (DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateEnableEventsPayload.html">CreateEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the active events in the SoundCard device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateFrequencyDI0Payload.html">CreateFrequencyDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound frequency to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateFrequencyDI1Payload.html">CreateFrequencyDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound frequency to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateFrequencyDI2Payload.html">CreateFrequencyDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound frequency to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateInputStatePayload.html">CreateInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that state of the digital inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+SoundCard device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateOutputClearPayload.html">CreateOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateOutputSetPayload.html">CreateOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateOutputStatePayload.html">CreateOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateOutputTogglePayload.html">CreateOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreatePlaySoundOrFrequencyPayload.html">CreatePlaySoundOrFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the sound index (if less than 32) or frequency (if greater or equal than 32).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreatePulseDO0Payload.html">CreatePulseDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that pulse for the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreatePulseDO1Payload.html">CreatePulseDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that pulse for the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreatePulseDO2Payload.html">CreatePulseDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that pulse for the digital output 2 (DO2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateSoundIndexDI0Payload.html">CreateSoundIndexDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound index to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateSoundIndexDI1Payload.html">CreateSoundIndexDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound index to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateSoundIndexDI2Payload.html">CreateSoundIndexDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the sound index to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateStopPayload.html">CreateStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that any value will stop the current sound.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAnalogDataPayload.html">CreateTimestampedAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains sampled analog input data or dynamic sound parameters controlled by the ADC channels. Values are zero if not used.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndFrequencyDI0Payload.html">CreateTimestampedAttenuationAndFrequencyDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI0 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndFrequencyDI1Payload.html">CreateTimestampedAttenuationAndFrequencyDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI1 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndFrequencyDI2Payload.html">CreateTimestampedAttenuationAndFrequencyDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI2 [Att BOTH] [Frequency].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndPlaySoundOrFreqPayload.html">CreateTimestampedAttenuationAndPlaySoundOrFreqPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures attenuation and plays sound index [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndSoundIndexDI0Payload.html">CreateTimestampedAttenuationAndSoundIndexDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI0 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndSoundIndexDI1Payload.html">CreateTimestampedAttenuationAndSoundIndexDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI1 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationAndSoundIndexDI2Payload.html">CreateTimestampedAttenuationAndSoundIndexDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sound index and attenuation to be played when triggering DI2 [Att R] [Att L] [Index].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationBothPayload.html">CreateTimestampedAttenuationBothPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures both attenuation on right and left channels [Att R] [Att L].</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationLeftDI0Payload.html">CreateTimestampedAttenuationLeftDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationLeftDI1Payload.html">CreateTimestampedAttenuationLeftDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationLeftDI2Payload.html">CreateTimestampedAttenuationLeftDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that left channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationLeftPayload.html">CreateTimestampedAttenuationLeftPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configure left channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationRightDI0Payload.html">CreateTimestampedAttenuationRightDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationRightDI1Payload.html">CreateTimestampedAttenuationRightDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationRightDI2Payload.html">CreateTimestampedAttenuationRightDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that right channel's attenuation (1 LSB is 0.5dB) when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedAttenuationRightPayload.html">CreateTimestampedAttenuationRightPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configure right channel's attenuation (1 LSB is 0.1dB).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedCommandsPayload.html">CreateTimestampedCommandsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that send commands to PIC32 micro-controller.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureAdcPayload.html">CreateTimestampedConfigureAdcPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of Analog Inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDI0Payload.html">CreateTimestampedConfigureDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital input 0 (DI0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDI1Payload.html">CreateTimestampedConfigureDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital input 1 (DI1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDI2Payload.html">CreateTimestampedConfigureDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital input 2 (DI2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDO0Payload.html">CreateTimestampedConfigureDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDO1Payload.html">CreateTimestampedConfigureDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedConfigureDO2Payload.html">CreateTimestampedConfigureDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital output 2 (DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedEnableEventsPayload.html">CreateTimestampedEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the active events in the SoundCard device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedFrequencyDI0Payload.html">CreateTimestampedFrequencyDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound frequency to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedFrequencyDI1Payload.html">CreateTimestampedFrequencyDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound frequency to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedFrequencyDI2Payload.html">CreateTimestampedFrequencyDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound frequency to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedInputStatePayload.html">CreateTimestampedInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that state of the digital inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedOutputClearPayload.html">CreateTimestampedOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedOutputSetPayload.html">CreateTimestampedOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedOutputStatePayload.html">CreateTimestampedOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedOutputTogglePayload.html">CreateTimestampedOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedPlaySoundOrFrequencyPayload.html">CreateTimestampedPlaySoundOrFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the sound index (if less than 32) or frequency (if greater or equal than 32).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedPulseDO0Payload.html">CreateTimestampedPulseDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that pulse for the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedPulseDO1Payload.html">CreateTimestampedPulseDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that pulse for the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedPulseDO2Payload.html">CreateTimestampedPulseDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that pulse for the digital output 2 (DO2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedSoundIndexDI0Payload.html">CreateTimestampedSoundIndexDI0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound index to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedSoundIndexDI1Payload.html">CreateTimestampedSoundIndexDI1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound index to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedSoundIndexDI2Payload.html">CreateTimestampedSoundIndexDI2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the sound index to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.CreateTimestampedStopPayload.html">CreateTimestampedStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that any value will stop the current sound.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.EnableEvents.html">EnableEvents</a></dt>
+      <dd><p>Represents a register that specifies the active events in the SoundCard device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.SoundCard.html">Harp.SoundCard</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+SoundCard register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.FrequencyDI0.html">FrequencyDI0</a></dt>
+      <dd><p>Represents a register that specifies the sound frequency to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.FrequencyDI1.html">FrequencyDI1</a></dt>
+      <dd><p>Represents a register that specifies the sound frequency to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.FrequencyDI2.html">FrequencyDI2</a></dt>
+      <dd><p>Represents a register that specifies the sound frequency to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.SoundCard.html">Harp.SoundCard</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.InputState.html">InputState</a></dt>
+      <dd><p>Represents a register that state of the digital inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.OutputClear.html">OutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.OutputSet.html">OutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.OutputState.html">OutputState</a></dt>
+      <dd><p>Represents a register that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.OutputToggle.html">OutputToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the SoundCard device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.PlaySoundOrFrequency.html">PlaySoundOrFrequency</a></dt>
+      <dd><p>Represents a register that starts the sound index (if less than 32) or frequency (if greater or equal than 32).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.PulseDO0.html">PulseDO0</a></dt>
+      <dd><p>Represents a register that pulse for the digital output 0 (DO0).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.PulseDO1.html">PulseDO1</a></dt>
+      <dd><p>Represents a register that pulse for the digital output 1 (DO1).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.PulseDO2.html">PulseDO2</a></dt>
+      <dd><p>Represents a register that pulse for the digital output 2 (DO2).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.SoundIndexDI0.html">SoundIndexDI0</a></dt>
+      <dd><p>Represents a register that specifies the sound index to be played when triggering DI0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.SoundIndexDI1.html">SoundIndexDI1</a></dt>
+      <dd><p>Represents a register that specifies the sound index to be played when triggering DI1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.SoundIndexDI2.html">SoundIndexDI2</a></dt>
+      <dd><p>Represents a register that specifies the sound index to be played when triggering DI2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.Stop.html">Stop</a></dt>
+      <dd><p>Represents a register that any value will stop the current sound.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAnalogData.html">TimestampedAnalogData</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AnalogData register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndFrequencyDI0.html">TimestampedAttenuationAndFrequencyDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndFrequencyDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndFrequencyDI1.html">TimestampedAttenuationAndFrequencyDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndFrequencyDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndFrequencyDI2.html">TimestampedAttenuationAndFrequencyDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndFrequencyDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndPlaySoundOrFreq.html">TimestampedAttenuationAndPlaySoundOrFreq</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndPlaySoundOrFreq register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndSoundIndexDI0.html">TimestampedAttenuationAndSoundIndexDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndSoundIndexDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndSoundIndexDI1.html">TimestampedAttenuationAndSoundIndexDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndSoundIndexDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationAndSoundIndexDI2.html">TimestampedAttenuationAndSoundIndexDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationAndSoundIndexDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationBoth.html">TimestampedAttenuationBoth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationBoth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationLeft.html">TimestampedAttenuationLeft</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationLeft register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationLeftDI0.html">TimestampedAttenuationLeftDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationLeftDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationLeftDI1.html">TimestampedAttenuationLeftDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationLeftDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationLeftDI2.html">TimestampedAttenuationLeftDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationLeftDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationRight.html">TimestampedAttenuationRight</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationRight register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationRightDI0.html">TimestampedAttenuationRightDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationRightDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationRightDI1.html">TimestampedAttenuationRightDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationRightDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedAttenuationRightDI2.html">TimestampedAttenuationRightDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AttenuationRightDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedCommands.html">TimestampedCommands</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Commands register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureAdc.html">TimestampedConfigureAdc</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureAdc register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDI0.html">TimestampedConfigureDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDI1.html">TimestampedConfigureDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDI2.html">TimestampedConfigureDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDO0.html">TimestampedConfigureDO0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDO0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDO1.html">TimestampedConfigureDO1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDO1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedConfigureDO2.html">TimestampedConfigureDO2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ConfigureDO2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedEnableEvents.html">TimestampedEnableEvents</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEvents register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedFrequencyDI0.html">TimestampedFrequencyDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+FrequencyDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedFrequencyDI1.html">TimestampedFrequencyDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+FrequencyDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedFrequencyDI2.html">TimestampedFrequencyDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+FrequencyDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedInputState.html">TimestampedInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+InputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedOutputClear.html">TimestampedOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedOutputSet.html">TimestampedOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedOutputState.html">TimestampedOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedOutputToggle.html">TimestampedOutputToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedPlaySoundOrFrequency.html">TimestampedPlaySoundOrFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PlaySoundOrFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedPulseDO0.html">TimestampedPulseDO0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedPulseDO1.html">TimestampedPulseDO1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedPulseDO2.html">TimestampedPulseDO2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedSoundIndexDI0.html">TimestampedSoundIndexDI0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SoundIndexDI0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedSoundIndexDI1.html">TimestampedSoundIndexDI1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SoundIndexDI1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedSoundIndexDI2.html">TimestampedSoundIndexDI2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SoundIndexDI2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.TimestampedStop.html">TimestampedStop</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stop register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AnalogDataPayload.html">AnalogDataPayload</a></dt>
+      <dd><p>Represents the payload of the AnalogData register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.AdcConfiguration.html">AdcConfiguration</a></dt>
+      <dd><p>Specifies the operation mode of the analog inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.ControllerCommand.html">ControllerCommand</a></dt>
+      <dd><p>Specifies commands to send to the PIC32 micro-controller</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.DigitalInputConfiguration.html">DigitalInputConfiguration</a></dt>
+      <dd><p>Specifies the operation mode of the digital input.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Specifies the state of the digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.DigitalOutputConfiguration.html">DigitalOutputConfiguration</a></dt>
+      <dd><p>Specifies the operation mode of the digital output.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of the digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SoundCard.SoundCardEvents.html">SoundCardEvents</a></dt>
+      <dd><p>Specifies the active events in the SoundCard.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_SoundCard.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

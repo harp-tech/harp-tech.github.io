@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Parse
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Parse
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Harp_Behavior_Parse.md&amp;value=---%0Auid%3A%20Harp.Behavior.Parse%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.Behavior.Parse">
+
+
+
+  <h1 id="Harp_Behavior_Parse" data-uid="Harp.Behavior.Parse" class="text-break">
+    Class Parse
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L384"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.Behavior.html">Behavior</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.Behavior.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an operator which filters and selects specific messages
+reported by the Behavior device.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Parse : ParseBuilder, IExpressionBuilder, ICustomTypeDescriptor, INamedElement</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html">ExpressionBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.HarpCombinatorBuilder.html">HarpCombinatorBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html">RegisterCombinatorBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.ParseBuilder.html">ParseBuilder</a></div>
+      <div><span class="xref">Parse</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.IExpressionBuilder.html">IExpressionBuilder</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.icustomtypedescriptor">ICustomTypeDescriptor</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.INamedElement.html">INamedElement</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.ParseBuilder.html#Bonsai_Harp_ParseBuilder_Register">ParseBuilder.Register</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html#Bonsai_Harp_RegisterCombinatorBuilder_Build_System_Collections_Generic_IEnumerable_System_Linq_Expressions_Expression__">RegisterCombinatorBuilder.Build(IEnumerable&lt;Expression&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.RegisterCombinatorBuilder.html#Bonsai_Harp_RegisterCombinatorBuilder_ArgumentRange">RegisterCombinatorBuilder.ArgumentRange</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_ToString">ExpressionBuilder.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_Unwrap_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.Unwrap(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetWorkflowElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetWorkflowElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerMappings_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerMappings(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.FromWorkflowElement(object, ElementCategory)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ExpressionBuilder.GetElementDisplayName(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.GetElementDisplayName(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Harp_Behavior_Parse__ctor_" data-uid="Harp.Behavior.Parse.#ctor*"></a>
+
+  <h3 id="Harp_Behavior_Parse__ctor" data-uid="Harp.Behavior.Parse.#ctor">
+  Parse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L526"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Harp.Behavior.Parse.html">Parse</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Parse()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="Harp.Behavior.DigitalInputState.html">DigitalInputState</a></div>
+    <div><a class="xref" href="Harp.Behavior.OutputSet.html">OutputSet</a></div>
+    <div><a class="xref" href="Harp.Behavior.OutputClear.html">OutputClear</a></div>
+    <div><a class="xref" href="Harp.Behavior.OutputToggle.html">OutputToggle</a></div>
+    <div><a class="xref" href="Harp.Behavior.OutputState.html">OutputState</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIOSet.html">PortDIOSet</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIOClear.html">PortDIOClear</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIOToggle.html">PortDIOToggle</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIOState.html">PortDIOState</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIODirection.html">PortDIODirection</a></div>
+    <div><a class="xref" href="Harp.Behavior.PortDIOStateEvent.html">PortDIOStateEvent</a></div>
+    <div><a class="xref" href="Harp.Behavior.AnalogData.html">AnalogData</a></div>
+    <div><a class="xref" href="Harp.Behavior.OutputPulseEnable.html">OutputPulseEnable</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDOPort0.html">PulseDOPort0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDOPort1.html">PulseDOPort1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDOPort2.html">PulseDOPort2</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseSupplyPort0.html">PulseSupplyPort0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseSupplyPort1.html">PulseSupplyPort1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseSupplyPort2.html">PulseSupplyPort2</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseLed0.html">PulseLed0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseLed1.html">PulseLed1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseRgb0.html">PulseRgb0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseRgb1.html">PulseRgb1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDO0.html">PulseDO0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDO1.html">PulseDO1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDO2.html">PulseDO2</a></div>
+    <div><a class="xref" href="Harp.Behavior.PulseDO3.html">PulseDO3</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO0.html">PwmFrequencyDO0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO1.html">PwmFrequencyDO1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO2.html">PwmFrequencyDO2</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO3.html">PwmFrequencyDO3</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO0.html">PwmDutyCycleDO0</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO1.html">PwmDutyCycleDO1</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO2.html">PwmDutyCycleDO2</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO3.html">PwmDutyCycleDO3</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmStart.html">PwmStart</a></div>
+    <div><a class="xref" href="Harp.Behavior.PwmStop.html">PwmStop</a></div>
+    <div><a class="xref" href="Harp.Behavior.RgbAll.html">RgbAll</a></div>
+    <div><a class="xref" href="Harp.Behavior.Rgb0.html">Rgb0</a></div>
+    <div><a class="xref" href="Harp.Behavior.Rgb1.html">Rgb1</a></div>
+    <div><a class="xref" href="Harp.Behavior.Led0Current.html">Led0Current</a></div>
+    <div><a class="xref" href="Harp.Behavior.Led1Current.html">Led1Current</a></div>
+    <div><a class="xref" href="Harp.Behavior.Led0MaxCurrent.html">Led0MaxCurrent</a></div>
+    <div><a class="xref" href="Harp.Behavior.Led1MaxCurrent.html">Led1MaxCurrent</a></div>
+    <div><a class="xref" href="Harp.Behavior.EventEnable.html">EventEnable</a></div>
+    <div><a class="xref" href="Harp.Behavior.StartCameras.html">StartCameras</a></div>
+    <div><a class="xref" href="Harp.Behavior.StopCameras.html">StopCameras</a></div>
+    <div><a class="xref" href="Harp.Behavior.EnableServos.html">EnableServos</a></div>
+    <div><a class="xref" href="Harp.Behavior.DisableServos.html">DisableServos</a></div>
+    <div><a class="xref" href="Harp.Behavior.EnableEncoders.html">EnableEncoders</a></div>
+    <div><a class="xref" href="Harp.Behavior.EncoderMode.html">EncoderMode</a></div>
+    <div><a class="xref" href="Harp.Behavior.Camera0Frame.html">Camera0Frame</a></div>
+    <div><a class="xref" href="Harp.Behavior.Camera0Frequency.html">Camera0Frequency</a></div>
+    <div><a class="xref" href="Harp.Behavior.Camera1Frame.html">Camera1Frame</a></div>
+    <div><a class="xref" href="Harp.Behavior.Camera1Frequency.html">Camera1Frequency</a></div>
+    <div><a class="xref" href="Harp.Behavior.ServoMotor2Period.html">ServoMotor2Period</a></div>
+    <div><a class="xref" href="Harp.Behavior.ServoMotor2Pulse.html">ServoMotor2Pulse</a></div>
+    <div><a class="xref" href="Harp.Behavior.ServoMotor3Period.html">ServoMotor3Period</a></div>
+    <div><a class="xref" href="Harp.Behavior.ServoMotor3Pulse.html">ServoMotor3Pulse</a></div>
+    <div><a class="xref" href="Harp.Behavior.EncoderReset.html">EncoderReset</a></div>
+    <div><a class="xref" href="Harp.Behavior.EnableSerialTimestamp.html">EnableSerialTimestamp</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort0IR.html">MimicPort0IR</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort1IR.html">MimicPort1IR</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort2IR.html">MimicPort2IR</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort0Valve.html">MimicPort0Valve</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort1Valve.html">MimicPort1Valve</a></div>
+    <div><a class="xref" href="Harp.Behavior.MimicPort2Valve.html">MimicPort2Valve</a></div>
+    <div><a class="xref" href="Harp.Behavior.PokeInputFilter.html">PokeInputFilter</a></div>
+    </dd>
+  </dl>
+
+
+  <h2 id="seealso">See Also</h2>
+  <div class="seealso">
+      <div><a class="xref" href="Harp.Behavior.DigitalInputState.html">DigitalInputState</a></div>
+      <div><a class="xref" href="Harp.Behavior.OutputSet.html">OutputSet</a></div>
+      <div><a class="xref" href="Harp.Behavior.OutputClear.html">OutputClear</a></div>
+      <div><a class="xref" href="Harp.Behavior.OutputToggle.html">OutputToggle</a></div>
+      <div><a class="xref" href="Harp.Behavior.OutputState.html">OutputState</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIOSet.html">PortDIOSet</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIOClear.html">PortDIOClear</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIOToggle.html">PortDIOToggle</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIOState.html">PortDIOState</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIODirection.html">PortDIODirection</a></div>
+      <div><a class="xref" href="Harp.Behavior.PortDIOStateEvent.html">PortDIOStateEvent</a></div>
+      <div><a class="xref" href="Harp.Behavior.AnalogData.html">AnalogData</a></div>
+      <div><a class="xref" href="Harp.Behavior.OutputPulseEnable.html">OutputPulseEnable</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDOPort0.html">PulseDOPort0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDOPort1.html">PulseDOPort1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDOPort2.html">PulseDOPort2</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseSupplyPort0.html">PulseSupplyPort0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseSupplyPort1.html">PulseSupplyPort1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseSupplyPort2.html">PulseSupplyPort2</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseLed0.html">PulseLed0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseLed1.html">PulseLed1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseRgb0.html">PulseRgb0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseRgb1.html">PulseRgb1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDO0.html">PulseDO0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDO1.html">PulseDO1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDO2.html">PulseDO2</a></div>
+      <div><a class="xref" href="Harp.Behavior.PulseDO3.html">PulseDO3</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO0.html">PwmFrequencyDO0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO1.html">PwmFrequencyDO1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO2.html">PwmFrequencyDO2</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmFrequencyDO3.html">PwmFrequencyDO3</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO0.html">PwmDutyCycleDO0</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO1.html">PwmDutyCycleDO1</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO2.html">PwmDutyCycleDO2</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmDutyCycleDO3.html">PwmDutyCycleDO3</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmStart.html">PwmStart</a></div>
+      <div><a class="xref" href="Harp.Behavior.PwmStop.html">PwmStop</a></div>
+      <div><a class="xref" href="Harp.Behavior.RgbAll.html">RgbAll</a></div>
+      <div><a class="xref" href="Harp.Behavior.Rgb0.html">Rgb0</a></div>
+      <div><a class="xref" href="Harp.Behavior.Rgb1.html">Rgb1</a></div>
+      <div><a class="xref" href="Harp.Behavior.Led0Current.html">Led0Current</a></div>
+      <div><a class="xref" href="Harp.Behavior.Led1Current.html">Led1Current</a></div>
+      <div><a class="xref" href="Harp.Behavior.Led0MaxCurrent.html">Led0MaxCurrent</a></div>
+      <div><a class="xref" href="Harp.Behavior.Led1MaxCurrent.html">Led1MaxCurrent</a></div>
+      <div><a class="xref" href="Harp.Behavior.EventEnable.html">EventEnable</a></div>
+      <div><a class="xref" href="Harp.Behavior.StartCameras.html">StartCameras</a></div>
+      <div><a class="xref" href="Harp.Behavior.StopCameras.html">StopCameras</a></div>
+      <div><a class="xref" href="Harp.Behavior.EnableServos.html">EnableServos</a></div>
+      <div><a class="xref" href="Harp.Behavior.DisableServos.html">DisableServos</a></div>
+      <div><a class="xref" href="Harp.Behavior.EnableEncoders.html">EnableEncoders</a></div>
+      <div><a class="xref" href="Harp.Behavior.EncoderMode.html">EncoderMode</a></div>
+      <div><a class="xref" href="Harp.Behavior.Camera0Frame.html">Camera0Frame</a></div>
+      <div><a class="xref" href="Harp.Behavior.Camera0Frequency.html">Camera0Frequency</a></div>
+      <div><a class="xref" href="Harp.Behavior.Camera1Frame.html">Camera1Frame</a></div>
+      <div><a class="xref" href="Harp.Behavior.Camera1Frequency.html">Camera1Frequency</a></div>
+      <div><a class="xref" href="Harp.Behavior.ServoMotor2Period.html">ServoMotor2Period</a></div>
+      <div><a class="xref" href="Harp.Behavior.ServoMotor2Pulse.html">ServoMotor2Pulse</a></div>
+      <div><a class="xref" href="Harp.Behavior.ServoMotor3Period.html">ServoMotor3Period</a></div>
+      <div><a class="xref" href="Harp.Behavior.ServoMotor3Pulse.html">ServoMotor3Pulse</a></div>
+      <div><a class="xref" href="Harp.Behavior.EncoderReset.html">EncoderReset</a></div>
+      <div><a class="xref" href="Harp.Behavior.EnableSerialTimestamp.html">EnableSerialTimestamp</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort0IR.html">MimicPort0IR</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort1IR.html">MimicPort1IR</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort2IR.html">MimicPort2IR</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort0Valve.html">MimicPort0Valve</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort1Valve.html">MimicPort1Valve</a></div>
+      <div><a class="xref" href="Harp.Behavior.MimicPort2Valve.html">MimicPort2Valve</a></div>
+      <div><a class="xref" href="Harp.Behavior.PokeInputFilter.html">PokeInputFilter</a></div>
+  </div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L384" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

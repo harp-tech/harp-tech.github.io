@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Binary Protocol 32-bit (v0.1) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Binary Protocol 32-bit (v0.1) ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\BinaryProtocol-32bit.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<img src="assets/HarpLogo.svg" width="200">
+<h1 id="binary-protocol-32-bit-v01">Binary Protocol 32-bit (v0.1)</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Harp Protocol is a binary communication protocol created in order to facilitate and unify the interaction between different devices. It was designed with efficiency and ease of parsing in mind.</p>
+<p>The protocol is based on addresses. Each address points to a certain memory position available in the device. These positions are called registers. Each register is defined by a data type and some meaningful functionality attached to the data.</p>
+<p>The Harp Binary Protocol is commonly used for all exchanges between a Controller and a Device. The Controller can be a computer, or a server and the Device can be a data acquisition or actuator microcontroller.</p>
+<p>The available packets are:</p>
+<ul>
+<li>Command: Sent by the Controller to the Device. Command messages can be used to read or write the register contents.</li>
+<li>Reply: Sent by the Device in response to a Command.</li>
+<li>Event: Sent by the Device when an external or internal event of interest happens. An Event message will always carry the contents of the register that the event refers to.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The Harp Binary Protocol uses Little-Endian byte ordering.</p>
+</blockquote>
+<h2 id="harp-message">Harp Message</h2>
+<p>The Harp Message contains a minimal amount of information to execute a well-defined exchange of data. It follows the structure below.</p>
+<table>
+<tr>
+    <th><code>  31 &mdash; 24  </code></th>
+    <th><code>  23 &mdash; 16  </code></th>
+    <th><code>  15 &mdash;  8  </code></th>
+    <th><code>   7 &mdash;  0  </code></th>
+</tr>
+<tr>
+    <td align="center" colspan="2">RegisterAddress</td>
+    <td align="center" colspan="1">PayloadType</td>
+    <td align="center" colspan="1">MessageType</td>
+</tr>
+<tr><td align="center" colspan="4">Length</td></tr>
+<tr><td align="center" colspan="4">Port *</td></tr>
+<tr><td align="center" colspan="4">Seconds *</td></tr>
+<tr><td align="center" colspan="4">Nanoseconds *</td></tr>
+<tr><td align="center" colspan="4">Payload *</td></tr>
+<tr>
+    <td align="center" colspan="2">Counter</td>
+    <td align="center" colspan="2">Checksum</td>
+</tr>
+</table>
+<p>* Optional fields</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The field [Payload] can have more than one 32-bit word.</p>
+</blockquote>
+<h2 id="messagetype">MessageType</h2>
+<table>
+<tr>
+    <th align="center">7</th>
+    <th align="center">6</th>
+    <th align="center">5</th>
+    <th align="center">4</th>
+    <th align="center">3</th>
+    <th align="center">2</th>
+    <th align="center">1</th>
+    <th align="center">0</th>
+</tr>
+<tr>
+    <td align="center">Flag32</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">FlagError</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center" colspan="2">Type</td>
+</tr>
+</table>
+<h3 id="type-2-bits">Type (2 bits)</h3>
+<p>Specifies the type of the Harp Message.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 (Read)</td>
+<td>Read the content of the register with address [RegisterAddress]</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 (Write)</td>
+<td>Write the content to the register with address [RegisterAddress]</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 (Event)</td>
+<td>Send the content of the register with address [RegisterAddress]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flagerror-1-bit">FlagError (1 bit)</h3>
+<p>This bit is set when an error occurred while executing the command. Examples of possible errors:</p>
+<ul>
+<li>The Controller tries to read a register that doesn’t exist.</li>
+<li>The Controller tries to write data which is out of bounds for the specific register functionality.</li>
+<li>[PayloadType] doesn’t match the register [RegisterAddress] type.</li>
+</ul>
+<h3 id="flag32-1-bit">Flag32 (1 bit)</h3>
+<p>If this Flag is set, the current Harp Message is constructed according to the 32-bit Harp Binary Protocol. To comply with this document, this bit should always be equal to 1.</p>
+<h2 id="payloadtype">PayloadType</h2>
+<table>
+<tr>
+    <th align="center">7</th>
+    <th align="center">6</th>
+    <th align="center">5</th>
+    <th align="center">4</th>
+    <th align="center">3</th>
+    <th align="center">2</th>
+    <th align="center">1</th>
+    <th align="center">0</th>
+</tr>
+<tr>
+    <td align="center">IsSigned</td>
+    <td align="center">IsFloat</td>
+    <td align="center">0</td>
+    <td align="center">HasTimestamp</td>
+    <td align="center" colspan="4">Type</td>
+</tr>
+</table>
+<h3 id="type-4-bits">Type (4 bits)</h3>
+<p>Specifies the size of the word in the [Payload].</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Value</th>
+<th style="text-align: right;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">8 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">16 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">32 bits</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">64 bits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hastimestamp-1-bit">HasTimestamp (1 bit)</h3>
+<p>If this bit is set the Harp Message contains a timestamp. In this case the fields [Seconds] and [Nanoseconds] must be present in the message.</p>
+<h3 id="isfloat-1-bit">IsFloat (1 bit)</h3>
+<p>This bit indicates whether the [Payload] represents fractional values. If the bit is not set, the payload contains integers.</p>
+<h3 id="issigned-1-bit">IsSigned (1 bit)</h3>
+<p>If the bit is set, indicates that the [Payload] contains integers with signal.</p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The bits [IsFloat] and [IsSigned] must never be set simultaneously.</p>
+</blockquote>
+<h2 id="registeraddress">RegisterAddress</h2>
+<p>Contains the address of the register to which the Harp Message refers to.</p>
+<h2 id="length">Length</h2>
+<p>Contains the number of bytes that are still available and need to be read to complete the Harp message. If the total number of bytes in the Harp Message is not a multiple of four, the field [Payload] will be followed by 0-3 additional zero bytes to ensure that the total size is divisible by four.</p>
+<h2 id="port">Port</h2>
+<p>This field is optional. If the device is a Hub of Harp Devices, it indicates the origin or destination of the Harp Message. If the field is not used or it’s equal to 0xFFFFFFFF, it points to the device itself.</p>
+<h2 id="seconds">Seconds</h2>
+<p>Contains the seconds of the Harp Timestamp clock. This field is optional. In order to indicate that this field is available, the bit [HasTimestamp] in the field [PayloadType] needs to be set.</p>
+<h2 id="nanoseconds">Nanoseconds</h2>
+<p>It contains the fractional part of the Harp Timestamp clock in nanoseconds.</p>
+<p>This field is optional. In order to indicate that this field is available, the bit [HasTimestamp] in the field [PayloadType] needs to be set.</p>
+<h2 id="payload">Payload</h2>
+<p>Contains the data to be transferred.</p>
+<h2 id="checksum">Checksum</h2>
+<p>The checksum is equal to the U16 (unsigned 16-bit) sum of all the bytes in the Harp Message.</p>
+<p>The receiver of the message should calculate the checksum and compare it with the received. If they don’t match, the Harp Message should be discarded.</p>
+<h2 id="counter">Counter</h2>
+<p>Contains a S16 (signed 16-bit) counter that starts from negative one when the device boots.</p>
+<p>It should reset to negative one when the device goes into Active Mode.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\BinaryProtocol-32bit.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

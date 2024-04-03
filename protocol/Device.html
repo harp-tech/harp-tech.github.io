@@ -1,0 +1,737 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Common Registers and Operation (Device 1.2) </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Common Registers and Operation (Device 1.2) ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../articles/toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\Device.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<img src="assets/HarpLogo.svg" width="200">
+<h1 id="common-registers-and-operation-device-12">Common Registers and Operation (Device 1.2)</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This document defines the common set of standard functionality that new Harp <code>Device</code> hardware should aim to provide. The goal is to create a common ground for the development and operation of Harp devices, and to allow quick and easy integration of new devices into the existing ecosystem. While some registers and functionalities are not mandatory, it is strongly recommended that they are implemented or, at least, considered with compatibility in mind.</p>
+<h2 id="registers">Registers</h2>
+<h3 id="common-registers">Common Registers</h3>
+<p>The <code>Common Registers</code> are a set of registers that are common to all Harp Devices. These registers are used to identify the device, its version, and its operation mode. The <code>Common Registers</code> are mandatory and should be implemented in all Harp Devices. Summary description of each register can be found in [this table](ref missing).</p>
+<p>All other registers pertaining to the operation of a specific device (<code>Application Registers</code>) should always take a register number equal, or greater, than 32. Moreoever, numbering and naming of these registers will be left to the developer, as they are specific to each device.</p>
+<h3 id="operation-modes">Operation Modes</h3>
+<p>A Harp Device is expected to implement the following <code>Operation Modes</code>:</p>
+<ul>
+<li><strong><code>Standby Mode:</code></strong>  Replies to host commands. Events are disabled and must not be sent.</li>
+<li><strong><code>Active Mode:</code></strong> Replies to host commands. Events are enabled and sent to host whenever the device deems it so.</li>
+<li><em><code>Speed Mode:</code></em> Allows the implementation of a different and specific communication protocol. On this mode, the Harp Binary Protocol is no longer used. The specific protocol designed must implement the possibility to exit this mode.</li>
+</ul>
+<p>The mandatory Operation Modes are the <strong><code>Standby Mode</code></strong> and <strong><code>Active Mode</code></strong>. The <strong><code>Speed Mode</code></strong> is optional and, in many of the applications, not needed.
+It’s strongly recommended that a Harp Device acting as peripheral should continuously check if the communication with the host is active and healthy. If this doesn’t happen over the last 3 seconds, the Harp Device should go to Standby Mode and flush/destroy its TX buffer.</p>
+<h3 id="table---list-of-available-common-registers"><strong>Table - List of available Common Registers</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Name</strong></th>
+<th style="text-align: center;"><strong>Volatile</strong></th>
+<th style="text-align: center;"><strong>Read Only</strong></th>
+<th style="text-align: center;"><strong>Type</strong></th>
+<th style="text-align: center;"><strong>Add.</strong></th>
+<th style="text-align: center;"><strong>Default</strong></th>
+<th style="text-align: left;"><strong>Brief Description</strong></th>
+<th style="text-align: center;"><strong>Mandatory</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">R_WHO_AM_I</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Who am I</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_HW_VERSION_H</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Major Hardware version</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_HW_VERSION_L</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">002</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Minor Hardware version</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_ASSEMBLY_VERSION</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">003</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Version of the assembled components</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_CORE_VERSION_H</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">004</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Major core version</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_CORE_VERSION_L</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">005</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Minor core version</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_FW_VERSION_H</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">006</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Major Firmware version of the application</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_FW_VERSION_L</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">007</td>
+<td style="text-align: center;">a)</td>
+<td style="text-align: left;">Minor Firmware version of the application</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_TIMESTAMP_SECOND</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U32</td>
+<td style="text-align: center;">008</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">System timestamp: seconds</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_TIMESTAMP_MICRO</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">Yes</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">009</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">System timestamp: microseconds</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_OPERATION_CTRL</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Configuration of the operation mode</td>
+<td style="text-align: center;">c)</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_RESET_DEV</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Reset device and save non-volatile registers</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_DEVICE_NAME</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">012</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Name of the device given by the user</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_SERIAL_NUMBER</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U16</td>
+<td style="text-align: center;">013</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Unique serial number of the device</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_CLOCK_CONFIG</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">014</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Synchronization clock configuration</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+<tr>
+<td style="text-align: left;">R_TIMESTAMP_OFFSET</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">No</td>
+<td style="text-align: center;">U8</td>
+<td style="text-align: center;">015</td>
+<td style="text-align: center;">b)</td>
+<td style="text-align: left;">Adds an offset if user updates the Timestamp</td>
+<td style="text-align: center;">Optional</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">a) These values are stored during factory process and are persistent, i.e., they cannot be changed by the user.<br>b) Check register notes on the specific register explanation<br>c) Only parts of the functionality is mandatory. Check register notes on the explanation.</th>
+</tr>
+</thead>
+</table>
+<!---
+Tables can be generated here https://www.tablesgenerator.com/html_tables
+Mermaid plots can be generated here: https://mermaid.live/
+--->
+<h4 id="r_who_am_i-u16--who-am-i"><strong><code>R_WHO_AM_I</code> (U16) – Who Am I</strong></h4>
+<p>Address: <code>000</code></p>
+<p>Used to verify the identity of the device. A list of devices can be found at <a href="https://github.com/harp-tech/protocol">https://github.com/harp-tech/protocol</a>. To reserve a range or certain IDs for your project or company, please follow the instructions in this repository. If the device doesn’t have a pre-allocated ID on the IDs list, this register should be set as 0.</p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+
+gantt
+    title R_WHO_AM_I (000) [U16]
+
+    dateFormat X
+    axisFormat %
+    tickInterval 0
+
+    section Bit
+    15-8      :byte1, 0, 1
+    7-0      :byte0, after byte1  , 2
+    section Id
+    WHO_AM_I      :id1, 0, 2
+    section Default
+    0      :d1, 0, 2
+</code></pre>
+<h4 id="r_timestamp_second-u32--system-timestamp-seconds"><strong><code>R_TIMESTAMP_SECOND</code> (U32) – System timestamp (seconds)</strong></h4>
+<p>Address: <code>008</code></p>
+<p>Contains the current system timestamp in whole seconds. The default value is 0 (ZERO) and will increment one unit for each elapsed second.</p>
+<pre><code class="lang-mermaid">
+---
+displayMode: compact
+---
+
+gantt
+    title R_TIMESTAMP_SECONDS (008) [U32]
+
+    dateFormat X
+    axisFormat %
+    tickInterval 0
+
+    section Bit
+    31-24      :byte3, 0, 1
+    23-16      :byte2, after byte3  , 2
+    15-8      :byte1, after byte2  , 3
+    7-0      :byte0, after byte1  , 4
+    section Id
+    SECONDS      :id1, 0, 4
+    section Default
+    0      :d1, 0, 4
+</code></pre>
+<h4 id="r_timestamp_micro-u16--system-timestamp-microseconds"><strong><code>R_TIMESTAMP_MICRO</code> (U16) – System timestamp (microseconds)</strong></h4>
+<p>Address: <code>009</code></p>
+<p>Contains the microseconds count within each second. Each LSB corresponds to 32 microseconds. The maximum value is 31249.</p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+
+gantt
+    title R_TIMESTAMP_SECONDS (009) [U16]
+
+    dateFormat X
+    axisFormat %
+    tickInterval 0
+
+    section Bit
+    15-8      :byte1, 0, 1
+    7-0      :byte0, after byte1  , 2
+    section Id
+    USECONDS      :id1, 0, 2
+    section Default
+    -      :d1, 0, 2
+</code></pre>
+<h4 id="r_operation_ctrl-u16--operation-mode-configuration"><strong><code>R_OPERATION_CTRL</code> (U16) – Operation mode configuration</strong></h4>
+<p>Address: <code>010</code></p>
+<pre><code class="lang-mermaid">
+---
+displayMode: compact
+---
+
+gantt
+    title R_OPERATION_CTRL (010)
+    dateFormat X
+    axisFormat %
+
+    section Bit
+    7      :bit7, 0, 1
+    6      :bit6, after bit7  , 2
+    5      :bit5, after bit6  , 3
+    4      :bit4, after bit5  , 4
+    3      :bit3, after bit4  , 5
+    2      :bit2, after bit3  , 6
+    1      :bit1, after bit2  , 7
+    0      :bit0, after bit1  , 8
+    section Id
+    ALIVE_EN      :id7, 0, 1
+    OPLEDEN      :id6, after bit7  , 2
+    VISUALEN      :id5, after bit6  , 3
+    MUTE_RPL      :id4, after bit5  , 4
+    DUMP      :id3, after bit4  , 5
+    -      :id2, after bit3  , 6
+    OP_MODE      :id1, after id2  , 8
+    section Default
+    1      :d7, 0, 1
+    1      :d6, after bit7  , 2
+    1      :d5, after bit6  , 3
+    0      :d4, after bit5  , 4
+    0      :d3, after bit4  , 5
+    -      :d2, after bit3  , 6
+    0      :d1, after d2  , 8
+    section Implementation
+    Optional      :i7, 0, 1
+    Optional      :i6, after bit7  , 2
+    Optional      :i5, after bit6  , 3
+    Optional      :i4, after bit5  , 4
+    Optional      :i3, after bit4  , 5
+    -      :i2, after bit3  , 6
+    a)      :i1, after i2  , 8
+
+
+</code></pre>
+<p>a) Standby Mode and Active Mode are mandatory. Speed Mode is optional.</p>
+<ul>
+<li><strong>OP_MODE [Bits 1:0]:</strong> These bits define the operation mode of the device. Note that, if Speed Mode is selected, the device will no longer reply to the HARP commands, only to its specific Speed Mode commands.</li>
+</ul>
+<p><strong>Table - Available Operation modes</strong></p>
+<table>
+<thead>
+<tr>
+<th>OP_MODE[1:0]</th>
+<th>Configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Standby Mode. The device has all the <code>Events</code> turned off.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Active Mode. The device turns ON the <code>Events</code> detection. Only the enabled Events will be operating.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Reserved.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Speed Mode. The device enters Speed Mode.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>DUMP [Bit 3]:</strong> When written to 1, the device adds the content of all registers to the streaming buffer as <code>Read</code> messages. This bit is always read as 0.</li>
+<li><strong>MUTE_RPL [Bit 4]:</strong> If set to 1, the <code>Replies</code> to all the <code>Commands</code> are muted, i.e., they will not be sent by the device.</li>
+<li><strong>VISUALEN [Bit 5]:</strong> If set to 1, visual indications, typically LEDs, available on the device will operate. If equals to 0, all the visual indications should turn off.</li>
+<li><strong>OPLEDEN [Bit 6]:</strong> If set to 1, the LED present on the device will indicate the Operation Mode selected.</li>
+</ul>
+<p><strong>Table - Visual LED toggle feedback</strong></p>
+<table>
+<thead>
+<tr>
+<th>Period (s)</th>
+<th>Operation Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Standby Mode.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Active Mode.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Speed Mode.</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>A critical error occurred. Only a hardware reset or a new power up can remove the device from this Mode.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ALIVE_EN [Bit 7]:</strong> If set to 1, the device sends an <code>Event</code> Message with the <code>R_TIMESTAMP_SECONDS</code> content each second (i.e. Heartbeat). This allows the host to check that the device is alive. Although this is an optional feature, it’s strongly recommended to be implemented.</li>
+</ul>
+<h4 id="r_reset_dev-u8--reset-device-and-save-non-volatile-registers"><strong><code>R_RESET_DEV</code> (U8) – Reset device and save non-volatile registers</strong></h4>
+<p>Address: <code>011</code></p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+gantt
+    title R_RESET_DEV (011)
+    dateFormat X
+    axisFormat %
+
+    section Bit
+    7      :bit7, 0, 1
+    6      :bit6, after bit7  , 2
+    5      :bit5, after bit6  , 3
+    4      :bit4, after bit5  , 4
+    3      :bit3, after bit4  , 5
+    2      :bit2, after bit3  , 6
+    1      :bit1, after bit2  , 7
+    0      :bit0, after bit1  , 8
+    section Id
+    BOOT_EE      :id7, 0, 1
+    BOOT_DEF      :id6, after bit7  , 2
+    -      :id5, after bit6  , 3
+    -      :id4, after bit5  , 4
+    NAME_TO_DEFAULT      :id3, after bit4  , 5
+    SAVE      :id2, after bit3  , 6
+    RST_EE      :id1, after id2  , 7
+    RST_DEF      :id0, after id1  , 8
+
+    section Default
+    -      :d7, 0, 1
+    -      :d6, after bit7  , 2
+    -      :d5, after bit6  , 3
+    -      :d4, after bit5  , 4
+    0      :d3, after bit4  , 5
+    0      :d2, after bit3  , 6
+    0      :d1, after bit2  , 7
+    0      :d0, after bit1  , 8
+</code></pre>
+<ul>
+<li><p><strong>RST_DEF [Bit 0]:</strong> If set to 1, the device resets and, reboots with all the registers, both <code>Common</code> and <code>Application</code>, with the default values. EEPROM will be erased, and the default values will be restored as the permanent boot option. This bit is always read as 0.</p>
+</li>
+<li><p><strong>RST_EE [Bit 1]:</strong> If set to 1, the device resets and reboots with all the registers, both <code>Common</code> and <code>Applicatin</code> registers, with the values saved on the non-volatile memory, usually an EEPROM. The EEPROM values will remain the permanent boot option. This bit is always read as 0.</p>
+</li>
+<li><p><strong>SAVE [Bit 3]:</strong> If set to 1, the device will save all the non-volatile registers (both <code>Common</code> and <code>Application</code>) to the internal non-volatile memory, and reboot. The non-volatile memory should be the permanent boot option.</p>
+</li>
+<li><p><strong>NAME_TO_DEFAULT [Bit 4]:</strong> If set to 1, the device will reboot with the default name. This bit is always read as 0.</p>
+</li>
+<li><p><strong>BOOT_DEF [Bit 6]:</strong> A read-only state bit that indicates whether the device booted with the default register values or not.</p>
+</li>
+<li><p><strong>BOOT_EE [Bit 7]:</strong> A read-only state bit that indicates whether the device booted with the register values saved on the EEPROM or not.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>To avoid unexpected behaviors, only one bit at a time should be written to register <code>R_RESET_DEV</code>.</p>
+</blockquote>
+<h4 id="r_device_name-25-bytes--devices-name"><strong><code>R_DEVICE_NAME</code> (25 Bytes) – Device's name</strong></h4>
+<p>Address: <code>012</code></p>
+<p>An array of 25 bytes that should contain the device name. The last, and unused, bytes must be equal to 0.
+This register is non-volatile. The device will reset if this register is written to.</p>
+<h4 id="r_serial_number-u16--devices-serial-number"><strong><code>R_SERIAL_NUMBER</code> (U16) – Device's serial number</strong></h4>
+<p>Address: <code>013</code></p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+
+gantt
+    title R_SERIAL_NUMBER (013) [U16]
+
+    dateFormat X
+    axisFormat %
+    tickInterval 0
+
+    section Bit
+    15-8      :byte1, 0, 1
+    7-0      :byte0, after byte1  , 2
+    section Id
+    SERIAL_NUMBER      :id1, 0, 2
+    section Default
+    -      :d1, 0, 2
+</code></pre>
+<p>This number should be unique for each unit of the same Device ID.
+To write to this register a two-step write command is needed. First, write the value <code>0xFFFF</code>, and then the desired serial number (as a <code>U16</code>). The device will reset after the second write command is received.</p>
+<h4 id="r_clock_config-u8--synchronization-clock-configuration"><strong><code>R_CLOCK_CONFIG</code> (U8) – Synchronization clock configuration</strong></h4>
+<p>Address: <code>014</code></p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+gantt
+    title R_CLOCK_CONFIG (014)
+    dateFormat X
+    axisFormat %
+
+    section Bit
+    7      :bit7, 0, 1
+    6      :bit6, after bit7  , 2
+    5      :bit5, after bit6  , 3
+    4      :bit4, after bit5  , 4
+    3      :bit3, after bit4  , 5
+    2      :bit2, after bit3  , 6
+    1      :bit1, after bit2  , 7
+    0      :bit0, after bit1  , 8
+    section Id
+    CLK_LOCK      :id7, 0, 1
+    CLK_UNLOCK      :id6, after bit7  , 2
+    -      :id5, after bit6  , 3
+    GEN_ABLE      :id4, after bit5  , 4
+    REP_ABLE      :id3, after bit4  , 5
+    -      :id2, after bit3  , 6
+    CLK_GEN      :id1, after id2  , 7
+    CLK_REP      :id0, after id1  , 8
+
+    section Default
+    0      :d7, 0, 1
+    1      :d6, after bit7  , 2
+    -      :d5, after bit6  , 3
+    -      :d4, after bit5  , 4
+    -      :d3, after bit4  , 5
+    -      :d2, after bit3  , 6
+    -      :d1, after bit2  , 7
+    -      :d0, after bit1  , 8
+</code></pre>
+<ul>
+<li><p><strong>CLK_REP [Bit 0]:</strong> If set to 1, the device will repeat the Harp Synchronization Clock to the Clock Output connector, if available. It will act has a daisy-chain, by repeating the Clock Input to the Clock Output. Setting this bit, also unlocks the Harp Synchronization Clock.</p>
+</li>
+<li><p><strong>CLK_GEN [Bit 1]:</strong> If set to 1, the device will generate Harp Synchronization Clock to the Clock Output connector, if available. The Clock Input will be ignored. The bit is read as 1 if the device is generating the Harp Synchronization Clock.</p>
+</li>
+<li><p><strong>REP_ABLE [Bit 3]:</strong> This is a read-only bit signaling if the device is able (1) to repeat the Harp Synchronization Clock timestamp.</p>
+</li>
+<li><p><strong>GEN_ABLE [Bit 4]:</strong> This is a read-only bit signaling if the device is able (1) to generate the Harp Synchronization Clock timestamp.</p>
+</li>
+<li><p><strong>CLK_UNLOCK [Bit 6]:</strong> If set to 1, the device will unlock the timestamp register counter (register <code>R_TIMESTAMP_SECOND</code>) and it will now accept new timestamp values. The bit is read as 1 if the timestamp register is unlocked.</p>
+</li>
+<li><p><strong>CLK_LOCK [Bit 7]:</strong> If set to 1, the device will lock the current timestamp register counter (register <code>R_TIMESTAMP_SECOND</code>) and it will reject any new timestamp values. The bit is read as 1 if the timestamp register is locked.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The device always wakes up in the <code>unlock</code> state.</p>
+</blockquote>
+<h4 id="r_timestamp_offset-u8--clock-calibration-offset"><strong><code>R_TIMESTAMP_OFFSET</code> (U8) – Clock calibration offset</strong></h4>
+<p>Address: <code>015</code></p>
+<pre><code class="lang-mermaid">---
+displayMode: compact
+---
+
+gantt
+    title R_TIMESTAMP_OFFSET (000) [U8]
+
+    dateFormat X
+    axisFormat %
+    tickInterval 0
+
+    section Bit
+    7-0      :byte1, 0, 1
+    section Id
+    UOFFSET      :id1, 0, 1
+    section Default
+    0      :d1, 0, 1
+</code></pre>
+<p>When the value of this register is above 0 (zero), the device’s timestamp will be offset by this amount. The register is sensitive to 500 microsecond increments. This register is non-volatile.</p>
+<h2 id="release-notes">Release notes:</h2>
+<ul>
+<li><p>v0.2</p>
+<ul>
+<li>First draft released.</li>
+</ul>
+</li>
+<li><p>v1.0</p>
+<ul>
+<li>R_RESET_DEV and R_DEVICE_NAME are now optional.</li>
+<li>Changed Normal Mode to Standby Mode.</li>
+<li>Added bit ALIVE_EN to register R_OPERATION_CTRL. This is an important feature.</li>
+<li>Major release.</li>
+</ul>
+</li>
+<li><p>v1.1</p>
+<ul>
+<li>Added bit MUTE_RPL to register R_OPERATION_CTRL.</li>
+</ul>
+</li>
+<li><p>v1.2</p>
+<ul>
+<li>Corrected some wrong names.</li>
+</ul>
+</li>
+<li><p>v1.3</p>
+<ul>
+<li>Added the bit NAME_TO_DEFAULT.</li>
+</ul>
+</li>
+<li><p>v1.4</p>
+<ul>
+<li>Added the register R_SERIAL_NUMBER.</li>
+</ul>
+</li>
+<li><p>v1.5</p>
+<ul>
+<li>Added the register R_CLOCK_CONFIG.</li>
+</ul>
+</li>
+<li><p>v1.6</p>
+<ul>
+<li>Changed device naming to Controller and Peripheral.</li>
+</ul>
+</li>
+<li><p>v1.7</p>
+<ul>
+<li>Raised version to 1.2 since all the foreseen features are included at this point.</li>
+<li>Added the register R_TIMESTAMP_OFFSET.</li>
+</ul>
+</li>
+<li><p>v1.8</p>
+<ul>
+<li>Replaced HARP_VERSION with CORE_VERSION.</li>
+</ul>
+</li>
+<li><p>v1.9.0</p>
+<ul>
+<li>Refactor documentation to markdown format.</li>
+<li>Minor typo corrections.</li>
+<li>Improve clarity of some sections.</li>
+<li>Adopt semantic versioning.</li>
+</ul>
+</li>
+<li><p>v1.9.1</p>
+<ul>
+<li>Remove table of contents to avoid redundancy with doc generators.</li>
+<li>Minor improvements to clarity of introduction.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/protocol\Device.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

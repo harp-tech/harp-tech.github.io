@@ -1,0 +1,2358 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.OutputExpander
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.OutputExpander
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_OutputExpander.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.OutputExpander">
+
+  <h1 id="Harp_OutputExpander" data-uid="Harp.OutputExpander" class="text-break">Namespace Harp.OutputExpander
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-output-expander">Harp Output Expander</h2>
+<p>Harp board to expand the outputs of the current harp ecosystem.</p>
+<p><img src="../src/device.outputexpander/Assets/pcb.jpg" alt="HarpExpander"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>TBA</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>TBA</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp Output Expander can be done through <a href="https://bonsai-rx.org/">Bonsai</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">OutputExpander</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1108</td></tr>
+    <tr><td>firmwareVersion</td><td>2.2</td></tr>
+    <tr><td>hardwareTargets</td><td>1.2</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.AuxInState.html">AuxInState</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Reports the state of the auxiliary inputs.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AuxiliaryInputs.html">AuxiliaryInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.AuxInRisingEdge.html">AuxInRisingEdge</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables rising edge detection on the auxiliary inputs.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AuxiliaryInputs.html">AuxiliaryInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.AuxInFallingEdge.html">AuxInFallingEdge</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables falling edge detection on the auxiliary input port.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AuxiliaryInputs.html">AuxiliaryInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OutputSet.html">OutputSet</a></td>
+<td>35</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OutputClear.html">OutputClear</a></td>
+<td>36</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OutputToggle.html">OutputToggle</a></td>
+<td>37</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OutputState.html">OutputState</a></td>
+<td>38</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of all digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimEnable.html">PwmAndStimEnable</a></td>
+<td>39</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Enables PWM and stimulation on the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimMappings.html">PwmAndStimMappings</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimDisable.html">PwmAndStimDisable</a></td>
+<td>40</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Disables PWM and stimulation on the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimMappings.html">PwmAndStimMappings</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimState.html">PwmAndStimState</a></td>
+<td>41</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Writes the mapping between PWM/stimulation and the specified digital output lines in a single command.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmAndStimMappings.html">PwmAndStimMappings</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0Frequency.html">Pwm0Frequency</a></td>
+<td>42</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the frequency of PWM0 (Hz).</td>
+<td>[0.5:1000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0DutyCycle.html">Pwm0DutyCycle</a></td>
+<td>43</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duty cycle of PWM0 (%).</td>
+<td>50 [1:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0PulseCount.html">Pwm0PulseCount</a></td>
+<td>44</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses to generate for PWM0.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0ActualFrequency.html">Pwm0ActualFrequency</a></td>
+<td>45</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual frequency to be generated from PWM0 (Hz).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0ActualDutyCycle.html">Pwm0ActualDutyCycle</a></td>
+<td>46</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual duty cycle to be generated from PWM0 (%).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0AcquisitionMode.html">Pwm0AcquisitionMode</a></td>
+<td>47</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the acquisition mode of PWM0.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AcquisitionMode.html">AcquisitionMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0TriggerSource.html">Pwm0TriggerSource</a></td>
+<td>48</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the trigger source of PWM0.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.TriggerSource.html">TriggerSource</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm0EventConfig.html">Pwm0EventConfig</a></td>
+<td>49</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the generation of events for PWM0.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1Frequency.html">Pwm1Frequency</a></td>
+<td>50</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the frequency of PWM1 (Hz).</td>
+<td>[0.5:1000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1DutyCycle.html">Pwm1DutyCycle</a></td>
+<td>51</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duty cycle of PWM1 (%).</td>
+<td>50 [1:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1PulseCount.html">Pwm1PulseCount</a></td>
+<td>52</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses to generate for PWM1.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1ActualFrequency.html">Pwm1ActualFrequency</a></td>
+<td>53</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual frequency to be generated from PWM1 (Hz).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1ActualDutyCycle.html">Pwm1ActualDutyCycle</a></td>
+<td>54</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual duty cycle to be generated from PWM1 (%).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1AcquisitionMode.html">Pwm1AcquisitionMode</a></td>
+<td>55</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the acquisition mode of PWM1.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AcquisitionMode.html">AcquisitionMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1TriggerSource.html">Pwm1TriggerSource</a></td>
+<td>56</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the trigger source of PWM1.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.TriggerSource.html">TriggerSource</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm1EventConfig.html">Pwm1EventConfig</a></td>
+<td>57</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the generation of events for PWM1.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2Frequency.html">Pwm2Frequency</a></td>
+<td>58</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the frequency of PWM2 (Hz).</td>
+<td>[0.5:1000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2DutyCycle.html">Pwm2DutyCycle</a></td>
+<td>59</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duty cycle of PWM2 (%).</td>
+<td>50 [1:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2PulseCount.html">Pwm2PulseCount</a></td>
+<td>60</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses to generate for PWM2.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2ActualFrequency.html">Pwm2ActualFrequency</a></td>
+<td>61</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual frequency to be generated from PWM2 (Hz).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2ActualDutyCycle.html">Pwm2ActualDutyCycle</a></td>
+<td>62</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Reports the actual duty cycle to be generated from PWM2 (%).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2AcquisitionMode.html">Pwm2AcquisitionMode</a></td>
+<td>63</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the acquisition mode of PWM2.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AcquisitionMode.html">AcquisitionMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2TriggerSource.html">Pwm2TriggerSource</a></td>
+<td>64</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the trigger source of PWM2.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.TriggerSource.html">TriggerSource</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Pwm2EventConfig.html">Pwm2EventConfig</a></td>
+<td>65</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the generation of events for PWM2.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmStart.html">PwmStart</a></td>
+<td>66</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmChannels.html">PwmChannels</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmStop.html">PwmStop</a></td>
+<td>67</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Stops the a PWM on the specified channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmChannels.html">PwmChannels</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.PwmRiseEvent.html">PwmRiseEvent</a></td>
+<td>68</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Enables the generation of an event on every rising edge of the PWM line.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.PwmChannels.html">PwmChannels</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Stim0PulseOnTime.html">Stim0PulseOnTime</a></td>
+<td>69</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (us) each pulse is on for.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Stim0PulseOffTime.html">Stim0PulseOffTime</a></td>
+<td>70</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (us) each pulse is off for.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Stim0PulseCount.html">Stim0PulseCount</a></td>
+<td>71</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses to be generate when triggered.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Stim0AcquisitionMode.html">Stim0AcquisitionMode</a></td>
+<td>72</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the acquisition mode of Stim0.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.AcquisitionMode.html">AcquisitionMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Stim0TriggerSource.html">Stim0TriggerSource</a></td>
+<td>73</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the trigger source of Stim0.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.TriggerSource.html">TriggerSource</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.StimStart.html">StimStart</a></td>
+<td>74</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Starts a target Stim protocol.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.StimChannels.html">StimChannels</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.StimStop.html">StimStop</a></td>
+<td>75</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Stops the target Stim protocol.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.StimChannels.html">StimChannels</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OutputPulse.html">OutputPulse</a></td>
+<td>76</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Enables pulse generation on the specified digital output line.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out0PulseWidth.html">Out0PulseWidth</a></td>
+<td>77</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out1PulseWidth.html">Out1PulseWidth</a></td>
+<td>78</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out2PulseWidth.html">Out2PulseWidth</a></td>
+<td>79</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out3PulseWidth.html">Out3PulseWidth</a></td>
+<td>80</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out4PulseWidth.html">Out4PulseWidth</a></td>
+<td>81</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out5PulseWidth.html">Out5PulseWidth</a></td>
+<td>82</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out6PulseWidth.html">Out6PulseWidth</a></td>
+<td>83</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out7PulseWidth.html">Out7PulseWidth</a></td>
+<td>84</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out8PulseWidth.html">Out8PulseWidth</a></td>
+<td>85</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Out9PulseWidth.html">Out9PulseWidth</a></td>
+<td>86</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duration (ms) of the pulse to be generated on the specified digital output line.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.ExpansionBoard.html">ExpansionBoard</a></td>
+<td>87</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Selects the board to be interfaced with via the expansion port.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.ExpansionBoardType.html">ExpansionBoardType</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.MagneticEncoder.html">MagneticEncoder</a></td>
+<td>90</td>
+<td>U16</td>
+<td>2</td>
+<td>Event</td>
+<td>Generated event with the latest read from the magnetic encoder.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.MagneticEncoderPayload.html">MagneticEncoderPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRate.html">MagneticEncoderSampleRate</a></td>
+<td>91</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the sample rate of the magnetic encoder.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRateMode.html">MagneticEncoderSampleRateMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.ServoPeriod.html">ServoPeriod</a></td>
+<td>94</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the period of the servo pulses (us).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Servo0PulseWidth.html">Servo0PulseWidth</a></td>
+<td>95</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the pulse width of the Servo0 pulses (us).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Servo1PulseWidth.html">Servo1PulseWidth</a></td>
+<td>96</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the pulse width of the Servo1 pulses (us).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.Servo2PulseWidth.html">Servo2PulseWidth</a></td>
+<td>97</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the pulse width of the Servo2 pulses (us).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.OutputExpander.OpticalFlow.html">OpticalFlow</a></td>
+<td>100</td>
+<td>S16</td>
+<td>3</td>
+<td>Event</td>
+<td>Generated event with the latest read from the optical flow sensor.</td>
+<td></td>
+<td><a class="xref" href="Harp.OutputExpander.OpticalFlowPayload.html">OpticalFlowPayload</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with OutputExpander devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AuxInFallingEdge.html">AuxInFallingEdge</a></dt>
+      <dd><p>Represents a register that enables falling edge detection on the auxiliary input port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AuxInRisingEdge.html">AuxInRisingEdge</a></dt>
+      <dd><p>Represents a register that enables rising edge detection on the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AuxInState.html">AuxInState</a></dt>
+      <dd><p>Represents a register that reports the state of the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.ConfigureMagneticEncoder.html">ConfigureMagneticEncoder</a></dt>
+      <dd><p>Represents an operator that generates a sequence of Harp messages to
+configure the magnetic encoder expansion.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.ConfigurePwm.html">ConfigurePwm</a></dt>
+      <dd><p>Represents an operator that generates a sequence of Harp messages to
+configure the PWM feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateAuxInFallingEdgePayload.html">CreateAuxInFallingEdgePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables falling edge detection on the auxiliary input port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateAuxInRisingEdgePayload.html">CreateAuxInRisingEdgePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables rising edge detection on the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateAuxInStatePayload.html">CreateAuxInStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the state of the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateExpansionBoardPayload.html">CreateExpansionBoardPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that selects the board to be interfaced with via the expansion port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateMagneticEncoderPayload.html">CreateMagneticEncoderPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that generated event with the latest read from the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateMagneticEncoderSampleRatePayload.html">CreateMagneticEncoderSampleRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the sample rate of the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+OutputExpander device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOpticalFlowPayload.html">CreateOpticalFlowPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that generated event with the latest read from the optical flow sensor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut0PulseWidthPayload.html">CreateOut0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut1PulseWidthPayload.html">CreateOut1PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut2PulseWidthPayload.html">CreateOut2PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut3PulseWidthPayload.html">CreateOut3PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut4PulseWidthPayload.html">CreateOut4PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut5PulseWidthPayload.html">CreateOut5PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut6PulseWidthPayload.html">CreateOut6PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut7PulseWidthPayload.html">CreateOut7PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut8PulseWidthPayload.html">CreateOut8PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOut9PulseWidthPayload.html">CreateOut9PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOutputClearPayload.html">CreateOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOutputPulsePayload.html">CreateOutputPulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables pulse generation on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOutputSetPayload.html">CreateOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOutputStatePayload.html">CreateOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateOutputTogglePayload.html">CreateOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0AcquisitionModePayload.html">CreatePwm0AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the acquisition mode of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0ActualDutyCyclePayload.html">CreatePwm0ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual duty cycle to be generated from PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0ActualFrequencyPayload.html">CreatePwm0ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual frequency to be generated from PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0DutyCyclePayload.html">CreatePwm0DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duty cycle of PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0EventConfigPayload.html">CreatePwm0EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the generation of events for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0FrequencyPayload.html">CreatePwm0FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the frequency of PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0PulseCountPayload.html">CreatePwm0PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses to generate for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm0TriggerSourcePayload.html">CreatePwm0TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the trigger source of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1AcquisitionModePayload.html">CreatePwm1AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the acquisition mode of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1ActualDutyCyclePayload.html">CreatePwm1ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual duty cycle to be generated from PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1ActualFrequencyPayload.html">CreatePwm1ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual frequency to be generated from PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1DutyCyclePayload.html">CreatePwm1DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duty cycle of PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1EventConfigPayload.html">CreatePwm1EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the generation of events for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1FrequencyPayload.html">CreatePwm1FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the frequency of PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1PulseCountPayload.html">CreatePwm1PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses to generate for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm1TriggerSourcePayload.html">CreatePwm1TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the trigger source of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2AcquisitionModePayload.html">CreatePwm2AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the acquisition mode of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2ActualDutyCyclePayload.html">CreatePwm2ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual duty cycle to be generated from PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2ActualFrequencyPayload.html">CreatePwm2ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reports the actual frequency to be generated from PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2DutyCyclePayload.html">CreatePwm2DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duty cycle of PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2EventConfigPayload.html">CreatePwm2EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the generation of events for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2FrequencyPayload.html">CreatePwm2FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the frequency of PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2PulseCountPayload.html">CreatePwm2PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses to generate for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwm2TriggerSourcePayload.html">CreatePwm2TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the trigger source of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmAndStimDisablePayload.html">CreatePwmAndStimDisablePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that disables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmAndStimEnablePayload.html">CreatePwmAndStimEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmAndStimStatePayload.html">CreatePwmAndStimStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmRiseEventPayload.html">CreatePwmRiseEventPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the generation of an event on every rising edge of the PWM line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmStartPayload.html">CreatePwmStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreatePwmStopPayload.html">CreatePwmStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stops the a PWM on the specified channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateServo0PulseWidthPayload.html">CreateServo0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the pulse width of the Servo0 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateServo1PulseWidthPayload.html">CreateServo1PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the pulse width of the Servo1 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateServo2PulseWidthPayload.html">CreateServo2PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the pulse width of the Servo2 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateServoPeriodPayload.html">CreateServoPeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the period of the servo pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStim0AcquisitionModePayload.html">CreateStim0AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the acquisition mode of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStim0PulseCountPayload.html">CreateStim0PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses to be generate when triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStim0PulseOffTimePayload.html">CreateStim0PulseOffTimePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (us) each pulse is off for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStim0PulseOnTimePayload.html">CreateStim0PulseOnTimePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duration (us) each pulse is on for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStim0TriggerSourcePayload.html">CreateStim0TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the trigger source of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStimStartPayload.html">CreateStimStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts a target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateStimStopPayload.html">CreateStimStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stops the target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedAuxInFallingEdgePayload.html">CreateTimestampedAuxInFallingEdgePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables falling edge detection on the auxiliary input port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedAuxInRisingEdgePayload.html">CreateTimestampedAuxInRisingEdgePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables rising edge detection on the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedAuxInStatePayload.html">CreateTimestampedAuxInStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the state of the auxiliary inputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedExpansionBoardPayload.html">CreateTimestampedExpansionBoardPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that selects the board to be interfaced with via the expansion port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedMagneticEncoderPayload.html">CreateTimestampedMagneticEncoderPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that generated event with the latest read from the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedMagneticEncoderSampleRatePayload.html">CreateTimestampedMagneticEncoderSampleRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the sample rate of the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOpticalFlowPayload.html">CreateTimestampedOpticalFlowPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that generated event with the latest read from the optical flow sensor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut0PulseWidthPayload.html">CreateTimestampedOut0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut1PulseWidthPayload.html">CreateTimestampedOut1PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut2PulseWidthPayload.html">CreateTimestampedOut2PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut3PulseWidthPayload.html">CreateTimestampedOut3PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut4PulseWidthPayload.html">CreateTimestampedOut4PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut5PulseWidthPayload.html">CreateTimestampedOut5PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut6PulseWidthPayload.html">CreateTimestampedOut6PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut7PulseWidthPayload.html">CreateTimestampedOut7PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut8PulseWidthPayload.html">CreateTimestampedOut8PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOut9PulseWidthPayload.html">CreateTimestampedOut9PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOutputClearPayload.html">CreateTimestampedOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOutputPulsePayload.html">CreateTimestampedOutputPulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables pulse generation on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOutputSetPayload.html">CreateTimestampedOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOutputStatePayload.html">CreateTimestampedOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedOutputTogglePayload.html">CreateTimestampedOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0AcquisitionModePayload.html">CreateTimestampedPwm0AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the acquisition mode of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0ActualDutyCyclePayload.html">CreateTimestampedPwm0ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual duty cycle to be generated from PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0ActualFrequencyPayload.html">CreateTimestampedPwm0ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual frequency to be generated from PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0DutyCyclePayload.html">CreateTimestampedPwm0DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duty cycle of PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0EventConfigPayload.html">CreateTimestampedPwm0EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the generation of events for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0FrequencyPayload.html">CreateTimestampedPwm0FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the frequency of PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0PulseCountPayload.html">CreateTimestampedPwm0PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses to generate for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm0TriggerSourcePayload.html">CreateTimestampedPwm0TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the trigger source of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1AcquisitionModePayload.html">CreateTimestampedPwm1AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the acquisition mode of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1ActualDutyCyclePayload.html">CreateTimestampedPwm1ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual duty cycle to be generated from PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1ActualFrequencyPayload.html">CreateTimestampedPwm1ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual frequency to be generated from PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1DutyCyclePayload.html">CreateTimestampedPwm1DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duty cycle of PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1EventConfigPayload.html">CreateTimestampedPwm1EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the generation of events for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1FrequencyPayload.html">CreateTimestampedPwm1FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the frequency of PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1PulseCountPayload.html">CreateTimestampedPwm1PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses to generate for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm1TriggerSourcePayload.html">CreateTimestampedPwm1TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the trigger source of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2AcquisitionModePayload.html">CreateTimestampedPwm2AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the acquisition mode of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2ActualDutyCyclePayload.html">CreateTimestampedPwm2ActualDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual duty cycle to be generated from PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2ActualFrequencyPayload.html">CreateTimestampedPwm2ActualFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reports the actual frequency to be generated from PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2DutyCyclePayload.html">CreateTimestampedPwm2DutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duty cycle of PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2EventConfigPayload.html">CreateTimestampedPwm2EventConfigPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the generation of events for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2FrequencyPayload.html">CreateTimestampedPwm2FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the frequency of PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2PulseCountPayload.html">CreateTimestampedPwm2PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses to generate for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwm2TriggerSourcePayload.html">CreateTimestampedPwm2TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the trigger source of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmAndStimDisablePayload.html">CreateTimestampedPwmAndStimDisablePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that disables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmAndStimEnablePayload.html">CreateTimestampedPwmAndStimEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmAndStimStatePayload.html">CreateTimestampedPwmAndStimStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmRiseEventPayload.html">CreateTimestampedPwmRiseEventPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the generation of an event on every rising edge of the PWM line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmStartPayload.html">CreateTimestampedPwmStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedPwmStopPayload.html">CreateTimestampedPwmStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stops the a PWM on the specified channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedServo0PulseWidthPayload.html">CreateTimestampedServo0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the pulse width of the Servo0 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedServo1PulseWidthPayload.html">CreateTimestampedServo1PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the pulse width of the Servo1 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedServo2PulseWidthPayload.html">CreateTimestampedServo2PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the pulse width of the Servo2 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedServoPeriodPayload.html">CreateTimestampedServoPeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the period of the servo pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStim0AcquisitionModePayload.html">CreateTimestampedStim0AcquisitionModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the acquisition mode of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStim0PulseCountPayload.html">CreateTimestampedStim0PulseCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses to be generate when triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStim0PulseOffTimePayload.html">CreateTimestampedStim0PulseOffTimePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (us) each pulse is off for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStim0PulseOnTimePayload.html">CreateTimestampedStim0PulseOnTimePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duration (us) each pulse is on for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStim0TriggerSourcePayload.html">CreateTimestampedStim0TriggerSourcePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the trigger source of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStimStartPayload.html">CreateTimestampedStimStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts a target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.CreateTimestampedStimStopPayload.html">CreateTimestampedStimStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stops the target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.ExpansionBoard.html">ExpansionBoard</a></dt>
+      <dd><p>Represents a register that selects the board to be interfaced with via the expansion port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.OutputExpander.html">Harp.OutputExpander</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+OutputExpander register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.OutputExpander.html">Harp.OutputExpander</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.MagneticEncoder.html">MagneticEncoder</a></dt>
+      <dd><p>Represents a register that generated event with the latest read from the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRate.html">MagneticEncoderSampleRate</a></dt>
+      <dd><p>Represents a register that sets the sample rate of the magnetic encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OpticalFlow.html">OpticalFlow</a></dt>
+      <dd><p>Represents a register that generated event with the latest read from the optical flow sensor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out0PulseWidth.html">Out0PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out1PulseWidth.html">Out1PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out2PulseWidth.html">Out2PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out3PulseWidth.html">Out3PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out4PulseWidth.html">Out4PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out5PulseWidth.html">Out5PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out6PulseWidth.html">Out6PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out7PulseWidth.html">Out7PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out8PulseWidth.html">Out8PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Out9PulseWidth.html">Out9PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the duration (ms) of the pulse to be generated on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OutputClear.html">OutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OutputPulse.html">OutputPulse</a></dt>
+      <dd><p>Represents a register that enables pulse generation on the specified digital output line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OutputSet.html">OutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OutputState.html">OutputState</a></dt>
+      <dd><p>Represents a register that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OutputToggle.html">OutputToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the OutputExpander device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0AcquisitionMode.html">Pwm0AcquisitionMode</a></dt>
+      <dd><p>Represents a register that sets the acquisition mode of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0ActualDutyCycle.html">Pwm0ActualDutyCycle</a></dt>
+      <dd><p>Represents a register that reports the actual duty cycle to be generated from PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0ActualFrequency.html">Pwm0ActualFrequency</a></dt>
+      <dd><p>Represents a register that reports the actual frequency to be generated from PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0DutyCycle.html">Pwm0DutyCycle</a></dt>
+      <dd><p>Represents a register that sets the duty cycle of PWM0 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0EventConfig.html">Pwm0EventConfig</a></dt>
+      <dd><p>Represents a register that enables the generation of events for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0Frequency.html">Pwm0Frequency</a></dt>
+      <dd><p>Represents a register that sets the frequency of PWM0 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0PulseCount.html">Pwm0PulseCount</a></dt>
+      <dd><p>Represents a register that sets the number of pulses to generate for PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm0TriggerSource.html">Pwm0TriggerSource</a></dt>
+      <dd><p>Represents a register that sets the trigger source of PWM0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1AcquisitionMode.html">Pwm1AcquisitionMode</a></dt>
+      <dd><p>Represents a register that sets the acquisition mode of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1ActualDutyCycle.html">Pwm1ActualDutyCycle</a></dt>
+      <dd><p>Represents a register that reports the actual duty cycle to be generated from PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1ActualFrequency.html">Pwm1ActualFrequency</a></dt>
+      <dd><p>Represents a register that reports the actual frequency to be generated from PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1DutyCycle.html">Pwm1DutyCycle</a></dt>
+      <dd><p>Represents a register that sets the duty cycle of PWM1 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1EventConfig.html">Pwm1EventConfig</a></dt>
+      <dd><p>Represents a register that enables the generation of events for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1Frequency.html">Pwm1Frequency</a></dt>
+      <dd><p>Represents a register that sets the frequency of PWM1 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1PulseCount.html">Pwm1PulseCount</a></dt>
+      <dd><p>Represents a register that sets the number of pulses to generate for PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm1TriggerSource.html">Pwm1TriggerSource</a></dt>
+      <dd><p>Represents a register that sets the trigger source of PWM1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2AcquisitionMode.html">Pwm2AcquisitionMode</a></dt>
+      <dd><p>Represents a register that sets the acquisition mode of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2ActualDutyCycle.html">Pwm2ActualDutyCycle</a></dt>
+      <dd><p>Represents a register that reports the actual duty cycle to be generated from PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2ActualFrequency.html">Pwm2ActualFrequency</a></dt>
+      <dd><p>Represents a register that reports the actual frequency to be generated from PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2DutyCycle.html">Pwm2DutyCycle</a></dt>
+      <dd><p>Represents a register that sets the duty cycle of PWM2 (%).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2EventConfig.html">Pwm2EventConfig</a></dt>
+      <dd><p>Represents a register that enables the generation of events for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2Frequency.html">Pwm2Frequency</a></dt>
+      <dd><p>Represents a register that sets the frequency of PWM2 (Hz).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2PulseCount.html">Pwm2PulseCount</a></dt>
+      <dd><p>Represents a register that sets the number of pulses to generate for PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Pwm2TriggerSource.html">Pwm2TriggerSource</a></dt>
+      <dd><p>Represents a register that sets the trigger source of PWM2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmAndStimDisable.html">PwmAndStimDisable</a></dt>
+      <dd><p>Represents a register that disables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmAndStimEnable.html">PwmAndStimEnable</a></dt>
+      <dd><p>Represents a register that enables PWM and stimulation on the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmAndStimState.html">PwmAndStimState</a></dt>
+      <dd><p>Represents a register that writes the mapping between PWM/stimulation and the specified digital output lines in a single command.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmRiseEvent.html">PwmRiseEvent</a></dt>
+      <dd><p>Represents a register that enables the generation of an event on every rising edge of the PWM line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmStart.html">PwmStart</a></dt>
+      <dd><p>Represents a register that starts the a PWM on the specified channels. An event will be generated if the start was triggered by an auxiliary input.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmStop.html">PwmStop</a></dt>
+      <dd><p>Represents a register that stops the a PWM on the specified channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Servo0PulseWidth.html">Servo0PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the pulse width of the Servo0 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Servo1PulseWidth.html">Servo1PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the pulse width of the Servo1 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Servo2PulseWidth.html">Servo2PulseWidth</a></dt>
+      <dd><p>Represents a register that sets the pulse width of the Servo2 pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.ServoPeriod.html">ServoPeriod</a></dt>
+      <dd><p>Represents a register that sets the period of the servo pulses (us).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Stim0AcquisitionMode.html">Stim0AcquisitionMode</a></dt>
+      <dd><p>Represents a register that sets the acquisition mode of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Stim0PulseCount.html">Stim0PulseCount</a></dt>
+      <dd><p>Represents a register that sets the number of pulses to be generate when triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Stim0PulseOffTime.html">Stim0PulseOffTime</a></dt>
+      <dd><p>Represents a register that sets the duration (us) each pulse is off for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Stim0PulseOnTime.html">Stim0PulseOnTime</a></dt>
+      <dd><p>Represents a register that sets the duration (us) each pulse is on for.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.Stim0TriggerSource.html">Stim0TriggerSource</a></dt>
+      <dd><p>Represents a register that sets the trigger source of Stim0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.StimStart.html">StimStart</a></dt>
+      <dd><p>Represents a register that starts a target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.StimStop.html">StimStop</a></dt>
+      <dd><p>Represents a register that stops the target Stim protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedAuxInFallingEdge.html">TimestampedAuxInFallingEdge</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AuxInFallingEdge register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedAuxInRisingEdge.html">TimestampedAuxInRisingEdge</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AuxInRisingEdge register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedAuxInState.html">TimestampedAuxInState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AuxInState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedExpansionBoard.html">TimestampedExpansionBoard</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ExpansionBoard register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedMagneticEncoder.html">TimestampedMagneticEncoder</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MagneticEncoder register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedMagneticEncoderSampleRate.html">TimestampedMagneticEncoderSampleRate</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MagneticEncoderSampleRate register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOpticalFlow.html">TimestampedOpticalFlow</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OpticalFlow register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut0PulseWidth.html">TimestampedOut0PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out0PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut1PulseWidth.html">TimestampedOut1PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out1PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut2PulseWidth.html">TimestampedOut2PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out2PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut3PulseWidth.html">TimestampedOut3PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out3PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut4PulseWidth.html">TimestampedOut4PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out4PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut5PulseWidth.html">TimestampedOut5PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out5PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut6PulseWidth.html">TimestampedOut6PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out6PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut7PulseWidth.html">TimestampedOut7PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out7PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut8PulseWidth.html">TimestampedOut8PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out8PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOut9PulseWidth.html">TimestampedOut9PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Out9PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOutputClear.html">TimestampedOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOutputPulse.html">TimestampedOutputPulse</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputPulse register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOutputSet.html">TimestampedOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOutputState.html">TimestampedOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedOutputToggle.html">TimestampedOutputToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0AcquisitionMode.html">TimestampedPwm0AcquisitionMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0AcquisitionMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0ActualDutyCycle.html">TimestampedPwm0ActualDutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0ActualDutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0ActualFrequency.html">TimestampedPwm0ActualFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0ActualFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0DutyCycle.html">TimestampedPwm0DutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0DutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0EventConfig.html">TimestampedPwm0EventConfig</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0EventConfig register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0Frequency.html">TimestampedPwm0Frequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0Frequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0PulseCount.html">TimestampedPwm0PulseCount</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0PulseCount register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm0TriggerSource.html">TimestampedPwm0TriggerSource</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm0TriggerSource register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1AcquisitionMode.html">TimestampedPwm1AcquisitionMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1AcquisitionMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1ActualDutyCycle.html">TimestampedPwm1ActualDutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1ActualDutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1ActualFrequency.html">TimestampedPwm1ActualFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1ActualFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1DutyCycle.html">TimestampedPwm1DutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1DutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1EventConfig.html">TimestampedPwm1EventConfig</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1EventConfig register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1Frequency.html">TimestampedPwm1Frequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1Frequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1PulseCount.html">TimestampedPwm1PulseCount</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1PulseCount register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm1TriggerSource.html">TimestampedPwm1TriggerSource</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm1TriggerSource register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2AcquisitionMode.html">TimestampedPwm2AcquisitionMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2AcquisitionMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2ActualDutyCycle.html">TimestampedPwm2ActualDutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2ActualDutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2ActualFrequency.html">TimestampedPwm2ActualFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2ActualFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2DutyCycle.html">TimestampedPwm2DutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2DutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2EventConfig.html">TimestampedPwm2EventConfig</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2EventConfig register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2Frequency.html">TimestampedPwm2Frequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2Frequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2PulseCount.html">TimestampedPwm2PulseCount</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2PulseCount register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwm2TriggerSource.html">TimestampedPwm2TriggerSource</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Pwm2TriggerSource register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmAndStimDisable.html">TimestampedPwmAndStimDisable</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmAndStimDisable register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmAndStimEnable.html">TimestampedPwmAndStimEnable</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmAndStimEnable register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmAndStimState.html">TimestampedPwmAndStimState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmAndStimState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmRiseEvent.html">TimestampedPwmRiseEvent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmRiseEvent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmStart.html">TimestampedPwmStart</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmStart register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedPwmStop.html">TimestampedPwmStop</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmStop register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedServo0PulseWidth.html">TimestampedServo0PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Servo0PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedServo1PulseWidth.html">TimestampedServo1PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Servo1PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedServo2PulseWidth.html">TimestampedServo2PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Servo2PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedServoPeriod.html">TimestampedServoPeriod</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ServoPeriod register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStim0AcquisitionMode.html">TimestampedStim0AcquisitionMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stim0AcquisitionMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStim0PulseCount.html">TimestampedStim0PulseCount</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stim0PulseCount register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStim0PulseOffTime.html">TimestampedStim0PulseOffTime</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stim0PulseOffTime register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStim0PulseOnTime.html">TimestampedStim0PulseOnTime</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stim0PulseOnTime register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStim0TriggerSource.html">TimestampedStim0TriggerSource</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Stim0TriggerSource register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStimStart.html">TimestampedStimStart</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StimStart register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TimestampedStimStop.html">TimestampedStimStop</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StimStop register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.MagneticEncoderPayload.html">MagneticEncoderPayload</a></dt>
+      <dd><p>Represents the payload of the MagneticEncoder register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.OpticalFlowPayload.html">OpticalFlowPayload</a></dt>
+      <dd><p>Represents the payload of the OpticalFlow register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AcquisitionMode.html">AcquisitionMode</a></dt>
+      <dd><p>Available configurations for a PWM line.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.AuxiliaryInputs.html">AuxiliaryInputs</a></dt>
+      <dd><p>Specifies the state of auxiliary input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the available digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.ExpansionBoardType.html">ExpansionBoardType</a></dt>
+      <dd><p>Specifies the available expansion boards implemented.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.MagneticEncoderSampleRateMode.html">MagneticEncoderSampleRateMode</a></dt>
+      <dd><p>Specifies the sample rate of the encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmAndStimMappings.html">PwmAndStimMappings</a></dt>
+      <dd><p>Specifies the mapping PWM and Stimulation to digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.PwmChannels.html">PwmChannels</a></dt>
+      <dd><p>Specifies the available PWM protocols.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.StimChannels.html">StimChannels</a></dt>
+      <dd><p>Specifies the available Stim protocols.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.OutputExpander.TriggerSource.html">TriggerSource</a></dt>
+      <dd><p>Available trigger sources.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_OutputExpander.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

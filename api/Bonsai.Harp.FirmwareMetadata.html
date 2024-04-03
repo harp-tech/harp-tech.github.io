@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class FirmwareMetadata
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class FirmwareMetadata
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Bonsai_Harp_FirmwareMetadata.md&amp;value=---%0Auid%3A%20Bonsai.Harp.FirmwareMetadata%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.Harp.FirmwareMetadata">
+
+
+
+  <h1 id="Bonsai_Harp_FirmwareMetadata" data-uid="Bonsai.Harp.FirmwareMetadata" class="text-break">
+    Class FirmwareMetadata
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bonsai.html">Bonsai</a>.<a class="xref" href="Bonsai.Harp.html">Harp</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bonsai.Harp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents information about the device, firmware version and hardware version numbers
+contained in a particular device or hex file.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class FirmwareMetadata : IEquatable&lt;FirmwareMetadata&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">FirmwareMetadata</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata__ctor_" data-uid="Bonsai.Harp.FirmwareMetadata.#ctor*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata__ctor_System_String_Bonsai_Harp_HarpVersion_Bonsai_Harp_HarpVersion_Bonsai_Harp_HarpVersion_System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="Bonsai.Harp.FirmwareMetadata.#ctor(System.String,Bonsai.Harp.HarpVersion,Bonsai.Harp.HarpVersion,Bonsai.Harp.HarpVersion,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+  FirmwareMetadata(string, HarpVersion, HarpVersion, HarpVersion, int?, int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> class with the
+specified device name, the firmware version and compatible hardware versions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FirmwareMetadata(string deviceName, HarpVersion firmwareVersion, HarpVersion coreVersion, HarpVersion hardwareVersion, int? assemblyVersion = null, int? prereleaseVersion = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The unique identifier of the device type on which the firmware should be installed.</p>
+</dd>
+    <dt><code>firmwareVersion</code> <a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd><p>The version of the firmware contained in the device or hex file.</p>
+</dd>
+    <dt><code>coreVersion</code> <a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd><p>The version of the Harp core implemented by the firmware.</p>
+</dd>
+    <dt><code>hardwareVersion</code> <a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd><p>The hardware version of the device, or range of hardware versions supported by the firmware.</p>
+</dd>
+    <dt><code>assemblyVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The board assembly version of the device, or range of assembly versions supported by the firmware.</p>
+</dd>
+    <dt><code>prereleaseVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The optional prerelease number, for preview versions of the firmware.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_AssemblyVersion_" data-uid="Bonsai.Harp.FirmwareMetadata.AssemblyVersion*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_AssemblyVersion" data-uid="Bonsai.Harp.FirmwareMetadata.AssemblyVersion">
+  AssemblyVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the board assembly version of the device, or range of assembly versions supported by the firmware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? AssemblyVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_CoreVersion_" data-uid="Bonsai.Harp.FirmwareMetadata.CoreVersion*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_CoreVersion" data-uid="Bonsai.Harp.FirmwareMetadata.CoreVersion">
+  CoreVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the version of the Harp core implemented by the firmware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HarpVersion CoreVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_DeviceName_" data-uid="Bonsai.Harp.FirmwareMetadata.DeviceName*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_DeviceName" data-uid="Bonsai.Harp.FirmwareMetadata.DeviceName">
+  DeviceName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the unique identifier of the device type on which the firmware should be installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DeviceName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_FirmwareVersion_" data-uid="Bonsai.Harp.FirmwareMetadata.FirmwareVersion*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_FirmwareVersion" data-uid="Bonsai.Harp.FirmwareMetadata.FirmwareVersion">
+  FirmwareVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the version of the firmware contained in the device or hex file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HarpVersion FirmwareVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_HardwareVersion_" data-uid="Bonsai.Harp.FirmwareMetadata.HardwareVersion*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_HardwareVersion" data-uid="Bonsai.Harp.FirmwareMetadata.HardwareVersion">
+  HardwareVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the hardware version of the device, or range of hardware versions supported by the firmware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HarpVersion HardwareVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_PrereleaseVersion_" data-uid="Bonsai.Harp.FirmwareMetadata.PrereleaseVersion*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_PrereleaseVersion" data-uid="Bonsai.Harp.FirmwareMetadata.PrereleaseVersion">
+  PrereleaseVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the optional prerelease number, for preview versions of the firmware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? PrereleaseVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_Equals_" data-uid="Bonsai.Harp.FirmwareMetadata.Equals*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_Equals_Bonsai_Harp_FirmwareMetadata_" data-uid="Bonsai.Harp.FirmwareMetadata.Equals(Bonsai.Harp.FirmwareMetadata)">
+  Equals(FirmwareMetadata)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified metadata object is equal to the current metadata.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(FirmwareMetadata other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The metadata object to compare with the current metadata.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the specified metadata object is equal to the current metadata;
+otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_Equals_" data-uid="Bonsai.Harp.FirmwareMetadata.Equals*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_Equals_System_Object_" data-uid="Bonsai.Harp.FirmwareMetadata.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current metadata.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current metadata.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the specified object is equal to the current metadata;
+otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_GetHashCode_" data-uid="Bonsai.Harp.FirmwareMetadata.GetHashCode*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_GetHashCode" data-uid="Bonsai.Harp.FirmwareMetadata.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Computes the hash code for the current metadata object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The hash code for the current metadata object, extracted from a combination
+of hashes for the device name and various version numbers.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_Parse_" data-uid="Bonsai.Harp.FirmwareMetadata.Parse*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_Parse_System_String_" data-uid="Bonsai.Harp.FirmwareMetadata.Parse(System.String)">
+  Parse(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string representation of the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> to its
+equivalent value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FirmwareMetadata Parse(string input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representing the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The equivalent <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> object for the specified string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_Supports_" data-uid="Bonsai.Harp.FirmwareMetadata.Supports*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_Supports_System_String_Bonsai_Harp_HarpVersion_System_Int32_" data-uid="Bonsai.Harp.FirmwareMetadata.Supports(System.String,Bonsai.Harp.HarpVersion,System.Int32)">
+  Supports(string, HarpVersion, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether the firmware supports the specified hardware version
+and board assembly number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Supports(string deviceName, HarpVersion hardwareVersion, int assemblyVersion = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deviceName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The identifier of the device to check for compatibility.</p>
+</dd>
+    <dt><code>hardwareVersion</code> <a class="xref" href="Bonsai.Harp.HarpVersion.html">HarpVersion</a></dt>
+    <dd><p>The hardware version to check for compatibility.</p>
+</dd>
+    <dt><code>assemblyVersion</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The optional board assembly version to check for compatibility.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the firmware supports the specified <code class="paramref">hardwareVersion</code> and
+<code class="paramref">assemblyVersion</code>; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_ToString_" data-uid="Bonsai.Harp.FirmwareMetadata.ToString*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_ToString" data-uid="Bonsai.Harp.FirmwareMetadata.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> object to its equivalent string representation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation of the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_TryParse_" data-uid="Bonsai.Harp.FirmwareMetadata.TryParse*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_TryParse_System_String_Bonsai_Harp_FirmwareMetadata__" data-uid="Bonsai.Harp.FirmwareMetadata.TryParse(System.String,Bonsai.Harp.FirmwareMetadata@)">
+  TryParse(string, out FirmwareMetadata)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a string representation of the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> to its
+equivalent value. A return value indicates whether the conversion succeeded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(string input, out FirmwareMetadata metadata)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representing the <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a>.</p>
+</dd>
+    <dt><code>metadata</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>When this method returns, contains the equivalent <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a> object
+for the specified string representation if the conversion was successful;
+otherwise, contains <b>null</b>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the conversion was successful; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_op_Equality_" data-uid="Bonsai.Harp.FirmwareMetadata.op_Equality*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_op_Equality_Bonsai_Harp_FirmwareMetadata_Bonsai_Harp_FirmwareMetadata_" data-uid="Bonsai.Harp.FirmwareMetadata.op_Equality(Bonsai.Harp.FirmwareMetadata,Bonsai.Harp.FirmwareMetadata)">
+  operator ==(FirmwareMetadata, FirmwareMetadata)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the values on both sides of the equality operator
+are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(FirmwareMetadata lhs, FirmwareMetadata rhs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lhs</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The value on the left-hand side of the operator.</p>
+</dd>
+    <dt><code>rhs</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The value on the right-hand side of the operator.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the value on the left-hand side of the operator is equal
+to the value on the right-hand side; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_Harp_FirmwareMetadata_op_Inequality_" data-uid="Bonsai.Harp.FirmwareMetadata.op_Inequality*"></a>
+
+  <h3 id="Bonsai_Harp_FirmwareMetadata_op_Inequality_Bonsai_Harp_FirmwareMetadata_Bonsai_Harp_FirmwareMetadata_" data-uid="Bonsai.Harp.FirmwareMetadata.op_Inequality(Bonsai.Harp.FirmwareMetadata,Bonsai.Harp.FirmwareMetadata)">
+  operator !=(FirmwareMetadata, FirmwareMetadata)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the values on both sides of the inequality operator
+are not equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(FirmwareMetadata lhs, FirmwareMetadata rhs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>lhs</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The value on the left-hand side of the operator.</p>
+</dd>
+    <dt><code>rhs</code> <a class="xref" href="Bonsai.Harp.FirmwareMetadata.html">FirmwareMetadata</a></dt>
+    <dd><p>The value on the right-hand side of the operator.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if the value on the left-hand side of the operator is not equal
+to the value on the right-hand side; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\harp\Bonsai.Harp\FirmwareMetadata.cs/#L11" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

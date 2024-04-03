@@ -1,0 +1,2543 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.Behavior
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.Behavior
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_Behavior.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.Behavior">
+
+  <h1 id="Harp_Behavior" data-uid="Harp.Behavior" class="text-break">Namespace Harp.Behavior
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-behavior">Harp Behavior</h2>
+<p>This is a multi-purpose device tailored to behavioral experiments. It allows control of pokes, RGB LEDs, LEDs, cameras, servo motors and a quadrature counter.</p>
+<p><img src="../src/device.behavior/Assets/pcb.png" alt="HarpBehavior"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Enable pulse and configure duration for each output</li>
+<li>Support for PWM configuration (frequency up to 10KHz and duty cycle)</li>
+<li>LED current (up to 100mA) and maximum nominal current configuration</li>
+<li>Up to 2 cameras controlling (DO0 and DO1)</li>
+<li>Up to 2 servo motors (DO2 and DO3)</li>
+<li>Up to 1 quadrature counter (Port2) (Note: Port0 and Port1 can also act as quadrature counters but this is a request feature)</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1x clock sync input (CLKIN) [stereo jack]</li>
+<li>1x USB (for computer) [USB type B]</li>
+<li>1x 12V supply [barrel connector jack]</li>
+<li>3x poke connectors (LED+12V valve) (Poke0, Poke1, Poke2) [RJ45]</li>
+<li>2x LEDs outputs (5V) (LED0, LED1) [screw terminal]</li>
+<li>2x RGB LEDs outputs (5V) (RGB0, RGB1) [flick lock 3x male pins]</li>
+<li>4x general purpose digital outputs with PWM (5V) (DO0-DO3) [screw terminal]</li>
+<li>1x ADC (5V) [screw terminal]</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp Behavior can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<p>In order to use this GUI, there are some software that needs to be installed:</p>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/UsbDriver-2.12.26.zip">drivers</a>.</p>
+<p>2 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Runtime-1.0.zip">runtime</a>.</p>
+<p>3 - Reboot the computer.</p>
+<p>4 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp%20Behavior%20v2.0.0.zip">GUI</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">Behavior</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1216</td></tr>
+    <tr><td>firmwareVersion</td><td>3.2</td></tr>
+    <tr><td>hardwareTargets</td><td>1.1</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.Behavior.DigitalInputState.html">DigitalInputState</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Reflects the state of DI digital lines of each Port</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.OutputSet.html">OutputSet</a></td>
+<td>34</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.OutputClear.html">OutputClear</a></td>
+<td>35</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.OutputToggle.html">OutputToggle</a></td>
+<td>36</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.OutputState.html">OutputState</a></td>
+<td>37</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of all digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIOSet.html">PortDIOSet</a></td>
+<td>38</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified port DIO lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIOClear.html">PortDIOClear</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified port DIO lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIOToggle.html">PortDIOToggle</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified port DIO lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIOState.html">PortDIOState</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of all port DIO lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIODirection.html">PortDIODirection</a></td>
+<td>42</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies which of the port DIO lines are outputs</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PortDIOStateEvent.html">PortDIOStateEvent</a></td>
+<td>43</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Specifies the state of the port DIO lines on a line change</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.AnalogData.html">AnalogData</a></td>
+<td>44</td>
+<td>S16</td>
+<td>3</td>
+<td>Event</td>
+<td>Voltage at the ADC input and encoder value on Port 2</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.AnalogDataPayload.html">AnalogDataPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.OutputPulseEnable.html">OutputPulseEnable</a></td>
+<td>45</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Enables the pulse function for the specified output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDOPort0.html">PulseDOPort0</a></td>
+<td>46</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDOPort1.html">PulseDOPort1</a></td>
+<td>47</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDOPort2.html">PulseDOPort2</a></td>
+<td>48</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseSupplyPort0.html">PulseSupplyPort0</a></td>
+<td>49</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseSupplyPort1.html">PulseSupplyPort1</a></td>
+<td>50</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseSupplyPort2.html">PulseSupplyPort2</a></td>
+<td>51</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseLed0.html">PulseLed0</a></td>
+<td>52</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseLed1.html">PulseLed1</a></td>
+<td>53</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseRgb0.html">PulseRgb0</a></td>
+<td>54</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseRgb1.html">PulseRgb1</a></td>
+<td>55</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDO0.html">PulseDO0</a></td>
+<td>56</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDO1.html">PulseDO1</a></td>
+<td>57</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDO2.html">PulseDO2</a></td>
+<td>58</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PulseDO3.html">PulseDO3</a></td>
+<td>59</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duration of the output pulse in milliseconds.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmFrequencyDO0.html">PwmFrequencyDO0</a></td>
+<td>60</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the frequency of the PWM at DO0.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmFrequencyDO1.html">PwmFrequencyDO1</a></td>
+<td>61</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the frequency of the PWM at DO1.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmFrequencyDO2.html">PwmFrequencyDO2</a></td>
+<td>62</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the frequency of the PWM at DO2.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmFrequencyDO3.html">PwmFrequencyDO3</a></td>
+<td>63</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the frequency of the PWM at DO3.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmDutyCycleDO0.html">PwmDutyCycleDO0</a></td>
+<td>64</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duty cycle of the PWM at DO0.</td>
+<td>[1:99]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmDutyCycleDO1.html">PwmDutyCycleDO1</a></td>
+<td>65</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duty cycle of the PWM at DO1.</td>
+<td>[1:99]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmDutyCycleDO2.html">PwmDutyCycleDO2</a></td>
+<td>66</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duty cycle of the PWM at DO2.</td>
+<td>[1:99]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmDutyCycleDO3.html">PwmDutyCycleDO3</a></td>
+<td>67</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the duty cycle of the PWM at DO3.</td>
+<td>[1:99]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmStart.html">PwmStart</a></td>
+<td>68</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Starts the PWM on the selected output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PwmOutputs.html">PwmOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PwmStop.html">PwmStop</a></td>
+<td>69</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Stops the PWM on the selected output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.PwmOutputs.html">PwmOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.RgbAll.html">RgbAll</a></td>
+<td>70</td>
+<td>U8</td>
+<td>6</td>
+<td>Write</td>
+<td>Specifies the state of all RGB LED channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.RgbAllPayload.html">RgbAllPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Rgb0.html">Rgb0</a></td>
+<td>71</td>
+<td>U8</td>
+<td>3</td>
+<td>Write</td>
+<td>Specifies the state of the RGB0 LED channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.RgbPayload.html">RgbPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Rgb1.html">Rgb1</a></td>
+<td>72</td>
+<td>U8</td>
+<td>3</td>
+<td>Write</td>
+<td>Specifies the state of the RGB1 LED channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.RgbPayload.html">RgbPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Led0Current.html">Led0Current</a></td>
+<td>73</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the configuration of current to drive LED 0.</td>
+<td>[2:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Led1Current.html">Led1Current</a></td>
+<td>74</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the configuration of current to drive LED 1.</td>
+<td>[2:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Led0MaxCurrent.html">Led0MaxCurrent</a></td>
+<td>75</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the configuration of current to drive LED 0.</td>
+<td>[5:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Led1MaxCurrent.html">Led1MaxCurrent</a></td>
+<td>76</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the configuration of current to drive LED 1.</td>
+<td>[5:100]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EventEnable.html">EventEnable</a></td>
+<td>77</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.Events.html">Events</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.StartCameras.html">StartCameras</a></td>
+<td>78</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the camera outputs to enable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.CameraOutputs.html">CameraOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.StopCameras.html">StopCameras</a></td>
+<td>79</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the camera outputs to disable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.CameraOutputs.html">CameraOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EnableServos.html">EnableServos</a></td>
+<td>80</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the servo outputs to enable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.ServoOutputs.html">ServoOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.DisableServos.html">DisableServos</a></td>
+<td>81</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the servo outputs to disable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.ServoOutputs.html">ServoOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EnableEncoders.html">EnableEncoders</a></td>
+<td>82</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the port quadrature counters to enable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.EncoderInputs.html">EncoderInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EncoderMode.html">EncoderMode</a></td>
+<td>83</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode of the quadrature encoders.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.EncoderModeConfig.html">EncoderModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Camera0Frame.html">Camera0Frame</a></td>
+<td>92</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Specifies that a frame was acquired on camera 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.FrameAcquired.html">FrameAcquired</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Camera0Frequency.html">Camera0Frequency</a></td>
+<td>93</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the trigger frequency for camera 0.</td>
+<td>[1:600]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Camera1Frame.html">Camera1Frame</a></td>
+<td>94</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Specifies that a frame was acquired on camera 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.FrameAcquired.html">FrameAcquired</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.Camera1Frequency.html">Camera1Frequency</a></td>
+<td>95</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the trigger frequency for camera 1.</td>
+<td>[1:600]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.ServoMotor2Period.html">ServoMotor2Period</a></td>
+<td>100</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the period of the servo motor in DO2, in microseconds.</td>
+<td>[2:65534]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.ServoMotor2Pulse.html">ServoMotor2Pulse</a></td>
+<td>101</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the pulse of the servo motor in DO2, in microseconds.</td>
+<td>[6:65530]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.ServoMotor3Period.html">ServoMotor3Period</a></td>
+<td>102</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the period of the servo motor in DO3, in microseconds.</td>
+<td>[2:65534]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.ServoMotor3Pulse.html">ServoMotor3Pulse</a></td>
+<td>103</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the pulse of the servo motor in DO3, in microseconds.</td>
+<td>[6:65530]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EncoderReset.html">EncoderReset</a></td>
+<td>108</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Reset the counter of the specified encoders to zero.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.EncoderInputs.html">EncoderInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.EnableSerialTimestamp.html">EnableSerialTimestamp</a></td>
+<td>110</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the timestamp for serial TX.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort0IR.html">MimicPort0IR</a></td>
+<td>111</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 0 IR state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort1IR.html">MimicPort1IR</a></td>
+<td>112</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 1 IR state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort2IR.html">MimicPort2IR</a></td>
+<td>113</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 2 IR state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort0Valve.html">MimicPort0Valve</a></td>
+<td>117</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 0 valve state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort1Valve.html">MimicPort1Valve</a></td>
+<td>118</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 1 valve state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.MimicPort2Valve.html">MimicPort2Valve</a></td>
+<td>119</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the digital output to mimic the Port 2 valve state.</td>
+<td></td>
+<td><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Behavior.PokeInputFilter.html">PokeInputFilter</a></td>
+<td>122</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the low pass filter time value for poke inputs, in ms.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.AnalogData.html">AnalogData</a></dt>
+      <dd><p>Represents a register that voltage at the ADC input and encoder value on Port 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with Behavior devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Camera0Frame.html">Camera0Frame</a></dt>
+      <dd><p>Represents a register that specifies that a frame was acquired on camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Camera0Frequency.html">Camera0Frequency</a></dt>
+      <dd><p>Represents a register that specifies the trigger frequency for camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Camera1Frame.html">Camera1Frame</a></dt>
+      <dd><p>Represents a register that specifies that a frame was acquired on camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Camera1Frequency.html">Camera1Frequency</a></dt>
+      <dd><p>Represents a register that specifies the trigger frequency for camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateAnalogDataPayload.html">CreateAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that voltage at the ADC input and encoder value on Port 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateCamera0FramePayload.html">CreateCamera0FramePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies that a frame was acquired on camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateCamera0FrequencyPayload.html">CreateCamera0FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the trigger frequency for camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateCamera1FramePayload.html">CreateCamera1FramePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies that a frame was acquired on camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateCamera1FrequencyPayload.html">CreateCamera1FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the trigger frequency for camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reflects the state of DI digital lines of each Port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateDisableServosPayload.html">CreateDisableServosPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the servo outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEnableEncodersPayload.html">CreateEnableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEnableSerialTimestampPayload.html">CreateEnableSerialTimestampPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the timestamp for serial TX.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEnableServosPayload.html">CreateEnableServosPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the servo outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEncoderModePayload.html">CreateEncoderModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode of the quadrature encoders.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEncoderResetPayload.html">CreateEncoderResetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reset the counter of the specified encoders to zero.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateEventEnablePayload.html">CreateEventEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateLed0CurrentPayload.html">CreateLed0CurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateLed0MaxCurrentPayload.html">CreateLed0MaxCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateLed1CurrentPayload.html">CreateLed1CurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateLed1MaxCurrentPayload.html">CreateLed1MaxCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+Behavior device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort0IRPayload.html">CreateMimicPort0IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 0 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort0ValvePayload.html">CreateMimicPort0ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 0 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort1IRPayload.html">CreateMimicPort1IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 1 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort1ValvePayload.html">CreateMimicPort1ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 1 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort2IRPayload.html">CreateMimicPort2IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 2 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateMimicPort2ValvePayload.html">CreateMimicPort2ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the digital output to mimic the Port 2 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateOutputClearPayload.html">CreateOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateOutputPulseEnablePayload.html">CreateOutputPulseEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the pulse function for the specified output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateOutputSetPayload.html">CreateOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateOutputStatePayload.html">CreateOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateOutputTogglePayload.html">CreateOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePokeInputFilterPayload.html">CreatePokeInputFilterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the low pass filter time value for poke inputs, in ms.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIOClearPayload.html">CreatePortDIOClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIODirectionPayload.html">CreatePortDIODirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies which of the port DIO lines are outputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIOSetPayload.html">CreatePortDIOSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIOStateEventPayload.html">CreatePortDIOStateEventPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the state of the port DIO lines on a line change.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIOStatePayload.html">CreatePortDIOStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePortDIOTogglePayload.html">CreatePortDIOTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDO0Payload.html">CreatePulseDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDO1Payload.html">CreatePulseDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDO2Payload.html">CreatePulseDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDO3Payload.html">CreatePulseDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDOPort0Payload.html">CreatePulseDOPort0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDOPort1Payload.html">CreatePulseDOPort1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseDOPort2Payload.html">CreatePulseDOPort2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseLed0Payload.html">CreatePulseLed0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseLed1Payload.html">CreatePulseLed1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseRgb0Payload.html">CreatePulseRgb0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseRgb1Payload.html">CreatePulseRgb1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort0Payload.html">CreatePulseSupplyPort0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort1Payload.html">CreatePulseSupplyPort1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort2Payload.html">CreatePulseSupplyPort2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO0Payload.html">CreatePwmDutyCycleDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duty cycle of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO1Payload.html">CreatePwmDutyCycleDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duty cycle of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO2Payload.html">CreatePwmDutyCycleDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duty cycle of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO3Payload.html">CreatePwmDutyCycleDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the duty cycle of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO0Payload.html">CreatePwmFrequencyDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the frequency of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO1Payload.html">CreatePwmFrequencyDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the frequency of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO2Payload.html">CreatePwmFrequencyDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the frequency of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO3Payload.html">CreatePwmFrequencyDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the frequency of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmStartPayload.html">CreatePwmStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreatePwmStopPayload.html">CreatePwmStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stops the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateRgb0Payload.html">CreateRgb0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the state of the RGB0 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateRgb1Payload.html">CreateRgb1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the state of the RGB1 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateRgbAllPayload.html">CreateRgbAllPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the state of all RGB LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateServoMotor2PeriodPayload.html">CreateServoMotor2PeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the period of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateServoMotor2PulsePayload.html">CreateServoMotor2PulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the pulse of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateServoMotor3PeriodPayload.html">CreateServoMotor3PeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the period of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateServoMotor3PulsePayload.html">CreateServoMotor3PulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the pulse of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateStartCamerasPayload.html">CreateStartCamerasPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the camera outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateStopCamerasPayload.html">CreateStopCamerasPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the camera outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedAnalogDataPayload.html">CreateTimestampedAnalogDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that voltage at the ADC input and encoder value on Port 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedCamera0FramePayload.html">CreateTimestampedCamera0FramePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies that a frame was acquired on camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedCamera0FrequencyPayload.html">CreateTimestampedCamera0FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the trigger frequency for camera 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedCamera1FramePayload.html">CreateTimestampedCamera1FramePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies that a frame was acquired on camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedCamera1FrequencyPayload.html">CreateTimestampedCamera1FrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the trigger frequency for camera 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reflects the state of DI digital lines of each Port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedDisableServosPayload.html">CreateTimestampedDisableServosPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the servo outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEnableEncodersPayload.html">CreateTimestampedEnableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEnableSerialTimestampPayload.html">CreateTimestampedEnableSerialTimestampPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the timestamp for serial TX.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEnableServosPayload.html">CreateTimestampedEnableServosPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the servo outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEncoderModePayload.html">CreateTimestampedEncoderModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode of the quadrature encoders.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEncoderResetPayload.html">CreateTimestampedEncoderResetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reset the counter of the specified encoders to zero.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedEventEnablePayload.html">CreateTimestampedEventEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedLed0CurrentPayload.html">CreateTimestampedLed0CurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedLed0MaxCurrentPayload.html">CreateTimestampedLed0MaxCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedLed1CurrentPayload.html">CreateTimestampedLed1CurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedLed1MaxCurrentPayload.html">CreateTimestampedLed1MaxCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort0IRPayload.html">CreateTimestampedMimicPort0IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 0 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort0ValvePayload.html">CreateTimestampedMimicPort0ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 0 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort1IRPayload.html">CreateTimestampedMimicPort1IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 1 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort1ValvePayload.html">CreateTimestampedMimicPort1ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 1 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort2IRPayload.html">CreateTimestampedMimicPort2IRPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 2 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedMimicPort2ValvePayload.html">CreateTimestampedMimicPort2ValvePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the digital output to mimic the Port 2 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedOutputClearPayload.html">CreateTimestampedOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedOutputPulseEnablePayload.html">CreateTimestampedOutputPulseEnablePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the pulse function for the specified output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedOutputSetPayload.html">CreateTimestampedOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedOutputStatePayload.html">CreateTimestampedOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedOutputTogglePayload.html">CreateTimestampedOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPokeInputFilterPayload.html">CreateTimestampedPokeInputFilterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the low pass filter time value for poke inputs, in ms.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIOClearPayload.html">CreateTimestampedPortDIOClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIODirectionPayload.html">CreateTimestampedPortDIODirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies which of the port DIO lines are outputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIOSetPayload.html">CreateTimestampedPortDIOSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIOStateEventPayload.html">CreateTimestampedPortDIOStateEventPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the state of the port DIO lines on a line change.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIOStatePayload.html">CreateTimestampedPortDIOStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPortDIOTogglePayload.html">CreateTimestampedPortDIOTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDO0Payload.html">CreateTimestampedPulseDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDO1Payload.html">CreateTimestampedPulseDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDO2Payload.html">CreateTimestampedPulseDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDO3Payload.html">CreateTimestampedPulseDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDOPort0Payload.html">CreateTimestampedPulseDOPort0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDOPort1Payload.html">CreateTimestampedPulseDOPort1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseDOPort2Payload.html">CreateTimestampedPulseDOPort2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseLed0Payload.html">CreateTimestampedPulseLed0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseLed1Payload.html">CreateTimestampedPulseLed1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseRgb0Payload.html">CreateTimestampedPulseRgb0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseRgb1Payload.html">CreateTimestampedPulseRgb1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseSupplyPort0Payload.html">CreateTimestampedPulseSupplyPort0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseSupplyPort1Payload.html">CreateTimestampedPulseSupplyPort1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPulseSupplyPort2Payload.html">CreateTimestampedPulseSupplyPort2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmDutyCycleDO0Payload.html">CreateTimestampedPwmDutyCycleDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duty cycle of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmDutyCycleDO1Payload.html">CreateTimestampedPwmDutyCycleDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duty cycle of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmDutyCycleDO2Payload.html">CreateTimestampedPwmDutyCycleDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duty cycle of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmDutyCycleDO3Payload.html">CreateTimestampedPwmDutyCycleDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the duty cycle of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmFrequencyDO0Payload.html">CreateTimestampedPwmFrequencyDO0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the frequency of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmFrequencyDO1Payload.html">CreateTimestampedPwmFrequencyDO1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the frequency of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmFrequencyDO2Payload.html">CreateTimestampedPwmFrequencyDO2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the frequency of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmFrequencyDO3Payload.html">CreateTimestampedPwmFrequencyDO3Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the frequency of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmStartPayload.html">CreateTimestampedPwmStartPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedPwmStopPayload.html">CreateTimestampedPwmStopPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stops the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedRgb0Payload.html">CreateTimestampedRgb0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the state of the RGB0 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedRgb1Payload.html">CreateTimestampedRgb1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the state of the RGB1 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedRgbAllPayload.html">CreateTimestampedRgbAllPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the state of all RGB LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedServoMotor2PeriodPayload.html">CreateTimestampedServoMotor2PeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the period of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedServoMotor2PulsePayload.html">CreateTimestampedServoMotor2PulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the pulse of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedServoMotor3PeriodPayload.html">CreateTimestampedServoMotor3PeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the period of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedServoMotor3PulsePayload.html">CreateTimestampedServoMotor3PulsePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the pulse of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedStartCamerasPayload.html">CreateTimestampedStartCamerasPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the camera outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CreateTimestampedStopCamerasPayload.html">CreateTimestampedStopCamerasPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the camera outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that reflects the state of DI digital lines of each Port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.DisableServos.html">DisableServos</a></dt>
+      <dd><p>Represents a register that specifies the servo outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EnableEncoders.html">EnableEncoders</a></dt>
+      <dd><p>Represents a register that specifies the port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EnableSerialTimestamp.html">EnableSerialTimestamp</a></dt>
+      <dd><p>Represents a register that enables the timestamp for serial TX.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EnableServos.html">EnableServos</a></dt>
+      <dd><p>Represents a register that specifies the servo outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EncoderMode.html">EncoderMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode of the quadrature encoders.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EncoderReset.html">EncoderReset</a></dt>
+      <dd><p>Represents a register that reset the counter of the specified encoders to zero.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EventEnable.html">EventEnable</a></dt>
+      <dd><p>Represents a register that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.Behavior.html">Harp.Behavior</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+Behavior register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.Behavior.html">Harp.Behavior</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Led0Current.html">Led0Current</a></dt>
+      <dd><p>Represents a register that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Led0MaxCurrent.html">Led0MaxCurrent</a></dt>
+      <dd><p>Represents a register that specifies the configuration of current to drive LED 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Led1Current.html">Led1Current</a></dt>
+      <dd><p>Represents a register that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Led1MaxCurrent.html">Led1MaxCurrent</a></dt>
+      <dd><p>Represents a register that specifies the configuration of current to drive LED 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort0IR.html">MimicPort0IR</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 0 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort0Valve.html">MimicPort0Valve</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 0 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort1IR.html">MimicPort1IR</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 1 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort1Valve.html">MimicPort1Valve</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 1 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort2IR.html">MimicPort2IR</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 2 IR state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicPort2Valve.html">MimicPort2Valve</a></dt>
+      <dd><p>Represents a register that specifies the digital output to mimic the Port 2 valve state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.OutputClear.html">OutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.OutputPulseEnable.html">OutputPulseEnable</a></dt>
+      <dd><p>Represents a register that enables the pulse function for the specified output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.OutputSet.html">OutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.OutputState.html">OutputState</a></dt>
+      <dd><p>Represents a register that write the state of all digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.OutputToggle.html">OutputToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the Behavior device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PokeInputFilter.html">PokeInputFilter</a></dt>
+      <dd><p>Represents a register that specifies the low pass filter time value for poke inputs, in ms.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIOClear.html">PortDIOClear</a></dt>
+      <dd><p>Represents a register that clear the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIODirection.html">PortDIODirection</a></dt>
+      <dd><p>Represents a register that specifies which of the port DIO lines are outputs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIOSet.html">PortDIOSet</a></dt>
+      <dd><p>Represents a register that set the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIOState.html">PortDIOState</a></dt>
+      <dd><p>Represents a register that write the state of all port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIOStateEvent.html">PortDIOStateEvent</a></dt>
+      <dd><p>Represents a register that specifies the state of the port DIO lines on a line change.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDIOToggle.html">PortDIOToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDO0.html">PulseDO0</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDO1.html">PulseDO1</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDO2.html">PulseDO2</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDO3.html">PulseDO3</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDOPort0.html">PulseDOPort0</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDOPort1.html">PulseDOPort1</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseDOPort2.html">PulseDOPort2</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseLed0.html">PulseLed0</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseLed1.html">PulseLed1</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseRgb0.html">PulseRgb0</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseRgb1.html">PulseRgb1</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseSupplyPort0.html">PulseSupplyPort0</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseSupplyPort1.html">PulseSupplyPort1</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PulseSupplyPort2.html">PulseSupplyPort2</a></dt>
+      <dd><p>Represents a register that specifies the duration of the output pulse in milliseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmDutyCycleDO0.html">PwmDutyCycleDO0</a></dt>
+      <dd><p>Represents a register that specifies the duty cycle of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmDutyCycleDO1.html">PwmDutyCycleDO1</a></dt>
+      <dd><p>Represents a register that specifies the duty cycle of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmDutyCycleDO2.html">PwmDutyCycleDO2</a></dt>
+      <dd><p>Represents a register that specifies the duty cycle of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmDutyCycleDO3.html">PwmDutyCycleDO3</a></dt>
+      <dd><p>Represents a register that specifies the duty cycle of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmFrequencyDO0.html">PwmFrequencyDO0</a></dt>
+      <dd><p>Represents a register that specifies the frequency of the PWM at DO0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmFrequencyDO1.html">PwmFrequencyDO1</a></dt>
+      <dd><p>Represents a register that specifies the frequency of the PWM at DO1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmFrequencyDO2.html">PwmFrequencyDO2</a></dt>
+      <dd><p>Represents a register that specifies the frequency of the PWM at DO2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmFrequencyDO3.html">PwmFrequencyDO3</a></dt>
+      <dd><p>Represents a register that specifies the frequency of the PWM at DO3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmStart.html">PwmStart</a></dt>
+      <dd><p>Represents a register that starts the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmStop.html">PwmStop</a></dt>
+      <dd><p>Represents a register that stops the PWM on the selected output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Rgb0.html">Rgb0</a></dt>
+      <dd><p>Represents a register that specifies the state of the RGB0 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Rgb1.html">Rgb1</a></dt>
+      <dd><p>Represents a register that specifies the state of the RGB1 LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.RgbAll.html">RgbAll</a></dt>
+      <dd><p>Represents a register that specifies the state of all RGB LED channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.ServoMotor2Period.html">ServoMotor2Period</a></dt>
+      <dd><p>Represents a register that specifies the period of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.ServoMotor2Pulse.html">ServoMotor2Pulse</a></dt>
+      <dd><p>Represents a register that specifies the pulse of the servo motor in DO2, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.ServoMotor3Period.html">ServoMotor3Period</a></dt>
+      <dd><p>Represents a register that specifies the period of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.ServoMotor3Pulse.html">ServoMotor3Pulse</a></dt>
+      <dd><p>Represents a register that specifies the pulse of the servo motor in DO3, in microseconds.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.StartCameras.html">StartCameras</a></dt>
+      <dd><p>Represents a register that specifies the camera outputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.StopCameras.html">StopCameras</a></dt>
+      <dd><p>Represents a register that specifies the camera outputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedAnalogData.html">TimestampedAnalogData</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AnalogData register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedCamera0Frame.html">TimestampedCamera0Frame</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Camera0Frame register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedCamera0Frequency.html">TimestampedCamera0Frequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Camera0Frequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedCamera1Frame.html">TimestampedCamera1Frame</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Camera1Frame register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedCamera1Frequency.html">TimestampedCamera1Frequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Camera1Frequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedDisableServos.html">TimestampedDisableServos</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DisableServos register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEnableEncoders.html">TimestampedEnableEncoders</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEncoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEnableSerialTimestamp.html">TimestampedEnableSerialTimestamp</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableSerialTimestamp register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEnableServos.html">TimestampedEnableServos</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableServos register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEncoderMode.html">TimestampedEncoderMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EncoderMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEncoderReset.html">TimestampedEncoderReset</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EncoderReset register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedEventEnable.html">TimestampedEventEnable</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EventEnable register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedLed0Current.html">TimestampedLed0Current</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0Current register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedLed0MaxCurrent.html">TimestampedLed0MaxCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0MaxCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedLed1Current.html">TimestampedLed1Current</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1Current register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedLed1MaxCurrent.html">TimestampedLed1MaxCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1MaxCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort0IR.html">TimestampedMimicPort0IR</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort0IR register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort0Valve.html">TimestampedMimicPort0Valve</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort0Valve register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort1IR.html">TimestampedMimicPort1IR</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort1IR register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort1Valve.html">TimestampedMimicPort1Valve</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort1Valve register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort2IR.html">TimestampedMimicPort2IR</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort2IR register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedMimicPort2Valve.html">TimestampedMimicPort2Valve</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MimicPort2Valve register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedOutputClear.html">TimestampedOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedOutputPulseEnable.html">TimestampedOutputPulseEnable</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputPulseEnable register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedOutputSet.html">TimestampedOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedOutputState.html">TimestampedOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedOutputToggle.html">TimestampedOutputToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OutputToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPokeInputFilter.html">TimestampedPokeInputFilter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PokeInputFilter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIOClear.html">TimestampedPortDIOClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIOClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIODirection.html">TimestampedPortDIODirection</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIODirection register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIOSet.html">TimestampedPortDIOSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIOSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIOState.html">TimestampedPortDIOState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIOState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIOStateEvent.html">TimestampedPortDIOStateEvent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIOStateEvent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPortDIOToggle.html">TimestampedPortDIOToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PortDIOToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDO0.html">TimestampedPulseDO0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDO1.html">TimestampedPulseDO1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDO2.html">TimestampedPulseDO2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDO3.html">TimestampedPulseDO3</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDO3 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDOPort0.html">TimestampedPulseDOPort0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDOPort0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDOPort1.html">TimestampedPulseDOPort1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDOPort1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseDOPort2.html">TimestampedPulseDOPort2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseDOPort2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseLed0.html">TimestampedPulseLed0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseLed0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseLed1.html">TimestampedPulseLed1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseLed1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseRgb0.html">TimestampedPulseRgb0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseRgb0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseRgb1.html">TimestampedPulseRgb1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseRgb1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseSupplyPort0.html">TimestampedPulseSupplyPort0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseSupplyPort0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseSupplyPort1.html">TimestampedPulseSupplyPort1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseSupplyPort1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPulseSupplyPort2.html">TimestampedPulseSupplyPort2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseSupplyPort2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmDutyCycleDO0.html">TimestampedPwmDutyCycleDO0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmDutyCycleDO0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmDutyCycleDO1.html">TimestampedPwmDutyCycleDO1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmDutyCycleDO1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmDutyCycleDO2.html">TimestampedPwmDutyCycleDO2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmDutyCycleDO2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmDutyCycleDO3.html">TimestampedPwmDutyCycleDO3</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmDutyCycleDO3 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmFrequencyDO0.html">TimestampedPwmFrequencyDO0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmFrequencyDO0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmFrequencyDO1.html">TimestampedPwmFrequencyDO1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmFrequencyDO1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmFrequencyDO2.html">TimestampedPwmFrequencyDO2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmFrequencyDO2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmFrequencyDO3.html">TimestampedPwmFrequencyDO3</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmFrequencyDO3 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmStart.html">TimestampedPwmStart</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmStart register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedPwmStop.html">TimestampedPwmStop</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PwmStop register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedRgb0.html">TimestampedRgb0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Rgb0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedRgb1.html">TimestampedRgb1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Rgb1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedRgbAll.html">TimestampedRgbAll</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+RgbAll register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedServoMotor2Period.html">TimestampedServoMotor2Period</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ServoMotor2Period register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedServoMotor2Pulse.html">TimestampedServoMotor2Pulse</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ServoMotor2Pulse register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedServoMotor3Period.html">TimestampedServoMotor3Period</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ServoMotor3Period register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedServoMotor3Pulse.html">TimestampedServoMotor3Pulse</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ServoMotor3Pulse register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedStartCameras.html">TimestampedStartCameras</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StartCameras register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.TimestampedStopCameras.html">TimestampedStopCameras</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StopCameras register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.AnalogDataPayload.html">AnalogDataPayload</a></dt>
+      <dd><p>Represents the payload of the AnalogData register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.RgbAllPayload.html">RgbAllPayload</a></dt>
+      <dd><p>Represents the payload of the RgbAll register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.RgbPayload.html">RgbPayload</a></dt>
+      <dd><p>Represents the payload of the Rgb register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.CameraOutputs.html">CameraOutputs</a></dt>
+      <dd><p>Specifies camera output enable bits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Specifies the state of port digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of port digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EncoderInputs.html">EncoderInputs</a></dt>
+      <dd><p>Specifies quadrature counter enable bits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.EncoderModeConfig.html">EncoderModeConfig</a></dt>
+      <dd><p>Specifies the type of reading made from the quadrature encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.Events.html">Events</a></dt>
+      <dd><p>Specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.FrameAcquired.html">FrameAcquired</a></dt>
+      <dd><p>Specifies that camera frame was acquired.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.MimicOutput.html">MimicOutput</a></dt>
+      <dd><p>Specifies the target IO on which to mimic the specified register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PortDigitalIOS.html">PortDigitalIOS</a></dt>
+      <dd><p>Specifies the state of the port DIO lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.PwmOutputs.html">PwmOutputs</a></dt>
+      <dd><p>Specifies the state of PWM output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.Behavior.ServoOutputs.html">ServoOutputs</a></dt>
+      <dd><p>Specifies servo output enable bits.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_Behavior.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

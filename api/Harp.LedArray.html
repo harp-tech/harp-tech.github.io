@@ -1,0 +1,1373 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.LedArray
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.LedArray
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_LedArray.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.LedArray">
+
+  <h1 id="Harp_LedArray" data-uid="Harp.LedArray" class="text-break">Namespace Harp.LedArray
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-led-array">Harp LED array</h2>
+<p>Controlling LED arrays that require more power. Ideally for opto-stimulation experiments.</p>
+<p><img src="../src/device.ledarray/Assets/pcb.png" alt="harpledarray"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Controls up to 2 separate RGB LED</li>
+<li>Arrays and one common Infrared LED</li>
+<li>Two operation modes for each RGB LED Array: PWM or Interval</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1x clock sync input (CLKIN) [stereo jack]</li>
+<li>1x USB (for computer) [USB type B]</li>
+<li>1x flat cable</li>
+<li>2x Digital Inputs (IN0, IN1) [flick lock male pins]</li>
+<li>2x Digital Outputs (OUT0, OUT1) [flick lock male pins]</li>
+<li>1x connector for 2 LED Arrays [10-pin flat-cable]</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp board can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<p>In order to use this GUI, there are some software that needs to be installed:</p>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/UsbDriver-2.12.26.zip">drivers</a>.</p>
+<p>2 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Runtime-1.0.zip">runtime</a>.</p>
+<p>3 - Reboot the computer.</p>
+<p>4 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp%20Led%20Array%20v2.2.0.zip">GUI</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">LedArray</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1088</td></tr>
+    <tr><td>firmwareVersion</td><td>2.4</td></tr>
+    <tr><td>hardwareTargets</td><td>1.1</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.LedArray.EnablePower.html">EnablePower</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Control the enable of both LEDs' power supply.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.LedState.html">LedState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.EnableLedMode.html">EnableLedMode</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Start/stop the LEDs according to the pulse configuration.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.LedState.html">LedState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.EnableLed.html">EnableLed</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Enables/disables the LEDs.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.LedState.html">LedState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.DigitalInputState.html">DigitalInputState</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>State of the digital input pins. An event will be emitted when the value of any digital input pin changes.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.DigitalOutputSync.html">DigitalOutputSync</a></td>
+<td>36</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital outputs behavior.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.DigitalOutputSyncPayload.html">DigitalOutputSyncPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.DigitalInputTrigger.html">DigitalInputTrigger</a></td>
+<td>37</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital inputs pins behavior.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.DigitalInputTriggerPayload.html">DigitalInputTriggerPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.PulseMode.html">PulseMode</a></td>
+<td>38</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the pulse mode used by the LEDs.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.PulseModePayload.html">PulseModePayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0Power.html">Led0Power</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the power to LED0, between 1 and 120 (arbitrary units).</td>
+<td>[1:120]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1Power.html">Led1Power</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the power to LED1, between 1 and 120 (arbitrary units).</td>
+<td>[1:120]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PwmFrequency.html">Led0PwmFrequency</a></td>
+<td>41</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the frequency (Hz) of LED0 when in Pwm mode, between 0.5 and 2000.</td>
+<td>[0.5:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PwmDutyCycle.html">Led0PwmDutyCycle</a></td>
+<td>42</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duty cycle (%) of LED0 when in Pwm mode, between 0.1 and 99.9.</td>
+<td>[0.1:99.9]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PwmPulseCounter.html">Led0PwmPulseCounter</a></td>
+<td>43</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses of LED0 when in Pwm mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PulseTimeOn.html">Led0PulseTimeOn</a></td>
+<td>44</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the time on (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PulseTimeOff.html">Led0PulseTimeOff</a></td>
+<td>45</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the time off (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PulseTimePulseCounter.html">Led0PulseTimePulseCounter</a></td>
+<td>46</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses of LED0 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PulseTimeTail.html">Led0PulseTimeTail</a></td>
+<td>47</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the wait time between pulses (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PulseRepeatCounter.html">Led0PulseRepeatCounter</a></td>
+<td>48</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of repetitions of LED0 pulse protocol when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PwmFrequency.html">Led1PwmFrequency</a></td>
+<td>49</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the frequency (Hz) of LED1 when in Pwm mode, between 0.5 and 2000.</td>
+<td>[0.5:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PwmDutyCycle.html">Led1PwmDutyCycle</a></td>
+<td>50</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Sets the duty cycle (%) of LED1 when in Pwm mode, between 0.1 and 99.9.</td>
+<td>[0.1:99.9]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PwmPulseCounter.html">Led1PwmPulseCounter</a></td>
+<td>51</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses of LED1 when in Pwm mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PulseTimeOn.html">Led1PulseTimeOn</a></td>
+<td>52</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the time on (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PulseTimeOff.html">Led1PulseTimeOff</a></td>
+<td>53</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the time off (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PulseTimePulseCounter.html">Led1PulseTimePulseCounter</a></td>
+<td>54</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of pulses of LED1 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PulseTimeTail.html">Led1PulseTimeTail</a></td>
+<td>55</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the wait time between pulses (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PulseRepeatCounter.html">Led1PulseRepeatCounter</a></td>
+<td>56</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of repetitions of LED1 pulse protocol when in PulseTime mode, between 1 and 65535.</td>
+<td>[1:65535]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PwmReal.html">Led0PwmReal</a></td>
+<td>57</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Get the real frequency (Hz) of LED0 when in Pwm mode.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led0PwmDutyCycleReal.html">Led0PwmDutyCycleReal</a></td>
+<td>58</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Get the real duty cycle (%) of LED0 when in Pwm mode.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.Led1PwmReal.html">Led1PwmReal</a></td>
+<td>59</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Get the real frequency (Hz) of LED1 when in Pwm mode.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.LedD1PwmDutyCycleReal.html">LedD1PwmDutyCycleReal</a></td>
+<td>60</td>
+<td>Float</td>
+<td></td>
+<td>Read</td>
+<td>Get the real duty cycle (%) of LED1 when in Pwm mode.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.AuxDigitalOutputState.html">AuxDigitalOutputState</a></td>
+<td>61</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of the auxiliary digital output bit.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.AuxDigitalOutputs.html">AuxDigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.AuxLedPower.html">AuxLedPower</a></td>
+<td>62</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the power to be applied to auxiliary LED, between 1 and 120.</td>
+<td>[1:120]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.DigitalOutputState.html">DigitalOutputState</a></td>
+<td>63</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Write the state of digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LedArray.EnableEvents.html">EnableEvents</a></td>
+<td>65</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies all the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.LedArray.LedArrayEvents.html">LedArrayEvents</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with LedArray devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.AuxDigitalOutputState.html">AuxDigitalOutputState</a></dt>
+      <dd><p>Represents a register that write the state of the auxiliary digital output bit.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.AuxLedPower.html">AuxLedPower</a></dt>
+      <dd><p>Represents a register that sets the power to be applied to auxiliary LED, between 1 and 120.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateAuxDigitalOutputStatePayload.html">CreateAuxDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of the auxiliary digital output bit.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateAuxLedPowerPayload.html">CreateAuxLedPowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the power to be applied to auxiliary LED, between 1 and 120.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateDigitalInputTriggerPayload.html">CreateDigitalInputTriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital inputs pins behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateDigitalOutputStatePayload.html">CreateDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateDigitalOutputSyncPayload.html">CreateDigitalOutputSyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital outputs behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateEnableEventsPayload.html">CreateEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateEnableLedModePayload.html">CreateEnableLedModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that start/stop the LEDs according to the pulse configuration.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateEnableLedPayload.html">CreateEnableLedPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables/disables the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateEnablePowerPayload.html">CreateEnablePowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that control the enable of both LEDs' power supply.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PowerPayload.html">CreateLed0PowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the power to LED0, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PulseRepeatCounterPayload.html">CreateLed0PulseRepeatCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of repetitions of LED0 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PulseTimeOffPayload.html">CreateLed0PulseTimeOffPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the time off (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PulseTimeOnPayload.html">CreateLed0PulseTimeOnPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the time on (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PulseTimePulseCounterPayload.html">CreateLed0PulseTimePulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PulseTimeTailPayload.html">CreateLed0PulseTimeTailPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the wait time between pulses (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PwmDutyCyclePayload.html">CreateLed0PwmDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duty cycle (%) of LED0 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PwmDutyCycleRealPayload.html">CreateLed0PwmDutyCycleRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that get the real duty cycle (%) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PwmFrequencyPayload.html">CreateLed0PwmFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the frequency (Hz) of LED0 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PwmPulseCounterPayload.html">CreateLed0PwmPulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses of LED0 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed0PwmRealPayload.html">CreateLed0PwmRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that get the real frequency (Hz) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PowerPayload.html">CreateLed1PowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the power to LED1, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PulseRepeatCounterPayload.html">CreateLed1PulseRepeatCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of repetitions of LED1 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PulseTimeOffPayload.html">CreateLed1PulseTimeOffPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the time off (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PulseTimeOnPayload.html">CreateLed1PulseTimeOnPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the time on (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PulseTimePulseCounterPayload.html">CreateLed1PulseTimePulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PulseTimeTailPayload.html">CreateLed1PulseTimeTailPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the wait time between pulses (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PwmDutyCyclePayload.html">CreateLed1PwmDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the duty cycle (%) of LED1 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PwmFrequencyPayload.html">CreateLed1PwmFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the frequency (Hz) of LED1 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PwmPulseCounterPayload.html">CreateLed1PwmPulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of pulses of LED1 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLed1PwmRealPayload.html">CreateLed1PwmRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that get the real frequency (Hz) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateLedD1PwmDutyCycleRealPayload.html">CreateLedD1PwmDutyCycleRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that get the real duty cycle (%) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+LedArray device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreatePulseModePayload.html">CreatePulseModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the pulse mode used by the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedAuxDigitalOutputStatePayload.html">CreateTimestampedAuxDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of the auxiliary digital output bit.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedAuxLedPowerPayload.html">CreateTimestampedAuxLedPowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the power to be applied to auxiliary LED, between 1 and 120.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedDigitalInputTriggerPayload.html">CreateTimestampedDigitalInputTriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital inputs pins behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedDigitalOutputStatePayload.html">CreateTimestampedDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedDigitalOutputSyncPayload.html">CreateTimestampedDigitalOutputSyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital outputs behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedEnableEventsPayload.html">CreateTimestampedEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedEnableLedModePayload.html">CreateTimestampedEnableLedModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that start/stop the LEDs according to the pulse configuration.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedEnableLedPayload.html">CreateTimestampedEnableLedPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables/disables the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedEnablePowerPayload.html">CreateTimestampedEnablePowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that control the enable of both LEDs' power supply.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PowerPayload.html">CreateTimestampedLed0PowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the power to LED0, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PulseRepeatCounterPayload.html">CreateTimestampedLed0PulseRepeatCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of repetitions of LED0 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PulseTimeOffPayload.html">CreateTimestampedLed0PulseTimeOffPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the time off (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PulseTimeOnPayload.html">CreateTimestampedLed0PulseTimeOnPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the time on (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PulseTimePulseCounterPayload.html">CreateTimestampedLed0PulseTimePulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PulseTimeTailPayload.html">CreateTimestampedLed0PulseTimeTailPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the wait time between pulses (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PwmDutyCyclePayload.html">CreateTimestampedLed0PwmDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duty cycle (%) of LED0 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PwmDutyCycleRealPayload.html">CreateTimestampedLed0PwmDutyCycleRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that get the real duty cycle (%) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PwmFrequencyPayload.html">CreateTimestampedLed0PwmFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the frequency (Hz) of LED0 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PwmPulseCounterPayload.html">CreateTimestampedLed0PwmPulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses of LED0 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed0PwmRealPayload.html">CreateTimestampedLed0PwmRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that get the real frequency (Hz) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PowerPayload.html">CreateTimestampedLed1PowerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the power to LED1, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PulseRepeatCounterPayload.html">CreateTimestampedLed1PulseRepeatCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of repetitions of LED1 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PulseTimeOffPayload.html">CreateTimestampedLed1PulseTimeOffPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the time off (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PulseTimeOnPayload.html">CreateTimestampedLed1PulseTimeOnPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the time on (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PulseTimePulseCounterPayload.html">CreateTimestampedLed1PulseTimePulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PulseTimeTailPayload.html">CreateTimestampedLed1PulseTimeTailPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the wait time between pulses (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PwmDutyCyclePayload.html">CreateTimestampedLed1PwmDutyCyclePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the duty cycle (%) of LED1 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PwmFrequencyPayload.html">CreateTimestampedLed1PwmFrequencyPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the frequency (Hz) of LED1 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PwmPulseCounterPayload.html">CreateTimestampedLed1PwmPulseCounterPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of pulses of LED1 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLed1PwmRealPayload.html">CreateTimestampedLed1PwmRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that get the real frequency (Hz) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedLedD1PwmDutyCycleRealPayload.html">CreateTimestampedLedD1PwmDutyCycleRealPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that get the real duty cycle (%) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.CreateTimestampedPulseModePayload.html">CreateTimestampedPulseModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the pulse mode used by the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that state of the digital input pins. An event will be emitted when the value of any digital input pin changes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalInputTrigger.html">DigitalInputTrigger</a></dt>
+      <dd><p>Represents a register that configuration of the digital inputs pins behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalOutputState.html">DigitalOutputState</a></dt>
+      <dd><p>Represents a register that write the state of digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalOutputSync.html">DigitalOutputSync</a></dt>
+      <dd><p>Represents a register that configuration of the digital outputs behavior.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.EnableEvents.html">EnableEvents</a></dt>
+      <dd><p>Represents a register that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.EnableLed.html">EnableLed</a></dt>
+      <dd><p>Represents a register that enables/disables the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.EnableLedMode.html">EnableLedMode</a></dt>
+      <dd><p>Represents a register that start/stop the LEDs according to the pulse configuration.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.EnablePower.html">EnablePower</a></dt>
+      <dd><p>Represents a register that control the enable of both LEDs' power supply.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.LedArray.html">Harp.LedArray</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+LedArray register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.LedArray.html">Harp.LedArray</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0Power.html">Led0Power</a></dt>
+      <dd><p>Represents a register that sets the power to LED0, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PulseRepeatCounter.html">Led0PulseRepeatCounter</a></dt>
+      <dd><p>Represents a register that sets the number of repetitions of LED0 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PulseTimeOff.html">Led0PulseTimeOff</a></dt>
+      <dd><p>Represents a register that sets the time off (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PulseTimeOn.html">Led0PulseTimeOn</a></dt>
+      <dd><p>Represents a register that sets the time on (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PulseTimePulseCounter.html">Led0PulseTimePulseCounter</a></dt>
+      <dd><p>Represents a register that sets the number of pulses of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PulseTimeTail.html">Led0PulseTimeTail</a></dt>
+      <dd><p>Represents a register that sets the wait time between pulses (milliseconds) of LED0 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PwmDutyCycle.html">Led0PwmDutyCycle</a></dt>
+      <dd><p>Represents a register that sets the duty cycle (%) of LED0 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PwmDutyCycleReal.html">Led0PwmDutyCycleReal</a></dt>
+      <dd><p>Represents a register that get the real duty cycle (%) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PwmFrequency.html">Led0PwmFrequency</a></dt>
+      <dd><p>Represents a register that sets the frequency (Hz) of LED0 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PwmPulseCounter.html">Led0PwmPulseCounter</a></dt>
+      <dd><p>Represents a register that sets the number of pulses of LED0 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led0PwmReal.html">Led0PwmReal</a></dt>
+      <dd><p>Represents a register that get the real frequency (Hz) of LED0 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1Power.html">Led1Power</a></dt>
+      <dd><p>Represents a register that sets the power to LED1, between 1 and 120 (arbitrary units).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PulseRepeatCounter.html">Led1PulseRepeatCounter</a></dt>
+      <dd><p>Represents a register that sets the number of repetitions of LED1 pulse protocol when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PulseTimeOff.html">Led1PulseTimeOff</a></dt>
+      <dd><p>Represents a register that sets the time off (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PulseTimeOn.html">Led1PulseTimeOn</a></dt>
+      <dd><p>Represents a register that sets the time on (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PulseTimePulseCounter.html">Led1PulseTimePulseCounter</a></dt>
+      <dd><p>Represents a register that sets the number of pulses of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PulseTimeTail.html">Led1PulseTimeTail</a></dt>
+      <dd><p>Represents a register that sets the wait time between pulses (milliseconds) of LED1 when in PulseTime mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PwmDutyCycle.html">Led1PwmDutyCycle</a></dt>
+      <dd><p>Represents a register that sets the duty cycle (%) of LED1 when in Pwm mode, between 0.1 and 99.9.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PwmFrequency.html">Led1PwmFrequency</a></dt>
+      <dd><p>Represents a register that sets the frequency (Hz) of LED1 when in Pwm mode, between 0.5 and 2000.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PwmPulseCounter.html">Led1PwmPulseCounter</a></dt>
+      <dd><p>Represents a register that sets the number of pulses of LED1 when in Pwm mode, between 1 and 65535.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Led1PwmReal.html">Led1PwmReal</a></dt>
+      <dd><p>Represents a register that get the real frequency (Hz) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.LedD1PwmDutyCycleReal.html">LedD1PwmDutyCycleReal</a></dt>
+      <dd><p>Represents a register that get the real duty cycle (%) of LED1 when in Pwm mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the LedArray device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.PulseMode.html">PulseMode</a></dt>
+      <dd><p>Represents a register that sets the pulse mode used by the LEDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedAuxDigitalOutputState.html">TimestampedAuxDigitalOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AuxDigitalOutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedAuxLedPower.html">TimestampedAuxLedPower</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AuxLedPower register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedDigitalInputTrigger.html">TimestampedDigitalInputTrigger</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputTrigger register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedDigitalOutputState.html">TimestampedDigitalOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedDigitalOutputSync.html">TimestampedDigitalOutputSync</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputSync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedEnableEvents.html">TimestampedEnableEvents</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEvents register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedEnableLed.html">TimestampedEnableLed</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableLed register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedEnableLedMode.html">TimestampedEnableLedMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableLedMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedEnablePower.html">TimestampedEnablePower</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnablePower register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0Power.html">TimestampedLed0Power</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0Power register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PulseRepeatCounter.html">TimestampedLed0PulseRepeatCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PulseRepeatCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PulseTimeOff.html">TimestampedLed0PulseTimeOff</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PulseTimeOff register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PulseTimeOn.html">TimestampedLed0PulseTimeOn</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PulseTimeOn register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PulseTimePulseCounter.html">TimestampedLed0PulseTimePulseCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PulseTimePulseCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PulseTimeTail.html">TimestampedLed0PulseTimeTail</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PulseTimeTail register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PwmDutyCycle.html">TimestampedLed0PwmDutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PwmDutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PwmDutyCycleReal.html">TimestampedLed0PwmDutyCycleReal</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PwmDutyCycleReal register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PwmFrequency.html">TimestampedLed0PwmFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PwmFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PwmPulseCounter.html">TimestampedLed0PwmPulseCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PwmPulseCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed0PwmReal.html">TimestampedLed0PwmReal</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led0PwmReal register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1Power.html">TimestampedLed1Power</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1Power register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PulseRepeatCounter.html">TimestampedLed1PulseRepeatCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PulseRepeatCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PulseTimeOff.html">TimestampedLed1PulseTimeOff</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PulseTimeOff register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PulseTimeOn.html">TimestampedLed1PulseTimeOn</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PulseTimeOn register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PulseTimePulseCounter.html">TimestampedLed1PulseTimePulseCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PulseTimePulseCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PulseTimeTail.html">TimestampedLed1PulseTimeTail</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PulseTimeTail register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PwmDutyCycle.html">TimestampedLed1PwmDutyCycle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PwmDutyCycle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PwmFrequency.html">TimestampedLed1PwmFrequency</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PwmFrequency register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PwmPulseCounter.html">TimestampedLed1PwmPulseCounter</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PwmPulseCounter register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLed1PwmReal.html">TimestampedLed1PwmReal</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Led1PwmReal register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedLedD1PwmDutyCycleReal.html">TimestampedLedD1PwmDutyCycleReal</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+LedD1PwmDutyCycleReal register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.TimestampedPulseMode.html">TimestampedPulseMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+PulseMode register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalInputTriggerPayload.html">DigitalInputTriggerPayload</a></dt>
+      <dd><p>Represents the payload of the DigitalInputTrigger register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalOutputSyncPayload.html">DigitalOutputSyncPayload</a></dt>
+      <dd><p>Represents the payload of the DigitalOutputSync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.PulseModePayload.html">PulseModePayload</a></dt>
+      <dd><p>Represents the payload of the PulseMode register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.AuxDigitalOutputs.html">AuxDigitalOutputs</a></dt>
+      <dd><p>Specifies the state of the auxiliary digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DO0SyncConfig.html">DO0SyncConfig</a></dt>
+      <dd><p>Available configurations when using digital output pin 0 to report firmware events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DO1SyncConfig.html">DO1SyncConfig</a></dt>
+      <dd><p>Available configurations when using digital output pin 1 to report firmware events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalInputTriggerConfig.html">DigitalInputTriggerConfig</a></dt>
+      <dd><p>Available configurations when using digital inputs as an acquisition trigger.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Specifies the state of port digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of port digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.LedArrayEvents.html">LedArrayEvents</a></dt>
+      <dd><p>The events that can be enabled/disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.LedState.html">LedState</a></dt>
+      <dd><p>Specifies the LEDs state.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LedArray.PulseModeConfig.html">PulseModeConfig</a></dt>
+      <dd><p>Available configurations modes when LED behavior is enabled.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_LedArray.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

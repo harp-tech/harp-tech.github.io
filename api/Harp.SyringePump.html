@@ -1,0 +1,885 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.SyringePump
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.SyringePump
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_SyringePump.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.SyringePump">
+
+  <h1 id="Harp_SyringePump" data-uid="Harp.SyringePump" class="text-break">Namespace Harp.SyringePump
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-syringe-pump">Harp Syringe Pump</h2>
+<p>This is a repository for the Harp Syringe Pump. The Harp Syringe Pump is a device that can be used to control the flow of liquid through a syringe by driving a stepper motor.
+<img src="../src/device.syringepump/Assets/pcb.png" alt="HarpSyringePump"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Low and High-level interface control of the stepper motor</li>
+<li>General digital inputs configurable to trigger hardware events</li>
+<li>Digital outputs configurable to report hardware events</li>
+<li>Includes on-board stepper-motor driver</li>
+<li>Included mechanical designs and assembly instructions</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1x clock sync input (CLKIN) [stereo jack]</li>
+<li>1x USB (for computer) [USB type B]</li>
+<li>1x 12V supply [barrel connector jack]</li>
+<li>General purpose I/O (5V) [screw terminal]</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp Behavior can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">SyringePump</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1296</td></tr>
+    <tr><td>firmwareVersion</td><td>1.0</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.EnableMotorDriver.html">EnableMotorDriver</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the motor driver.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.EnableProtocol.html">EnableProtocol</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the currently defined protocol.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.Step.html">Step</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Status of the STEP motor controller pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.StepState.html">StepState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.Direction.html">Direction</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Write, Event</td>
+<td>Status of the DIR motor controller pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DirectionState.html">DirectionState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.ForwardSwitch.html">ForwardSwitch</a></td>
+<td>36</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the forward limit switch.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.ForwardSwitchState.html">ForwardSwitchState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.ReverseSwitch.html">ReverseSwitch</a></td>
+<td>37</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the reverse limit switch.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.ReverseSwitchState.html">ReverseSwitchState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DigitalInputState.html">DigitalInputState</a></td>
+<td>38</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the digital input pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DigitalOutputSet.html">DigitalOutputSet</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DigitalOutputClear.html">DigitalOutputClear</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DO0Sync.html">DO0Sync</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures which signal is mimicked in the digital output 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DO0SyncConfig.html">DO0SyncConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DO1Sync.html">DO1Sync</a></td>
+<td>42</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures which signal is mimicked in the digital output 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DO1SyncConfig.html">DO1SyncConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.DI0Trigger.html">DI0Trigger</a></td>
+<td>43</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the callback function triggered when digital input is triggered.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.DI0TriggerConfig.html">DI0TriggerConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.StepMode.html">StepMode</a></td>
+<td>44</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the motor step mode from a list of available types.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.StepModeType.html">StepModeType</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.ProtocolStepCount.html">ProtocolStepCount</a></td>
+<td>45</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the number of steps to be executed in the current protocol.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.ProtocolPeriod.html">ProtocolPeriod</a></td>
+<td>47</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Sets the period, in ms, of of each step in the protocol.</td>
+<td>[1:]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.EnableEvents.html">EnableEvents</a></td>
+<td>52</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies all the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.PumpEvents.html">PumpEvents</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.Protocol.html">Protocol</a></td>
+<td>54</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the protocol execution.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.ProtocolState.html">ProtocolState</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.SyringePump.ProtocolDirection.html">ProtocolDirection</a></td>
+<td>55</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the direction of the protocol execution.</td>
+<td></td>
+<td><a class="xref" href="Harp.SyringePump.ProtocolDirectionState.html">ProtocolDirectionState</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with SyringePump devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDI0TriggerPayload.html">CreateDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the callback function triggered when digital input is triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDO0SyncPayload.html">CreateDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures which signal is mimicked in the digital output 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDO1SyncPayload.html">CreateDO1SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures which signal is mimicked in the digital output 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the digital input pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDigitalOutputClearPayload.html">CreateDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDigitalOutputSetPayload.html">CreateDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateDirectionPayload.html">CreateDirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the DIR motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateEnableEventsPayload.html">CreateEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateEnableMotorDriverPayload.html">CreateEnableMotorDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the motor driver.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateEnableProtocolPayload.html">CreateEnableProtocolPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the currently defined protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateForwardSwitchPayload.html">CreateForwardSwitchPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the forward limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+SyringePump device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateProtocolDirectionPayload.html">CreateProtocolDirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the direction of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateProtocolPayload.html">CreateProtocolPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateProtocolPeriodPayload.html">CreateProtocolPeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the period, in ms, of of each step in the protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateProtocolStepCountPayload.html">CreateProtocolStepCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the number of steps to be executed in the current protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateReverseSwitchPayload.html">CreateReverseSwitchPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the reverse limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateStepModePayload.html">CreateStepModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that sets the motor step mode from a list of available types.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateStepPayload.html">CreateStepPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the STEP motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDI0TriggerPayload.html">CreateTimestampedDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the callback function triggered when digital input is triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDO0SyncPayload.html">CreateTimestampedDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures which signal is mimicked in the digital output 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDO1SyncPayload.html">CreateTimestampedDO1SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures which signal is mimicked in the digital output 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the digital input pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDigitalOutputClearPayload.html">CreateTimestampedDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDigitalOutputSetPayload.html">CreateTimestampedDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedDirectionPayload.html">CreateTimestampedDirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the DIR motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedEnableEventsPayload.html">CreateTimestampedEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedEnableMotorDriverPayload.html">CreateTimestampedEnableMotorDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the motor driver.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedEnableProtocolPayload.html">CreateTimestampedEnableProtocolPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the currently defined protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedForwardSwitchPayload.html">CreateTimestampedForwardSwitchPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the forward limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedProtocolDirectionPayload.html">CreateTimestampedProtocolDirectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the direction of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedProtocolPayload.html">CreateTimestampedProtocolPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedProtocolPeriodPayload.html">CreateTimestampedProtocolPeriodPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the period, in ms, of of each step in the protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedProtocolStepCountPayload.html">CreateTimestampedProtocolStepCountPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the number of steps to be executed in the current protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedReverseSwitchPayload.html">CreateTimestampedReverseSwitchPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the reverse limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedStepModePayload.html">CreateTimestampedStepModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that sets the motor step mode from a list of available types.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.CreateTimestampedStepPayload.html">CreateTimestampedStepPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the STEP motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DI0Trigger.html">DI0Trigger</a></dt>
+      <dd><p>Represents a register that configures the callback function triggered when digital input is triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DO0Sync.html">DO0Sync</a></dt>
+      <dd><p>Represents a register that configures which signal is mimicked in the digital output 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DO1Sync.html">DO1Sync</a></dt>
+      <dd><p>Represents a register that configures which signal is mimicked in the digital output 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that status of the digital input pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DigitalOutputClear.html">DigitalOutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DigitalOutputSet.html">DigitalOutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Direction.html">Direction</a></dt>
+      <dd><p>Represents a register that status of the DIR motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.EnableEvents.html">EnableEvents</a></dt>
+      <dd><p>Represents a register that specifies all the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.EnableMotorDriver.html">EnableMotorDriver</a></dt>
+      <dd><p>Represents a register that enables the motor driver.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.EnableProtocol.html">EnableProtocol</a></dt>
+      <dd><p>Represents a register that enables the currently defined protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.SyringePump.html">Harp.SyringePump</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+SyringePump register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ForwardSwitch.html">ForwardSwitch</a></dt>
+      <dd><p>Represents a register that status of the forward limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.SyringePump.html">Harp.SyringePump</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the SyringePump device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Protocol.html">Protocol</a></dt>
+      <dd><p>Represents a register that status of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ProtocolDirection.html">ProtocolDirection</a></dt>
+      <dd><p>Represents a register that sets the direction of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ProtocolPeriod.html">ProtocolPeriod</a></dt>
+      <dd><p>Represents a register that sets the period, in ms, of of each step in the protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ProtocolStepCount.html">ProtocolStepCount</a></dt>
+      <dd><p>Represents a register that sets the number of steps to be executed in the current protocol.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ReverseSwitch.html">ReverseSwitch</a></dt>
+      <dd><p>Represents a register that status of the reverse limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.Step.html">Step</a></dt>
+      <dd><p>Represents a register that status of the STEP motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.StepMode.html">StepMode</a></dt>
+      <dd><p>Represents a register that sets the motor step mode from a list of available types.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDI0Trigger.html">TimestampedDI0Trigger</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DI0Trigger register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDO0Sync.html">TimestampedDO0Sync</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0Sync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDO1Sync.html">TimestampedDO1Sync</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1Sync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDigitalOutputClear.html">TimestampedDigitalOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDigitalOutputSet.html">TimestampedDigitalOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedDirection.html">TimestampedDirection</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Direction register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedEnableEvents.html">TimestampedEnableEvents</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEvents register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedEnableMotorDriver.html">TimestampedEnableMotorDriver</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableMotorDriver register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedEnableProtocol.html">TimestampedEnableProtocol</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableProtocol register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedForwardSwitch.html">TimestampedForwardSwitch</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ForwardSwitch register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedProtocol.html">TimestampedProtocol</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Protocol register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedProtocolDirection.html">TimestampedProtocolDirection</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ProtocolDirection register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedProtocolPeriod.html">TimestampedProtocolPeriod</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ProtocolPeriod register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedProtocolStepCount.html">TimestampedProtocolStepCount</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ProtocolStepCount register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedReverseSwitch.html">TimestampedReverseSwitch</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ReverseSwitch register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedStep.html">TimestampedStep</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Step register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.TimestampedStepMode.html">TimestampedStepMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StepMode register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DI0TriggerConfig.html">DI0TriggerConfig</a></dt>
+      <dd><p>Configures the function executed when digital input is triggered.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DO0SyncConfig.html">DO0SyncConfig</a></dt>
+      <dd><p>Configures which signal is mimicked in the digital output 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DO1SyncConfig.html">DO1SyncConfig</a></dt>
+      <dd><p>Configures which signal is mimicked in the digital output 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>The state of the digital input pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>The digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.DirectionState.html">DirectionState</a></dt>
+      <dd><p>The state of the DIR motor controller pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ForwardSwitchState.html">ForwardSwitchState</a></dt>
+      <dd><p>The state of the forward limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ProtocolDirectionState.html">ProtocolDirectionState</a></dt>
+      <dd><p>The state of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ProtocolState.html">ProtocolState</a></dt>
+      <dd><p>The state of the protocol execution.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.PumpBoardType.html">PumpBoardType</a></dt>
+      <dd><p>Available board configurations.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.PumpEvents.html">PumpEvents</a></dt>
+      <dd><p>The events that can be enabled/disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.PumpProtocolType.html">PumpProtocolType</a></dt>
+      <dd><p>Available protocol types.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.ReverseSwitchState.html">ReverseSwitchState</a></dt>
+      <dd><p>The state of the reverse limit switch.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.StepModeType.html">StepModeType</a></dt>
+      <dd><p>Available step modes.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.SyringePump.StepState.html">StepState</a></dt>
+      <dd><p>The state of the STEP motor controller pin.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_SyringePump.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

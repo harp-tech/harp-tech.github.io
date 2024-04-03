@@ -1,0 +1,2976 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.StepperDriver
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.StepperDriver
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_StepperDriver.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.StepperDriver">
+
+  <h1 id="Harp_StepperDriver" data-uid="Harp.StepperDriver" class="text-break">Namespace Harp.StepperDriver
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-stepper-driver">Harp Stepper Driver</h2>
+<p>A stepper motor controller device for four motors including individual quadrature encoders..</p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Individual control of maximum output current for each motor</li>
+<li>Individual motor current up to 2A</li>
+<li>Two control modes</li>
+<li>
+<ul>
+<li>Position set</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Speed control</li>
+</ul>
+</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>1 USB Mini port</li>
+<li>1 Motor supply input voltage (up to 35V)</li>
+<li>4 motors</li>
+<li>4 quadrature encoders</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp Behavior can be done through <a href="https://bonsai-rx.org/">Bonsai</a></p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">StepperDriver</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1130</td></tr>
+    <tr><td>firmwareVersion</td><td>0.3</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.EnableDriver.html">EnableDriver</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the driver for a specific motor. If the driver is already enabled, the driver remains enabled.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.DisableDriver.html">DisableDriver</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Disables the driver for a specific stepper motor, which prevents current from being sent to the motor or load. If the driver is already disabled, the driver remains disabled.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.EnableEncoders.html">EnableEncoders</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies a set of port quadrature counters to enable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.QuadratureEncoders.html">QuadratureEncoders</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.DisableEncoders.html">DisableEncoders</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies a set of port quadrature counters to disable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.QuadratureEncoders.html">QuadratureEncoders</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.EnableDigitalInputs.html">EnableDigitalInputs</a></td>
+<td>36</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies a set of digital inputs to enable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.DisableDigitalInputs.html">DisableDigitalInputs</a></td>
+<td>37</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies a set of digital inputs to disable in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0OperationMode.html">Motor0OperationMode</a></td>
+<td>38</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for motor 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MotorOperationMode.html">MotorOperationMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1OperationMode.html">Motor1OperationMode</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for motor 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MotorOperationMode.html">MotorOperationMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2OperationMode.html">Motor2OperationMode</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for motor 2.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MotorOperationMode.html">MotorOperationMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3OperationMode.html">Motor3OperationMode</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for motor 3.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MotorOperationMode.html">MotorOperationMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MicrostepResolution.html">Motor0MicrostepResolution</a></td>
+<td>42</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the microstep resolution for motor 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MicrostepResolution.html">MicrostepResolution</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MicrostepResolution.html">Motor1MicrostepResolution</a></td>
+<td>43</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the microstep resolution for motor 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MicrostepResolution.html">MicrostepResolution</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MicrostepResolution.html">Motor2MicrostepResolution</a></td>
+<td>44</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the microstep resolution for motor 2.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MicrostepResolution.html">MicrostepResolution</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MicrostepResolution.html">Motor3MicrostepResolution</a></td>
+<td>45</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the microstep resolution for motor 3.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MicrostepResolution.html">MicrostepResolution</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MaximumRunCurrent.html">Motor0MaximumRunCurrent</a></td>
+<td>46</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Configures the maximum run RMS current per phase for motor 0.</td>
+<td>0.2 [0.139:2.1]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MaximumRunCurrent.html">Motor1MaximumRunCurrent</a></td>
+<td>47</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Configures the maximum run RMS current per phase for motor 1.</td>
+<td>0.2 [0.139:2.1]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MaximumRunCurrent.html">Motor2MaximumRunCurrent</a></td>
+<td>48</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Configures the maximum run RMS current per phase for motor 2.</td>
+<td>0.2 [0.139:2.1]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MaximumRunCurrent.html">Motor3MaximumRunCurrent</a></td>
+<td>49</td>
+<td>Float</td>
+<td></td>
+<td>Write</td>
+<td>Configures the maximum run RMS current per phase for motor 3.</td>
+<td>0.2 [0.139:2.1]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0HoldCurrentReduction.html">Motor0HoldCurrentReduction</a></td>
+<td>50</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the hold current reduction for motor 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.HoldCurrentReduction.html">HoldCurrentReduction</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1HoldCurrentReduction.html">Motor1HoldCurrentReduction</a></td>
+<td>51</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the hold current reduction for motor 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.HoldCurrentReduction.html">HoldCurrentReduction</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2HoldCurrentReduction.html">Motor2HoldCurrentReduction</a></td>
+<td>52</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the hold current reduction for motor 2.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.HoldCurrentReduction.html">HoldCurrentReduction</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3HoldCurrentReduction.html">Motor3HoldCurrentReduction</a></td>
+<td>53</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the hold current reduction for motor 3.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.HoldCurrentReduction.html">HoldCurrentReduction</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0StepInterval.html">Motor0StepInterval</a></td>
+<td>54</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) when running at nominal speed for motor 0.</td>
+<td>250 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1StepInterval.html">Motor1StepInterval</a></td>
+<td>55</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) when running at nominal speed for motor 1.</td>
+<td>250 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2StepInterval.html">Motor2StepInterval</a></td>
+<td>56</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) when running at nominal speed for motor 2.</td>
+<td>250 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3StepInterval.html">Motor3StepInterval</a></td>
+<td>57</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) when running at nominal speed for motor 3.</td>
+<td>250 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MaximumStepInterval.html">Motor0MaximumStepInterval</a></td>
+<td>58</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) used when starting or stopping a movement for motor 0.</td>
+<td>2000 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MaximumStepInterval.html">Motor1MaximumStepInterval</a></td>
+<td>59</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) used when starting or stopping a movement for motor 1.</td>
+<td>2000 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MaximumStepInterval.html">Motor2MaximumStepInterval</a></td>
+<td>60</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) used when starting or stopping a movement for motor 2.</td>
+<td>2000 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MaximumStepInterval.html">Motor3MaximumStepInterval</a></td>
+<td>61</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the time between step motor pulses (us) used when starting or stopping a movement for motor 3.</td>
+<td>2000 [100:20000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0StepAccelerationInterval.html">Motor0StepAccelerationInterval</a></td>
+<td>62</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the acceleration for motor 0. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</td>
+<td>10 [2:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1StepAccelerationInterval.html">Motor1StepAccelerationInterval</a></td>
+<td>63</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the acceleration for motor 1. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</td>
+<td>10 [2:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2StepAccelerationInterval.html">Motor2StepAccelerationInterval</a></td>
+<td>64</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the acceleration for motor 2. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</td>
+<td>10 [2:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3StepAccelerationInterval.html">Motor3StepAccelerationInterval</a></td>
+<td>65</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Configures the acceleration for motor 3. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</td>
+<td>10 [2:2000]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.EncoderMode.html">EncoderMode</a></td>
+<td>66</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode of the quadrature encoder.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.EncoderModeConfig.html">EncoderModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.EncoderSamplingRate.html">EncoderSamplingRate</a></td>
+<td>67</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the sampling rate of the quadrature encoder event.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.EncoderSamplingRateConfig.html">EncoderSamplingRateConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Input0OpMode.html">Input0OpMode</a></td>
+<td>68</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for digital input 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.InputOpModeConfig.html">InputOpModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Input1OpMode.html">Input1OpMode</a></td>
+<td>69</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for digital input 1.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.InputOpModeConfig.html">InputOpModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Input2OpMode.html">Input2OpMode</a></td>
+<td>70</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for digital input 2.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.InputOpModeConfig.html">InputOpModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Input3OpMode.html">Input3OpMode</a></td>
+<td>71</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the operation mode for digital input 3.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.InputOpModeConfig.html">InputOpModeConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.InterlockEnabled.html">InterlockEnabled</a></td>
+<td>72</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the external interlock connector state required for the device to be enabled.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.InterlockEnabledConfig.html">InterlockEnabledConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.AccumulatedStepsSamplingRate.html">AccumulatedStepsSamplingRate</a></td>
+<td>73</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures the dispatch rate of the accumulated steps event.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.AccumulatedStepsSamplingRateConfig.html">AccumulatedStepsSamplingRateConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MotorStopped.html">MotorStopped</a></td>
+<td>74</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Emitted when any of the motors stops.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MotorStoppedPayload.html">MotorStoppedPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MotorOverVoltageDetection.html">MotorOverVoltageDetection</a></td>
+<td>75</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Contains a bit mask specifying the motor where the over voltage detection and protection mechanism occurred, which can happen when the there's a quick deceleration from a high velocity or when the motor stalls (not implemented).</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MotorRaisedError.html">MotorRaisedError</a></td>
+<td>76</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Contains a bit mask specifying the motor that triggered the error which can be happen in case of short-circuit or driver temperature above 165 degrees celsius.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Encoders.html">Encoders</a></td>
+<td>77</td>
+<td>S16</td>
+<td>3</td>
+<td>Event, Write</td>
+<td>Contains the quadrature encoder readings.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.EncodersPayload.html">EncodersPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.DigitalInputState.html">DigitalInputState</a></td>
+<td>78</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Reflects the state of the digital input lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.DigitalInputStates.html">DigitalInputStates</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.DeviceState.html">DeviceState</a></td>
+<td>79</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Contains the state of the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.DeviceStateMode.html">DeviceStateMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MoveRelative.html">MoveRelative</a></td>
+<td>80</td>
+<td>S32</td>
+<td>4</td>
+<td>Write</td>
+<td>Moves all motors by the number of steps written in this array register and set the direction according to the value's signal. If a motor is disable, the user should set the value to 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MoveRelativePayload.html">MoveRelativePayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MoveRelative.html">Motor0MoveRelative</a></td>
+<td>81</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 0 by the number of steps written in this register and set the direction according to the value's signal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MoveRelative.html">Motor1MoveRelative</a></td>
+<td>82</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 1 by the number of steps written in this register and set the direction according to the value's signal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MoveRelative.html">Motor2MoveRelative</a></td>
+<td>83</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 2 by the number of steps written in this register and set the direction according to the value's signal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MoveRelative.html">Motor3MoveRelative</a></td>
+<td>84</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 3 by the number of steps written in this register and set the direction according to the value's signal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MoveAbsolute.html">MoveAbsolute</a></td>
+<td>85</td>
+<td>S32</td>
+<td>4</td>
+<td>Write</td>
+<td>Moves all motors to the absolute position written in this array register. If a motor is disable, the user should set the value to 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MoveAbsolutePayload.html">MoveAbsolutePayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MoveAbsolute.html">Motor0MoveAbsolute</a></td>
+<td>86</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 0 to the absolute position written in this register.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MoveAbsolute.html">Motor1MoveAbsolute</a></td>
+<td>87</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 1 to the absolute position written in this register.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MoveAbsolute.html">Motor2MoveAbsolute</a></td>
+<td>88</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 2 to the absolute position written in this register.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MoveAbsolute.html">Motor3MoveAbsolute</a></td>
+<td>89</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Moves motor 3 to the absolute position written in this register.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.AccumulatedSteps.html">AccumulatedSteps</a></td>
+<td>90</td>
+<td>S32</td>
+<td>4</td>
+<td>Event, Write</td>
+<td>Contains the accumulated steps of all motors. Write a value to set the accumulated steps. An event will be emitted with a dispatch rate defined in AccumulatedStepsSamplingRate.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.AccumulatedStepsPayload.html">AccumulatedStepsPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Mortor0AccumulatedSteps.html">Mortor0AccumulatedSteps</a></td>
+<td>91</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Contains the accumulated number of steps of motor 0. Write a value to set the current number of accumulated steps.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Mortor1AccumulatedSteps.html">Mortor1AccumulatedSteps</a></td>
+<td>92</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Contains the accumulated number of steps of motor 1. Write a value to set the current number of accumulated steps.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Mortor2AccumulatedSteps.html">Mortor2AccumulatedSteps</a></td>
+<td>93</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Contains the accumulated number of steps of motor 2. Write a value to set the current number of accumulated steps.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Mortor3AccumulatedSteps.html">Mortor3AccumulatedSteps</a></td>
+<td>94</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Contains the accumulated number of steps of motor 3. Write a value to set the current number of accumulated steps.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MaxPosition.html">MaxPosition</a></td>
+<td>95</td>
+<td>S32</td>
+<td>4</td>
+<td>Write</td>
+<td>Defines the limit of the accumulated steps for the positive movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MaxPositionPayload.html">MaxPositionPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MaxPosition.html">Motor0MaxPosition</a></td>
+<td>96</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the positive movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MaxPosition.html">Motor1MaxPosition</a></td>
+<td>97</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the positive movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MaxPosition.html">Motor2MaxPosition</a></td>
+<td>98</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the positive movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MaxPosition.html">Motor3MaxPosition</a></td>
+<td>99</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the positive movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.MinPosition.html">MinPosition</a></td>
+<td>100</td>
+<td>S32</td>
+<td>4</td>
+<td>Write</td>
+<td>Defines the limit of the accumulated steps for the negative movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.MinPositionPayload.html">MinPositionPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0MinPosition.html">Motor0MinPosition</a></td>
+<td>101</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the negative movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1MinPosition.html">Motor1MinPosition</a></td>
+<td>102</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the negative movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2MinPosition.html">Motor2MinPosition</a></td>
+<td>103</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the negative movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3MinPosition.html">Motor3MinPosition</a></td>
+<td>104</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the limit of the accumulated steps for the negative movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.StepRelative.html">StepRelative</a></td>
+<td>105</td>
+<td>S32</td>
+<td>4</td>
+<td>Write</td>
+<td>Starts the movement of all motors with the step interval defined by this array. The value's signal defines the direction.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepRelativePayload.html">StepRelativePayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor0StepRelative.html">Motor0StepRelative</a></td>
+<td>106</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Starts the movement of motor 0 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor1StepRelative.html">Motor1StepRelative</a></td>
+<td>107</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Starts the movement of motor 1 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor2StepRelative.html">Motor2StepRelative</a></td>
+<td>108</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Starts the movement of motor 2 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.Motor3StepRelative.html">Motor3StepRelative</a></td>
+<td>109</td>
+<td>S32</td>
+<td></td>
+<td>Write</td>
+<td>Starts the movement of motor 3 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.StopMotors.html">StopMotors</a></td>
+<td>110</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Stops the motors selected in the bit-mask immediately.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.StepperDriver.ResetEncoders.html">ResetEncoders</a></td>
+<td>112</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Resets the encoder.</td>
+<td></td>
+<td><a class="xref" href="Harp.StepperDriver.QuadratureEncoders.html">QuadratureEncoders</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.AccumulatedSteps.html">AccumulatedSteps</a></dt>
+      <dd><p>Represents a register that contains the accumulated steps of all motors. Write a value to set the accumulated steps. An event will be emitted with a dispatch rate defined in AccumulatedStepsSamplingRate.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.AccumulatedStepsSamplingRate.html">AccumulatedStepsSamplingRate</a></dt>
+      <dd><p>Represents a register that configures the dispatch rate of the accumulated steps event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with StepperDriver devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateAccumulatedStepsPayload.html">CreateAccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the accumulated steps of all motors. Write a value to set the accumulated steps. An event will be emitted with a dispatch rate defined in AccumulatedStepsSamplingRate.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateAccumulatedStepsSamplingRatePayload.html">CreateAccumulatedStepsSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the dispatch rate of the accumulated steps event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateDeviceStatePayload.html">CreateDeviceStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the state of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that reflects the state of the digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateDisableDigitalInputsPayload.html">CreateDisableDigitalInputsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies a set of digital inputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateDisableDriverPayload.html">CreateDisableDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that disables the driver for a specific stepper motor, which prevents current from being sent to the motor or load. If the driver is already disabled, the driver remains disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateDisableEncodersPayload.html">CreateDisableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies a set of port quadrature counters to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEnableDigitalInputsPayload.html">CreateEnableDigitalInputsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies a set of digital inputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEnableDriverPayload.html">CreateEnableDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the driver for a specific motor. If the driver is already enabled, the driver remains enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEnableEncodersPayload.html">CreateEnableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies a set of port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEncoderModePayload.html">CreateEncoderModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode of the quadrature encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEncoderSamplingRatePayload.html">CreateEncoderSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the sampling rate of the quadrature encoder event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateEncodersPayload.html">CreateEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the quadrature encoder readings.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateInput0OpModePayload.html">CreateInput0OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for digital input 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateInput1OpModePayload.html">CreateInput1OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for digital input 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateInput2OpModePayload.html">CreateInput2OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for digital input 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateInput3OpModePayload.html">CreateInput3OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for digital input 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateInterlockEnabledPayload.html">CreateInterlockEnabledPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the external interlock connector state required for the device to be enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMaxPositionPayload.html">CreateMaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that defines the limit of the accumulated steps for the positive movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+StepperDriver device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMinPositionPayload.html">CreateMinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that defines the limit of the accumulated steps for the negative movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMortor0AccumulatedStepsPayload.html">CreateMortor0AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the accumulated number of steps of motor 0. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMortor1AccumulatedStepsPayload.html">CreateMortor1AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the accumulated number of steps of motor 1. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMortor2AccumulatedStepsPayload.html">CreateMortor2AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the accumulated number of steps of motor 2. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMortor3AccumulatedStepsPayload.html">CreateMortor3AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains the accumulated number of steps of motor 3. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0HoldCurrentReductionPayload.html">CreateMotor0HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the hold current reduction for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MaxPositionPayload.html">CreateMotor0MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MaximumRunCurrentPayload.html">CreateMotor0MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the maximum run RMS current per phase for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MaximumStepIntervalPayload.html">CreateMotor0MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MicrostepResolutionPayload.html">CreateMotor0MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the microstep resolution for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MinPositionPayload.html">CreateMotor0MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MoveAbsolutePayload.html">CreateMotor0MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 0 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0MoveRelativePayload.html">CreateMotor0MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 0 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0OperationModePayload.html">CreateMotor0OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0StepAccelerationIntervalPayload.html">CreateMotor0StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the acceleration for motor 0. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0StepIntervalPayload.html">CreateMotor0StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor0StepRelativePayload.html">CreateMotor0StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the movement of motor 0 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1HoldCurrentReductionPayload.html">CreateMotor1HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the hold current reduction for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MaxPositionPayload.html">CreateMotor1MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MaximumRunCurrentPayload.html">CreateMotor1MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the maximum run RMS current per phase for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MaximumStepIntervalPayload.html">CreateMotor1MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MicrostepResolutionPayload.html">CreateMotor1MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the microstep resolution for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MinPositionPayload.html">CreateMotor1MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MoveAbsolutePayload.html">CreateMotor1MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 1 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1MoveRelativePayload.html">CreateMotor1MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 1 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1OperationModePayload.html">CreateMotor1OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1StepAccelerationIntervalPayload.html">CreateMotor1StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the acceleration for motor 1. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1StepIntervalPayload.html">CreateMotor1StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor1StepRelativePayload.html">CreateMotor1StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the movement of motor 1 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2HoldCurrentReductionPayload.html">CreateMotor2HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the hold current reduction for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MaxPositionPayload.html">CreateMotor2MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MaximumRunCurrentPayload.html">CreateMotor2MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the maximum run RMS current per phase for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MaximumStepIntervalPayload.html">CreateMotor2MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MicrostepResolutionPayload.html">CreateMotor2MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the microstep resolution for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MinPositionPayload.html">CreateMotor2MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MoveAbsolutePayload.html">CreateMotor2MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 2 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2MoveRelativePayload.html">CreateMotor2MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 2 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2OperationModePayload.html">CreateMotor2OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2StepAccelerationIntervalPayload.html">CreateMotor2StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the acceleration for motor 2. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2StepIntervalPayload.html">CreateMotor2StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor2StepRelativePayload.html">CreateMotor2StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the movement of motor 2 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3HoldCurrentReductionPayload.html">CreateMotor3HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the hold current reduction for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MaxPositionPayload.html">CreateMotor3MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MaximumRunCurrentPayload.html">CreateMotor3MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the maximum run RMS current per phase for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MaximumStepIntervalPayload.html">CreateMotor3MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MicrostepResolutionPayload.html">CreateMotor3MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the microstep resolution for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MinPositionPayload.html">CreateMotor3MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MoveAbsolutePayload.html">CreateMotor3MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 3 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3MoveRelativePayload.html">CreateMotor3MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves motor 3 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3OperationModePayload.html">CreateMotor3OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the operation mode for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3StepAccelerationIntervalPayload.html">CreateMotor3StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the acceleration for motor 3. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3StepIntervalPayload.html">CreateMotor3StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotor3StepRelativePayload.html">CreateMotor3StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the movement of motor 3 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotorOverVoltageDetectionPayload.html">CreateMotorOverVoltageDetectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains a bit mask specifying the motor where the over voltage detection and protection mechanism occurred, which can happen when the there's a quick deceleration from a high velocity or when the motor stalls (not implemented).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotorRaisedErrorPayload.html">CreateMotorRaisedErrorPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that contains a bit mask specifying the motor that triggered the error which can be happen in case of short-circuit or driver temperature above 165 degrees celsius.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMotorStoppedPayload.html">CreateMotorStoppedPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that emitted when any of the motors stops.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMoveAbsolutePayload.html">CreateMoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves all motors to the absolute position written in this array register. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateMoveRelativePayload.html">CreateMoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that moves all motors by the number of steps written in this array register and set the direction according to the value's signal. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateResetEncodersPayload.html">CreateResetEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that resets the encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateStepRelativePayload.html">CreateStepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that starts the movement of all motors with the step interval defined by this array. The value's signal defines the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateStopMotorsPayload.html">CreateStopMotorsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that stops the motors selected in the bit-mask immediately.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedAccumulatedStepsPayload.html">CreateTimestampedAccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the accumulated steps of all motors. Write a value to set the accumulated steps. An event will be emitted with a dispatch rate defined in AccumulatedStepsSamplingRate.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedAccumulatedStepsSamplingRatePayload.html">CreateTimestampedAccumulatedStepsSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the dispatch rate of the accumulated steps event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedDeviceStatePayload.html">CreateTimestampedDeviceStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the state of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that reflects the state of the digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedDisableDigitalInputsPayload.html">CreateTimestampedDisableDigitalInputsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies a set of digital inputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedDisableDriverPayload.html">CreateTimestampedDisableDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that disables the driver for a specific stepper motor, which prevents current from being sent to the motor or load. If the driver is already disabled, the driver remains disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedDisableEncodersPayload.html">CreateTimestampedDisableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies a set of port quadrature counters to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEnableDigitalInputsPayload.html">CreateTimestampedEnableDigitalInputsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies a set of digital inputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEnableDriverPayload.html">CreateTimestampedEnableDriverPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the driver for a specific motor. If the driver is already enabled, the driver remains enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEnableEncodersPayload.html">CreateTimestampedEnableEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies a set of port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEncoderModePayload.html">CreateTimestampedEncoderModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode of the quadrature encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEncoderSamplingRatePayload.html">CreateTimestampedEncoderSamplingRatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the sampling rate of the quadrature encoder event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedEncodersPayload.html">CreateTimestampedEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the quadrature encoder readings.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedInput0OpModePayload.html">CreateTimestampedInput0OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for digital input 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedInput1OpModePayload.html">CreateTimestampedInput1OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for digital input 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedInput2OpModePayload.html">CreateTimestampedInput2OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for digital input 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedInput3OpModePayload.html">CreateTimestampedInput3OpModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for digital input 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedInterlockEnabledPayload.html">CreateTimestampedInterlockEnabledPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the external interlock connector state required for the device to be enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMaxPositionPayload.html">CreateTimestampedMaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that defines the limit of the accumulated steps for the positive movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMinPositionPayload.html">CreateTimestampedMinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that defines the limit of the accumulated steps for the negative movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMortor0AccumulatedStepsPayload.html">CreateTimestampedMortor0AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the accumulated number of steps of motor 0. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMortor1AccumulatedStepsPayload.html">CreateTimestampedMortor1AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the accumulated number of steps of motor 1. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMortor2AccumulatedStepsPayload.html">CreateTimestampedMortor2AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the accumulated number of steps of motor 2. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMortor3AccumulatedStepsPayload.html">CreateTimestampedMortor3AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains the accumulated number of steps of motor 3. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0HoldCurrentReductionPayload.html">CreateTimestampedMotor0HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the hold current reduction for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MaxPositionPayload.html">CreateTimestampedMotor0MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MaximumRunCurrentPayload.html">CreateTimestampedMotor0MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the maximum run RMS current per phase for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MaximumStepIntervalPayload.html">CreateTimestampedMotor0MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MicrostepResolutionPayload.html">CreateTimestampedMotor0MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the microstep resolution for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MinPositionPayload.html">CreateTimestampedMotor0MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MoveAbsolutePayload.html">CreateTimestampedMotor0MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 0 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0MoveRelativePayload.html">CreateTimestampedMotor0MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 0 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0OperationModePayload.html">CreateTimestampedMotor0OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0StepAccelerationIntervalPayload.html">CreateTimestampedMotor0StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the acceleration for motor 0. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0StepIntervalPayload.html">CreateTimestampedMotor0StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor0StepRelativePayload.html">CreateTimestampedMotor0StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the movement of motor 0 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1HoldCurrentReductionPayload.html">CreateTimestampedMotor1HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the hold current reduction for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MaxPositionPayload.html">CreateTimestampedMotor1MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MaximumRunCurrentPayload.html">CreateTimestampedMotor1MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the maximum run RMS current per phase for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MaximumStepIntervalPayload.html">CreateTimestampedMotor1MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MicrostepResolutionPayload.html">CreateTimestampedMotor1MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the microstep resolution for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MinPositionPayload.html">CreateTimestampedMotor1MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MoveAbsolutePayload.html">CreateTimestampedMotor1MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 1 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1MoveRelativePayload.html">CreateTimestampedMotor1MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 1 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1OperationModePayload.html">CreateTimestampedMotor1OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1StepAccelerationIntervalPayload.html">CreateTimestampedMotor1StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the acceleration for motor 1. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1StepIntervalPayload.html">CreateTimestampedMotor1StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor1StepRelativePayload.html">CreateTimestampedMotor1StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the movement of motor 1 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2HoldCurrentReductionPayload.html">CreateTimestampedMotor2HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the hold current reduction for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MaxPositionPayload.html">CreateTimestampedMotor2MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MaximumRunCurrentPayload.html">CreateTimestampedMotor2MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the maximum run RMS current per phase for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MaximumStepIntervalPayload.html">CreateTimestampedMotor2MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MicrostepResolutionPayload.html">CreateTimestampedMotor2MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the microstep resolution for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MinPositionPayload.html">CreateTimestampedMotor2MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MoveAbsolutePayload.html">CreateTimestampedMotor2MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 2 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2MoveRelativePayload.html">CreateTimestampedMotor2MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 2 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2OperationModePayload.html">CreateTimestampedMotor2OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2StepAccelerationIntervalPayload.html">CreateTimestampedMotor2StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the acceleration for motor 2. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2StepIntervalPayload.html">CreateTimestampedMotor2StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor2StepRelativePayload.html">CreateTimestampedMotor2StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the movement of motor 2 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3HoldCurrentReductionPayload.html">CreateTimestampedMotor3HoldCurrentReductionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the hold current reduction for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MaxPositionPayload.html">CreateTimestampedMotor3MaxPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the positive movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MaximumRunCurrentPayload.html">CreateTimestampedMotor3MaximumRunCurrentPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the maximum run RMS current per phase for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MaximumStepIntervalPayload.html">CreateTimestampedMotor3MaximumStepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MicrostepResolutionPayload.html">CreateTimestampedMotor3MicrostepResolutionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the microstep resolution for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MinPositionPayload.html">CreateTimestampedMotor3MinPositionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the limit of the accumulated steps for the negative movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MoveAbsolutePayload.html">CreateTimestampedMotor3MoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 3 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3MoveRelativePayload.html">CreateTimestampedMotor3MoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves motor 3 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3OperationModePayload.html">CreateTimestampedMotor3OperationModePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the operation mode for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3StepAccelerationIntervalPayload.html">CreateTimestampedMotor3StepAccelerationIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the acceleration for motor 3. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3StepIntervalPayload.html">CreateTimestampedMotor3StepIntervalPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configures the time between step motor pulses (us) when running at nominal speed for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotor3StepRelativePayload.html">CreateTimestampedMotor3StepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the movement of motor 3 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotorOverVoltageDetectionPayload.html">CreateTimestampedMotorOverVoltageDetectionPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains a bit mask specifying the motor where the over voltage detection and protection mechanism occurred, which can happen when the there's a quick deceleration from a high velocity or when the motor stalls (not implemented).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotorRaisedErrorPayload.html">CreateTimestampedMotorRaisedErrorPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that contains a bit mask specifying the motor that triggered the error which can be happen in case of short-circuit or driver temperature above 165 degrees celsius.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMotorStoppedPayload.html">CreateTimestampedMotorStoppedPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that emitted when any of the motors stops.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMoveAbsolutePayload.html">CreateTimestampedMoveAbsolutePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves all motors to the absolute position written in this array register. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedMoveRelativePayload.html">CreateTimestampedMoveRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that moves all motors by the number of steps written in this array register and set the direction according to the value's signal. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedResetEncodersPayload.html">CreateTimestampedResetEncodersPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that resets the encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedStepRelativePayload.html">CreateTimestampedStepRelativePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that starts the movement of all motors with the step interval defined by this array. The value's signal defines the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.CreateTimestampedStopMotorsPayload.html">CreateTimestampedStopMotorsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that stops the motors selected in the bit-mask immediately.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DeviceState.html">DeviceState</a></dt>
+      <dd><p>Represents a register that contains the state of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that reflects the state of the digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DisableDigitalInputs.html">DisableDigitalInputs</a></dt>
+      <dd><p>Represents a register that specifies a set of digital inputs to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DisableDriver.html">DisableDriver</a></dt>
+      <dd><p>Represents a register that disables the driver for a specific stepper motor, which prevents current from being sent to the motor or load. If the driver is already disabled, the driver remains disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DisableEncoders.html">DisableEncoders</a></dt>
+      <dd><p>Represents a register that specifies a set of port quadrature counters to disable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EnableDigitalInputs.html">EnableDigitalInputs</a></dt>
+      <dd><p>Represents a register that specifies a set of digital inputs to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EnableDriver.html">EnableDriver</a></dt>
+      <dd><p>Represents a register that enables the driver for a specific motor. If the driver is already enabled, the driver remains enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EnableEncoders.html">EnableEncoders</a></dt>
+      <dd><p>Represents a register that specifies a set of port quadrature counters to enable in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EncoderMode.html">EncoderMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode of the quadrature encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EncoderSamplingRate.html">EncoderSamplingRate</a></dt>
+      <dd><p>Represents a register that configures the sampling rate of the quadrature encoder event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Encoders.html">Encoders</a></dt>
+      <dd><p>Represents a register that contains the quadrature encoder readings.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.StepperDriver.html">Harp.StepperDriver</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+StepperDriver register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.StepperDriver.html">Harp.StepperDriver</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Input0OpMode.html">Input0OpMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for digital input 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Input1OpMode.html">Input1OpMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for digital input 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Input2OpMode.html">Input2OpMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for digital input 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Input3OpMode.html">Input3OpMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for digital input 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.InterlockEnabled.html">InterlockEnabled</a></dt>
+      <dd><p>Represents a register that configures the external interlock connector state required for the device to be enabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MaxPosition.html">MaxPosition</a></dt>
+      <dd><p>Represents a register that defines the limit of the accumulated steps for the positive movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MinPosition.html">MinPosition</a></dt>
+      <dd><p>Represents a register that defines the limit of the accumulated steps for the negative movement of all motors. The device will not let the motors move further than this value. A value equal to 0 will disable the limits.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Mortor0AccumulatedSteps.html">Mortor0AccumulatedSteps</a></dt>
+      <dd><p>Represents a register that contains the accumulated number of steps of motor 0. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Mortor1AccumulatedSteps.html">Mortor1AccumulatedSteps</a></dt>
+      <dd><p>Represents a register that contains the accumulated number of steps of motor 1. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Mortor2AccumulatedSteps.html">Mortor2AccumulatedSteps</a></dt>
+      <dd><p>Represents a register that contains the accumulated number of steps of motor 2. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Mortor3AccumulatedSteps.html">Mortor3AccumulatedSteps</a></dt>
+      <dd><p>Represents a register that contains the accumulated number of steps of motor 3. Write a value to set the current number of accumulated steps.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0HoldCurrentReduction.html">Motor0HoldCurrentReduction</a></dt>
+      <dd><p>Represents a register that configures the hold current reduction for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MaxPosition.html">Motor0MaxPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the positive movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MaximumRunCurrent.html">Motor0MaximumRunCurrent</a></dt>
+      <dd><p>Represents a register that configures the maximum run RMS current per phase for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MaximumStepInterval.html">Motor0MaximumStepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MicrostepResolution.html">Motor0MicrostepResolution</a></dt>
+      <dd><p>Represents a register that configures the microstep resolution for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MinPosition.html">Motor0MinPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the negative movement of motor 0. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MoveAbsolute.html">Motor0MoveAbsolute</a></dt>
+      <dd><p>Represents a register that moves motor 0 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0MoveRelative.html">Motor0MoveRelative</a></dt>
+      <dd><p>Represents a register that moves motor 0 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0OperationMode.html">Motor0OperationMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0StepAccelerationInterval.html">Motor0StepAccelerationInterval</a></dt>
+      <dd><p>Represents a register that configures the acceleration for motor 0. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0StepInterval.html">Motor0StepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) when running at nominal speed for motor 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor0StepRelative.html">Motor0StepRelative</a></dt>
+      <dd><p>Represents a register that starts the movement of motor 0 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1HoldCurrentReduction.html">Motor1HoldCurrentReduction</a></dt>
+      <dd><p>Represents a register that configures the hold current reduction for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MaxPosition.html">Motor1MaxPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the positive movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MaximumRunCurrent.html">Motor1MaximumRunCurrent</a></dt>
+      <dd><p>Represents a register that configures the maximum run RMS current per phase for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MaximumStepInterval.html">Motor1MaximumStepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MicrostepResolution.html">Motor1MicrostepResolution</a></dt>
+      <dd><p>Represents a register that configures the microstep resolution for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MinPosition.html">Motor1MinPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the negative movement of motor 1. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MoveAbsolute.html">Motor1MoveAbsolute</a></dt>
+      <dd><p>Represents a register that moves motor 1 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1MoveRelative.html">Motor1MoveRelative</a></dt>
+      <dd><p>Represents a register that moves motor 1 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1OperationMode.html">Motor1OperationMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1StepAccelerationInterval.html">Motor1StepAccelerationInterval</a></dt>
+      <dd><p>Represents a register that configures the acceleration for motor 1. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1StepInterval.html">Motor1StepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) when running at nominal speed for motor 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor1StepRelative.html">Motor1StepRelative</a></dt>
+      <dd><p>Represents a register that starts the movement of motor 1 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2HoldCurrentReduction.html">Motor2HoldCurrentReduction</a></dt>
+      <dd><p>Represents a register that configures the hold current reduction for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MaxPosition.html">Motor2MaxPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the positive movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MaximumRunCurrent.html">Motor2MaximumRunCurrent</a></dt>
+      <dd><p>Represents a register that configures the maximum run RMS current per phase for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MaximumStepInterval.html">Motor2MaximumStepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MicrostepResolution.html">Motor2MicrostepResolution</a></dt>
+      <dd><p>Represents a register that configures the microstep resolution for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MinPosition.html">Motor2MinPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the negative movement of motor 2. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MoveAbsolute.html">Motor2MoveAbsolute</a></dt>
+      <dd><p>Represents a register that moves motor 2 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2MoveRelative.html">Motor2MoveRelative</a></dt>
+      <dd><p>Represents a register that moves motor 2 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2OperationMode.html">Motor2OperationMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2StepAccelerationInterval.html">Motor2StepAccelerationInterval</a></dt>
+      <dd><p>Represents a register that configures the acceleration for motor 2. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2StepInterval.html">Motor2StepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) when running at nominal speed for motor 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor2StepRelative.html">Motor2StepRelative</a></dt>
+      <dd><p>Represents a register that starts the movement of motor 2 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3HoldCurrentReduction.html">Motor3HoldCurrentReduction</a></dt>
+      <dd><p>Represents a register that configures the hold current reduction for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MaxPosition.html">Motor3MaxPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the positive movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MaximumRunCurrent.html">Motor3MaximumRunCurrent</a></dt>
+      <dd><p>Represents a register that configures the maximum run RMS current per phase for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MaximumStepInterval.html">Motor3MaximumStepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) used when starting or stopping a movement for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MicrostepResolution.html">Motor3MicrostepResolution</a></dt>
+      <dd><p>Represents a register that configures the microstep resolution for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MinPosition.html">Motor3MinPosition</a></dt>
+      <dd><p>Represents a register that specifies the limit of the accumulated steps for the negative movement of motor 3. The device will not let the motor move further than this value. A value equal to 0 disables the feature.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MoveAbsolute.html">Motor3MoveAbsolute</a></dt>
+      <dd><p>Represents a register that moves motor 3 to the absolute position written in this register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3MoveRelative.html">Motor3MoveRelative</a></dt>
+      <dd><p>Represents a register that moves motor 3 by the number of steps written in this register and set the direction according to the value's signal.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3OperationMode.html">Motor3OperationMode</a></dt>
+      <dd><p>Represents a register that configures the operation mode for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3StepAccelerationInterval.html">Motor3StepAccelerationInterval</a></dt>
+      <dd><p>Represents a register that configures the acceleration for motor 3. The time between step pulses is decreased by this value when accelerating and increased when decelerating.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3StepInterval.html">Motor3StepInterval</a></dt>
+      <dd><p>Represents a register that configures the time between step motor pulses (us) when running at nominal speed for motor 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Motor3StepRelative.html">Motor3StepRelative</a></dt>
+      <dd><p>Represents a register that starts the movement of motor 3 with the step interval defined by this register, disregarding the acceleration protocol. The sign of the value specifies the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MotorOverVoltageDetection.html">MotorOverVoltageDetection</a></dt>
+      <dd><p>Represents a register that contains a bit mask specifying the motor where the over voltage detection and protection mechanism occurred, which can happen when the there's a quick deceleration from a high velocity or when the motor stalls (not implemented).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MotorRaisedError.html">MotorRaisedError</a></dt>
+      <dd><p>Represents a register that contains a bit mask specifying the motor that triggered the error which can be happen in case of short-circuit or driver temperature above 165 degrees celsius.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MotorStopped.html">MotorStopped</a></dt>
+      <dd><p>Represents a register that emitted when any of the motors stops.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MoveAbsolute.html">MoveAbsolute</a></dt>
+      <dd><p>Represents a register that moves all motors to the absolute position written in this array register. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MoveRelative.html">MoveRelative</a></dt>
+      <dd><p>Represents a register that moves all motors by the number of steps written in this array register and set the direction according to the value's signal. If a motor is disable, the user should set the value to 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the StepperDriver device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.ResetEncoders.html">ResetEncoders</a></dt>
+      <dd><p>Represents a register that resets the encoder.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.StepRelative.html">StepRelative</a></dt>
+      <dd><p>Represents a register that starts the movement of all motors with the step interval defined by this array. The value's signal defines the direction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.StopMotors.html">StopMotors</a></dt>
+      <dd><p>Represents a register that stops the motors selected in the bit-mask immediately.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedAccumulatedSteps.html">TimestampedAccumulatedSteps</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedAccumulatedStepsSamplingRate.html">TimestampedAccumulatedStepsSamplingRate</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AccumulatedStepsSamplingRate register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedDeviceState.html">TimestampedDeviceState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DeviceState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedDisableDigitalInputs.html">TimestampedDisableDigitalInputs</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DisableDigitalInputs register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedDisableDriver.html">TimestampedDisableDriver</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DisableDriver register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedDisableEncoders.html">TimestampedDisableEncoders</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DisableEncoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEnableDigitalInputs.html">TimestampedEnableDigitalInputs</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableDigitalInputs register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEnableDriver.html">TimestampedEnableDriver</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableDriver register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEnableEncoders.html">TimestampedEnableEncoders</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEncoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEncoderMode.html">TimestampedEncoderMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EncoderMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEncoderSamplingRate.html">TimestampedEncoderSamplingRate</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EncoderSamplingRate register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedEncoders.html">TimestampedEncoders</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Encoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedInput0OpMode.html">TimestampedInput0OpMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Input0OpMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedInput1OpMode.html">TimestampedInput1OpMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Input1OpMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedInput2OpMode.html">TimestampedInput2OpMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Input2OpMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedInput3OpMode.html">TimestampedInput3OpMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Input3OpMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedInterlockEnabled.html">TimestampedInterlockEnabled</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+InterlockEnabled register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMaxPosition.html">TimestampedMaxPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMinPosition.html">TimestampedMinPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMortor0AccumulatedSteps.html">TimestampedMortor0AccumulatedSteps</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Mortor0AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMortor1AccumulatedSteps.html">TimestampedMortor1AccumulatedSteps</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Mortor1AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMortor2AccumulatedSteps.html">TimestampedMortor2AccumulatedSteps</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Mortor2AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMortor3AccumulatedSteps.html">TimestampedMortor3AccumulatedSteps</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Mortor3AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0HoldCurrentReduction.html">TimestampedMotor0HoldCurrentReduction</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0HoldCurrentReduction register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MaxPosition.html">TimestampedMotor0MaxPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MaximumRunCurrent.html">TimestampedMotor0MaximumRunCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MaximumRunCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MaximumStepInterval.html">TimestampedMotor0MaximumStepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MaximumStepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MicrostepResolution.html">TimestampedMotor0MicrostepResolution</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MicrostepResolution register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MinPosition.html">TimestampedMotor0MinPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MoveAbsolute.html">TimestampedMotor0MoveAbsolute</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0MoveRelative.html">TimestampedMotor0MoveRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0OperationMode.html">TimestampedMotor0OperationMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0OperationMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0StepAccelerationInterval.html">TimestampedMotor0StepAccelerationInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0StepAccelerationInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0StepInterval.html">TimestampedMotor0StepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0StepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor0StepRelative.html">TimestampedMotor0StepRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor0StepRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1HoldCurrentReduction.html">TimestampedMotor1HoldCurrentReduction</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1HoldCurrentReduction register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MaxPosition.html">TimestampedMotor1MaxPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MaximumRunCurrent.html">TimestampedMotor1MaximumRunCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MaximumRunCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MaximumStepInterval.html">TimestampedMotor1MaximumStepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MaximumStepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MicrostepResolution.html">TimestampedMotor1MicrostepResolution</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MicrostepResolution register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MinPosition.html">TimestampedMotor1MinPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MoveAbsolute.html">TimestampedMotor1MoveAbsolute</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1MoveRelative.html">TimestampedMotor1MoveRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1OperationMode.html">TimestampedMotor1OperationMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1OperationMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1StepAccelerationInterval.html">TimestampedMotor1StepAccelerationInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1StepAccelerationInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1StepInterval.html">TimestampedMotor1StepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1StepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor1StepRelative.html">TimestampedMotor1StepRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor1StepRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2HoldCurrentReduction.html">TimestampedMotor2HoldCurrentReduction</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2HoldCurrentReduction register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MaxPosition.html">TimestampedMotor2MaxPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MaximumRunCurrent.html">TimestampedMotor2MaximumRunCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MaximumRunCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MaximumStepInterval.html">TimestampedMotor2MaximumStepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MaximumStepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MicrostepResolution.html">TimestampedMotor2MicrostepResolution</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MicrostepResolution register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MinPosition.html">TimestampedMotor2MinPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MoveAbsolute.html">TimestampedMotor2MoveAbsolute</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2MoveRelative.html">TimestampedMotor2MoveRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2OperationMode.html">TimestampedMotor2OperationMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2OperationMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2StepAccelerationInterval.html">TimestampedMotor2StepAccelerationInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2StepAccelerationInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2StepInterval.html">TimestampedMotor2StepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2StepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor2StepRelative.html">TimestampedMotor2StepRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor2StepRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3HoldCurrentReduction.html">TimestampedMotor3HoldCurrentReduction</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3HoldCurrentReduction register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MaxPosition.html">TimestampedMotor3MaxPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MaximumRunCurrent.html">TimestampedMotor3MaximumRunCurrent</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MaximumRunCurrent register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MaximumStepInterval.html">TimestampedMotor3MaximumStepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MaximumStepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MicrostepResolution.html">TimestampedMotor3MicrostepResolution</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MicrostepResolution register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MinPosition.html">TimestampedMotor3MinPosition</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MoveAbsolute.html">TimestampedMotor3MoveAbsolute</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3MoveRelative.html">TimestampedMotor3MoveRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3OperationMode.html">TimestampedMotor3OperationMode</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3OperationMode register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3StepAccelerationInterval.html">TimestampedMotor3StepAccelerationInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3StepAccelerationInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3StepInterval.html">TimestampedMotor3StepInterval</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3StepInterval register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotor3StepRelative.html">TimestampedMotor3StepRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+Motor3StepRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotorOverVoltageDetection.html">TimestampedMotorOverVoltageDetection</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MotorOverVoltageDetection register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotorRaisedError.html">TimestampedMotorRaisedError</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MotorRaisedError register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMotorStopped.html">TimestampedMotorStopped</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MotorStopped register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMoveAbsolute.html">TimestampedMoveAbsolute</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedMoveRelative.html">TimestampedMoveRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedResetEncoders.html">TimestampedResetEncoders</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+ResetEncoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedStepRelative.html">TimestampedStepRelative</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StepRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TimestampedStopMotors.html">TimestampedStopMotors</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+StopMotors register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.AccumulatedStepsPayload.html">AccumulatedStepsPayload</a></dt>
+      <dd><p>Represents the payload of the AccumulatedSteps register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EncodersPayload.html">EncodersPayload</a></dt>
+      <dd><p>Represents the payload of the Encoders register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MaxPositionPayload.html">MaxPositionPayload</a></dt>
+      <dd><p>Represents the payload of the MaxPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MinPositionPayload.html">MinPositionPayload</a></dt>
+      <dd><p>Represents the payload of the MinPosition register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MotorStoppedPayload.html">MotorStoppedPayload</a></dt>
+      <dd><p>Represents the payload of the MotorStopped register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MoveAbsolutePayload.html">MoveAbsolutePayload</a></dt>
+      <dd><p>Represents the payload of the MoveAbsolute register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MoveRelativePayload.html">MoveRelativePayload</a></dt>
+      <dd><p>Represents the payload of the MoveRelative register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.StepRelativePayload.html">StepRelativePayload</a></dt>
+      <dd><p>Represents the payload of the StepRelative register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.AccumulatedStepsSamplingRateConfig.html">AccumulatedStepsSamplingRateConfig</a></dt>
+      <dd><p>Specifies the rate of the accumulated steps events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DeviceStateMode.html">DeviceStateMode</a></dt>
+      <dd><p>Specifies the current state of the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DigitalInputStates.html">DigitalInputStates</a></dt>
+      <dd><p>Specifies the state of the port and digital input line that changed.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Specifies the available digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EncoderModeConfig.html">EncoderModeConfig</a></dt>
+      <dd><p>Specifies the type of reading made from the quadrature QuadratureEncoders.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.EncoderSamplingRateConfig.html">EncoderSamplingRateConfig</a></dt>
+      <dd><p>Specifies the rate of the events from the quadrature QuadratureEncoders.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.HoldCurrentReduction.html">HoldCurrentReduction</a></dt>
+      <dd><p>Specifies the hold current reduction.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.InputOpModeConfig.html">InputOpModeConfig</a></dt>
+      <dd><p>Specifies the inputs operation mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.InterlockEnabledConfig.html">InterlockEnabledConfig</a></dt>
+      <dd><p>Specifies the external connector state that enables the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MicrostepResolution.html">MicrostepResolution</a></dt>
+      <dd><p>Specifies the microstep resolution for each step pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.MotorOperationMode.html">MotorOperationMode</a></dt>
+      <dd><p>Specifies the motor operation mode.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.QuadratureEncoders.html">QuadratureEncoders</a></dt>
+      <dd><p>Specifies the index of each motor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.StepperMotors.html">StepperMotors</a></dt>
+      <dd><p>Specifies the index of each motor.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.StepperDriver.TriggerConfig.html">TriggerConfig</a></dt>
+      <dd><p>Specifies the input trigger configuration.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_StepperDriver.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

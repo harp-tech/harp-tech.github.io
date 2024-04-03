@@ -1,0 +1,1366 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AsyncDevice
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AsyncDevice
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Harp_TimestampGeneratorGen3_AsyncDevice.md&amp;value=---%0Auid%3A%20Harp.TimestampGeneratorGen3.AsyncDevice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.TimestampGeneratorGen3.AsyncDevice">
+
+
+
+  <h1 id="Harp_TimestampGeneratorGen3_AsyncDevice" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice" class="text-break">
+    Class AsyncDevice
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.TimestampGeneratorGen3.html">TimestampGeneratorGen3</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.TimestampGeneratorGen3.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an asynchronous API to configure and interface with TimestampGeneratorGen3 devices.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AsyncDevice : AsyncDevice, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Bonsai.Harp.AsyncDevice.html">AsyncDevice</a></div>
+      <div><span class="xref">AsyncDevice</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadWhoAmIAsync_System_Threading_CancellationToken_">AsyncDevice.ReadWhoAmIAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadHardwareVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadHardwareVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadAssemblyVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadAssemblyVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadCoreVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadCoreVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadFirmwareVersionAsync_System_Threading_CancellationToken_">AsyncDevice.ReadFirmwareVersionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadTimestampSecondsAsync_System_Threading_CancellationToken_">AsyncDevice.ReadTimestampSecondsAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadTimestampMicrosecondsAsync_System_Threading_CancellationToken_">AsyncDevice.ReadTimestampMicrosecondsAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadOperationControlAsync_System_Threading_CancellationToken_">AsyncDevice.ReadOperationControlAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadResetDeviceAsync_System_Threading_CancellationToken_">AsyncDevice.ReadResetDeviceAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadDeviceNameAsync_System_Threading_CancellationToken_">AsyncDevice.ReadDeviceNameAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSerialNumberAsync_System_Threading_CancellationToken_">AsyncDevice.ReadSerialNumberAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadClockConfigurationAsync_System_Threading_CancellationToken_">AsyncDevice.ReadClockConfigurationAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadByteAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadByteAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadByteArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadByteArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSByteAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSByteAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSByteArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSByteArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt16Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt16Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt16ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt16ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt16Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt16Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt16ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt16ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt32Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt32Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt32ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt32ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt32Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt32Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt32ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt32ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt64Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt64Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadUInt64ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadUInt64ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt64Async_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt64Async(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadInt64ArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadInt64ArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSingleAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSingleAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_ReadSingleArrayAsync_System_Int32_System_Threading_CancellationToken_">AsyncDevice.ReadSingleArrayAsync(int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteTimestampSecondsAsync_System_UInt32_System_Threading_CancellationToken_">AsyncDevice.WriteTimestampSecondsAsync(uint, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteResetDeviceAsync_Bonsai_Harp_ResetFlags_System_Threading_CancellationToken_">AsyncDevice.WriteResetDeviceAsync(ResetFlags, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteDeviceNameAsync_System_String_System_Threading_CancellationToken_">AsyncDevice.WriteDeviceNameAsync(string, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteClockConfigurationAsync_Bonsai_Harp_ClockConfigurationFlags_System_Threading_CancellationToken_">AsyncDevice.WriteClockConfigurationAsync(ClockConfigurationFlags, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteByteAsync_System_Int32_System_Byte_System_Threading_CancellationToken_">AsyncDevice.WriteByteAsync(int, byte, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteByteAsync_System_Int32_System_Byte___System_Threading_CancellationToken_">AsyncDevice.WriteByteAsync(int, byte[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSByteAsync_System_Int32_System_SByte_System_Threading_CancellationToken_">AsyncDevice.WriteSByteAsync(int, sbyte, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSByteAsync_System_Int32_System_SByte___System_Threading_CancellationToken_">AsyncDevice.WriteSByteAsync(int, sbyte[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt16Async_System_Int32_System_UInt16_System_Threading_CancellationToken_">AsyncDevice.WriteUInt16Async(int, ushort, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt16Async_System_Int32_System_UInt16___System_Threading_CancellationToken_">AsyncDevice.WriteUInt16Async(int, ushort[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt16Async_System_Int32_System_Int16_System_Threading_CancellationToken_">AsyncDevice.WriteInt16Async(int, short, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt16Async_System_Int32_System_Int16___System_Threading_CancellationToken_">AsyncDevice.WriteInt16Async(int, short[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt32Async_System_Int32_System_UInt32_System_Threading_CancellationToken_">AsyncDevice.WriteUInt32Async(int, uint, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt32Async_System_Int32_System_UInt32___System_Threading_CancellationToken_">AsyncDevice.WriteUInt32Async(int, uint[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt32Async_System_Int32_System_Int32_System_Threading_CancellationToken_">AsyncDevice.WriteInt32Async(int, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt32Async_System_Int32_System_Int32___System_Threading_CancellationToken_">AsyncDevice.WriteInt32Async(int, int[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt64Async_System_Int32_System_UInt64_System_Threading_CancellationToken_">AsyncDevice.WriteUInt64Async(int, ulong, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteUInt64Async_System_Int32_System_UInt64___System_Threading_CancellationToken_">AsyncDevice.WriteUInt64Async(int, ulong[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt64Async_System_Int32_System_Int64_System_Threading_CancellationToken_">AsyncDevice.WriteInt64Async(int, long, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteInt64Async_System_Int32_System_Int64___System_Threading_CancellationToken_">AsyncDevice.WriteInt64Async(int, long[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSingleAsync_System_Int32_System_Single_System_Threading_CancellationToken_">AsyncDevice.WriteSingleAsync(int, float, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_WriteSingleAsync_System_Int32_System_Single___System_Threading_CancellationToken_">AsyncDevice.WriteSingleAsync(int, float[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_CommandAsync_Bonsai_Harp_HarpMessage_System_Threading_CancellationToken_">AsyncDevice.CommandAsync(HarpMessage, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.AsyncDevice.html#Bonsai_Harp_AsyncDevice_Dispose">AsyncDevice.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryAsync(System.Threading.CancellationToken)">
+  ReadBatteryAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the Battery register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;float&gt; ReadBatteryAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryCalibration0Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration0Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryCalibration0Async_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration0Async(System.Threading.CancellationToken)">
+  ReadBatteryCalibration0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the BatteryCalibration0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadBatteryCalibration0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryCalibration1Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration1Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryCalibration1Async_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryCalibration1Async(System.Threading.CancellationToken)">
+  ReadBatteryCalibration1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L398"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the BatteryCalibration1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ushort&gt; ReadBatteryCalibration1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryRateAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryRateAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryRateAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryRateAsync(System.Threading.CancellationToken)">
+  ReadBatteryRateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the BatteryRate register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;BatteryRateConfiguration&gt; ReadBatteryRateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.BatteryRateConfiguration.html">BatteryRateConfiguration</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryThresholdHighAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdHighAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryThresholdHighAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdHighAsync(System.Threading.CancellationToken)">
+  ReadBatteryThresholdHighAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the BatteryThresholdHigh register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;float&gt; ReadBatteryThresholdHighAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryThresholdLowAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdLowAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadBatteryThresholdLowAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadBatteryThresholdLowAsync(System.Threading.CancellationToken)">
+  ReadBatteryThresholdLowAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the BatteryThresholdLow register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;float&gt; ReadBatteryThresholdLowAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadConfigAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadConfigAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadConfigAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadConfigAsync(System.Threading.CancellationToken)">
+  ReadConfigAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the Config register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ConfigurationFlags&gt; ReadConfigAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.ConfigurationFlags.html">ConfigurationFlags</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadDevicesConnectedAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadDevicesConnectedAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadDevicesConnectedAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadDevicesConnectedAsync(System.Threading.CancellationToken)">
+  ReadDevicesConnectedAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the DevicesConnected register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;byte&gt; ReadDevicesConnectedAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadRepeaterStatusAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadRepeaterStatusAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadRepeaterStatusAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadRepeaterStatusAsync(System.Threading.CancellationToken)">
+  ReadRepeaterStatusAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the contents of the RepeaterStatus register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;RepeaterFlags&gt; ReadRepeaterStatusAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.RepeaterFlags.html">RepeaterFlags</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryAsync(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the Battery register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;float&gt;&gt; ReadTimestampedBatteryAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryCalibration0Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration0Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryCalibration0Async_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration0Async(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryCalibration0Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L368"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the BatteryCalibration0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedBatteryCalibration0Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryCalibration1Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration1Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryCalibration1Async_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryCalibration1Async(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryCalibration1Async(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the BatteryCalibration1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ushort&gt;&gt; ReadTimestampedBatteryCalibration1Async(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryRateAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryRateAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryRateAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryRateAsync(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryRateAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the BatteryRate register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;BatteryRateConfiguration&gt;&gt; ReadTimestampedBatteryRateAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.BatteryRateConfiguration.html">BatteryRateConfiguration</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryThresholdHighAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdHighAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryThresholdHighAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdHighAsync(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryThresholdHighAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the BatteryThresholdHigh register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;float&gt;&gt; ReadTimestampedBatteryThresholdHighAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryThresholdLowAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdLowAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedBatteryThresholdLowAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedBatteryThresholdLowAsync(System.Threading.CancellationToken)">
+  ReadTimestampedBatteryThresholdLowAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the BatteryThresholdLow register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;float&gt;&gt; ReadTimestampedBatteryThresholdLowAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedConfigAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedConfigAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedConfigAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedConfigAsync(System.Threading.CancellationToken)">
+  ReadTimestampedConfigAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the Config register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;ConfigurationFlags&gt;&gt; ReadTimestampedConfigAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.ConfigurationFlags.html">ConfigurationFlags</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedDevicesConnectedAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedDevicesConnectedAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedDevicesConnectedAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedDevicesConnectedAsync(System.Threading.CancellationToken)">
+  ReadTimestampedDevicesConnectedAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the DevicesConnected register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;byte&gt;&gt; ReadTimestampedDevicesConnectedAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedRepeaterStatusAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedRepeaterStatusAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_ReadTimestampedRepeaterStatusAsync_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.ReadTimestampedRepeaterStatusAsync(System.Threading.CancellationToken)">
+  ReadTimestampedRepeaterStatusAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously reads the timestamped contents of the RepeaterStatus register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Timestamped&lt;RepeaterFlags&gt;&gt; ReadTimestampedRepeaterStatusAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Bonsai.Harp.Timestamped-1.html">Timestamped</a>&lt;<a class="xref" href="Harp.TimestampGeneratorGen3.RepeaterFlags.html">RepeaterFlags</a>&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a>
+property contains the timestamped register payload.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryCalibration0Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration0Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryCalibration0Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration0Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteBatteryCalibration0Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L382"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the BatteryCalibration0 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBatteryCalibration0Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryCalibration1Async_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration1Async*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryCalibration1Async_System_UInt16_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryCalibration1Async(System.UInt16,System.Threading.CancellationToken)">
+  WriteBatteryCalibration1Async(ushort, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L428"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the BatteryCalibration1 register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBatteryCalibration1Async(ushort value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint16">ushort</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryRateAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryRateAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryRateAsync_Harp_TimestampGeneratorGen3_BatteryRateConfiguration_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryRateAsync(Harp.TimestampGeneratorGen3.BatteryRateConfiguration,System.Threading.CancellationToken)">
+  WriteBatteryRateAsync(BatteryRateConfiguration, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the BatteryRate register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBatteryRateAsync(BatteryRateConfiguration value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.TimestampGeneratorGen3.BatteryRateConfiguration.html">BatteryRateConfiguration</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryThresholdHighAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdHighAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryThresholdHighAsync_System_Single_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdHighAsync(System.Single,System.Threading.CancellationToken)">
+  WriteBatteryThresholdHighAsync(float, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the BatteryThresholdHigh register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBatteryThresholdHighAsync(float value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryThresholdLowAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdLowAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteBatteryThresholdLowAsync_System_Single_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteBatteryThresholdLowAsync(System.Single,System.Threading.CancellationToken)">
+  WriteBatteryThresholdLowAsync(float, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the BatteryThresholdLow register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBatteryThresholdLowAsync(float value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteConfigAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteConfigAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteConfigAsync_Harp_TimestampGeneratorGen3_ConfigurationFlags_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteConfigAsync(Harp.TimestampGeneratorGen3.ConfigurationFlags,System.Threading.CancellationToken)">
+  WriteConfigAsync(ConfigurationFlags, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the Config register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteConfigAsync(ConfigurationFlags value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.TimestampGeneratorGen3.ConfigurationFlags.html">ConfigurationFlags</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteRepeaterStatusAsync_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteRepeaterStatusAsync*"></a>
+
+  <h3 id="Harp_TimestampGeneratorGen3_AsyncDevice_WriteRepeaterStatusAsync_Harp_TimestampGeneratorGen3_RepeaterFlags_System_Threading_CancellationToken_" data-uid="Harp.TimestampGeneratorGen3.AsyncDevice.WriteRepeaterStatusAsync(Harp.TimestampGeneratorGen3.RepeaterFlags,System.Threading.CancellationToken)">
+  WriteRepeaterStatusAsync(RepeaterFlags, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously writes a value to the RepeaterStatus register.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteRepeaterStatusAsync(RepeaterFlags value, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="Harp.TimestampGeneratorGen3.RepeaterFlags.html">RepeaterFlags</a></dt>
+    <dd><p>The value to be stored in the register.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> which can be used to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.timestampgeneratorgen3\Interface\Harp.TimestampGeneratorGen3\AsyncDevice.Generated.cs/#L41" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2002 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Harp.LoadCells
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Harp.LoadCells
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_LoadCells.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.LoadCells">
+
+  <h1 id="Harp_LoadCells" data-uid="Harp.LoadCells" class="text-break">Namespace Harp.LoadCells
+</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"><h2 id="harp-load-cells-interface-and-reader">Harp Load Cells Interface and Reader</h2>
+<p>This pair of boards can be used to acquire analog signals from load cells and output their data to a USB host. It is additionally able to emit programmable digital events.</p>
+<p><img src="../src/device.loadcells/Assets/pcb.png" alt="harploadcellsinterface"></p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Load cells interface
+<ul>
+<li>Controls up to 2 load cells readers</li>
+<li>Digital outputs can be regulated at 3V or 5V</li>
+</ul>
+</li>
+<li>Load Cells Reader
+<ul>
+<li>Up to 4 load cell sensors</li>
+<li>1kHz sampling rate</li>
+<li>Load cells offset compensation</li>
+</ul>
+</li>
+</ul>
+<h3 id="connectivity">Connectivity</h3>
+<ul>
+<li>Load cells interface
+<ul>
+<li>1x BNC input signal (IN0)</li>
+<li>1x BNC output signal (Out0)</li>
+<li>1x screw terminal connector interface (GND, DOUT1 to DOUT8, DIN0)</li>
+<li>2x RJ45 for digital inputs (from load cells devices)</li>
+<li>1x stereo jack for clock sync input (CLKIN)</li>
+<li>1x USB (for computer)</li>
+<li>1x power barrel connector jack (12V only)</li>
+<li>1x screw terminal connector for 5V output (GND, +5V)</li>
+</ul>
+</li>
+<li>Load Cells Reader
+<ul>
+<li>4x flick lock connectors (X1 to X4) with 4 analog inputs each (5V, I+, I-, 0V)</li>
+<li>1x digital output [RJ45]</li>
+</ul>
+</li>
+</ul>
+<h2 id="interface">Interface</h2>
+<p>The interface with the Harp board can be done through <a href="https://bonsai-rx.org/">Bonsai</a> or a dedicated GUI (Graphical User Interface).</p>
+<p>In order to use this GUI, there are some software that needs to be installed:</p>
+<p>1 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/UsbDriver-2.12.26.zip">drivers</a>.</p>
+<p>2 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Runtime-1.0.zip">runtime</a>.</p>
+<p>3 - Reboot the computer.</p>
+<p>4 - Install the <a href="https://bitbucket.org/fchampalimaud/downloads/downloads/Harp%20Load%20Cells%20v1.1.0.zip">GUI</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<p>Each subdirectory will contain a license or, possibly, a set of licenses if it involves both hardware and software.</p>
+<table>
+  <thead>
+    <tr><th colspan="2">LoadCells</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1232</td></tr>
+    <tr><td>firmwareVersion</td><td>1.1</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.AcquisitionState.html">AcquisitionState</a></td>
+<td>32</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Enables the data acquisition.</td>
+<td></td>
+<td><a class="xref" href="Bonsai.Harp.EnableFlag.html">EnableFlag</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.LoadCellData.html">LoadCellData</a></td>
+<td>33</td>
+<td>S16</td>
+<td>8</td>
+<td>Event</td>
+<td>Value of single ADC read from all load cell channels.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellDataPayload.html">LoadCellDataPayload</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DigitalInputState.html">DigitalInputState</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the digital input pin 0. An event will be emitted when DI0Trigger == None.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.SyncOutputState.html">SyncOutputState</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Event</td>
+<td>Status of the digital output pin 0. An periodic event will be emitted when DO0Sync == ToggleEachSecond.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.SyncOutputs.html">SyncOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DI0Trigger.html">DI0Trigger</a></td>
+<td>39</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital input pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.TriggerConfig.html">TriggerConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO0Sync.html">DO0Sync</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configuration of the digital output pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.SyncConfig.html">SyncConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO0PulseWidth.html">DO0PulseWidth</a></td>
+<td>41</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</td>
+<td>[1:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputSet.html">DigitalOutputSet</a></td>
+<td>42</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Set the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputClear.html">DigitalOutputClear</a></td>
+<td>43</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Clear the specified digital output lines.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputToggle.html">DigitalOutputToggle</a></td>
+<td>44</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Toggle the specified digital output lines</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputState.html">DigitalOutputState</a></td>
+<td>45</td>
+<td>U16</td>
+<td></td>
+<td>Write, Event</td>
+<td>Write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell0.html">OffsetLoadCell0</a></td>
+<td>48</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 0.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell1.html">OffsetLoadCell1</a></td>
+<td>49</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 1.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell2.html">OffsetLoadCell2</a></td>
+<td>50</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 2.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell3.html">OffsetLoadCell3</a></td>
+<td>51</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 3.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell4.html">OffsetLoadCell4</a></td>
+<td>52</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 4.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell5.html">OffsetLoadCell5</a></td>
+<td>53</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 5.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell6.html">OffsetLoadCell6</a></td>
+<td>54</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 6.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.OffsetLoadCell7.html">OffsetLoadCell7</a></td>
+<td>55</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Offset value for Load Cell channel 7.</td>
+<td>0 [-255:255]</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO1TargetLoadCell.html">DO1TargetLoadCell</a></td>
+<td>58</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO1 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO2TargetLoadCell.html">DO2TargetLoadCell</a></td>
+<td>59</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO2 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO3TargetLoadCell.html">DO3TargetLoadCell</a></td>
+<td>60</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO3 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO4TargetLoadCell.html">DO4TargetLoadCell</a></td>
+<td>61</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO4 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO5TargetLoadCell.html">DO5TargetLoadCell</a></td>
+<td>62</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO5 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO6TargetLoadCell.html">DO6TargetLoadCell</a></td>
+<td>63</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO6 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO7TargetLoadCell.html">DO7TargetLoadCell</a></td>
+<td>64</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO7 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO8TargetLoadCell.html">DO8TargetLoadCell</a></td>
+<td>65</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Target Load Cell that will be used to trigger a threshold event on DO8 pin.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO1Threshold.html">DO1Threshold</a></td>
+<td>66</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO1 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO2Threshold.html">DO2Threshold</a></td>
+<td>67</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO2 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO3Threshold.html">DO3Threshold</a></td>
+<td>68</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO3 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO4Threshold.html">DO4Threshold</a></td>
+<td>69</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO4 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO5Threshold.html">DO5Threshold</a></td>
+<td>70</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO5 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO6Threshold.html">DO6Threshold</a></td>
+<td>71</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO6 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO7Threshold.html">DO7Threshold</a></td>
+<td>72</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO7 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO8Threshold.html">DO8Threshold</a></td>
+<td>73</td>
+<td>S16</td>
+<td></td>
+<td>Write</td>
+<td>Value used to threshold a Load Cell read, and trigger DO8 pin.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO1TimeAboveThreshold.html">DO1TimeAboveThreshold</a></td>
+<td>74</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO1 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO2TimeAboveThreshold.html">DO2TimeAboveThreshold</a></td>
+<td>75</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO2 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO3TimeAboveThreshold.html">DO3TimeAboveThreshold</a></td>
+<td>76</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO3 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO4TimeAboveThreshold.html">DO4TimeAboveThreshold</a></td>
+<td>77</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO4 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO5TimeAboveThreshold.html">DO5TimeAboveThreshold</a></td>
+<td>78</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO5 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO6TimeAboveThreshold.html">DO6TimeAboveThreshold</a></td>
+<td>79</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO6 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO7TimeAboveThreshold.html">DO7TimeAboveThreshold</a></td>
+<td>80</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO7 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO8TimeAboveThreshold.html">DO8TimeAboveThreshold</a></td>
+<td>81</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) above threshold value that is required to trigger a DO8 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO1TimeBelowThreshold.html">DO1TimeBelowThreshold</a></td>
+<td>82</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO1 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO2TimeBelowThreshold.html">DO2TimeBelowThreshold</a></td>
+<td>83</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO2 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO3TimeBelowThreshold.html">DO3TimeBelowThreshold</a></td>
+<td>84</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO3 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO4TimeBelowThreshold.html">DO4TimeBelowThreshold</a></td>
+<td>85</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO4 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO5TimeBelowThreshold.html">DO5TimeBelowThreshold</a></td>
+<td>86</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO5 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO6TimeBelowThreshold.html">DO6TimeBelowThreshold</a></td>
+<td>87</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO6 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO7TimeBelowThreshold.html">DO7TimeBelowThreshold</a></td>
+<td>88</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO7 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.DO8TimeBelowThreshold.html">DO8TimeBelowThreshold</a></td>
+<td>89</td>
+<td>U16</td>
+<td></td>
+<td>Write</td>
+<td>Time (ms) below threshold value that is required to trigger a DO8 pin event.</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.LoadCells.EnableEvents.html">EnableEvents</a></td>
+<td>90</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.LoadCells.LoadCellEvents.html">LoadCellEvents</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.AcquisitionState.html">AcquisitionState</a></dt>
+      <dd><p>Represents a register that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.AsyncDevice.html">AsyncDevice</a></dt>
+      <dd><p>Represents an asynchronous API to configure and interface with LoadCells devices.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateAcquisitionStatePayload.html">CreateAcquisitionStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDI0TriggerPayload.html">CreateDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO0PulseWidthPayload.html">CreateDO0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO0SyncPayload.html">CreateDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO1TargetLoadCellPayload.html">CreateDO1TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO1ThresholdPayload.html">CreateDO1ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO1TimeAboveThresholdPayload.html">CreateDO1TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO1TimeBelowThresholdPayload.html">CreateDO1TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO2TargetLoadCellPayload.html">CreateDO2TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO2ThresholdPayload.html">CreateDO2ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO2TimeAboveThresholdPayload.html">CreateDO2TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO2TimeBelowThresholdPayload.html">CreateDO2TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO3TargetLoadCellPayload.html">CreateDO3TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO3ThresholdPayload.html">CreateDO3ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO3TimeAboveThresholdPayload.html">CreateDO3TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO3TimeBelowThresholdPayload.html">CreateDO3TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO4TargetLoadCellPayload.html">CreateDO4TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO4ThresholdPayload.html">CreateDO4ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO4TimeAboveThresholdPayload.html">CreateDO4TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO4TimeBelowThresholdPayload.html">CreateDO4TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO5TargetLoadCellPayload.html">CreateDO5TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO5ThresholdPayload.html">CreateDO5ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO5TimeAboveThresholdPayload.html">CreateDO5TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO5TimeBelowThresholdPayload.html">CreateDO5TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO6TargetLoadCellPayload.html">CreateDO6TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO6ThresholdPayload.html">CreateDO6ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO6TimeAboveThresholdPayload.html">CreateDO6TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO6TimeBelowThresholdPayload.html">CreateDO6TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO7TargetLoadCellPayload.html">CreateDO7TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO7ThresholdPayload.html">CreateDO7ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO7TimeAboveThresholdPayload.html">CreateDO7TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO7TimeBelowThresholdPayload.html">CreateDO7TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO8TargetLoadCellPayload.html">CreateDO8TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that target Load Cell that will be used to trigger a threshold event on DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO8ThresholdPayload.html">CreateDO8ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value used to threshold a Load Cell read, and trigger DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO8TimeAboveThresholdPayload.html">CreateDO8TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) above threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDO8TimeBelowThresholdPayload.html">CreateDO8TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that time (ms) below threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the digital input pin 0. An event will be emitted when DI0Trigger == None.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDigitalOutputClearPayload.html">CreateDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDigitalOutputSetPayload.html">CreateDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDigitalOutputStatePayload.html">CreateDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateDigitalOutputTogglePayload.html">CreateDigitalOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateEnableEventsPayload.html">CreateEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateLoadCellDataPayload.html">CreateLoadCellDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that value of single ADC read from all load cell channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateMessage.html">CreateMessage</a></dt>
+      <dd><p>Represents an operator which creates standard message payloads for the
+LoadCells device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell0Payload.html">CreateOffsetLoadCell0Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell1Payload.html">CreateOffsetLoadCell1Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell2Payload.html">CreateOffsetLoadCell2Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell3Payload.html">CreateOffsetLoadCell3Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell4Payload.html">CreateOffsetLoadCell4Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 4.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell5Payload.html">CreateOffsetLoadCell5Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 5.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell6Payload.html">CreateOffsetLoadCell6Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 6.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateOffsetLoadCell7Payload.html">CreateOffsetLoadCell7Payload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that offset value for Load Cell channel 7.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateSyncOutputStatePayload.html">CreateSyncOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a message payload
+that status of the digital output pin 0. An periodic event will be emitted when DO0Sync == ToggleEachSecond.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedAcquisitionStatePayload.html">CreateTimestampedAcquisitionStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that enables the data acquisition.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDI0TriggerPayload.html">CreateTimestampedDI0TriggerPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO0PulseWidthPayload.html">CreateTimestampedDO0PulseWidthPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO0SyncPayload.html">CreateTimestampedDO0SyncPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO1TargetLoadCellPayload.html">CreateTimestampedDO1TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO1ThresholdPayload.html">CreateTimestampedDO1ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO1TimeAboveThresholdPayload.html">CreateTimestampedDO1TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO1TimeBelowThresholdPayload.html">CreateTimestampedDO1TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO2TargetLoadCellPayload.html">CreateTimestampedDO2TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO2ThresholdPayload.html">CreateTimestampedDO2ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO2TimeAboveThresholdPayload.html">CreateTimestampedDO2TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO2TimeBelowThresholdPayload.html">CreateTimestampedDO2TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO3TargetLoadCellPayload.html">CreateTimestampedDO3TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO3ThresholdPayload.html">CreateTimestampedDO3ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO3TimeAboveThresholdPayload.html">CreateTimestampedDO3TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO3TimeBelowThresholdPayload.html">CreateTimestampedDO3TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO4TargetLoadCellPayload.html">CreateTimestampedDO4TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO4ThresholdPayload.html">CreateTimestampedDO4ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO4TimeAboveThresholdPayload.html">CreateTimestampedDO4TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO4TimeBelowThresholdPayload.html">CreateTimestampedDO4TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO5TargetLoadCellPayload.html">CreateTimestampedDO5TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO5ThresholdPayload.html">CreateTimestampedDO5ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO5TimeAboveThresholdPayload.html">CreateTimestampedDO5TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO5TimeBelowThresholdPayload.html">CreateTimestampedDO5TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO6TargetLoadCellPayload.html">CreateTimestampedDO6TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO6ThresholdPayload.html">CreateTimestampedDO6ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO6TimeAboveThresholdPayload.html">CreateTimestampedDO6TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO6TimeBelowThresholdPayload.html">CreateTimestampedDO6TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO7TargetLoadCellPayload.html">CreateTimestampedDO7TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO7ThresholdPayload.html">CreateTimestampedDO7ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO7TimeAboveThresholdPayload.html">CreateTimestampedDO7TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO7TimeBelowThresholdPayload.html">CreateTimestampedDO7TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO8TargetLoadCellPayload.html">CreateTimestampedDO8TargetLoadCellPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that target Load Cell that will be used to trigger a threshold event on DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO8ThresholdPayload.html">CreateTimestampedDO8ThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value used to threshold a Load Cell read, and trigger DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO8TimeAboveThresholdPayload.html">CreateTimestampedDO8TimeAboveThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) above threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDO8TimeBelowThresholdPayload.html">CreateTimestampedDO8TimeBelowThresholdPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that time (ms) below threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDigitalInputStatePayload.html">CreateTimestampedDigitalInputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the digital input pin 0. An event will be emitted when DI0Trigger == None.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDigitalOutputClearPayload.html">CreateTimestampedDigitalOutputClearPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDigitalOutputSetPayload.html">CreateTimestampedDigitalOutputSetPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDigitalOutputStatePayload.html">CreateTimestampedDigitalOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedDigitalOutputTogglePayload.html">CreateTimestampedDigitalOutputTogglePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedEnableEventsPayload.html">CreateTimestampedEnableEventsPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedLoadCellDataPayload.html">CreateTimestampedLoadCellDataPayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that value of single ADC read from all load cell channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell0Payload.html">CreateTimestampedOffsetLoadCell0Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell1Payload.html">CreateTimestampedOffsetLoadCell1Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell2Payload.html">CreateTimestampedOffsetLoadCell2Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell3Payload.html">CreateTimestampedOffsetLoadCell3Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell4Payload.html">CreateTimestampedOffsetLoadCell4Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 4.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell5Payload.html">CreateTimestampedOffsetLoadCell5Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 5.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell6Payload.html">CreateTimestampedOffsetLoadCell6Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 6.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedOffsetLoadCell7Payload.html">CreateTimestampedOffsetLoadCell7Payload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that offset value for Load Cell channel 7.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.CreateTimestampedSyncOutputStatePayload.html">CreateTimestampedSyncOutputStatePayload</a></dt>
+      <dd><p>Represents an operator that creates a timestamped message payload
+that status of the digital output pin 0. An periodic event will be emitted when DO0Sync == ToggleEachSecond.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DI0Trigger.html">DI0Trigger</a></dt>
+      <dd><p>Represents a register that configuration of the digital input pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO0PulseWidth.html">DO0PulseWidth</a></dt>
+      <dd><p>Represents a register that pulse duration (ms) for the digital output pin 0. The pulse will only be emitted when DO0Sync == Pulse.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO0Sync.html">DO0Sync</a></dt>
+      <dd><p>Represents a register that configuration of the digital output pin 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO1TargetLoadCell.html">DO1TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO1Threshold.html">DO1Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO1 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO1TimeAboveThreshold.html">DO1TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO1TimeBelowThreshold.html">DO1TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO1 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO2TargetLoadCell.html">DO2TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO2Threshold.html">DO2Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO2 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO2TimeAboveThreshold.html">DO2TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO2TimeBelowThreshold.html">DO2TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO2 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO3TargetLoadCell.html">DO3TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO3Threshold.html">DO3Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO3 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO3TimeAboveThreshold.html">DO3TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO3TimeBelowThreshold.html">DO3TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO3 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO4TargetLoadCell.html">DO4TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO4Threshold.html">DO4Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO4 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO4TimeAboveThreshold.html">DO4TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO4TimeBelowThreshold.html">DO4TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO4 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO5TargetLoadCell.html">DO5TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO5Threshold.html">DO5Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO5 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO5TimeAboveThreshold.html">DO5TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO5TimeBelowThreshold.html">DO5TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO5 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO6TargetLoadCell.html">DO6TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO6Threshold.html">DO6Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO6 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO6TimeAboveThreshold.html">DO6TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO6TimeBelowThreshold.html">DO6TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO6 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO7TargetLoadCell.html">DO7TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO7Threshold.html">DO7Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO7 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO7TimeAboveThreshold.html">DO7TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO7TimeBelowThreshold.html">DO7TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO7 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO8TargetLoadCell.html">DO8TargetLoadCell</a></dt>
+      <dd><p>Represents a register that target Load Cell that will be used to trigger a threshold event on DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO8Threshold.html">DO8Threshold</a></dt>
+      <dd><p>Represents a register that value used to threshold a Load Cell read, and trigger DO8 pin.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO8TimeAboveThreshold.html">DO8TimeAboveThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) above threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DO8TimeBelowThreshold.html">DO8TimeBelowThreshold</a></dt>
+      <dd><p>Represents a register that time (ms) below threshold value that is required to trigger a DO8 pin event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.Device.html">Device</a></dt>
+      <dd><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalInputState.html">DigitalInputState</a></dt>
+      <dd><p>Represents a register that status of the digital input pin 0. An event will be emitted when DI0Trigger == None.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalOutputClear.html">DigitalOutputClear</a></dt>
+      <dd><p>Represents a register that clear the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalOutputSet.html">DigitalOutputSet</a></dt>
+      <dd><p>Represents a register that set the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalOutputState.html">DigitalOutputState</a></dt>
+      <dd><p>Represents a register that write the state of all digital output lines. An event will be emitted when the value of any pin was changed by a threshold event.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalOutputToggle.html">DigitalOutputToggle</a></dt>
+      <dd><p>Represents a register that toggle the specified digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.EnableEvents.html">EnableEvents</a></dt>
+      <dd><p>Represents a register that specifies the active events in the device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.FilterRegister.html">FilterRegister</a></dt>
+      <dd><p>Represents an operator that filters register-specific messages
+reported by the <a class="xref" href="Harp.LoadCells.html">Harp.LoadCells</a> device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.Format.html">Format</a></dt>
+      <dd><p>Represents an operator which formats a sequence of values as specific
+LoadCells register messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.GroupByRegister.html">GroupByRegister</a></dt>
+      <dd><p>Represents an operator that groups the sequence of <a class="xref" href="Harp.LoadCells.html">Harp.LoadCells</a>&quot; messages by register type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.LoadCellData.html">LoadCellData</a></dt>
+      <dd><p>Represents a register that value of single ADC read from all load cell channels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell0.html">OffsetLoadCell0</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 0.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell1.html">OffsetLoadCell1</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 1.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell2.html">OffsetLoadCell2</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 2.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell3.html">OffsetLoadCell3</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 3.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell4.html">OffsetLoadCell4</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 4.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell5.html">OffsetLoadCell5</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 5.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell6.html">OffsetLoadCell6</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 6.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.OffsetLoadCell7.html">OffsetLoadCell7</a></dt>
+      <dd><p>Represents a register that offset value for Load Cell channel 7.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.Parse.html">Parse</a></dt>
+      <dd><p>Represents an operator which filters and selects specific messages
+reported by the LoadCells device.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.SyncOutputState.html">SyncOutputState</a></dt>
+      <dd><p>Represents a register that status of the digital output pin 0. An periodic event will be emitted when DO0Sync == ToggleEachSecond.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedAcquisitionState.html">TimestampedAcquisitionState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+AcquisitionState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDI0Trigger.html">TimestampedDI0Trigger</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DI0Trigger register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO0PulseWidth.html">TimestampedDO0PulseWidth</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0PulseWidth register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO0Sync.html">TimestampedDO0Sync</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO0Sync register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO1TargetLoadCell.html">TimestampedDO1TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO1Threshold.html">TimestampedDO1Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO1TimeAboveThreshold.html">TimestampedDO1TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO1TimeBelowThreshold.html">TimestampedDO1TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO1TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO2TargetLoadCell.html">TimestampedDO2TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO2Threshold.html">TimestampedDO2Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO2TimeAboveThreshold.html">TimestampedDO2TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO2TimeBelowThreshold.html">TimestampedDO2TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO2TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO3TargetLoadCell.html">TimestampedDO3TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO3Threshold.html">TimestampedDO3Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO3TimeAboveThreshold.html">TimestampedDO3TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO3TimeBelowThreshold.html">TimestampedDO3TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO3TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO4TargetLoadCell.html">TimestampedDO4TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO4TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO4Threshold.html">TimestampedDO4Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO4Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO4TimeAboveThreshold.html">TimestampedDO4TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO4TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO4TimeBelowThreshold.html">TimestampedDO4TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO4TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO5TargetLoadCell.html">TimestampedDO5TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO5TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO5Threshold.html">TimestampedDO5Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO5Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO5TimeAboveThreshold.html">TimestampedDO5TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO5TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO5TimeBelowThreshold.html">TimestampedDO5TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO5TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO6TargetLoadCell.html">TimestampedDO6TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO6TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO6Threshold.html">TimestampedDO6Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO6Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO6TimeAboveThreshold.html">TimestampedDO6TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO6TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO6TimeBelowThreshold.html">TimestampedDO6TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO6TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO7TargetLoadCell.html">TimestampedDO7TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO7TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO7Threshold.html">TimestampedDO7Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO7Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO7TimeAboveThreshold.html">TimestampedDO7TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO7TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO7TimeBelowThreshold.html">TimestampedDO7TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO7TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO8TargetLoadCell.html">TimestampedDO8TargetLoadCell</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO8TargetLoadCell register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO8Threshold.html">TimestampedDO8Threshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO8Threshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO8TimeAboveThreshold.html">TimestampedDO8TimeAboveThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO8TimeAboveThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDO8TimeBelowThreshold.html">TimestampedDO8TimeBelowThreshold</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DO8TimeBelowThreshold register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDigitalInputState.html">TimestampedDigitalInputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalInputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDigitalOutputClear.html">TimestampedDigitalOutputClear</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputClear register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDigitalOutputSet.html">TimestampedDigitalOutputSet</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputSet register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDigitalOutputState.html">TimestampedDigitalOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputState register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedDigitalOutputToggle.html">TimestampedDigitalOutputToggle</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+DigitalOutputToggle register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedEnableEvents.html">TimestampedEnableEvents</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+EnableEvents register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedLoadCellData.html">TimestampedLoadCellData</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+LoadCellData register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell0.html">TimestampedOffsetLoadCell0</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell0 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell1.html">TimestampedOffsetLoadCell1</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell1 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell2.html">TimestampedOffsetLoadCell2</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell2 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell3.html">TimestampedOffsetLoadCell3</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell3 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell4.html">TimestampedOffsetLoadCell4</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell4 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell5.html">TimestampedOffsetLoadCell5</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell5 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell6.html">TimestampedOffsetLoadCell6</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell6 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedOffsetLoadCell7.html">TimestampedOffsetLoadCell7</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+OffsetLoadCell7 register.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TimestampedSyncOutputState.html">TimestampedSyncOutputState</a></dt>
+      <dd><p>Provides methods for manipulating timestamped messages from the
+SyncOutputState register.</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.LoadCellDataPayload.html">LoadCellDataPayload</a></dt>
+      <dd><p>Represents the payload of the LoadCellData register.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalInputs.html">DigitalInputs</a></dt>
+      <dd><p>Available digital input lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.DigitalOutputs.html">DigitalOutputs</a></dt>
+      <dd><p>Specifies the state of port digital output lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.LoadCellChannel.html">LoadCellChannel</a></dt>
+      <dd><p>Available target load cells to be targeted on threshold events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.LoadCellEvents.html">LoadCellEvents</a></dt>
+      <dd><p>The events that can be enabled/disabled.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.SyncConfig.html">SyncConfig</a></dt>
+      <dd><p>Available configurations when using a digital output pin to report firmware events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.SyncOutputs.html">SyncOutputs</a></dt>
+      <dd><p>Specifies the state output synchronization lines.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Harp.LoadCells.TriggerConfig.html">TriggerConfig</a></dt>
+      <dd><p>Available configurations when using a digital input as an acquisition trigger.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_LoadCells.md/#L2" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

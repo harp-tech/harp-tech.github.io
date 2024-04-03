@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Device
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Device
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/blob/main/apispec\Harp_Synchronizer_Device.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.Synchronizer.Device">
+
+
+
+  <h1 id="Harp_Synchronizer_Device" data-uid="Harp.Synchronizer.Device" class="text-break">
+    Class Device
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\Device.Generated.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.Synchronizer.html">Synchronizer</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.Synchronizer.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an observable source of messages from the Harp device connected at the specified serial port.</p>
+</div>
+  <div class="markdown conceptual"><table>
+  <thead>
+    <tr><th colspan="2">Synchronizer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>whoAmI</td><td>1104</td></tr>
+    <tr><td>firmwareVersion</td><td>1.7</td></tr>
+    <tr><td>hardwareTargets</td><td>1.0</td></tr>
+  </tbody>
+</table>
+<h3 id="registers">Registers</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+<th>type</th>
+<th>length</th>
+<th>access</th>
+<th>description</th>
+<th>range</th>
+<th>interfaceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputState.html">DigitalInputState</a></td>
+<td>32</td>
+<td>U16</td>
+<td></td>
+<td>Event</td>
+<td>State of the digital input pins. An event will be emitted when the value of any digital input pin changes.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputs.html">DigitalInputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalOutputState.html">DigitalOutputState</a></td>
+<td>33</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Status of the digital output pin 0.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalOutputs.html">DigitalOutputs</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingMode.html">DigitalInputsSamplingMode</a></td>
+<td>34</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Sets the sampling mode for digital input pins.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DigitalInputsSamplingConfig.html">DigitalInputsSamplingConfig</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.DO0Config.html">DO0Config</a></td>
+<td>35</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Configures how the DO0 pin behaves.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.DO0ConfigMode.html">DO0ConfigMode</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="Harp.Synchronizer.EnableEvents.html">EnableEvents</a></td>
+<td>40</td>
+<td>U8</td>
+<td></td>
+<td>Write</td>
+<td>Specifies all the active events in the device.</td>
+<td></td>
+<td><a class="xref" href="Harp.Synchronizer.SynchronizerEvents.html">SynchronizerEvents</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Combinator(MethodName = &quot;Generate&quot;)]
+[WorkflowElementCategory(ElementCategory.Source)]
+public class Device : Device, INamedElement</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Source-1.html">Source</a>&lt;<a class="xref" href="Bonsai.Harp.HarpMessage.html">HarpMessage</a>&gt;</div>
+      <div><a class="xref" href="Bonsai.Harp.Device.html">Device</a></div>
+      <div><span class="xref">Device</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.INamedElement.html">INamedElement</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_Generate">Device.Generate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_Generate_System_IObservable_Bonsai_Harp_HarpMessage__">Device.Generate(IObservable&lt;HarpMessage&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_OperationMode">Device.OperationMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_OperationLed">Device.OperationLed</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_DumpRegisters">Device.DumpRegisters</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_VisualIndicators">Device.VisualIndicators</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_Heartbeat">Device.Heartbeat</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_IgnoreErrors">Device.IgnoreErrors</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.Device.html#Bonsai_Harp_Device_PortName">Device.PortName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Harp_Synchronizer_Device__ctor_" data-uid="Harp.Synchronizer.Device.#ctor*"></a>
+
+  <h3 id="Harp_Synchronizer_Device__ctor" data-uid="Harp.Synchronizer.Device.#ctor">
+  Device()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\Device.Generated.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Harp.Synchronizer.Device.html">Device</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Device()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Harp_Synchronizer_Device_WhoAmI" data-uid="Harp.Synchronizer.Device.WhoAmI">
+  WhoAmI
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\Device.Generated.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Represents the unique identity class of the <a class="xref" href="Harp.Synchronizer.html">Harp.Synchronizer</a> device.
+This field is constant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int WhoAmI = 1104</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Harp_Synchronizer_Device_RegisterMap_" data-uid="Harp.Synchronizer.Device.RegisterMap*"></a>
+
+  <h3 id="Harp_Synchronizer_Device_RegisterMap" data-uid="Harp.Synchronizer.Device.RegisterMap">
+  RegisterMap
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\Device.Generated.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a read-only mapping from address to register type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyDictionary&lt;int, Type&gt; RegisterMap { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Harp_Synchronizer_Device_CreateAsync_" data-uid="Harp.Synchronizer.Device.CreateAsync*"></a>
+
+  <h3 id="Harp_Synchronizer_Device_CreateAsync_System_String_" data-uid="Harp.Synchronizer.Device.CreateAsync(System.String)">
+  CreateAsync(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\AsyncDevice.Generated.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the asynchronous API to configure and interface
+with Synchronizer devices on the specified serial port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;AsyncDevice&gt; CreateAsync(string portName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>portName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the serial port used to communicate with the Harp device.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Harp.Synchronizer.AsyncDevice.html">AsyncDevice</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous initialization operation. The value of
+the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1.result">Result</a> parameter contains a new instance of
+the <a class="xref" href="Harp.Synchronizer.AsyncDevice.html">AsyncDevice</a> class.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.synchronizer\Interface\Harp.Synchronizer\Device.Generated.cs/#L16" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

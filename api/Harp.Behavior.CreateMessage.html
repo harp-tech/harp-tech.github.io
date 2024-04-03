@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CreateMessage
+ </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CreateMessage
+ ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/harp-tech/harp-tech.github.io/new/main/apidoc/new?filename=Harp_Behavior_CreateMessage.md&amp;value=---%0Auid%3A%20Harp.Behavior.CreateMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Harp.Behavior.CreateMessage">
+
+
+
+  <h1 id="Harp_Behavior_CreateMessage" data-uid="Harp.Behavior.CreateMessage" class="text-break">
+    Class CreateMessage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L7910"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Harp.html">Harp</a>.<a class="xref" href="Harp.Behavior.html">Behavior</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Harp.Behavior.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an operator which creates standard message payloads for the
+Behavior device.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CreateMessage : CreateMessageBuilder, IExpressionBuilder, ICustomTypeDescriptor, INamedElement</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html">ExpressionBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.HarpCombinatorBuilder.html">HarpCombinatorBuilder</a></div>
+      <div><a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html">CreateMessageBuilder</a></div>
+      <div><span class="xref">CreateMessage</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.IExpressionBuilder.html">IExpressionBuilder</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.icustomtypedescriptor">ICustomTypeDescriptor</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.INamedElement.html">INamedElement</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html#Bonsai_Harp_CreateMessageBuilder_Build_System_Collections_Generic_IEnumerable_System_Linq_Expressions_Expression__">CreateMessageBuilder.Build(IEnumerable&lt;Expression&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html#Bonsai_Harp_CreateMessageBuilder_ArgumentRange">CreateMessageBuilder.ArgumentRange</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html#Bonsai_Harp_CreateMessageBuilder_MessageType">CreateMessageBuilder.MessageType</a>
+    </div>
+    <div>
+      <a class="xref" href="Bonsai.Harp.CreateMessageBuilder.html#Bonsai_Harp_CreateMessageBuilder_Payload">CreateMessageBuilder.Payload</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_ToString">ExpressionBuilder.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_Unwrap_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.Unwrap(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetWorkflowElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetWorkflowElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerElement_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerElement(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Expressions.ExpressionBuilder.html#Bonsai_Expressions_ExpressionBuilder_GetVisualizerMappings_Bonsai_Expressions_ExpressionBuilder_">ExpressionBuilder.GetVisualizerMappings(ExpressionBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.FromWorkflowElement(object, ElementCategory)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ExpressionBuilder.GetElementDisplayName(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">ExpressionBuilder.GetElementDisplayName(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Harp_Behavior_CreateMessage__ctor_" data-uid="Harp.Behavior.CreateMessage.#ctor*"></a>
+
+  <h3 id="Harp_Behavior_CreateMessage__ctor" data-uid="Harp.Behavior.CreateMessage.#ctor">
+  CreateMessage()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L8052"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Harp.Behavior.CreateMessage.html">CreateMessage</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CreateMessage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><a class="xref" href="Harp.Behavior.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateOutputSetPayload.html">CreateOutputSetPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateOutputClearPayload.html">CreateOutputClearPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateOutputTogglePayload.html">CreateOutputTogglePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateOutputStatePayload.html">CreateOutputStatePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIOSetPayload.html">CreatePortDIOSetPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIOClearPayload.html">CreatePortDIOClearPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIOTogglePayload.html">CreatePortDIOTogglePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIOStatePayload.html">CreatePortDIOStatePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIODirectionPayload.html">CreatePortDIODirectionPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePortDIOStateEventPayload.html">CreatePortDIOStateEventPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateAnalogDataPayload.html">CreateAnalogDataPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateOutputPulseEnablePayload.html">CreateOutputPulseEnablePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort0Payload.html">CreatePulseDOPort0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort1Payload.html">CreatePulseDOPort1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort2Payload.html">CreatePulseDOPort2Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort0Payload.html">CreatePulseSupplyPort0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort1Payload.html">CreatePulseSupplyPort1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort2Payload.html">CreatePulseSupplyPort2Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseLed0Payload.html">CreatePulseLed0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseLed1Payload.html">CreatePulseLed1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseRgb0Payload.html">CreatePulseRgb0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseRgb1Payload.html">CreatePulseRgb1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDO0Payload.html">CreatePulseDO0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDO1Payload.html">CreatePulseDO1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDO2Payload.html">CreatePulseDO2Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePulseDO3Payload.html">CreatePulseDO3Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO0Payload.html">CreatePwmFrequencyDO0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO1Payload.html">CreatePwmFrequencyDO1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO2Payload.html">CreatePwmFrequencyDO2Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO3Payload.html">CreatePwmFrequencyDO3Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO0Payload.html">CreatePwmDutyCycleDO0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO1Payload.html">CreatePwmDutyCycleDO1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO2Payload.html">CreatePwmDutyCycleDO2Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO3Payload.html">CreatePwmDutyCycleDO3Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmStartPayload.html">CreatePwmStartPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePwmStopPayload.html">CreatePwmStopPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateRgbAllPayload.html">CreateRgbAllPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateRgb0Payload.html">CreateRgb0Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateRgb1Payload.html">CreateRgb1Payload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateLed0CurrentPayload.html">CreateLed0CurrentPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateLed1CurrentPayload.html">CreateLed1CurrentPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateLed0MaxCurrentPayload.html">CreateLed0MaxCurrentPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateLed1MaxCurrentPayload.html">CreateLed1MaxCurrentPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEventEnablePayload.html">CreateEventEnablePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateStartCamerasPayload.html">CreateStartCamerasPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateStopCamerasPayload.html">CreateStopCamerasPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEnableServosPayload.html">CreateEnableServosPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateDisableServosPayload.html">CreateDisableServosPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEnableEncodersPayload.html">CreateEnableEncodersPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEncoderModePayload.html">CreateEncoderModePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateCamera0FramePayload.html">CreateCamera0FramePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateCamera0FrequencyPayload.html">CreateCamera0FrequencyPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateCamera1FramePayload.html">CreateCamera1FramePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateCamera1FrequencyPayload.html">CreateCamera1FrequencyPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateServoMotor2PeriodPayload.html">CreateServoMotor2PeriodPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateServoMotor2PulsePayload.html">CreateServoMotor2PulsePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateServoMotor3PeriodPayload.html">CreateServoMotor3PeriodPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateServoMotor3PulsePayload.html">CreateServoMotor3PulsePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEncoderResetPayload.html">CreateEncoderResetPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateEnableSerialTimestampPayload.html">CreateEnableSerialTimestampPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort0IRPayload.html">CreateMimicPort0IRPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort1IRPayload.html">CreateMimicPort1IRPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort2IRPayload.html">CreateMimicPort2IRPayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort0ValvePayload.html">CreateMimicPort0ValvePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort1ValvePayload.html">CreateMimicPort1ValvePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreateMimicPort2ValvePayload.html">CreateMimicPort2ValvePayload</a></div>
+    <div><a class="xref" href="Harp.Behavior.CreatePokeInputFilterPayload.html">CreatePokeInputFilterPayload</a></div>
+    </dd>
+  </dl>
+
+
+  <h2 id="seealso">See Also</h2>
+  <div class="seealso">
+      <div><a class="xref" href="Harp.Behavior.CreateDigitalInputStatePayload.html">CreateDigitalInputStatePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateOutputSetPayload.html">CreateOutputSetPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateOutputClearPayload.html">CreateOutputClearPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateOutputTogglePayload.html">CreateOutputTogglePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateOutputStatePayload.html">CreateOutputStatePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIOSetPayload.html">CreatePortDIOSetPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIOClearPayload.html">CreatePortDIOClearPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIOTogglePayload.html">CreatePortDIOTogglePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIOStatePayload.html">CreatePortDIOStatePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIODirectionPayload.html">CreatePortDIODirectionPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePortDIOStateEventPayload.html">CreatePortDIOStateEventPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateAnalogDataPayload.html">CreateAnalogDataPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateOutputPulseEnablePayload.html">CreateOutputPulseEnablePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort0Payload.html">CreatePulseDOPort0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort1Payload.html">CreatePulseDOPort1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDOPort2Payload.html">CreatePulseDOPort2Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort0Payload.html">CreatePulseSupplyPort0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort1Payload.html">CreatePulseSupplyPort1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseSupplyPort2Payload.html">CreatePulseSupplyPort2Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseLed0Payload.html">CreatePulseLed0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseLed1Payload.html">CreatePulseLed1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseRgb0Payload.html">CreatePulseRgb0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseRgb1Payload.html">CreatePulseRgb1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDO0Payload.html">CreatePulseDO0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDO1Payload.html">CreatePulseDO1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDO2Payload.html">CreatePulseDO2Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePulseDO3Payload.html">CreatePulseDO3Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO0Payload.html">CreatePwmFrequencyDO0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO1Payload.html">CreatePwmFrequencyDO1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO2Payload.html">CreatePwmFrequencyDO2Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmFrequencyDO3Payload.html">CreatePwmFrequencyDO3Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO0Payload.html">CreatePwmDutyCycleDO0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO1Payload.html">CreatePwmDutyCycleDO1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO2Payload.html">CreatePwmDutyCycleDO2Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmDutyCycleDO3Payload.html">CreatePwmDutyCycleDO3Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmStartPayload.html">CreatePwmStartPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePwmStopPayload.html">CreatePwmStopPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateRgbAllPayload.html">CreateRgbAllPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateRgb0Payload.html">CreateRgb0Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateRgb1Payload.html">CreateRgb1Payload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateLed0CurrentPayload.html">CreateLed0CurrentPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateLed1CurrentPayload.html">CreateLed1CurrentPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateLed0MaxCurrentPayload.html">CreateLed0MaxCurrentPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateLed1MaxCurrentPayload.html">CreateLed1MaxCurrentPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEventEnablePayload.html">CreateEventEnablePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateStartCamerasPayload.html">CreateStartCamerasPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateStopCamerasPayload.html">CreateStopCamerasPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEnableServosPayload.html">CreateEnableServosPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateDisableServosPayload.html">CreateDisableServosPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEnableEncodersPayload.html">CreateEnableEncodersPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEncoderModePayload.html">CreateEncoderModePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateCamera0FramePayload.html">CreateCamera0FramePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateCamera0FrequencyPayload.html">CreateCamera0FrequencyPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateCamera1FramePayload.html">CreateCamera1FramePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateCamera1FrequencyPayload.html">CreateCamera1FrequencyPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateServoMotor2PeriodPayload.html">CreateServoMotor2PeriodPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateServoMotor2PulsePayload.html">CreateServoMotor2PulsePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateServoMotor3PeriodPayload.html">CreateServoMotor3PeriodPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateServoMotor3PulsePayload.html">CreateServoMotor3PulsePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEncoderResetPayload.html">CreateEncoderResetPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateEnableSerialTimestampPayload.html">CreateEnableSerialTimestampPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort0IRPayload.html">CreateMimicPort0IRPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort1IRPayload.html">CreateMimicPort1IRPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort2IRPayload.html">CreateMimicPort2IRPayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort0ValvePayload.html">CreateMimicPort0ValvePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort1ValvePayload.html">CreateMimicPort1ValvePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreateMimicPort2ValvePayload.html">CreateMimicPort2ValvePayload</a></div>
+      <div><a class="xref" href="Harp.Behavior.CreatePokeInputFilterPayload.html">CreatePokeInputFilterPayload</a></div>
+  </div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/harp-tech/harp-tech.github.io/blob/main/src\device.behavior\Interface\Harp.Behavior\Device.Generated.cs/#L7910" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span> - <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
