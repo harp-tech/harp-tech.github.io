@@ -1,28 +1,24 @@
-- name: About
-  items:
-    - name: What is Harp
-      href: about.md
+- name: Get started
+- name: Basic Concepts
+  href: about.md
+- name: Quick Start
+  href: ../index.md
 - name: Protocol
-  items:
-    - name: Binary Protocol
-      href: ~/protocol/BinaryProtocol-8bit.md
-    - name: Common Registers
-      href: ~/protocol/Device.md
-    - name: Synchronization Clock
-      href: ~/protocol/SynchronizationClock.md
+- name: Binary Protocol
+  href: ../protocol/BinaryProtocol-8bit.md
+- name: Common Registers
+  href: ../protocol/Device.md
+- name: Synchronization Clock
+  href: ../protocol/SynchronizationClock.md
 - name: Control Interface
-  items:
-    - name: Quickstart
-      href: intro.md
-    - name: Operators
-      href: operators.md
-    - name: Firmware
-      href: firmware.md
-    - name: Logging
-      href: logging.md
-    - name: Message Manipulation
-      href: message-manipulation.md
+- name: Operators
+  href: operators.md
+- name: Firmware
+  href: firmware.md
+- name: Logging
+  href: logging.md
+- name: Message Manipulation
+  href: message-manipulation.md
 - name: Data Interface
-  items:
-    - name: Python
-      href: python.md
+- name: Python
+  href: python.md

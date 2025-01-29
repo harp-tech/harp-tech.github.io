@@ -16,9 +16,7 @@
       ],
       "dest": "api",
       "filter": "filter.yml",
-      "enumSortOrder": "declaringOrder",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "enumSortOrder": "declaringOrder"
     }
   ],
   "build": {
@@ -47,8 +45,6 @@
     "resource": [
       {
         "files": [
-          "logo.svg",
-          "favicon.ico",
           "src/device.*/Assets/*.png",
           "src/device.*/Assets/*.jpg",
           "protocol/assets/**",
@@ -78,7 +74,7 @@
     "globalMetadata": {
       "_enableNewTab": true,
       "_enableSearch": true,
-      "_appFooter": "<span>&copy; 2023 harp-tech and Contributors</span> - <span>Licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a>.</span> - <span>Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a></span>",
+      "_appFooter": "<span>&copy; 2025 harp-tech and Contributors</span> - <span>Licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a>.</span> - <span>Made with <a href=\"https://dotnet.github.io/docfx\">docfx</a></span>",
       "_gitContribute": {
         "repo": "https://github.com/harp-tech/harp-tech.github.io",
         "branch": "main",
@@ -91,9 +87,9 @@
     "template": [
       "default",
       "modern",
+      "docfx-tools/template",
       "template"
     ],
-    "postProcessors": [ "ExtractSearchIndex" ],
     "markdownEngineName": "markdig",
     "markdownEngineProperties": {
       "markdigExtensions": [
