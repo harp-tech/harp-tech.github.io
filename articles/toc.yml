@@ -1,8 +1,6 @@
 - name: Get started
-- name: Basic Concepts
-  href: about.md
-- name: Quick Start
-  href: ../index.md
+- href: about.md
+- href: ../index.md
 - name: Protocol
 - name: Binary Protocol
   href: ../protocol/BinaryProtocol-8bit.md
@@ -11,12 +9,9 @@
 - name: Synchronization Clock
   href: ../protocol/SynchronizationClock.md
 - name: Control Interface
-- name: Operators
-  href: operators.md
-- name: Firmware
-  href: firmware.md
-- name: Logging
-  href: logging.md
+- href: operators.md
+- href: firmware.md
+- href: logging.md
 - name: Message Manipulation
   href: message-manipulation.md
 - name: Data Interface
