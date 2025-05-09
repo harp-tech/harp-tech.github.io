@@ -34,6 +34,11 @@
           "tutorials/**.md",
           "tutorials/**/toc.yml",
           "protocol/**.md",
+          "protocol-page/toc.yml",
+          "interface-page/**.md",
+          "interface-page/toc.yml",
+          "devices-page/**.md",
+          "devices-page/toc.yml",
           "toc.yml",
           "*.md"
         ],

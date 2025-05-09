@@ -1,0 +1,7 @@
+- name: Protocol
+- name: Binary Protocol
+  href: ../protocol/BinaryProtocol-8bit.md
+- name: Common Registers
+  href: ../protocol/Device.md
+- name: Synchronization Clock
+  href: ../protocol/SynchronizationClock.md

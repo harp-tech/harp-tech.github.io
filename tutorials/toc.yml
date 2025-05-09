@@ -1,0 +1,5 @@
+- name: Getting Started
+- name: Software Installation
+  href: setup.md
+- name: Firmware Update
+  href: firmware.md
