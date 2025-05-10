@@ -12,4 +12,4 @@ A high-level interface will usually be available for the specific Harp device yo
 
 <p><img alt="Installing a Harp device package" src="~/images/behavior-package.png" style="max-height:450px;object-fit:contain" /></p>
 
-The device nodes should now be available in the Bonsai Toolbox and you can start using them in your workflows. See [Operators](./articles/operators.md) for examples of how to manipulate and control Harp devices.
+The device nodes should now be available in the Bonsai Toolbox and you can start using them in your workflows. See [Operators](../platform/operators.md) for examples of how to manipulate and control Harp devices.

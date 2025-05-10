@@ -1,9 +1,7 @@
 - name: Overview
   href: articles/
-- name: Protocol
-  href: protocol-page/
-- name: Interface
-  href: interface-page/
+- name: Platform
+  href: platform/
 - name: Devices
   href: devices-page/
 - name: Tutorials
