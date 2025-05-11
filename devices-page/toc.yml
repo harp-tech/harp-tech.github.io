@@ -1,2 +1,8 @@
-- name: Core Devices
-- href: harp-behavior.md
+- name: Multi-purpose Devices
+- name: Harp Behavior Board
+  href: harp-behavior.md
+- name: Harp Timestamp Generator Gen3
+  href: harp-timestamp-generator-gen3.md
+- name: Single-purpose Devices
+- name: Harp Sound Card
+  href: harp-soundcard.md

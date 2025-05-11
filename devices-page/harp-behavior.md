@@ -1,1 +1,1 @@
-# Harp Behaviour Board
+[!include[Harp Behavior Board](~/src/device.behavior/README.md)]

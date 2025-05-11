@@ -1,3 +1,7 @@
+- name: Overview
+- href: protocol.md
+- href: interface.md
+- href: hardware-templates.md
 - name: Protocol
 - name: Binary Protocol
   href: ../protocol/BinaryProtocol-8bit.md
@@ -12,5 +16,8 @@
 - name: Data Interface
 - name: Python
   href: python.md
-- name: Hardware templates
-  href: hardware-templates.md
+- name: Hardware
+- name: Core Templates
+  href: hardware-cores.md
+- name: Registered Devices
+  href: ~/protocol/whoami.md

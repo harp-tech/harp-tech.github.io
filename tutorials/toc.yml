@@ -3,3 +3,6 @@
   href: setup.md
 - name: Firmware Update
   href: firmware.md
+- name: Harp Behavior Board
+- href: harp-behavior-dataacquisition.md
+- href: harp-behavior-peripheralcontrol.md
