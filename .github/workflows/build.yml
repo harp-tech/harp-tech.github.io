@@ -1,0 +1,51 @@
+# Builds and publishes the documentation website
+name: Build docs
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+permissions:
+  # Both required by actions/deploy-pages
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout
+        with:
+          submodules: recursive
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x
+
+      - name: Custom Build Steps
+        run: .\build.ps1
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Restore NuGet Packages
+        run: msbuild -t:restore src\harp\Bonsai.Harp.sln
+
+      - name: Setup DocFX
+        run: dotnet tool restore
+
+      - name: Build Documentation
+        run: dotnet docfx docfx.json
+
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
