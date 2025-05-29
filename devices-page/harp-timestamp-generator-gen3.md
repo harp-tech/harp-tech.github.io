@@ -1,0 +1,1 @@
+[!include[Harp Timestamp Generator Gen3](~/src/device.timestampgeneratorgen3/README.md)]

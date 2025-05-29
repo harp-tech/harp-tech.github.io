@@ -1,6 +1,10 @@
-- name: Manual
+- name: Overview
   href: articles/
-- name: Reference
-  href: api/
+- name: Platform
+  href: platform/
+- name: Devices
+  href: devices-page/
 - name: Tutorials
   href: tutorials/
+- name: Reference
+  href: api/

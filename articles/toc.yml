@@ -1,19 +1,6 @@
-- name: Get started
-- href: about.md
+- name: Introduction
 - href: ../index.md
-- name: Protocol
-- name: Binary Protocol
-  href: ../protocol/BinaryProtocol-8bit.md
-- name: Common Registers
-  href: ../protocol/Device.md
-- name: Synchronization Clock
-  href: ../protocol/SynchronizationClock.md
-- name: Control Interface
-- href: operators.md
-- href: firmware.md
-- href: logging.md
-- name: Message Manipulation
-  href: message-manipulation.md
-- name: Data Interface
-- name: Python
-  href: python.md
+- href: motivation.md
+- name: Partners
+- href: collaborators.md
+- href: distributors.md
