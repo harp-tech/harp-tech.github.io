@@ -43,3 +43,6 @@
 [submodule "docfx-tools"]
 	path = docfx-tools
 	url = https://github.com/bonsai-rx/docfx-tools.git
+[submodule "src/device.hobgoblin"]
+	path = src/device.hobgoblin
+	url = https://github.com/harp-tech/device.hobgoblin
