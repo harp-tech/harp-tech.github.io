@@ -1,12 +1,16 @@
 # Acquisition and Control
 
-The exercises below will help you get comfortable with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices, in Bonsai.
+The exercises below will help you become familiar with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices using Bonsai.
 
 ### Exercise 1: Acquiring Analog Data
 
 Connect a sensor such as a photodiode to one of the analog input channels on the `Harp Hobgoblin`.
 
 (TODO: wiring diagram)
+
+:::workflow
+![Analog Acquisition](../workflows/hobgoblin-helloworld.bonsai)
+:::
 
 Within Bonsai: 
 
