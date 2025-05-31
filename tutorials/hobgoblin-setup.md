@@ -4,7 +4,7 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 
 ## Installation
 
-- Install [Bonsai](https://bonsai-rx.org/docs/articles/installation.html)
+- Install [Bonsai](https://bonsai-rx.org/docs/articles/installation.html).
 - Install the `Harp.Hobgoblin` package by searching for it in the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html), using `nuget.org` as the package source.
 
 ## Flashing the Firmware
@@ -19,8 +19,8 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 ![Hobgoblin Hello World](~/workflows/hobgoblin-helloworld.bonsai)
 :::
 
-- Connect a simple switch to `AnalogInput0`. 
-- Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai. 
+- Connect a simple switch to `AnalogInput0`.
+- Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai.
 - Run the workflow and observe the output of `AnalogInput0`. The value should change when the switch is pressed.
 
 (TODO: Insert wiring diagram)
@@ -30,7 +30,7 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 The [harp-python](../articles/python.md) library provides an low-level interface to read and manipulate data from Harp devices. We recommend installing `harp-python` using [`uv`](https://docs.astral.sh/uv/), an extremely fast and modern Python package and project manager.
 
 - Install [`uv`](https://docs.astral.sh/uv/).
-- Create a folder for the project (e.g., `hobgoblin_data`)
+- Create a folder for the project (e.g., `hobgoblin_data`).
 - Navigate to the folder and initialize a new project:
 ```powershell
 uv init
