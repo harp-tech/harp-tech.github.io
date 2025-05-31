@@ -4,6 +4,9 @@
 
 The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed to help users learn the fundamentals of the Harp standard. The principles demonstrated in this tutorial series can also be applied to other Harp-compatible devices.
 
+> [!NOTE]
+> The `Hobgoblin` can be assembled in multiple ways; this image above shows only one possible configuration. For more information on how to build one, refer to the resources in the device [repository](https://github.com/harp-tech/device.hobgoblin).
+
 ## Installation
 
 - Install [Bonsai](https://bonsai-rx.org/docs/articles/installation.html).
