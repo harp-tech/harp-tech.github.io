@@ -24,7 +24,7 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 ![Hobgoblin Hello World](~/workflows/hobgoblin-helloworld.bonsai)
 :::
 
-- Connect a simple switch to analog input channel `0` on the Pico.
+- Connect a simple switch to analog input channel `0` (`GP26`) on the Pico.
 - Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai.
 - Run the workflow and observe the output of `AnalogInput0`. The value should change when the switch is pressed.
 
