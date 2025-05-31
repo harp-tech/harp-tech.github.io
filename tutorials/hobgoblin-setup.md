@@ -2,7 +2,7 @@
 
 ![Harp Hobgoblin Device](../images/device-hobgoblin.png){width=300}
 
-The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed to help users learn the fundamentals of the Harp standard. The principles demonstrated in this tutorial series can also be applied to other Harp-compatible devices.
+The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed to help users learn the fundamentals of the Harp ecosystem. The principles demonstrated in this tutorial series can also be applied to other Harp devices.
 
 > [!NOTE]
 > The `Hobgoblin` can be assembled in multiple ways; this image above shows only one possible configuration. For more information on how to build one, refer to the resources in the device [repository](https://github.com/harp-tech/device.hobgoblin).
@@ -15,8 +15,8 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 ## Flashing the Firmware
 
 - Download the latest version of the [firmware](https://github.com/harp-tech/device.hobgoblin/releases/) that matches your Pico board.
-- Press-and-hold the Pico `BOOTSEL` button while you connect the device to your computer's USB port.
-- Drag-and-drop the `.uf2` file into the new storage device that appears on your PC.
+- Press-and-hold the Pico `BOOTSEL` button while you connect the device to your computer's USB port. The Pico will be mounted as a new flash drive.
+- Drag-and-drop the `.uf2` file into the drive.
 
 ## Testing the Device
 
@@ -32,15 +32,24 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 
 ## Installing Harp-Python
 
-The [harp-python](../articles/python.md) library provides an low-level interface to read and manipulate data from Harp devices. We recommend installing `harp-python` using [`uv`](https://docs.astral.sh/uv/), an extremely fast and modern Python package and project manager.
+The [harp-python](../articles/python.md) library provides an low-level interface to read and manipulate data from Harp devices. You can install `harp-python` within Python virtual environments by running:
+
+```cmd
+pip install harp-python
+```
+
+Alternatively, `harp-python` can also be installed with [`uv`](https://docs.astral.sh/uv/), an extremely fast and modern Python package and project manager.
 
 - Install [`uv`](https://docs.astral.sh/uv/).
 - Create a folder for the project (e.g., `hobgoblin_data`).
 - Navigate to the folder and initialize a new project:
-```powershell
+
+```cmd
 uv init
 ```
+
 - Install `harp-python` as a dependency:
-```powershell
+
+```cmd
 uv add harp-python 
 ```
