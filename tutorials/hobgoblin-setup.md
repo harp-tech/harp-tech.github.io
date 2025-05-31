@@ -1,5 +1,7 @@
 # Getting Started
 
+![Harp Hobgoblin Device](../images/device-hobgoblin.png){width=300}
+
 The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed to help users learn the fundamentals of the Harp standard. The principles demonstrated in this tutorial series can also be applied to other Harp-compatible devices.
 
 ## Installation
