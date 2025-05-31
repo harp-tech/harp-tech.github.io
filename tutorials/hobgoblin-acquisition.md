@@ -1,6 +1,6 @@
 # Acquisition and Control
 
-The exercises below will help you get comfortable with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices.
+The exercises below will help you get comfortable with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices, in Bonsai.
 
 ### Exercise 1: Acquiring Analog Data
 
@@ -17,10 +17,12 @@ Within Bonsai:
 
 - Insert a [`Parse`] operator, which allows you to specify which messages or events to listen to from the device. 
 - Within the [`Parse`] operator, select the [`AnalogData`] from the `Register` property dropdown menu. 
-- Right click on the [`Parse`] operator, select the [`Harp.Hobgoblin.AnalogDataPayload`], and choose `AnalogInput0` from the dropdown menu.
+- Right click on the [`Parse`] operator, select the [`Harp.Hobgoblin.AnalogDataPayload`], and choose `AnalogInput0` (or the `AnalogInput` that the photodiode is connected to) from the dropdown menu.
 
 > [!TIP]
-> `Registers` are simply message or event types (for instance, [`AnalogData`] or [`DigitalInputState`]). Within each `Register`, there could be different `Payloads`, which you can think of as different bundles of data with the same event type. In this context, the `Register` is data coming from the analog inputs, and the `Payload` is a single analog input channel.
+> `Registers` are simply message or event types (for instance, [`AnalogData`] or [`DigitalInputState`]). Within each `Register`, there could be different `Payloads`, which you can think of as different bundles of data with the same event type. In this context, the `Register` [`AnalogData`] is a collection of data coming from the analog inputs, with each [`Harp.Hobgoblin.AnalogDataPayload`] being a single analog input channel.
+
+- Run the workflow, open the visualizer for `AnalogInput0`, and shine a light (for instance, from your phone camera) on the photodiode. What do you see?
 
 <!--Reference Style Links -->
 [`Device`]: xref:Harp.Hobgoblin.Device
