@@ -2,6 +2,8 @@
 
 The exercises below will help you become familiar with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices using Bonsai.
 
+## Acquisition
+
 ### Exercise 1: Acquiring Analog Data
 
 Connect a sensor such as a photodiode to one of the analog input channels on the `Harp Hobgoblin`.
@@ -43,10 +45,35 @@ One of the main advantages of devices in the Harp ecosystem is that all messages
 - Add a [`Zip`] operator and connect the `Seconds` and `AnalogInput0` nodes to it.
 - Run the workflow and open the visualizers for the `Seconds`, `AnalogInput0` and [`Zip`] nodes. **What is each visualizer representing?**
 
+### Exercise 3: Saving Data
+
+For simple use cases (e.g. recording from a single channel from a single device), data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
+
+:::workflow
+![Saving Data CSV](../workflows/hobgoblin-saving-csv.bonsai)
+:::
+
+- Add a [`ExpressionTransform`] operator. 
+- Double click the [`ExpressionTransform`] operator and add the follow code in the editor.
+
+```csharp
+new(Item1 as Timestamp, Item2 as AnalogInput0)
+```
+
+> [!TIP]
+> The [`Zip`] operator packages input items into a `tuple`, but loses the original item name. In this instance, the [`ExpressionTransform`] operator is useful for assigning a new name to those items.
+
+- Add a [`CsvWriter`] operator.
+- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`.
+- Change the `IncludeHeader` property of the [`CsvWriter`] to `True`. This creates column headings for the `.csv` file with the new name assigned by [`ExpressionTransform`].
+- Run the workflow, shine the line on the photodiode, and then open the resulting `.csv` file. **How is the data organized?**
+
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
+[`CsvWriter`]: xref:Bonsai.IO.CsvWriter
 [`Device`]: xref:Harp.Hobgoblin.Device
 [`DigitalInputState`]: xref:Harp.Hobgoblin.DigitalInputState
+[`ExpressionTransform`]: xref:Bonsai.Scripting.Expressions.ExpressionTransform
 [`Harp.Hobgoblin.AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData
