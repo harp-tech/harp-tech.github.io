@@ -19,10 +19,15 @@ In the acquisition section of this tutorial we will record data from a photodiod
 
 Within Bonsai: 
 
-- Insert a [`Device`] operator. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device. 
+- Insert a [`Device`] operator. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device.
 
 > [!NOTE]
 > Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. This is an example of a **polymorphic operator**, which changes its function and properties depending on what is being selected. To avoid confusion, in this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
+
+- Set the `PortName` property of the [`Device`] operator to the communications port of the `Hobgoblin` (e.g. `COM7`).
+
+> [!TIP]
+> In Windows, you can find the device's port number in `Device Manager` under `Ports (COM & LPT)` by locating the `USB Serial Device`.
 
 - Insert a [`Parse`] operator, which allows you to specify which `HarpMessage` to listen to from the device. 
 - Within the [`Parse`] operator, select the [`AnalogData`] from the `Register` property dropdown menu. 
