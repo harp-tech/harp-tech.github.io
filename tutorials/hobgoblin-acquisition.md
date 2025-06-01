@@ -21,16 +21,33 @@ Within Bonsai:
 
 - Insert a [`Parse`] operator, which allows you to specify which messages or events to listen to from the device. 
 - Within the [`Parse`] operator, select the [`AnalogData`] from the `Register` property dropdown menu. 
-- Right click on the [`Parse`] operator, select the [`Harp.Hobgoblin.AnalogDataPayload`], and choose `AnalogInput0` (or the `AnalogInput` that the photodiode is connected to) from the dropdown menu.
+- Right click on the [`Parse`] operator, select the [`Harp.Hobgoblin.AnalogDataPayload`] > `AnalogInput0` (or the `AnalogInput` that the photodiode is connected to) from the context menu.
 
 > [!TIP]
 > `Registers` are simply message or event types (for instance, [`AnalogData`] or [`DigitalInputState`]). Within each `Register`, there could be different `Payloads`, which you can think of as different bundles of data with the same event type. In this context, the `Register` [`AnalogData`] is a collection of data coming from the analog inputs, with each [`Harp.Hobgoblin.AnalogDataPayload`] being a single analog input channel.
 
-- Run the workflow, open the visualizer for `AnalogInput0`, and shine a light (for instance, from your phone camera) on the photodiode. What do you see?
+- Run the workflow, open the visualizer for `AnalogInput0`, and shine the flashlight from your phone on the photodiode. **What do you see?**
+
+### Exercise 2: Acquiring Timestamped Data
+
+One of the main advantages of devices in the Harp ecosystem is that all messages and events are hardware-timestamped, rather than relying on software timestamping by the operating system, which can be imprecise and subject to jitter. To access hardware timestamped data, make the follow modications to the previous workflow.
+
+:::workflow
+![Acquiring Timestamped Data](../workflows/hobgoblin-timestamp-data.bonsai)
+:::
+
+- Delete the `AnalogInput0` node.
+- Change the `Register` property in the [`Parse`] operator from [`AnalogData`] to [`TimestampedAnalogData`].
+- Right click on the [`Parse`] operator, select `Bonsai.Harp.Timestamp<Harp.Hobgoblin.AnalogDataPayload>` > `Seconds` from the context menu.
+- Right click on the [`Parse`] operator again, but this time select `Value (Harp.Hobgoblin.AnalogDataPayload)` > `AnalogInput0` from the context menu.
+- Add a [`Zip`] operator and connect the `Seconds` and `AnalogInput0` nodes to it.
+- Run the workflow and open the visualizers for the `Seconds`, `AnalogInput0` and [`Zip`] nodes. **What is each visualizer representing?**
 
 <!--Reference Style Links -->
-[`Device`]: xref:Harp.Hobgoblin.Device
-[`Parse`]: xref:Harp.Hobgoblin.Parse
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
+[`Device`]: xref:Harp.Hobgoblin.Device
 [`DigitalInputState`]: xref:Harp.Hobgoblin.DigitalInputState
 [`Harp.Hobgoblin.AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload
+[`Parse`]: xref:Harp.Hobgoblin.Parse
+[`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData
+[`Zip`]: xref:Bonsai.Reactive.Zip
