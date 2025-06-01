@@ -6,9 +6,12 @@ The exercises below will help you become familiar with acquiring and recording d
 
 ### Exercise 1: Acquiring Analog Input
 
-In the acquisition section of this tutorial we will record data from a photodiode sensor. Connect the photodiode to one of the analog input channels on the `Hobgoblin`. We will use analog input channel `0` (`GP26`) on the Pico for the examples and instructions, but you may use any of the other analog input channels as long as you change the appropriate values.
+In the acquisition section of this tutorial we will record data from a photodiode sensor. Connect the photodiode to analog input channel `0` (`GP26`) on the `Hobgoblin`. 
 
 (TODO: wiring diagram)
+
+> [!TIP]
+> You can use another sensor (such as a potentiometer, pushbutton, etc) and one of the other analog input channels by changing the appropriate properties.
 
 :::workflow
 ![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
@@ -118,9 +121,12 @@ df.plot(x = "Timestamp", y = "AnalogInput0")
 
 ### Exercise 5: Controlling Digital Output
 
-In the control section of this tutorial, we will send commands to turn on and off a LED. Connect a LED to a digital output channel on the Pico. We will use digital output channel `0` (`GP15`) on the Pico for the examples and instructions, but you can use any of the other digital output channels as long as you change the appropriate values.
+In the control section of this tutorial, we will send commands to turn on and off a LED. Connect a LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. 
 
 (TODO: wiring diagram)
+
+> [!TIP]
+> You can use another actuator (such as a active buzzer) and one of the other digital output channels by changing the appropriate properties.
 
 Previously we have been acquiring data from the `Hobgoblin` by placing operators after the [`Device`] operator. In order to send commands to the device, we need to place operators that lead into the [`Device`] operator.
 
