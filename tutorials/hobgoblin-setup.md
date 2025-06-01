@@ -26,7 +26,7 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 
 - Connect a pushbutton to analog input channel `0` (`GP26`) on the `Hobgoblin`.
 - Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai.
-- Run the workflow and observe the output of `AnalogInput0`. The value should change when the switch is pressed.
+- Run the workflow and observe the output of `AnalogInput0`. The value should change when the pushbutton is pressed.
 
 (TODO: Insert wiring diagram)
 
