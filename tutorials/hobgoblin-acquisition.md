@@ -1,6 +1,6 @@
 # Acquisition and Control
 
-The exercises below will help you become familiar with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices using Bonsai.
+The exercises below will help you become familiar with acquiring and recording data from the `Harp Hobgoblin` device, as well as issuing commands to connected peripheral devices using Bonsai. In addition, you will learn how to visualize and manipulate the recorded data in Python.
 
 ## Acquisition
 
@@ -67,6 +67,49 @@ new(Item1 as Timestamp, Item2 as AnalogInput0)
 - Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`.
 - Change the `IncludeHeader` property of the [`CsvWriter`] to `True`. This creates column headings for the `.csv` file with the new name assigned by [`ExpressionTransform`].
 - Run the workflow, shine the line on the photodiode, and then open the resulting `.csv` file. **How is the data organized?**
+
+### Exercise 4: Visualizing Recorded Data
+
+We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have an interactive notebook installed (e.g. [JuypterLab](https://jupyter.org/)) and a virtual environment with [`pandas`](https://pandas.pydata.org/) and [`matplotlib`](https://matplotlib.org/)(not included by default with `pandas`). If you have installed the `harp-python` library, [`pandas`](https://pandas.pydata.org/) is already included as a dependency.
+
+- Open a new interactive notebook and import `pandas`.
+
+```python 
+import pandas as pd
+```
+
+- Load the `.csv` into a dataframe variable.
+
+```python 
+df = pd.read_csv("analog_data.csv")
+```
+- Inspect the dataframe by looking at the first 5 rows.
+
+```python 
+df = pd.head()
+```
+
+- Plot the data by passing the right columns into the `x` and `y` arguments. **What did you notice?**
+
+```python 
+df.plot(x = "Timestamp", y = "AnalogInput0")
+```
+
+- **Optional** Normalize the `Timestamp` column by subtracting the initial value from all the values in the column.
+
+```python 
+df["Timestamp"] = df["Timestamp"] - df["Timestamp"].iloc[0]
+```
+
+- Plot the data again.
+
+```python 
+df.plot(x = "Timestamp", y = "AnalogInput0")
+```
+
+> [!WARNING]
+> This normalization step should be used with caution, as it only reflects the start time for that particular data stream and not the start time for a workflow with multiple data streams.
+
 
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
