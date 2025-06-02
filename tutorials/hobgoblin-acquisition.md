@@ -13,11 +13,11 @@ In the acquisition section of this tutorial we will record data from a photodiod
 > [!TIP]
 > You can use another sensor (such as a potentiometer, pushbutton, etc) and one of the other analog input channels by changing the appropriate properties.
 
+Within Bonsai: 
+
 :::workflow
 ![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
 :::
-
-Within Bonsai: 
 
 - Insert a [`Device`] operator. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device.
 
@@ -29,16 +29,16 @@ Within Bonsai:
 > [!TIP]
 > In Windows, you can find the device's port number in `Device Manager` under `Ports (COM & LPT)` by locating the `USB Serial Device`.
 
-- Insert a [`Parse`] operator, which allows you to specify which `HarpMessage` to listen to from the device. 
+- Insert a [`Parse`] operator to extract and process a specific `HarpMessage` to listen to from the device. 
 - Within the [`Parse`] operator, select [`AnalogData`] from the `Register` property dropdown menu. 
-- Right click on the [`Parse`] operator, select [`Harp.Hobgoblin.AnalogDataPayload`] > `AnalogInput0` from the context menu.
+- Right click on the [`Parse`] operator, select `Harp.Hobgoblin.AnalogDataPayload` > `AnalogInput0` from the context menu.
 
 > [!NOTE]
-> All `Harp` data and commands are received and sent in the form of `HarpMessages`. For simplicity sake, a `HarpMessage` can be distilled down to two critical values:
-> - `Registers` are different data or command types.
-> - `Payloads` are the actual content that is being sent.
+> All `Harp` data and commands are transmitted as `HarpMessages`. For simplicity, a `HarpMessage` can be distilled into two essential components:
+> - `Registers`: Specify the type of data or command being sent.
+> - `Payloads`: Contain the actual content being sent.
 >
-> In this context, the `Register` [`AnalogData`] is a collection of data coming from the analog inputs, with each [`Harp.Hobgoblin.AnalogDataPayload`] reporting the values from a single analog input channel.
+> In this context, the `Register` [`AnalogData`] represents a collection of data from the device’s analog inputs. Each [`AnalogDataPayload`] contains the measurement from a single analog input channel.
 
 - Run the workflow, open the visualizer for `AnalogInput0`, and shine the flashlight from your phone on the photodiode. **What do you see?**
 
@@ -57,7 +57,7 @@ One of the main advantages of devices in the Harp ecosystem is that all messages
 - Add a [`Zip`] operator and connect the `Seconds` and `AnalogInput0` nodes to it.
 - Run the workflow and open the visualizers for the `Seconds`, `AnalogInput0` and [`Zip`] nodes. **What is each visualizer representing?**
 
-### Exercise 3: Recording Data
+### Exercise 3: Recording Timestamped Data
 
 For simple use cases, data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
 
@@ -149,7 +149,7 @@ Now that we have constructed a `HarpMessage` to turn on the digital output, we w
 - Insert a [`KeyDown`] operator and set its `Key` property to `S`. We will use this key to turn OFF the LED.
 - Insert a [`CreateMessage`] operator. 
 - Configure the `Payload` property to [`DigitalOutputClearPayload`] which will clear the digital output and set it to `LOW`.
-- Configure the [`DigitalOutputSet`] property to the same digital output pin (`GP15`).
+- Configure the [`DigitalOutputClear`] property to the same digital output pin (`GP15`).
 
 > [!NOTE]
 > At this point we are ready to send these `HarpMessage` commands into the `Hobgoblin`. However, the [`Device`] operator only accepts one input node transmitting all the `HarpMessage` commands.
@@ -267,32 +267,62 @@ ax.get_legend().remove()
 # Show plot
 plt.show()
 ```
-
-## Harp-Python
-
-### Exercise 9: Simplifying Recording
-
-You might have noticed that the workflow in [Exercise 7](#exercise-7-combining-acquisition-and-control) is quite large due to all the additional nodes needed to process and record the data and commands. While this approach may be feasible for simple use cases, it does not scale well as more devices are added. 
-
 > [!TIP]
 > **Optional** - You can repeat the normalization step from [Exercise 4](#exercise-4-visualizing-recorded-data). Keep in mind when handling multiple data streams, all dataframes should be normalized to the earliest timestamp.
 
+## Data Interface
+
+### Exercise 9: Streamlining Recording
+
+You might have noticed that the workflow in [Exercise 7](#exercise-7-combining-acquisition-and-control) is quite large due to all the additional nodes needed to process and record the data and commands. While this approach may be feasible for simple use cases, it does not scale well as more devices are added. The `Harp.Hobgoblin` package provides a [`DeviceDataWriter`] that can be used to record all the data and commands received by the device. 
+
+:::workflow
+![Hobgoblin DeviceDataWriter](../workflows/hobgoblin-devicedatawriter.bonsai)
+:::
+
+- Copy the workflow from [Exercise 7](#exercise-7-combining-acquisition-and-control).
+- Delete all nodes that come after the [`Device`] operator.
+- Add a [`DeviceDataWriter`] operator.
+- Type a folder name in the `Path` property of [`DeviceDataWriter`]. This folder will be used to save all the data coming from the device.
+- Run the workflow, then open the folder you specified in the previous step. **What do you observe?**
+
+> [!NOTE]
+> The [`DeviceDataWriter`] records all the data from each `Register` in a separate raw binary file. This includes not just data registers, but common registers that include device metadata. In the next section, we will learn how to filter the `Registers` that are relevant for us.
+
+:::workflow
+![Hobgoblin Filter DeviceDataWriter](../workflows/hobgoblin-filter-devicedatawriter.bonsai)
+:::
+
+- Disconnect the [`Device`] and [`DeviceDataWriter`] operators.
+- Add a [`FilterRegister`] operator after the [`Device`] operator. Change the `Registry` property to [`AnalogData`].
+- Add a second [`FilterRegister`] operator. Change the `Registry` property to [`DigitalOutputSet`].
+- Add a third [`FilterRegister`] operator. Change the `Registry` property to [`DigitalOutputClear`].
+- Add a [`Merge`] operator to combine the `HarpMessages` from those three registers.
+- Connect the [`Merge`] operator to the [`DeviceDataWriter`] operator.
+- Run the workflow again, then open the folder you specified in the previous step. **What do you observe?**
+
+> [!NOTE]
+> The [`FilterRegister`] operator can be used to either include or exclude registers to be recorded. The [`Parse`] operator cannot be used in this instance as it only outputs the `Payload` in the `HarpMessage` as a processed value. Thus it is useful for visualization, but not for recording.
+
+
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
+[`AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload
 [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`CsvWriter`]: xref:Bonsai.IO.CsvWriter
 [`Device`]: xref:Harp.Hobgoblin.Device
-[`DigitalInputState`]: xref:Harp.Hobgoblin.DigitalInputState
-[`DigitalOutputSet`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
+[`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter
+[`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
+[`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 [`ExpressionTransform`]: xref:Bonsai.Scripting.Expressions.ExpressionTransform
-[`Harp.Hobgoblin.AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload
+[`FilterRegister`]: xref:Harp.Hobgoblin.FilterRegister
 [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown
 [`Merge`]: xref:Bonsai.Reactive.Merge
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData
-[`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.CreateTimestampedDigitalOutputSetPayload
-[`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.CreateTimestampedDigitalOutputClearPayload
+[`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet
+[`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputClear
 [`Zip`]: xref:Bonsai.Reactive.Zip

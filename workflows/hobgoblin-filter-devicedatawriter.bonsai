@@ -46,6 +46,21 @@
           <harp:PortName>COM7</harp:PortName>
         </Combinator>
       </Expression>
+      <Expression xsi:type="p1:FilterRegister">
+        <harp:FilterType>Include</harp:FilterType>
+        <harp:Register xsi:type="p1:AnalogData" />
+      </Expression>
+      <Expression xsi:type="p1:FilterRegister">
+        <harp:FilterType>Include</harp:FilterType>
+        <harp:Register xsi:type="p1:DigitalOutputSet" />
+      </Expression>
+      <Expression xsi:type="p1:FilterRegister">
+        <harp:FilterType>Include</harp:FilterType>
+        <harp:Register xsi:type="p1:DigitalOutputClear" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Merge" />
+      </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="p1:DeviceDataWriter">
           <p1:Path>data</p1:Path>
@@ -63,6 +78,12 @@
       <Edge From="3" To="4" Label="Source2" />
       <Edge From="4" To="5" Label="Source1" />
       <Edge From="5" To="6" Label="Source1" />
+      <Edge From="5" To="7" Label="Source1" />
+      <Edge From="5" To="8" Label="Source1" />
+      <Edge From="6" To="9" Label="Source1" />
+      <Edge From="7" To="9" Label="Source2" />
+      <Edge From="8" To="9" Label="Source3" />
+      <Edge From="9" To="10" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
