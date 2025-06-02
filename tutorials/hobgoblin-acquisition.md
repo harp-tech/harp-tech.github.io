@@ -30,15 +30,15 @@ Within Bonsai:
 > In Windows, you can find the device's port number in `Device Manager` under `Ports (COM & LPT)` by locating the `USB Serial Device`.
 
 - Insert a [`Parse`] operator, which allows you to specify which `HarpMessage` to listen to from the device. 
-- Within the [`Parse`] operator, select the [`AnalogData`] from the `Register` property dropdown menu. 
-- Right click on the [`Parse`] operator, select the [`Harp.Hobgoblin.AnalogDataPayload`] > `AnalogInput0` from the context menu.
+- Within the [`Parse`] operator, select [`AnalogData`] from the `Register` property dropdown menu. 
+- Right click on the [`Parse`] operator, select [`Harp.Hobgoblin.AnalogDataPayload`] > `AnalogInput0` from the context menu.
 
 > [!NOTE]
 > All `Harp` data and commands are received and sent in the form of `HarpMessages`. For simplicity sake, a `HarpMessage` can be distilled down to two critical values:
 > - `Registers` are different data or command types.
 > - `Payloads` are the actual content that is being sent.
 >
-> In this context, the `Register` [`AnalogData`] is a collection of data coming from the analog inputs, with each [`Harp.Hobgoblin.AnalogDataPayload`] carrying the values from a single analog input channel.
+> In this context, the `Register` [`AnalogData`] is a collection of data coming from the analog inputs, with each [`Harp.Hobgoblin.AnalogDataPayload`] reporting the values from a single analog input channel.
 
 - Run the workflow, open the visualizer for `AnalogInput0`, and shine the flashlight from your phone on the photodiode. **What do you see?**
 
@@ -52,12 +52,12 @@ One of the main advantages of devices in the Harp ecosystem is that all messages
 
 - Delete the `AnalogInput0` node.
 - Change the `Register` property in the [`Parse`] operator from [`AnalogData`] to [`TimestampedAnalogData`].
-- Right click on the [`Parse`] operator, select `Bonsai.Harp.Timestamp<Harp.Hobgoblin.AnalogDataPayload>` > `Seconds` from the context menu.
+- Right click on the [`Parse`] operator, select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.AnalogDataPayload>` > `Seconds` from the context menu.
 - Right click on the [`Parse`] operator again, but this time select `Value (Harp.Hobgoblin.AnalogDataPayload)` > `AnalogInput0` from the context menu.
 - Add a [`Zip`] operator and connect the `Seconds` and `AnalogInput0` nodes to it.
 - Run the workflow and open the visualizers for the `Seconds`, `AnalogInput0` and [`Zip`] nodes. **What is each visualizer representing?**
 
-### Exercise 3: Saving Data
+### Exercise 3: Recording Data
 
 For simple use cases (e.g. recording from a single channel from a single device), data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
 
@@ -76,9 +76,9 @@ new(Item1 as Timestamp, Item2 as AnalogInput0)
 > The [`Zip`] operator packages input items into a `tuple`, but loses the original item name. In this instance, the [`ExpressionTransform`] operator is useful for assigning a new name to those items.
 
 - Add a [`CsvWriter`] operator.
-- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`.
-- Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. This creates column headings for the `.csv` file with the new name assigned by [`ExpressionTransform`].
-- Run the workflow, shine the line on the photodiode, and then open the resulting `.csv` file. **How is the data organized?**
+- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`, for instance `analog_input.csv`.
+- Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. This creates column headings for the text file with the new name assigned by [`ExpressionTransform`].
+- Run the workflow, shine the line on the photodiode, and then open the resulting text file. **How is the data organized?**
 
 ### Exercise 4: Visualizing Recorded Data
 
@@ -93,7 +93,7 @@ import pandas as pd
 - Load the `.csv` into a dataframe variable.
 
 ```python 
-df = pd.read_csv("analog_data.csv")
+df = pd.read_csv("analog_input.csv")
 ```
 - Inspect the dataframe by looking at the first 5 rows.
 
@@ -152,14 +152,54 @@ Now that we have constructed a `HarpMessage` to turn on the digital output, we w
 - Configure the [`DigitalOutputSet`] property to the same digital output pin (`GP15`).
 
 > [!NOTE]
-> At this point we are ready to send these `HarpMessage` commands into the `Hobgoblin`. However, the [`Device`] operator only accepts one input node, which would carry all the `HarpMessage` commands.
+> At this point we are ready to send these `HarpMessage` commands into the `Hobgoblin`. However, the [`Device`] operator only accepts one input node transmitting all the `HarpMessage` commands.
 
 - Insert a [`Merge`] operator to combine these two commands into one `HarpMessage` sequence.
 - Insert a [`Device`] operator to send the `HarpMessage` sequence into the `Hobgoblin`.
 - Run the workflow and press either the `A` or `S` key. **What do you observe?**
 
+### Exercise 6: Recording Timestamped Commands
+
+To know when the digital output of the `Hobgoblin` was turned on or off, we can use the same format we learned in the acquisition section to receive `HarpMessages` that are transmitted when the command was executed by device.
+
+:::workflow
+![Timestamp Digital Output](../workflows/hobgoblin-timestamp-digitaloutput.bonsai)
+:::
+
+- Insert a [`Parse`] operator and select [`TimestampedDigitalOutputSet`] from the `Register` property dropdown menu.
+- Insert another [`Parse`] operator and select [`TimestampedDigitalOutputClear`] from the `Register` property dropdown menu.
+- Run the workflow, open the visualizers for both of these nodes, and toggle the LED on and off. **What do you notice?**
+
+> [!NOTE]
+> For both operators, the `HarpMessage` contains the pin number for the digital output that was either turned on or off, as well as the timestamps for those commands. They can be used to report the digital output commands for all pins available on the `Hobgoblin`. However, as the `Payload` for these `HarpMessages` have an identical structure, we now have to process and combine them into a format that we can save as data.
+
+- Right click on both operators and select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.DigitalOutputs>` > `Seconds` from the context menu.
+- Insert a [`Merge`] operator to merge the `Seconds` nodes.
+- Right click on both operators and select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.DigitalOutputs>` > `Value` from the context menu.
+- Insert a [`Boolean`] operator after the `Value` node coming from [`TimestampedDigitalOutputSet`]. Set the [`Boolean`] `value` property to `True`. 
+- Insert a [`Boolean`] operator after the `Value` node coming from [`TimestampedDigitalOutputClear`]. Set the [`Boolean`] `value` property to `False`. 
+- Insert a [`Merge`] operator to merge the [`Boolean`] nodes.
+- Insert a [`Zip`] operator to package the output of the two [`Merge`] nodes together.
+- Run the workflow, open the visualizer for the [`Zip`] operator, and toggle the LED on and off. **What do you see?**
+
+> [!TIP]
+> Explore the visualizers for the other nodes as well while the workflow is running to see what information each node is transmitting and how it is being transformed. 
+
+- Add a [`ExpressionTransform`] operator. 
+- Double click the [`ExpressionTransform`] operator and add the follow code in the editor.
+
+```csharp
+new(Item1 as Timestamp, Item2 as DigitalOutput0)
+```
+
+- Add a [`CsvWriter`] operator.
+- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`, like `digital_output.csv`.
+- Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. 
+- Run the workflow, toggle the LED on and off, and then open the resulting `.csv` file. **How is the data organized? How is it different from the analog input data?**
+
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
+[`Boolean`]: xref:Bonsai.Expressions.BooleanProperty
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`CsvWriter`]: xref:Bonsai.IO.CsvWriter
 [`Device`]: xref:Harp.Hobgoblin.Device
@@ -173,4 +213,6 @@ Now that we have constructed a `HarpMessage` to turn on the digital output, we w
 [`Merge`]: xref:Bonsai.Reactive.Merge
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData
+[`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.CreateTimestampedDigitalOutputSetPayload
+[`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.CreateTimestampedDigitalOutputClearPayload
 [`Zip`]: xref:Bonsai.Reactive.Zip

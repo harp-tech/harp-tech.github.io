@@ -43,7 +43,7 @@
           <harp:VisualIndicators>On</harp:VisualIndicators>
           <harp:Heartbeat>Disabled</harp:Heartbeat>
           <harp:IgnoreErrors>false</harp:IgnoreErrors>
-          <harp:PortName>COMx</harp:PortName>
+          <harp:PortName>COM7</harp:PortName>
         </Combinator>
       </Expression>
     </Nodes>
