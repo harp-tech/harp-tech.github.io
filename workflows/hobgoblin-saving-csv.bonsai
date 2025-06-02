@@ -42,7 +42,7 @@
         <io:FileName>analog_input.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
-        <io:Suffix>Timestamp</io:Suffix>
+        <io:Suffix>None</io:Suffix>
         <io:IncludeHeader>true</io:IncludeHeader>
       </Expression>
     </Nodes>

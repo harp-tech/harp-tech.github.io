@@ -197,6 +197,19 @@ new(Item1 as Timestamp, Item2 as DigitalOutput0)
 - Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. 
 - Run the workflow, toggle the LED on and off, and then open the resulting `.csv` file. **How is the data organized? How is it different from the analog input data?**
 
+## Integration
+
+### Exercise 7: Integrating Acquisition and Control
+
+You now have all the pieces to integrate for a full workflow that has both acquisition of data and control of peripheral devices. Combine the two workflows together and it should look something like this:
+
+:::workflow
+![Integrate Acquisition and Control](../workflows/hobgoblin-integrate-acquisition-control.bonsai)
+:::
+
+- Run the workflow and verify that you can record photosensitive signals on the analog input channel as well as toggle the LED with the keypresses.
+- Inspect the recorded analog input data and digital output command text files and verify that they are in the correct format and reflect what you are seeing and controlling.
+
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
 [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty
