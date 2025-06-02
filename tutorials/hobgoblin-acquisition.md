@@ -268,6 +268,12 @@ ax.get_legend().remove()
 plt.show()
 ```
 
+## Harp-Python
+
+### Exercise 9: Simplifying Recording
+
+You might have noticed that the workflow in [Exercise 7](#exercise-7-combining-acquisition-and-control) is quite large due to all the additional nodes needed to process and record the data and commands. While this approach may be feasible for simple use cases, it does not scale well as more devices are added. 
+
 > [!TIP]
 > **Optional** - You can repeat the normalization step from [Exercise 4](#exercise-4-visualizing-recorded-data). Keep in mind when handling multiple data streams, all dataframes should be normalized to the earliest timestamp.
 
