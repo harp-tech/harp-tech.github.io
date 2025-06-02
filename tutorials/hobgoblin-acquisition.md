@@ -59,7 +59,7 @@ One of the main advantages of devices in the Harp ecosystem is that all messages
 
 ### Exercise 3: Recording Data
 
-For simple use cases (e.g. recording from a single channel from a single device), data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
+For simple use cases, data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
 
 :::workflow
 ![Saving Data CSV](../workflows/hobgoblin-saving-csv.bonsai)
@@ -82,7 +82,7 @@ new(Item1 as Timestamp, Item2 as AnalogInput0)
 
 ### Exercise 4: Visualizing Recorded Data
 
-We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have an interactive notebook installed (e.g. [JuypterLab](https://jupyter.org/)) and a virtual environment with [`pandas`](https://pandas.pydata.org/) and [`matplotlib`](https://matplotlib.org/)(not included by default with `pandas`). If you have installed the `harp-python` library, `pandas` is already included as a dependency.
+We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have an interactive notebook installed (e.g. [JuypterLab](https://jupyter.org/)) and a virtual environment with [`pandas`](https://pandas.pydata.org/) and [`matplotlib`](https://matplotlib.org/). If you have installed the `harp-python` library, `pandas` is already included as a dependency. `matplotlib` is not included with `pandas` by default but is needed for the `pandas` plotting backend.
 
 - Open a new interactive notebook and import `pandas`.
 
@@ -93,30 +93,30 @@ import pandas as pd
 - Load the `.csv` into a dataframe variable.
 
 ```python 
-df = pd.read_csv("analog_input.csv")
+df_analog_input = pd.read_csv("analog_input.csv")
 ```
 - Inspect the dataframe by looking at the first 5 rows.
 
 ```python 
-df = pd.head()
+df_analog_input.head()
 ```
 
 - Plot the data by passing the right columns into the `x` and `y` arguments. **What did you notice?**
 
 ```python 
-df.plot(x = "Timestamp", y = "AnalogInput0")
+df_analog_input.plot(x = "Timestamp", y = "AnalogInput0", xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)", legend = False)
 ```
 
 - **Optional:** Normalize the `Timestamp` column by subtracting the initial value from all the values in the column.
 
 ```python 
-df["Timestamp"] = df["Timestamp"] - df["Timestamp"].iloc[0]
+df_analog_input["Timestamp"] = df_analog_input["Timestamp"] - df_analog_input["Timestamp"].iloc[0]
 ```
 
 - Plot the data again.
 
 ```python 
-df.plot(x = "Timestamp", y = "AnalogInput0")
+df_analog_input.plot(x = "Timestamp", y = "AnalogInput0", xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)", legend = False)
 ```
 
 > [!WARNING]
@@ -199,7 +199,7 @@ new(Item1 as Timestamp, Item2 as DigitalOutput0)
 
 ## Integration
 
-### Exercise 7: Integrating Acquisition and Control
+### Exercise 7: Combining Acquisition and Control
 
 You now have all the pieces to integrate for a full workflow that has both acquisition of data and control of peripheral devices. Combine the two workflows together and it should look something like this:
 
@@ -209,6 +209,67 @@ You now have all the pieces to integrate for a full workflow that has both acqui
 
 - Run the workflow and verify that you can record photosensitive signals on the analog input channel as well as toggle the LED with the keypresses.
 - Inspect the recorded analog input data and digital output command text files and verify that they are in the correct format and reflect what you are seeing and controlling.
+
+### Exercise 8: Visualizing Synchronized Recordings
+
+Another main advantage of devices in the Harp ecosystem is that all recorded information streams are timestamped to the same hardware clock. Thus, there is no need for post-hoc alignment during visualization and analysis. We will now take a look at our recorded text files and look at how to visualize them together. 
+
+- Open a new interactive notebook and import `pandas` and `matplotlib`.
+
+```python 
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+- Load and plot the recorded analog input data.
+
+```python 
+df_analog_input = pd.read_csv("analog_input.csv")
+df_analog_input.plot(x = "Timestamp", y = "AnalogInput0")
+```
+
+- Load and inspect the recorded digital output commands.
+
+```python 
+df_digital_output = pd.read_csv("digital_output.csv")
+df_digital_output.head()
+```
+
+> [!NOTE]
+> Since the digital output is a Boolean value that simply indicates whether the LED is on or off, it is not meaningful to plot it on its own.
+
+- Overlay the digital output as shaded regions on the plot of the analog input.
+
+```python 
+# Create a plot with the analog input data.
+ax = df_analog_input.plot(x='Timestamp', y='AnalogInput0')
+
+# Loop through digital events in pairs (`True` followed by `False`) 
+# Pass the timestamps as `on_time` and `off_time` to the matplotlib vertical shading function `axvspan`. 
+# Ignore duplicate commands
+on_time = None
+off_time = None
+for _, row in df_digital_output.iterrows():
+    if row['DigitalOutput0'] == True and on_time is None:
+        on_time = row['Timestamp'] 
+    elif row['DigitalOutput0'] == False and on_time is not None:
+        off_time = row['Timestamp']
+        ax.axvspan(on_time, off_time, color='lightblue', alpha=0.3)
+        # Reset variables
+        on_time = None  
+        off_time = None
+
+# Set plot properties
+ax.set_xlabel("Timestamp (second)")
+ax.set_ylabel("Analog Input (value)")
+ax.get_legend().remove()
+
+# Show plot
+plt.show()
+```
+
+> [!TIP]
+> **Optional** - You can repeat the normalization step from [Exercise 4](#exercise-4-visualizing-recorded-data). Keep in mind when handling multiple data streams, all dataframes should be normalized to the earliest timestamp.
 
 <!--Reference Style Links -->
 [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData
