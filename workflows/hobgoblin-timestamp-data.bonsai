@@ -25,10 +25,7 @@
         <Selector>Seconds</Selector>
       </Expression>
       <Expression xsi:type="MemberSelector">
-        <Selector>Value</Selector>
-      </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>AnalogInput0</Selector>
+        <Selector>Value.AnalogInput0</Selector>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="rx:Zip" />
@@ -38,9 +35,8 @@
       <Edge From="0" To="1" Label="Source1" />
       <Edge From="1" To="2" Label="Source1" />
       <Edge From="1" To="3" Label="Source1" />
-      <Edge From="2" To="5" Label="Source1" />
-      <Edge From="3" To="4" Label="Source1" />
-      <Edge From="4" To="5" Label="Source2" />
+      <Edge From="2" To="4" Label="Source1" />
+      <Edge From="3" To="4" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
