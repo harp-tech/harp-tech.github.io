@@ -22,7 +22,7 @@ Within Bonsai:
 - Insert a [`Device`] operator. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device.
 
 > [!NOTE]
-> Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. This is an example of a **polymorphic operator**, which changes its function and properties depending on what is being selected. To avoid confusion, in this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
+> Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. This is an example of a **polymorphic operator**, which changes its function and properties depending on what is being selected. In this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
 
 - Set the `PortName` property of the [`Device`] operator to the communications port of the `Hobgoblin` (e.g. `COM7`).
 
@@ -177,6 +177,10 @@ To know when the digital output of the `Hobgoblin` was turned on or off, we can 
 > [!NOTE]
 > For both operators, the `HarpMessage` contains the pin number for the digital output that was either turned on or off, as well as the timestamps for those commands. They can be used to report the digital output commands for all pins available on the `Hobgoblin`. However, as the `Payload` for these `HarpMessages` have an identical structure, we now have to process and combine them into a format that we can save as data.
 
+:::workflow
+![Saving Digital Output](../workflows/hobgoblin-saving-digitaloutput.bonsai)
+:::
+
 - Right click on both operators and select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.DigitalOutputs>` > `Seconds` from the context menu.
 - Insert a [`Merge`] operator to merge the `Seconds` nodes.
 - Right click on both operators and select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.DigitalOutputs>` > `Value` from the context menu.
@@ -306,7 +310,7 @@ You might have noticed that the workflow in [Exercise 7](#exercise-7-combining-a
 - Run the workflow again, then open the folder you specified in the previous step. **What do you observe?**
 
 > [!NOTE]
-> The [`FilterRegister`] operator can be used to either include or exclude registers to be recorded. The [`Parse`] operator cannot be used in this instance as it only outputs the `Payload` in the `HarpMessage` as a processed value. Thus it is useful for visualization, but not for recording.
+> The [`FilterRegister`] operator can be used to either include or exclude registers to be recorded. The [`Parse`] operator cannot be used in this instance as it only outputs the `Payload` in the `HarpMessage` as a processed value. Thus it is useful for visualization, but not for recording with the [`DeviceDataWriter`].
 
 
 <!--Reference Style Links -->
