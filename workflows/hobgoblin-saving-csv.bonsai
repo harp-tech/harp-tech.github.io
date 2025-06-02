@@ -39,7 +39,7 @@
         <scr:Expression>new(Item1 as Timestamp, Item2 as AnalogInput0)</scr:Expression>
       </Expression>
       <Expression xsi:type="io:CsvWriter">
-        <io:FileName>analog_data.csv</io:FileName>
+        <io:FileName>analog_input.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
         <io:Suffix>Timestamp</io:Suffix>
