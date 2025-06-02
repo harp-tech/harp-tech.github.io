@@ -97,7 +97,7 @@ import pandas as pd
 - Load the `.csv` into a dataframe variable.
 
 ```python 
-df_analog_input = pd.read_csv("analog_input.csv")
+df_analog_input = pd.read_csv("analog_input.csv", index_col = 0)
 ```
 - Inspect the dataframe by looking at the first 5 rows.
 
@@ -105,22 +105,22 @@ df_analog_input = pd.read_csv("analog_input.csv")
 df_analog_input.head()
 ```
 
-- Plot the data by passing the right columns into the `x` and `y` arguments. **What did you notice?**
+- Plot the data. **What did you notice?**
 
 ```python 
-df_analog_input.plot(x = "Timestamp", y = "AnalogInput0", xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)", legend = False)
+df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
 ```
 
 - **Optional:** Normalize the `Timestamp` column by subtracting the initial value from all the values in the column.
 
 ```python 
-df_analog_input["Timestamp"] = df_analog_input["Timestamp"] - df_analog_input["Timestamp"].iloc[0]
+df_analog_input.index = df_analog_input.index - df_analog_input.index[0]
 ```
 
 - Plot the data again.
 
 ```python 
-df_analog_input.plot(x = "Timestamp", y = "AnalogInput0", xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)", legend = False)
+df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
 ```
 
 > [!WARNING]
@@ -232,14 +232,14 @@ import matplotlib.pyplot as plt
 - Load and plot the recorded analog input data.
 
 ```python 
-df_analog_input = pd.read_csv("analog_input.csv")
-df_analog_input.plot(x = "Timestamp", y = "AnalogInput0")
+df_analog_input = pd.read_csv("analog_input.csv", index_col = 0)
+df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
 ```
 
 - Load and inspect the recorded digital output commands.
 
 ```python 
-df_digital_output = pd.read_csv("digital_output.csv")
+df_digital_output = pd.read_csv("digital_output.csv", index_col = 0)
 df_digital_output.head()
 ```
 
@@ -250,7 +250,10 @@ df_digital_output.head()
 
 ```python 
 # Create a plot with the analog input data.
-ax = df_analog_input.plot(x='Timestamp', y='AnalogInput0')
+ax = df_analog_input.plot()
+
+# Track whether we've added the legend label for digital output
+label_added = False
 
 # Loop through digital events in pairs (`True` followed by `False`) 
 # Pass the timestamps as `on_time` and `off_time` to the matplotlib vertical shading function `axvspan`. 
@@ -259,18 +262,19 @@ on_time = None
 off_time = None
 for _, row in df_digital_output.iterrows():
     if row['DigitalOutput0'] == True and on_time is None:
-        on_time = row['Timestamp'] 
+        on_time = row.name
     elif row['DigitalOutput0'] == False and on_time is not None:
-        off_time = row['Timestamp']
-        ax.axvspan(on_time, off_time, color='lightblue', alpha=0.3)
+        off_time = row.name
+        ax.axvspan(on_time, off_time, color='lightblue', alpha=0.3, label='DigitalOutput0' if not label_added else None)
         # Reset variables
+        label_added = True
         on_time = None  
         off_time = None
 
 # Set plot properties
 ax.set_xlabel("Timestamp (second)")
 ax.set_ylabel("Analog Input (value)")
-ax.get_legend().remove()
+ax.legend()
 
 # Show plot
 plt.show()
@@ -330,28 +334,25 @@ device = harp.create_reader("./data/device.yml")
 - Load different sets of data by specifying the `Register` as a property for the `device` reader, and calling the `read()` method.
 
 ```python
-analog_data = device.AnalogData.read()
+df_analog_data = device.AnalogData.read()
 ```
 
 - Find the type of the loaded data using the Python `type()` function. **What do you observe?**
 
 ```python
-type(analog_data)
+type(df_analog_data)
 ```
-
-> [!NOTE]
-> The output of `device.Register.read()` is a `pandas` dataframe with access to all of its methods. 
 
 - Inspect the data by looking at the first 5 rows.
 
 ```python
-analog_data.head()
+df_analog_data.head()
 ```
 
 - Plot the data.
 
 ```python
-analog_data.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
+df_analog_data.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
 ```
 
 > [!NOTE]
