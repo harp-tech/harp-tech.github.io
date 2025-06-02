@@ -16,7 +16,7 @@ In the acquisition section of this tutorial we will record data from a photodiod
 Within Bonsai: 
 
 :::workflow
-![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
+![Hobgoblin Device Operator](../workflows/hobgoblin-device-operator.bonsai)
 :::
 
 - Insert a [`Device`] operator. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device.
@@ -28,6 +28,10 @@ Within Bonsai:
 
 > [!TIP]
 > In Windows, you can find the device's port number in `Device Manager` under `Ports (COM & LPT)` by locating the `USB Serial Device`.
+
+:::workflow
+![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
+:::
 
 - Insert a [`Parse`] operator to extract and process a specific `HarpMessage` to listen to from the device. 
 - Within the [`Parse`] operator, select [`AnalogData`] from the `Register` property dropdown menu. 
