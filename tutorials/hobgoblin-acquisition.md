@@ -13,14 +13,15 @@ In the acquisition section of this tutorial we will record data from a photodiod
 > [!TIP]
 > You can use another sensor (such as a potentiometer, pushbutton, etc) and one of the other analog input channels by changing the appropriate properties.
 
-Within Bonsai: 
+In Bonsai: 
 
 :::workflow
 ![Hobgoblin Device Operator](../workflows/hobgoblin-device-operator.bonsai)
 :::
 
-- Insert a [`Device`] operator from the `Harp.Hobgoblin` package. This operator is the first node you will normally add to your workflow when using any Harp device, and initializes a connection to the device.
-- Set the `PortName` property of the [`Device`] operator to the communications port of the `Hobgoblin` (e.g. `COM7`).
+- Insert a [`Device`] operator from the `Harp.Hobgoblin` package. This type of operator is used to receive data from a Harp devices and send commands to it.
+- Set the `PortName` property of the [`Device`] operator to the serial port `Hobgoblin` is connected to (e.g. `COM7`).
+- Start the workflow. If you see the output of the [`Device`] operator you should observe a continuous stream of `HarpMessages`.
 
 > [!NOTE]
 > Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. In this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
@@ -32,22 +33,21 @@ Within Bonsai:
 ![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
 :::
 
-- Insert a [`Parse`] operator to extract and process a specific `HarpMessage` to listen to from the device. 
+- Insert a [`Parse`] operator to filter and parse `HarpMessages` from a specific register from the Device.
 - Within the [`Parse`] operator, select [`AnalogData`] from the `Register` property dropdown menu. 
-- Right-click on the [`Parse`] operator, select `Harp.Hobgoblin.AnalogDataPayload` > `AnalogInput0` from the context menu.
+- Right-click on the [`Parse`] operator, select `Harp.Hobgoblin.AnalogDataPayload` > `AnalogInput0` from the context menu. This will select data from the first analog input channel.
 
 > [!NOTE]
-> All `Harp` device data and commands are transmitted as `HarpMessages`. For simplicity, a `HarpMessage` can be distilled into two essential components:
-> - `Registers`: Specify the type of data or command being sent.
-> - `Payloads`: Contain the actual content being sent.
->
+> The `Harp` protocol is designed to be symmetrical. In other words, `Harp` devices send data, and receive commands, as `HarpMessages`. When using operators from a device-specific Bonsai package:
+> - `Register`: Specifies which functionality we are manipulating. In the case of `Parse` it allows us to only filter the `HarpMessages` related to ADC reads, as well as parsing the data into a more usable format.
+> - `Payload`: It is usually a way to refer to the data that is packed inside a given `HarpMessage`. Different `Registers` will have different `Payload` formats. Additionally, all `Payloads` contain a `Timestamp` that indicates when the data was acquired.
 > In this context, the `Register` [`AnalogData`] represents a collection of data from the device’s analog inputs. Each [`AnalogDataPayload`] contains the measurement from a single analog input channel.
 
 - Run the workflow, open the visualizer for `AnalogInput0`, and shine the flashlight from your phone on the photodiode. **What do you see?**
 
 ### Exercise 2: Acquiring Timestamped Data
 
-One of the main advantages of devices in the Harp ecosystem is that all messages and events are hardware-timestamped, rather than relying on software timestamping by the operating system, which is less precise and susceptible to jitter. To access hardware timestamped data, make the follow modications to the previous workflow.
+One of the main advantages of devices in the Harp ecosystem is that all messages and events are hardware-timestamped, rather than relying on software timestamping by the operating system, which is susceptible to jitter. To access hardware timestamped data, make the follow modications to the previous workflow.
 
 :::workflow
 ![Acquiring Timestamped Data](../workflows/hobgoblin-timestamp-data.bonsai)
@@ -85,51 +85,26 @@ new(Item1 as Timestamp, Item2 as AnalogInput0)
 
 ### Exercise 4: Visualizing Recorded Data
 
-We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have an interactive notebook installed (e.g. [JuypterLab](https://jupyter.org/)) and a virtual environment with [`pandas`](https://pandas.pydata.org/) and [`matplotlib`](https://matplotlib.org/). If you have installed the `harp-python` library, `pandas` is already included as a dependency. `matplotlib` is not included with `pandas` by default but is needed for the `pandas` plotting backend.
+We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have a python environment with [`pandas`](https://pandas.pydata.org/), [`matplotlib`](https://matplotlib.org/) and [`harp-python`](https://github.com/harp-tech/harp-python) installed.
 
-- Open a new interactive notebook and import `pandas`.
-
-```python 
+```python
 import pandas as pd
-```
 
-- Load the `.csv` into a dataframe variable.
-
-```python 
+# Load the recorded data from the Bonsai workflow
 df_analog_input = pd.read_csv("analog_input.csv", index_col = 0)
+
+# Display the first few rows of the DataFrame
+print(df_analog_input.head())
+
+# Plot the data
+df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (ADC value)")
 ```
-- Inspect the dataframe by looking at the first 5 rows.
-
-```python 
-df_analog_input.head()
-```
-
-- Plot the data. **What did you notice?**
-
-```python 
-df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
-```
-
-- **Optional:** Normalize the `Timestamp` index by subtracting the initial value.
-
-```python 
-df_analog_input.index = df_analog_input.index - df_analog_input.index[0]
-```
-
-- Plot the data again.
-
-```python 
-df_analog_input.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
-```
-
-> [!WARNING]
-> This normalization step should be used with caution, as it only reflects the start time for that particular data stream and not the start time for a workflow with multiple data streams.
 
 ## Control
 
 ### Exercise 5: Controlling Digital Output
 
-In the control section of this tutorial, we will send commands to turn on and off a LED. Connect a LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. 
+In the control section of this tutorial, we will send commands to turn on and off a LED. Connect a LED to digital output channel `0` (`GP15`) on the `Hobgoblin`.
 
 (TODO: wiring diagram)
 
@@ -180,27 +155,10 @@ To know when the digital output of the `Hobgoblin` was turned on or off, we can 
 ![Saving Digital Output](../workflows/hobgoblin-saving-digitaloutput.bonsai)
 :::
 
-- Right-click on the [`Parse`] (`TimestampedDigitalOutputSet`) operator, and select `Bonsai.Harp.Timestamped<Harp.Hobgoblin.DigitalOutputs>` > `Seconds` from the context menu.
-- Insert a [`Boolean`] operator on a separate branch. Set the `Value` property to `True`.
-- Insert a [`Zip`] operator to package the timestamp and converted digital output value together.
-- Repeat the steps for the [`Parse`] (`TimestampedDigitalOutputClear`) operator, but this time set the [`Boolean`] `Value` to `False`.
-- Insert a [`Merge`] operator to merge the two sequences together.
-- Run the workflow, open the visualizer for the [`Merge`] operator, and toggle the LED on and off. **What do you see?**
-
-> [!TIP]
-> Explore the visualizers for the other nodes as well while the workflow is running to see what information each node is transmitting and how it is being transformed. 
-
-- Add a [`ExpressionTransform`] operator. 
-- Double click the [`ExpressionTransform`] operator and add the follow code in the editor.
-
-```csharp
-new(Item1 as Timestamp, Item2 as DigitalOutput0)
-```
-
-- Add a [`CsvWriter`] operator.
-- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`, like `digital_output.csv`.
+- Log data from each register with a [`CsvWriter`] operator.
+- Configure the `FileName` property of the [`CsvWriter`] with a file name ending in `.csv`, like `digital_output_clear.csv`.
 - Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. 
-- Run the workflow, toggle the LED on and off, and then open the resulting text file. **How is the data organized? How is it different from the analog input data?**
+- Run the workflow, toggle the LED on and off, and then open the resulting text file.
 
 ## Integration
 
@@ -212,14 +170,18 @@ You now have all the pieces to integrate for a full workflow that has both acqui
 ![Integrate Acquisition and Control](../workflows/hobgoblin-integrate-acquisition-control.bonsai)
 :::
 
+As you can probably tell, it is quickly becoming unwieldy to manage so many connections to/from the [`Device`] operator. To help with this, we can use a `PublishSubject` operator. This node "broadcasts" all the events sent to it to the rest of the workflow. You can "subscribe" to any subject by adding a `SubscribeSubject` operator.
+
+:::workflow
+![Integrate Acquisition and Control with PublishSubject](../workflows/hobgoblin-integrate-acquisition-control-with-publish.bonsai)
+:::
+
 - Run the workflow and verify that you can record photosensitive signals on the analog input channel as well as toggle the LED with the keypresses.
 - Inspect the recorded analog input data and digital output command text files and verify that they are in the correct format and reflect what you are seeing and controlling.
 
 ### Exercise 8: Visualizing Synchronized Recordings
 
 Another main advantage of devices in the Harp ecosystem is that all recorded information streams are timestamped to the same hardware clock. Thus, there is no need for post-hoc alignment during visualization and analysis. We will now take a look at our recorded text files and look at how to visualize them together. 
-
-- Open a new interactive notebook and import `pandas` and `matplotlib`.
 
 ```python 
 import pandas as pd
@@ -290,66 +252,33 @@ You might have noticed that the workflow in [Exercise 7](#exercise-7-combining-a
 :::
 
 - Copy the workflow from [Exercise 7](#exercise-7-combining-acquisition-and-control).
-- Delete all nodes that come after the [`Device`] operator.
-- Add a [`DeviceDataWriter`] operator.
+- Subscribe to the [`Device`] operator using a [`SubscribeSubject`] operator. This will allow us to access the `HarpMessages` that are being sent by the device.
+- Add a [`DeviceDataWriter`] operator after the [`SubscribeSubject`] operator.
 - Type a folder name in the `Path` property of [`DeviceDataWriter`]. This folder will be used to save all the data coming from the device.
 - Run the workflow, then open the folder you specified in the previous step. **What do you observe?**
 
 > [!NOTE]
-> The [`DeviceDataWriter`] generates a `device.yml` file that contains device metadata that will be used later for loading data with `harp-python`. In addition, all the data from each `Register` is saved as a separate raw binary file. This includes not just data registers, but other common registers for device configuration or identification. In the next section, we will learn how to filter the `Registers` that are relevant for us. 
-
-:::workflow
-![Hobgoblin Filter DeviceDataWriter](../workflows/hobgoblin-filter-devicedatawriter.bonsai)
-:::
-
-- Disconnect the [`Device`] and [`DeviceDataWriter`] operators.
-- Add a [`FilterRegister`] operator after the [`Device`] operator. Change the `Registry` property to [`AnalogData`].
-- Add a second [`FilterRegister`] operator. Change the `Registry` property to [`DigitalOutputSet`].
-- Add a third [`FilterRegister`] operator. Change the `Registry` property to [`DigitalOutputClear`].
-- Add a [`Merge`] operator to combine the `HarpMessages` from those three registers.
-- Connect the [`Merge`] operator to the [`DeviceDataWriter`] operator.
-- Run the workflow again, then open the folder you specified in the previous step. **What do you observe?**
-
-> [!NOTE]
-> The [`FilterRegister`] operator can be used to either include or exclude registers to be recorded. The [`Parse`] operator cannot be used in this instance as it only outputs the `Payload` in the `HarpMessage` as a processed value. Thus it is useful for visualization, but not for recording with the [`DeviceDataWriter`].
+> The [`DeviceDataWriter`] generates a `device.yml` file that contains device metadata that will be used later for loading data with `harp-python`. In addition, all the data from each `Register` is saved as a separate raw binary file. This includes not just data registers, but other common registers for device configuration or identification.
 
 ### Exercise 10: Streamlining Data Analysis
 
 The `harp-python` package also simplifies data visualization and analysis by providing a convenient interface to load and read the raw binary files that [`DeviceDataWriter`] records. This exercise assumes that you have setup the dependencies from previous exercises, as well as `harp-python`.
 
-- Import `harp-python`.
-
-```python 
+```python
 import harp
-```
-- Create a `device` reader object to load `Hobgoblin` data by specifying the location of the `device.yml` generated by [`DeviceDataWriter`].
+# Create a `device` reader object to load `Hobgoblin` data by specifying the location of the `device.yml` generated by [`DeviceDataWriter`].
 
-```python 
 device = harp.create_reader("./data/device.yml")
-```
 
-- Load different sets of data by specifying the `Register` as a property for the `device` reader, and calling the `read()` method.
+# Data from a register can be access by device.<register_name>.read()
 
-```python
 df_analog_data = device.AnalogData.read()
-```
 
-- Find the type of the loaded data using the Python `type()` function. **What do you observe?**
+# The returned data is a `pandas.DataFrame` that can be easily inspected ...
+print(df_analog_data.head())
 
-```python
-type(df_analog_data)
-```
-
-- Inspect the data by looking at the first 5 rows.
-
-```python
-df_analog_data.head()
-```
-
-- Plot the data.
-
-```python
-df_analog_data.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (value)")
+# ...and visualized
+df_analog_data.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (ADC value)")
 ```
 
 > [!NOTE]
