@@ -23,10 +23,10 @@ Within Bonsai:
 - Set the `PortName` property of the [`Device`] operator to the communications port of the `Hobgoblin` (e.g. `COM7`).
 
 > [!NOTE]
-> Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. This is an example of a **polymorphic operator**, which changes its function and properties depending on what is being selected. In this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
+> Notice how the [`Device`] operator automatically changes its name to `Hobgoblin` when added to the workflow. In this tutorial, we will be referring to the original name of the operator in the Bonsai `Toolbox`, which will be different from how it appears in your workflow or in the workflow images shown.
 
 > [!WARNING]
-> Make sure to use the high-level [`Device`] operator for your device rather than the generic [`Device`] operator from the `Harp` package. This unlocks device-specific functionality.
+> When adding the operators in this tutorials, make sure to use the high-level operators for your device (such as `Device (Harp.Hobgoblin)`) rather than the generic operators from the `Harp` package (such as `Device (Harp)`). This unlocks device-specific functionality.
 
 :::workflow
 ![Analog Input](../workflows/hobgoblin-helloworld.bonsai)
