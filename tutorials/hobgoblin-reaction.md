@@ -10,7 +10,7 @@ The task begins with an inter-trial interval (`ITI`), followed by stimulus prese
 
 ### Exercise 1: Generating a fixed-interval stimulus
 
-In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. 
+In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. Connect the pushbutton to digital input channel `0` (`GP2`) on the `Hobgoblin`. 
 
 (TODO: wiring diagram)
 
@@ -33,7 +33,7 @@ Next, we will set up our `Hobgoblin`. While we can connect operators carrying `H
 Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 
 :::workflow
-![Hobgoblin Device Pattern](../workflows/hobgoblin-reactiontime-stimulus.bonsai)
+![Hobgoblin Reaction Time Stimulus](../workflows/hobgoblin-reactiontime-stimulus.bonsai)
 :::
 
 - Insert a [`Timer`] source and set its `DueTime` property to 1 second.
@@ -44,6 +44,63 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 - Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`.
 - Insert a [`Repeat`] operator.
 
+### Exercise 2: Measuring reaction time
+
+:::workflow
+![Hobgoblin Reaction Time Measurement](../workflows/hobgoblin-reactiontime-measurement.bonsai)
+:::
+
+- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`. This operator receives `HarpMessages` from `Hobgoblin Events`.
+- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalOutputSet`].
+- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`]. 
+- Insert a [`DeviceDataWriter`] after `Hobgoblin Events`. Type a folder name in the `Path` property.
+- Run the workflow, and verify that both the stimulus and the button are correctly recorded.
+
+### Exercise 3: Analyzing reaction time
+
+We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have a python environment with [`pandas`](https://pandas.pydata.org/), [`matplotlib`](https://matplotlib.org/) and [`harp-python`](https://github.com/harp-tech/harp-python) installed.
+
+```python
+# Import harp-python for data interface and pandas for simple plotting
+import harp
+import pandas as pd 
+
+# Load device reader
+device = harp.create_reader("./data/device.yml")
+
+# Load digital input and digital output
+df_digital_output_set = device.DigitalOutputSet.read()
+df_digital_input_state = device.DigitalInputState.read()
+
+# Inspect dataframe
+df_digital_output_set.head()
+df_digital_input_state.head()
+
+# Discard_unused_channels
+df_digital_output_set = df_digital_output_set["GP15"]
+df_digital_input_state = df_digital_input_state["GP2"]
+
+# Keep digital_input_state == True values (when button is pressed)
+df_digital_input_state = df_digital_input_state[df_digital_input_state == True]
+
+# Extract valid responses (first button press that occurs within response_window, our ITI is ~1.2 second)
+response_window = 1.0
+valid_response_times = []
+for led_on in df_digital_output_set.index:
+    for button_press in df_digital_input_state.index:
+        response_time = button_press - led_on
+        if 0 < response_time < response_window:
+            valid_response_times.append(response_time)
+
+# Calculate and print hit/miss percentage
+num_valid_responses = len(valid_response_times)
+num_total_trials = len(df_digital_output_set.index)
+hit_percentage = num_valid_responses / num_total_trials * 100
+print(f"There were {num_valid_responses} valid responses out of {num_total_trials} trials, giving a hit rate of {hit_percentage}%")
+
+# Plot valid response times
+pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response Times (seconds)", title = "Boxplot of valid response times")
+```
 
 <!--Reference Style Links -->
 <!-- [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData -->
@@ -51,10 +108,9 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 <!-- [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject -->
 <!-- [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty -->
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
-<!-- [`CsvWriter`]: xref:Bonsai.IO.CsvWriter -->
 [`Delay`]: xref:Bonsai.Reactive.Delay
 [`Device`]: xref:Harp.Hobgoblin.Device
-<!-- [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter -->
+[`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
@@ -63,12 +119,14 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 <!-- [`FilterRegister`]: xref:Harp.Hobgoblin.FilterRegister -->
 <!-- [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown -->
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
-<!-- [`Parse`]: xref:Harp.Hobgoblin.Parse -->
+[`Parse`]: xref:Harp.Hobgoblin.Parse
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
+[`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`Timer`]: xref:Bonsai.Reactive.Timer
 <!-- [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData -->
-<!-- [`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet -->
+[`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet
+[`TimestampedDigitalInputState`]: xref:Harp.Hobgoblin.TimestampedDigitalInputState
 <!-- [`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputClear -->
 <!-- [`Zip`]: xref:Bonsai.Reactive.Zip -->
