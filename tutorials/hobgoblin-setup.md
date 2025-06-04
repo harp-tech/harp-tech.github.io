@@ -21,13 +21,16 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 
 ## Testing the device
 
+![Hobgoblin Touch](../images/hobgoblin-helloworld-touch.png){width=400}  
+*<small>Hobgoblin wiring diagram for touch sensor</small>*
+
 :::workflow
 ![Hobgoblin Hello World](~/workflows/hobgoblin-helloworld.bonsai)
 :::
 
-- Connect a push button to analog input channel `0` (`GP26`) on the `Hobgoblin`.
+- Connect a touch sensor to analog input channel `0` (`GP26`) on the `Hobgoblin`.
 - Set the `PortName` property of the [`Hobgoblin`](xref:Harp.Hobgoblin.Device) operator to the communications port of the `Hobgoblin` (e.g. COM7).
-- Run the workflow and double-click the output of `AnalogInput0`. The value should change when the push button is pressed.
+- Run the workflow and double-click the output of `AnalogInput0`. The value should change when the touch sensor is pressed.
 
 ## Installing harp-python
 
