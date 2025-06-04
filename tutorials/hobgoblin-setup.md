@@ -25,12 +25,8 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 :::
 
 - Connect a push button to analog input channel `0` (`GP26`) on the `Hobgoblin`.
-- Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai.
 - Set the `PortName` property of the [`Hobgoblin`](xref:Harp.Hobgoblin.Device) operator to the communications port of the `Hobgoblin` (e.g. COM7).
 - Run the workflow and double-click the output of `AnalogInput0`. The value should change when the push button is pressed.
-
-> [!TIP]
-> In Windows, you can find the device's port name in `Device Manager`. Under `Ports (COM & LPT)`, locate the entry labelled `USB Serial Device`.
 
 ## Installing harp-python
 
