@@ -87,40 +87,40 @@ import harp
 import pandas as pd 
 
 # Load device reader
-device = harp.create_reader("./data/device.yml")
+device = harp.create_reader("./Hobgoblin.harp")
 
 # Load digital input and digital output
-df_digital_output_set = device.DigitalOutputSet.read()
-df_digital_input_state = device.DigitalInputState.read()
+digital_output_set = device.DigitalOutputSet.read()
+digital_input_state = device.DigitalInputState.read()
 
 # Inspect dataframe
-df_digital_output_set.head()
-df_digital_input_state.head()
+print(digital_output_set.head())
+print(digital_input_state.head())
 
 # Discard_unused_channels
-df_digital_output_set = df_digital_output_set["GP15"]
-df_digital_input_state = df_digital_input_state["GP2"]
+digital_output_set = digital_output_set["GP15"]
+digital_input_state = digital_input_state["GP2"]
 
 # Keep digital_input_state == True values (when button is pressed)
-df_digital_input_state = df_digital_input_state[df_digital_input_state == True]
+digital_input_state = digital_input_state[digital_input_state == True]
 
 # Extract valid responses (first button press that occurs within response_window, our ITI is ~1.2 second)
 response_window = 1.0
 valid_response_times = []
-for led_on in df_digital_output_set.index:
-    for button_press in df_digital_input_state.index:
+for led_on in digital_output_set.index:
+    for button_press in digital_input_state.index:
         response_time = button_press - led_on
         if 0 < response_time < response_window:
             valid_response_times.append(response_time)
 
 # Calculate and print hit/miss percentage
 num_valid_responses = len(valid_response_times)
-num_total_trials = len(df_digital_output_set.index)
+num_total_trials = len(digital_output_set.index)
 hit_percentage = num_valid_responses / num_total_trials * 100
 print(f"There were {num_valid_responses} valid responses out of {num_total_trials} trials, giving a hit rate of {hit_percentage}%")
 
 # Plot valid response times
-pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response Times (seconds)", title = "Boxplot of valid response times")
+pd.Series(valid_response_times).plot(kind="box", ylim=(0,1))
 ```
 
 ### Exercise 4: Driving state transitions with external behaviour events
