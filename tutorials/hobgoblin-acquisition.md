@@ -1,20 +1,20 @@
 # Acquisition and Control
 
-The exercises below will help you become familiar with acquiring and recording data from the `Hobgoblin` device, as well as issuing commands to connected peripheral devices using Bonsai. In addition, you will learn how to visualize and manipulate the recorded data in Python.
+The exercises below will help you become familiar with acquiring and recording data from the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin), as well as issuing commands to connected peripheral devices using Bonsai. In addition, you will learn how to visualize and manipulate the recorded data in Python.
 
 > [!WARNING]
-> When adding the operators in this tutorials, make sure to use the high-level operators for your device (such as `Device (Harp.Hobgoblin)`) rather than the generic operators from the `Harp` package (such as `Device (Harp)`). This unlocks device-specific functionality.
+> When adding the operators in these tutorials, make sure to use the high-level operators for your device (such as `Device (Harp.Hobgoblin)`) rather than the generic operators from the `Harp` package (such as `Device (Harp)`). This unlocks device-specific functionality.
 
 ## Acquisition
 
-### Exercise 1: Acquiring Analog Input
+### Exercise 1: Acquiring analog input
 
 In the acquisition section of this tutorial we will record data from a photodiode sensor. Connect the photodiode to analog input channel `0` (`GP26`) on the `Hobgoblin`. 
 
-(TODO: wiring diagram)
-
 > [!TIP]
 > You can use another sensor (such as a potentiometer, pushbutton, etc) and one of the other analog input channels by changing the appropriate properties.
+
+![Hobgoblin Photodiode](../images/hobgolbin-acquisition-photodiode.svg){width=400px}
 
 In Bonsai: 
 
@@ -43,11 +43,11 @@ In Bonsai:
 > - `Register`: Specifies which functionality we are manipulating. 
 > - `Payload`: It is usually a way to refer to the data that is packed inside a given `HarpMessage`. Different `Registers` will have different `Payload` formats. Additionally, all `Payloads` contain a `Timestamp` that indicates when the data was acquired.
 >
-> In this context, the `Harp.Hobgoblin` [`Parse`] operator "recognizes" that the `Register` [`AnalogData`] corresponds to data readouts from the `Hobgoblin` analog inputs and "understands" how to parse each [`AnalogDataPayload`] as the measurement from a single analog input channel. 
+> A device-specific operator like [`Parse (Harp.Hobgoblin)`] is able to "recognize" that the `Register` [`AnalogData`] corresponds to data readouts from the `Hobgoblin` analog inputs and "understands" how to parse each [`AnalogDataPayload`] as the measurement from a single analog input channel. 
 
 - Run the workflow, open the visualizer for `AnalogInput0`, and shine the flashlight from your phone on the photodiode. **What do you see?**
 
-### Exercise 2: Acquiring Timestamped Data
+### Exercise 2: Acquiring timestamped data
 
 One of the main advantages of devices in the Harp ecosystem is that all `HarpMessages` are hardware-timestamped, rather than relying on software timestamping by the operating system, which is susceptible to jitter. To access hardware timestamped data, make the follow modications to the previous workflow.
 
@@ -62,7 +62,7 @@ One of the main advantages of devices in the Harp ecosystem is that all `HarpMes
 - Add a [`Zip`] operator and connect the `Seconds` and `Value.AnalogInput0` nodes to it.
 - Run the workflow and open the visualizers for the `Seconds`, `Value.AnalogInput0` and [`Zip`] nodes. **What is each visualizer representing?**
 
-### Exercise 3: Recording Timestamped Data
+### Exercise 3: Recording timestamped data
 
 For simple use cases, data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
 
@@ -76,7 +76,7 @@ For simple use cases, data can be saved to a text file using [`CsvWriter`]. In a
 - Set the `IncludeHeader` property of the [`CsvWriter`] to `True`. This creates column headings for the text file.
 - Run the workflow, shine the line on the photodiode, and then open the resulting text file. **How is the data organized?**
 
-### Exercise 4: Visualizing Recorded Data
+### Exercise 4: Visualizing recorded data
 
 We will take a brief detour from Bonsai to look at how to visualize the data we have recorded. This section assumes you already have a python environment with [`pandas`](https://pandas.pydata.org/), [`matplotlib`](https://matplotlib.org/) and [`harp-python`](https://github.com/harp-tech/harp-python) installed.
 
@@ -95,14 +95,14 @@ df_analog_input["Value.AnalogInput0"].plot(xlabel= "Timestamp (Seconds)", ylabel
 
 ## Control
 
-### Exercise 5: Controlling Digital Output
+### Exercise 5: Controlling digital output
 
 In the control section of this tutorial, we will send commands to turn on and off a LED. Connect a LED to digital output channel `0` (`GP15`) on the `Hobgoblin`.
 
-(TODO: wiring diagram)
-
 > [!TIP]
 > You can use another actuator (such as an active buzzer) and one of the other digital output channels by changing the appropriate properties.
+
+![Hobgoblin LED](../images/hobgoblin-acquisition-led.svg){width=400px}
 
 Previously we have been acquiring data from the `Hobgoblin` by placing operators after the [`Device`] operator. In order to send commands to the device, we need to place operators that lead into the [`Device`] operator.
 
@@ -129,7 +129,7 @@ Now that we have constructed a `HarpMessage` to turn on the digital output, we w
 - Insert a [`Device`] operator to send the `HarpMessage` sequence into the `Hobgoblin`.
 - Run the workflow and press either the `A` or `S` key. **What do you observe?**
 
-### Exercise 6: Recording Timestamped Commands
+### Exercise 6: Recording timestamped commands
 
 To know when the digital output of the `Hobgoblin` was turned on or off, we can use the same format we learned in the acquisition section to receive `HarpMessages` that are transmitted when the command was executed by device.
 
@@ -155,7 +155,7 @@ To know when the digital output of the `Hobgoblin` was turned on or off, we can 
 
 ## Integration
 
-### Exercise 7: Combining Acquisition and Control
+### Exercise 7: Combining acquisition and control
 
 You now have all the pieces to integrate for a full workflow that has both acquisition of data and control of peripheral devices. Combine the two workflows together and it should look something like this:
 
@@ -175,7 +175,7 @@ As you can probably tell, it is quickly becoming unwieldy to manage so many conn
 - Connect each [`SubscribeSubject`] to a [`Parse`] operator.
 - Run the workflow and verify that you can record photosensitive signals on the analog input channel as well as toggle the LED with the keypresses.
 
-### Exercise 8: Visualizing Synchronized Recordings
+### Exercise 8: Visualizing synchronized recordings
 
 Another main advantage of devices in the Harp ecosystem is that all recorded information streams are timestamped to the same hardware clock. Thus, there is no need for post-hoc alignment during visualization and analysis. We will now take a look at our recorded text files and look at how to visualize them together. 
 
@@ -228,7 +228,7 @@ plt.show()
 
 ## Data Interface
 
-### Exercise 9: Streamlining Recording
+### Exercise 9: Streamlining recording
 
 You might have noticed that the approach to recording data in [Exercise 7](#exercise-7-combining-acquisition-and-control) does not scale well, particularly when adding more `Registers` or additional devices. The `Harp.Hobgoblin` package provides a [`DeviceDataWriter`] operator that can be used to record all the data and commands received by the device. 
 
@@ -246,9 +246,9 @@ You might have noticed that the approach to recording data in [Exercise 7](#exer
 > [!NOTE]
 > The [`DeviceDataWriter`] generates a `device.yml` file that contains device metadata that will be used later for loading data with `harp-python`. In addition, all the data from each `Register` is saved as a separate raw binary file. This includes not just data registers, but other common registers for device configuration or identification.
 
-### Exercise 10: Streamlining Data Analysis
+### Exercise 10: Streamlining data analysis
 
-The `harp-python` package also simplifies data visualization and analysis by providing a convenient interface to load and read the raw binary files that [`DeviceDataWriter`] records. This exercise assumes that you have setup the dependencies from previous exercises, as well as `harp-python`.
+You might have also noticed that the approach to loading data in [Exercise 8](#exercise-8-visualizing-synchronized-recordings) does not scale well. The `harp-python` package also simplifies data visualization and analysis by providing a convenient interface to load and read the raw binary files that [`DeviceDataWriter`] records. This exercise assumes that you have setup the dependencies from previous exercises, as well as `harp-python`.
 
 ```python
 import harp
@@ -283,6 +283,7 @@ df_analog_data.plot(xlabel= "Timestamp (seconds)", ylabel = "Analog Input (ADC v
 [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown
 [`Merge`]: xref:Bonsai.Reactive.Merge
 [`Parse`]: xref:Harp.Hobgoblin.Parse
+[`Parse (Harp.Hobgoblin)`]: xref:Harp.Hobgoblin.Parse
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData
