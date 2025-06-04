@@ -12,10 +12,10 @@ The task begins with an inter-trial interval (`ITI`), followed by stimulus prese
 
 In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. Connect the pushbutton to digital input channel `0` (`GP2`) on the `Hobgoblin`. 
 
-(TODO: wiring diagram)
-
 >[!TIP]
 > You can use other digital input or digital output channels, but make sure to change the appropriate properties.
+
+![Hobgoblin RTT](../images/hobgoblin-reactiontime-ledbutton.svg){width=520px}
 
 Next, we will set up our `Hobgoblin`. 
 
