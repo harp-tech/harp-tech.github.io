@@ -15,20 +15,27 @@ In this first exercise, you will assemble the basic hardware and software compon
 (TODO: wiring diagram)
 
 >[!TIP]
-> You can wire the LED into any digital input pin, but make sure to change the appropriate properties.
+> You can use other digital input or digital output channels, but make sure to change the appropriate properties.
 
-Next, we will set up our `Hobgoblin`. While we can connect operators carrying `HarpMessage` streams to and from the [`Device`] operator directly like we did in the [Acquisition and Control](./hobgoblin-acquisition.md) tutorial, as a workflow grows this becomes cumbersome to manage. To address this issue, we introduce a new [device pattern](../articles/operators.md#device-pattern):
+Next, we will set up our `Hobgoblin`. 
 
 :::workflow
 ![Hobgoblin Device Pattern](../workflows/hobgoblin-reactiontime-devicepattern.bonsai)
 :::
 
 - Insert a [`Device`] operator and set the `PortName` property.
-- Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. This will allow us to receive the stream of `HarpMessage` objects from the `Hobgoblin` at multiple places in our workflow.
+- Insert a [`DeviceDataWriter`] and set the `Path` property. Connecting it directly to the device ensures thats all events are logged.
+- Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. 
+
+This covers what we learned in the [Acquisition and Control](./hobgoblin-acquisition.md) tutorial. However we also want a way to send commands to the `Hobgoblin` without connecting directly to the input of the [`Device`] operator. 
+
 - Right-click the [`Device`] operator, select `Create Source (Bonsai.Harp.HarpMessage)` > [`BehaviorSubject`]. Name the generated ``BehaviourSubject`1`` operator `Hobgoblin Commands`. Connect it as input to the [`Device`] operator.
 
 >[!NOTE]
-> This [source subject](https://bonsai-rx.org/docs/articles/subjects.html#source-subjects) is an operator that is set up to receive commands from multiple places in the workflow and pass them on to the `Hobgoblin`. When creating a `source subject` we choose [`BehaviorSubject`] instead of [`PublishSubject`] to ensure that the connection remains open until the workflow is stopped.
+> A [source subject](https://bonsai-rx.org/docs/articles/subjects.html#source-subjects) is an operator that is set up to receive commands from multiple places in the workflow and pass them on to the `Hobgoblin`. When choosing a type for the `source subject`, choosing a [`BehaviorSubject`] instead of a [`PublishSubject`] ensures that the connection remains open until the workflow is stopped.
+
+> [!NOTE]
+> We will use this `device pattern` when setting up our `Hobgoblin` for the rest of the tutorials.
 
 Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 
@@ -50,11 +57,14 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 ![Hobgoblin Reaction Time Measurement](../workflows/hobgoblin-reactiontime-measurement.bonsai)
 :::
 
-- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`. This operator receives `HarpMessages` from `Hobgoblin Events`.
+- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
 - Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalOutputSet`].
-- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`]. 
-- Insert a [`DeviceDataWriter`] after `Hobgoblin Events`. Type a folder name in the `Path` property.
+- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
+- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`].
 - Run the workflow, and verify that both the stimulus and the button are correctly recorded.
+
+>[!TIP]
+> We use separate `Hobgoblin Events` operators to avoid issues with [branching](https://bonsai-rx.org/docs/articles/subjects.html#branching-subjects). See also [workflow guidelines](https://bonsai-rx.org/docs/articles/workflow-guidelines.html)
 
 ### Exercise 3: Analyzing reaction time
 
@@ -105,7 +115,7 @@ pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response 
 <!--Reference Style Links -->
 <!-- [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData -->
 <!-- [`AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload -->
-<!-- [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject -->
+[`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject
 <!-- [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty -->
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`Delay`]: xref:Bonsai.Reactive.Delay
@@ -115,8 +125,6 @@ pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response 
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
-<!-- [`ExpressionTransform`]: xref:Bonsai.Scripting.Expressions.ExpressionTransform -->
-<!-- [`FilterRegister`]: xref:Harp.Hobgoblin.FilterRegister -->
 <!-- [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown -->
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
 [`Parse`]: xref:Harp.Hobgoblin.Parse

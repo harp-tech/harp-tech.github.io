@@ -21,6 +21,15 @@
           <harp:PortName>COM7</harp:PortName>
         </Combinator>
       </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="p1:DeviceDataWriter">
+          <p1:Path>data</p1:Path>
+          <p1:Buffered>true</p1:Buffered>
+          <p1:Overwrite>false</p1:Overwrite>
+          <p1:FilterType>Include</p1:FilterType>
+          <p1:MessageType xsi:nil="true" />
+        </Combinator>
+      </Expression>
       <Expression xsi:type="rx:PublishSubject">
         <Name>Hobgoblin Events</Name>
       </Expression>
@@ -28,6 +37,7 @@
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
       <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

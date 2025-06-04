@@ -12,23 +12,16 @@
       <Expression xsi:type="p1:Parse">
         <harp:Register xsi:type="p1:TimestampedDigitalOutputSet" />
       </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>Hobgoblin Events</Name>
+      </Expression>
       <Expression xsi:type="p1:Parse">
         <harp:Register xsi:type="p1:TimestampedDigitalInputState" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="p1:DeviceDataWriter">
-          <p1:Path>data</p1:Path>
-          <p1:Buffered>true</p1:Buffered>
-          <p1:Overwrite>false</p1:Overwrite>
-          <p1:FilterType>Include</p1:FilterType>
-          <p1:MessageType xsi:nil="true" />
-        </Combinator>
       </Expression>
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
-      <Edge From="0" To="2" Label="Source1" />
-      <Edge From="0" To="3" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
