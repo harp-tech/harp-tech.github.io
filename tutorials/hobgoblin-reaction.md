@@ -21,7 +21,7 @@ The task begins with an inter-trial interval (`ITI`), followed by stimulus prese
 
 ### Exercise 1: Generating a fixed-interval stimulus
 
-In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. Connect the push button to digital input channel `0` (`GP2`) on the `Hobgoblin`. 
+In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `GP15` on the `Hobgoblin`. Connect the push button to digital input channel `GP2` on the `Hobgoblin`. 
 
 >[!TIP]
 > You can use other digital input or digital output channels, but make sure to change the appropriate properties.
@@ -38,7 +38,6 @@ Next, we will set up our `Hobgoblin`.
 - Insert a [`DeviceDataWriter`] and set the `Path` property. Connecting it directly to the device ensures thats all events are logged.
 - During this tutorial we will need to have the ability to send/receive commands from distinct places in the workflow. To allow this kind of "many-to-one"/"one-to-many" communication, we will:
 - Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. 
-
 
 - Right-click the [`Device`] operator, select `Create Source (Bonsai.Harp.HarpMessage)` > [`BehaviorSubject`]. Name the generated ``BehaviourSubject`1`` operator `Hobgoblin Commands`. Connect it as input to the [`Device`] operator.
 
@@ -61,6 +60,7 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 - Insert a [`CreateMessage`] operator, configure the `Payload` property to [`DigitalOutputClearPayload`], and set the [`DigitalOutputClear`] property to the `GP15` pin.
 - Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`.
 - Insert a [`Repeat`] operator.
+- Run the workflow, and verify that the LED is blinking.
 
 ### Exercise 2: Measuring reaction time
 
@@ -72,7 +72,7 @@ Lastly, we will set up a fixed-interval blinking LED as our stimulus.
 - Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalOutputSet`].
 - Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
 - Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`].
-- Run the workflow, and verify that both the stimulus and the button are correctly recorded.
+- Run the workflow, verify that both the stimulus and the button are correctly recorded.
 
 >[!TIP]
 > We use separate `Hobgoblin Events` operators to avoid issues with [branching](https://bonsai-rx.org/docs/articles/subjects.html#branching-subjects). See also [workflow guidelines](https://bonsai-rx.org/docs/articles/workflow-guidelines.html)
@@ -138,7 +138,7 @@ In order to translate our simple reaction time task in the previous exercises in
 - Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOff`.
 
 > [!Note]
-> The `Sink` operator allows you to specify arbitrary processing side-effects without affecting the original flow of events. It is often used to trigger and control stimulus presentation in response to events in the task. Inside the nested specification, `Source1` represents input events arriving at the sink. In the specific case of `Sink` operators, the `WorkflowOutput` node can be safely ignored.
+> The [`Sink`] operator allows you to specify arbitrary processing side-effects without affecting the original flow of events. It is often used to trigger and control stimulus presentation in response to events in the task. Inside the nested specification, `Source1` represents input events arriving at the sink. In the specific case of `Sink` operators, the `WorkflowOutput` node can be safely ignored.
 
 - Delete the [`Delay`] operator.
 - Insert a [`SelectMany`] operator after `StimOn`, and set its `Name` property to `Response`.
@@ -148,25 +148,34 @@ In order to translate our simple reaction time task in the previous exercises in
 ![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response-input.bonsai)
 :::
 
-- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
-- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`].
-- Insert a [`Take`] operator and set its `Count` property to 1.
 - Delete the `Source1` operator.
+- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
+- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`DigitalInputState`].
+- Insert a [`Condition`] operator after the [`Parse`] operator. 
+- Double-click on the [`Condition`] operator and add an [`Equal`] operator after the `Source1` operator. Set the `Value` property to `GP2`.
+- Insert a [`Take`] operator and set its `Count` property to 1.
 - Connect the [`Take`] operator to `WorkflowOutput`.
 - Run the workflow a couple of times and validate the state machine is responding to the button press.
+
+> [!Note]
+> [`DigitalInputState`] sends a [`HarpMessage`] when it detects a change on any of the digital input pins on the `Hobgoblin`. Using a [`Condition`]  with a nested [`Equal`] operator allows us to filter only messages from that pin. It also has the nice effect of only detecting a button press (when the value goes fron `None` > `GP2`) instead of a button release (`GP2`>`None`).
 
 <!--Reference Style Links -->
 <!-- [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData -->
 <!-- [`AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload -->
 [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject
+[`Condition`]: xref:Bonsai.Reactive.Condition
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`Delay`]: xref:Bonsai.Reactive.Delay
 [`Device`]: xref:Harp.Hobgoblin.Device
 [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter
+[`DigitalInputState`]: xref:Harp.Hobgoblin.DigitalInputState
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
 [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
+[`Equal`]: xref:Bonsai.Expressions.EqualBuilder
+[`HarpMessage`]: xref:Bonsai.Harp.HarpMessage
 <!-- [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown -->
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
