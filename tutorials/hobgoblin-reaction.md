@@ -145,26 +145,20 @@ In order to translate our simple reaction time task in the previous exercises in
 - Double-click on the [`SelectMany`] node to open up its internal specification.
 
 :::workflow
-![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response.bonsai)
+![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response-input.bonsai)
 :::
 
 - Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
 - Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`].
-
-
-
-
-
-
-
-
-
+- Insert a [`Take`] operator and set its `Count` property to 1.
+- Delete the `Source1` operator.
+- Connect the [`Take`] operator to `WorkflowOutput`.
+- Run the workflow a couple of times and validate the state machine is responding to the button press.
 
 <!--Reference Style Links -->
 <!-- [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData -->
 <!-- [`AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload -->
 [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject
-<!-- [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty -->
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`Delay`]: xref:Bonsai.Reactive.Delay
 [`Device`]: xref:Harp.Hobgoblin.Device
@@ -175,12 +169,14 @@ In order to translate our simple reaction time task in the previous exercises in
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 <!-- [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown -->
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
-[`Parse`]: xref:Harp.Hobgoblin.Parse
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
+[`Parse`]: xref:Harp.Hobgoblin.Parse
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
+[`SelectMany`]: xref: Bonsai.Reactive.SelectMany
 [`Sink`]: xref:Bonsai.Reactive.Sink
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
+[`Take`]: Bonsai.Reactive.Take
 [`Timer`]: xref:Bonsai.Reactive.Timer
 <!-- [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData -->
 [`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet
