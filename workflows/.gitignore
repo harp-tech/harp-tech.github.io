@@ -1,4 +1,5 @@
 ###############
-#  temp file  #
+#  temp files #
 ###############
 *.bonsai.layout
+.bonsai/
