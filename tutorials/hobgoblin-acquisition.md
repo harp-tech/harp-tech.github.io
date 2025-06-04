@@ -19,7 +19,7 @@ In the acquisition section of this tutorial we will record data from a photodiod
 In Bonsai: 
 
 :::workflow
-![Hobgoblin Device Operator](../workflows/hobgoblin-device-operator.bonsai)
+![Hobgoblin Device Operator](../workflows/hobgoblin-acquisition-device.bonsai)
 :::
 
 - Insert a [`Device`] operator. This type of operator is used to receive data from a Harp devices and send commands to it.
@@ -52,7 +52,7 @@ In Bonsai:
 One of the main advantages of devices in the Harp ecosystem is that all `HarpMessages` are hardware-timestamped, rather than relying on software timestamping by the operating system, which is susceptible to jitter. To access hardware timestamped data, make the follow modications to the previous workflow.
 
 :::workflow
-![Acquiring Timestamped Data](../workflows/hobgoblin-timestamp-data.bonsai)
+![Acquiring Timestamped Data](../workflows/hobgoblin-acquisition-analogtimestamp.bonsai)
 :::
 
 - Delete the `AnalogInput0` node.
@@ -67,7 +67,7 @@ One of the main advantages of devices in the Harp ecosystem is that all `HarpMes
 For simple use cases, data can be saved to a text file using [`CsvWriter`]. In a later exercise, we will go through why this approach does not scale well for more complicated recordings. 
 
 :::workflow
-![Saving Data CSV](../workflows/hobgoblin-saving-csv.bonsai)
+![Saving Data CSV](../workflows/hobgoblin-acquisition-analogcsv.bonsai)
 :::
 
 - Delete the `Seconds` and [`Zip`] operator. We will keep `Value.AnalogInput0` for visualization.
@@ -107,7 +107,7 @@ In the control section of this tutorial, we will send commands to turn on and of
 Previously we have been acquiring data from the `Hobgoblin` by placing operators after the [`Device`] operator. In order to send commands to the device, we need to place operators that lead into the [`Device`] operator.
 
 :::workflow
-![Digital Output](../workflows/hobgoblin-digital-output.bonsai)
+![Digital Output](../workflows/hobgoblin-acquisition-digitaloutput.bonsai)
 :::
 
 - Insert a [`KeyDown`] operator and set its `Key` property to `A`. We will use this key to turn ON the LED.
@@ -134,7 +134,7 @@ Now that we have constructed a `HarpMessage` to turn on the digital output, we w
 To know when the digital output of the `Hobgoblin` was turned on or off, we can use the same format we learned in the acquisition section to receive `HarpMessages` that are transmitted when the command was executed by device.
 
 :::workflow
-![Timestamp Digital Output](../workflows/hobgoblin-timestamp-digitaloutput.bonsai)
+![Timestamp Digital Output](../workflows/hobgoblin-acquisition-digitaloutputtimestamp.bonsai)
 :::
 
 - Insert a [`Parse`] operator and select [`TimestampedDigitalOutputSet`] from the `Register` property dropdown menu.
@@ -145,7 +145,7 @@ To know when the digital output of the `Hobgoblin` was turned on or off, we can 
 > For both operators, the `HarpMessage` contains the pin number for the digital output that was either turned on or off, as well as the timestamps for those commands. They can be used to report the digital output commands for all pins available on the `Hobgoblin`.
 
 :::workflow
-![Saving Digital Output](../workflows/hobgoblin-saving-digitaloutput.bonsai)
+![Saving Digital Output](../workflows/hobgoblin-acquisition-digitaloutputcsv.bonsai)
 :::
 
 - Log data from each register with a [`CsvWriter`] operator.
@@ -160,13 +160,13 @@ To know when the digital output of the `Hobgoblin` was turned on or off, we can 
 You now have all the pieces to integrate for a full workflow that has both acquisition of data and control of peripheral devices. Combine the two workflows together and it should look something like this:
 
 :::workflow
-![Integrate Acquisition and Control](../workflows/hobgoblin-integrate-acquisition-control.bonsai)
+![Integrate Acquisition and Control](../workflows/hobgoblin-acquisition-integration.bonsai)
 :::
 
 As you can probably tell, it is quickly becoming unwieldy to manage so many connections to/from the [`Device`] operator. To help with this, we can use [subjects](https://bonsai-rx.org/docs/articles/subjects.html).
 
 :::workflow
-![Integrate Acquisition and Control with PublishSubject](../workflows/hobgoblin-integrate-acquisition-control-with-publish.bonsai)
+![Integrate Acquisition and Control with PublishSubject](../workflows/hobgoblin-acquisition-publishsubject.bonsai)
 :::
 
 - Disconnect the [`Parse`] operators that come after the [`Device`] operator.
@@ -233,7 +233,7 @@ plt.show()
 You might have noticed that the approach to recording data in [Exercise 7](#exercise-7-combining-acquisition-and-control) does not scale well, particularly when adding more `Registers` or additional devices. The `Harp.Hobgoblin` package provides a [`DeviceDataWriter`] operator that can be used to record all the data and commands received by the device. 
 
 :::workflow
-![Hobgoblin DeviceDataWriter](../workflows/hobgoblin-devicedatawriter.bonsai)
+![Hobgoblin DeviceDataWriter](../workflows/hobgoblin-acquisition-devicedatawriter.bonsai)
 :::
 
 - Copy the final workflow from [Exercise 7](#exercise-7-combining-acquisition-and-control).
