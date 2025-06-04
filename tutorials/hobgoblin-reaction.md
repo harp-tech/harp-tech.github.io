@@ -21,7 +21,7 @@ The task begins with an inter-trial interval (`ITI`), followed by stimulus prese
 
 ### Exercise 1: Generating a fixed-interval stimulus
 
-In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. Connect the pushbutton to digital input channel `0` (`GP2`) on the `Hobgoblin`. 
+In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `0` (`GP15`) on the `Hobgoblin`. Connect the push button to digital input channel `0` (`GP2`) on the `Hobgoblin`. 
 
 >[!TIP]
 > You can use other digital input or digital output channels, but make sure to change the appropriate properties.
@@ -36,9 +36,9 @@ Next, we will set up our `Hobgoblin`.
 
 - Insert a [`Device`] operator and set the `PortName` property.
 - Insert a [`DeviceDataWriter`] and set the `Path` property. Connecting it directly to the device ensures thats all events are logged.
+- During this tutorial we will need to have the ability to send/receive commands from distinct places in the workflow. To allow this kind of "many-to-one"/"one-to-many" communication, we will:
 - Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. 
 
-This covers what we learned in the [Acquisition and Control](./hobgoblin-acquisition.md) tutorial. However we also want a way to send commands to the `Hobgoblin` without connecting directly to the input of the [`Device`] operator. 
 
 - Right-click the [`Device`] operator, select `Create Source (Bonsai.Harp.HarpMessage)` > [`BehaviorSubject`]. Name the generated ``BehaviourSubject`1`` operator `Hobgoblin Commands`. Connect it as input to the [`Device`] operator.
 
