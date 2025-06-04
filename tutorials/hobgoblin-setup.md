@@ -1,8 +1,9 @@
 # Getting Started
 
-![Harp Hobgoblin Pico2](../images/device-hobgoblin-pico2.png){width=300}
-
 The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed for learning the fundamentals of the Harp ecosystem. The principles demonstrated in this tutorial series can also be applied to other Harp devices.
+
+![Harp Hobgoblin Pico2](../images/device-hobgoblin-pico2.png){width=300}  
+*<small>Pico2 board mounted on Gravity: Expansion Board</small>*
 
 > [!NOTE]
 > The `Hobgoblin` can be interfaced with a variety of input and output modules using the [Gravity: Expansion Board](https://www.dfrobot.com/product-2393.html). For more information on how to assemble the board, along with recommended sensor kits, refer to the resources in the [harp-tech/device.hobgoblin](https://github.com/harp-tech/device.hobgoblin) repository.
