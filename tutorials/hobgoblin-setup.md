@@ -2,15 +2,15 @@
 
 ![Harp Hobgoblin Pico2](../images/device-hobgoblin-pico2.png){width=300}
 
-The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed to help users learn the fundamentals of the Harp ecosystem. The principles demonstrated in this tutorial series can also be applied to other Harp devices.
+The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple multi-purpose device designed for learning the fundamentals of the Harp ecosystem. The principles demonstrated in this tutorial series can also be applied to other Harp devices.
 
 > [!NOTE]
-> The `Hobgoblin` can be assembled in multiple ways; this image above shows only one possible configuration. For more information on how to build one, along with suggested sensor kits, refer to the resources in the device [repository](https://github.com/harp-tech/device.hobgoblin).
+> The `Hobgoblin` can be interfaced with a variety of input and output modules using the [Gravity: Expansion Board](https://www.dfrobot.com/product-2393.html). For more information on how to assemble the board, along with recommended sensor kits, refer to the resources in the [harp-tech/device.hobgoblin](https://github.com/harp-tech/device.hobgoblin) repository.
 
 ## Installation
 
 - Install [Bonsai](https://bonsai-rx.org/docs/articles/installation.html).
-- Install the `Harp.Hobgoblin` package by searching for it in the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html), using `nuget.org` as the package source.
+- Install the `Harp.Hobgoblin` package by searching for it in the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html).
 
 ## Flashing the firmware
 
@@ -24,34 +24,28 @@ The [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) is a simple 
 ![Hobgoblin Hello World](~/workflows/hobgoblin-helloworld.bonsai)
 :::
 
-- Connect a pushbutton to analog input channel `0` (`GP26`) on the `Hobgoblin`.
+- Connect a push button to analog input channel `0` (`GP26`) on the `Hobgoblin`.
 - Hover over the workflow above, click the copy button in the top right corner, and paste it into Bonsai.
 - Set the `PortName` property of the [`Hobgoblin`](xref:Harp.Hobgoblin.Device) operator to the communications port of the `Hobgoblin` (e.g. COM7).
-- Run the workflow and observe the output of `AnalogInput0`. The value should change when the pushbutton is pressed.
+- Run the workflow and double-click the output of `AnalogInput0`. The value should change when the push button is pressed.
 
 > [!TIP]
 > In Windows, you can find the device's port name in `Device Manager`. Under `Ports (COM & LPT)`, locate the entry labelled `USB Serial Device`.
 
 ## Installing harp-python
 
-The [harp-python](../articles/python.md) library provides an low-level interface to read and manipulate data from Harp devices. You can install `harp-python` within Python virtual environments by running:
-
-```cmd
-pip install harp-python
-```
-
-Alternatively, `harp-python` can also be installed with [`uv`](https://docs.astral.sh/uv/), an extremely fast and modern Python package and project manager.
+The [harp-python](../articles/python.md) library provides a low-level interface to read and manipulate data from Harp devices. You can create a Python environment with `harp-python` using [`uv`](https://docs.astral.sh/uv/):
 
 - Install [`uv`](https://docs.astral.sh/uv/).
-- Create a folder for the project (e.g., `hobgoblin_data`).
-- Navigate to the folder and initialize a new project:
+- Create a new folder for the project.
+- Navigate to the folder and initialize a new environment:
 
 ```cmd
-uv init
+uv venv
 ```
 
 - Install `harp-python` as a dependency:
 
 ```cmd
-uv add harp-python 
+uv pip install harp-python 
 ```
