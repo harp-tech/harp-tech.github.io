@@ -48,20 +48,20 @@
         </Combinator>
       </Expression>
       <Expression xsi:type="p1:Parse">
-        <harp:Register xsi:type="p1:TimestampedDigitalOutputClear" />
+        <harp:Register xsi:type="p1:TimestampedDigitalOutputSet" />
       </Expression>
       <Expression xsi:type="io:CsvWriter">
-        <io:FileName>digital_output_clear.csv</io:FileName>
+        <io:FileName>digital_output_set.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
         <io:Suffix>None</io:Suffix>
         <io:IncludeHeader>true</io:IncludeHeader>
       </Expression>
       <Expression xsi:type="p1:Parse">
-        <harp:Register xsi:type="p1:TimestampedDigitalOutputSet" />
+        <harp:Register xsi:type="p1:TimestampedDigitalOutputClear" />
       </Expression>
       <Expression xsi:type="io:CsvWriter">
-        <io:FileName>digital_output_set.csv</io:FileName>
+        <io:FileName>digital_output_clear.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
         <io:Suffix>None</io:Suffix>
