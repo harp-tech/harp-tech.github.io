@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.8.5"
+<WorkflowBuilder Version="2.9.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns:p1="clr-namespace:Harp.Hobgoblin;assembly=Harp.Hobgoblin"
@@ -51,7 +51,7 @@
         <harp:Register xsi:type="p1:TimestampedDigitalOutputSet" />
       </Expression>
       <Expression xsi:type="io:CsvWriter">
-        <io:FileName>digital_output_set.csv</io:FileName>
+        <io:FileName>DigitalOutputSet.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
         <io:Suffix>None</io:Suffix>
@@ -61,7 +61,7 @@
         <harp:Register xsi:type="p1:TimestampedDigitalOutputClear" />
       </Expression>
       <Expression xsi:type="io:CsvWriter">
-        <io:FileName>digital_output_clear.csv</io:FileName>
+        <io:FileName>DigitalOutputClear.csv</io:FileName>
         <io:Append>false</io:Append>
         <io:Overwrite>false</io:Overwrite>
         <io:Suffix>None</io:Suffix>

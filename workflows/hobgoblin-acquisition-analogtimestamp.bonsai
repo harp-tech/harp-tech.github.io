@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.8.5"
+<WorkflowBuilder Version="2.9.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:p1="clr-namespace:Harp.Hobgoblin;assembly=Harp.Hobgoblin"
                  xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
-                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:zg="clr-namespace:Bonsai.Gui.ZedGraph;assembly=Bonsai.Gui.ZedGraph"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
@@ -21,22 +21,20 @@
       <Expression xsi:type="p1:Parse">
         <harp:Register xsi:type="p1:TimestampedAnalogData" />
       </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>Seconds</Selector>
-      </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>Value.AnalogInput0</Selector>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Zip" />
+      <Expression xsi:type="zg:RollingGraphBuilder">
+        <zg:IndexSelector>Seconds</zg:IndexSelector>
+        <zg:ValueSelector>Value</zg:ValueSelector>
+        <zg:SymbolType>None</zg:SymbolType>
+        <zg:LineWidth>1</zg:LineWidth>
+        <zg:CurveSettings />
+        <zg:Capacity>1000</zg:Capacity>
+        <zg:Min xsi:nil="true" />
+        <zg:Max xsi:nil="true" />
       </Expression>
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
       <Edge From="1" To="2" Label="Source1" />
-      <Edge From="1" To="3" Label="Source1" />
-      <Edge From="2" To="4" Label="Source1" />
-      <Edge From="3" To="4" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
