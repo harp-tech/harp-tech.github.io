@@ -132,9 +132,9 @@ In order to translate our simple reaction time task in the previous exercises in
 :::
 
 - Select the [`Timer`] operator and set its `DueTime` property to 3 second.
-- Click and drag to select both the [`CreateMessage`]([`DigitalOutputSetPayload`]) and `Hobgoblin Commands` operators.
+- Click and drag to select both the [`CreateMessage`] ([`DigitalOutputSetPayload`]) and `Hobgoblin Commands` operators.
 - Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOn`.
-- Click and drag to select both the [`CreateMessage`]([`DigitalOutputClearPayload`]) and `Hobgoblin Commands` operators.
+- Click and drag to select both the [`CreateMessage`] ([`DigitalOutputClearPayload`]) and `Hobgoblin Commands` operators.
 - Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOff`.
 
 > [!Note]
@@ -165,18 +165,18 @@ In order to translate our simple reaction time task in the previous exercises in
 [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
-[`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
-[`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
+[`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
+[`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 <!-- [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown -->
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
-[`SelectMany`]: xref: Bonsai.Reactive.SelectMany
+[`SelectMany`]: xref:Bonsai.Reactive.SelectMany
 [`Sink`]: xref:Bonsai.Reactive.Sink
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
-[`Take`]: Bonsai.Reactive.Take
+[`Take`]: xref:Bonsai.Reactive.Take
 [`Timer`]: xref:Bonsai.Reactive.Timer
 <!-- [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData -->
 [`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet
