@@ -1,10 +1,21 @@
 # Reaction Time Task
 
-In this tutorial, you will learn how to use the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) to implement a simple reaction time task, which will serve as our model systems neuroscience experiment. In this task, the subject needs to press a button as fast as possible following a stimulus, as described in the following diagram:
+In this tutorial, you will learn how to use the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) to implement a reaction time task which can be easily adapted and modified to model a wide range of systems neuroscience experiments.
 
-:::diagram
-![State Machine Diagram](../images/reactiontime.svg)
-:::
+When designing operant behaviour assays, it is useful to describe the task as a sequence of states the system goes through (e.g. stimulus on, stimulus off, reward, inter-trial interval, etc). Progression through these states is driven by events, which can be either internal or external to the system (e.g. button press, timeout, stimulus offset, movement onset). It is common to describe the interplay between states and events in the form of a finite-state machine diagram, or graph, where nodes are states, and arrows are events.
+
+A reaction time task, where the subject needs to press a button as fast as possible following a stimulus, is described in the following diagram:
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> ITI
+    ITI --> ON: elapsed
+    ON --> Reward: hit
+    ON --> Fail: miss
+    Reward --> [*]
+    Fail --> [*]
+```
 
 The task begins with an inter-trial interval (`ITI`), followed by stimulus presentation (`ON`). After stimulus onset, advancement to the next state can happen only when the subject presses the button (`success`) or a timeout elapses (`miss`). Depending on which event is triggered first, the task advances either to the `Reward` state, or `Fail` state. At the end, the task goes back to the beginning of the ITI state for the next trial.
 
@@ -112,6 +123,43 @@ print(f"There were {num_valid_responses} valid responses out of {num_total_trial
 pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response Times (seconds)", title = "Boxplot of valid response times")
 ```
 
+### Exercise 4: Driving state transitions with external behaviour events
+
+In order to translate our simple reaction time task in the previous exercises into a proper state machine, we need to split up the fixed interval stimulus into different states. It is often convenient to consider the inter-trial interval period as the initial state, followed by stimulus presentation. We will begin with the workflow portion from the end of [Exercise 1](#exercise-1-generating-a-fixed-interval-stimulus).
+
+:::workflow
+![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response.bonsai)
+:::
+
+- Select the [`Timer`] operator and set its `DueTime` property to 3 second.
+- Click and drag to select both the [`CreateMessage`]([`DigitalOutputSetPayload`]) and `Hobgoblin Commands` operators.
+- Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOn`.
+- Click and drag to select both the [`CreateMessage`]([`DigitalOutputClearPayload`]) and `Hobgoblin Commands` operators.
+- Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOff`.
+
+> [!Note]
+> The `Sink` operator allows you to specify arbitrary processing side-effects without affecting the original flow of events. It is often used to trigger and control stimulus presentation in response to events in the task. Inside the nested specification, `Source1` represents input events arriving at the sink. In the specific case of `Sink` operators, the `WorkflowOutput` node can be safely ignored.
+
+- Delete the [`Delay`] operator.
+- Insert a [`SelectMany`] operator after `StimOn`, and set its `Name` property to `Response`.
+- Double-click on the [`SelectMany`] node to open up its internal specification.
+
+:::workflow
+![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response.bonsai)
+:::
+
+- Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
+- Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`TimestampedDigitalInputState`].
+
+
+
+
+
+
+
+
+
+
 <!--Reference Style Links -->
 <!-- [`AnalogData`]: xref:Harp.Hobgoblin.AnalogData -->
 <!-- [`AnalogDataPayload`]: xref:Harp.Hobgoblin.AnalogDataPayload -->
@@ -131,6 +179,7 @@ pd.Series(valid_response_times).plot(kind="box", ylim=(0,1), ylabel = "Response 
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
+[`Sink`]: xref:Bonsai.Reactive.Sink
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`Timer`]: xref:Bonsai.Reactive.Timer
 <!-- [`TimestampedAnalogData`]: xref:Harp.Hobgoblin.TimestampedAnalogData -->
