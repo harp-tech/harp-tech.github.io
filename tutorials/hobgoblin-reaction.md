@@ -37,7 +37,7 @@ Next, we will set up our `Hobgoblin`.
 - Insert a [`Device`] operator and set the `PortName` property.
 - Insert a [`DeviceDataWriter`] and set the `Path` property. Connecting it directly to the device ensures thats all events are logged.
 - During this tutorial we will need to have the ability to send/receive commands from distinct places in the workflow. To allow this kind of "many-to-one"/"one-to-many" communication, we will:
-- Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. 
+- Insert a [`PublishSubject`] operator and name it `Hobgoblin Events`. This operator broadcasts events from the `Hobgoblin`, which you can receive at multiple points in the workflow using a [SubscribeSubject].
 - Right-click the [`Device`] operator, select `Create Source (Bonsai.Harp.HarpMessage)` > [`BehaviorSubject`]. Name the generated ``BehaviourSubject`1`` operator `Hobgoblin Commands`. Connect it as input to the [`Device`] operator.
 
 >[!NOTE]
@@ -124,12 +124,13 @@ pd.Series(valid_response_times).plot(kind="box", ylim=(0,1))
 
 ### Exercise 4: Driving state transitions with external behaviour events
 
-In order to translate our simple reaction time task in the previous exercises into a proper state machine, we need to split up the fixed interval stimulus into different states. It is often convenient to consider the inter-trial interval period as the initial state, followed by stimulus presentation. We will begin with the workflow portion from the end of [Exercise 1](#exercise-1-generating-a-fixed-interval-stimulus).
+In order to translate our simple reaction time task in the previous exercises into a proper state machine, we need to split up the fixed interval stimulus into different states. It is often convenient to consider the inter-trial interval period as the initial state, followed by stimulus presentation. 
 
 :::workflow
 ![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response.bonsai)
 :::
 
+- Copy the workflows from [Exercise 1](#exercise-1-generating-a-fixed-interval-stimulus).
 - Select the [`Timer`] operator and set its `DueTime` property to 3 second.
 - Click and drag to select both the [`CreateMessage`] ([`DigitalOutputSetPayload`]) and `Hobgoblin Commands` operators.
 - Right-click, select `Group` > `Sink (Reactive)`. Set the `Name` property to `StimOn`.
@@ -180,6 +181,7 @@ In order to translate our simple reaction time task in the previous exercises in
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
+[`SubscribeSubject`]: xref:Bonsai.Reactive.SubscribeSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
 [`SelectMany`]: xref:Bonsai.Reactive.SelectMany
 [`Sink`]: xref:Bonsai.Reactive.Sink
