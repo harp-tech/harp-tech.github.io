@@ -144,6 +144,9 @@ In order to translate our simple reaction time task in the previous exercises in
 - Insert a [`SelectMany`] operator after `StimOn`, and set its `Name` property to `Response`.
 - Double-click on the [`SelectMany`] node to open up its internal specification.
 
+> [!Note]
+> The `SelectMany` operator is used here to create a new state for every input event. `Source1` represents the input event that created the state, and `WorkflowOutput` will be used to report the end result from the state (e.g. whether the response was a success or failure).
+
 :::workflow
 ![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response-input.bonsai)
 :::
@@ -158,15 +161,17 @@ In order to translate our simple reaction time task in the previous exercises in
 - Run the workflow a couple of times and validate the state machine is responding to the button press.
 
 > [!Note]
-> The [`Condition`] operator allows you to specify arbitrary rules for accepting or rejecting inputs. Only inputs which pass the filter specified inside the [`Condition`] are allowed to proceed. Using an [`Equal`] operator allows us to filter only messages from that pin. It also has the beneficial side effect of only detecting a button press (when the value changes fron `None` > `GP2`) instead of a button release (`GP2`>`None`).
+> The [`Condition`] operator allows you to specify arbitrary rules for accepting or rejecting inputs. The `WorkflowOutput` node always needs to be specified with a `bool` input, the result of whether the input is accepted (`True`) or rejected (`False`). Only inputs which pass the filter specified inside the [`Condition`] are allowed to proceed. Using an [`Equal`] operator here allows us to filter only messages from that pin and also has the beneficial side effect of only detecting a button press (when the value changes fron `None` > `GP2`) instead of a button release (`GP2`>`None`).
 
 ### Exercise 5: Timeout and choice
 
+We will modify our previous workflow to include a timeout during which the responder must make a choice.
+
+**`Response`**:
 :::workflow
 ![Stimulus presentation](../workflows/hobgoblin-reactiontime-stimulus-response-timeout.bonsai)
 :::
 
-**`Response`**:
 - Inside the `Response` node, insert a [`Timer`] source and set its `DueTime` property to be about 1 second.
 - Insert a [`Boolean`] operator and set the `Value` property to `False`
 - Insert another [`Boolean`] operator after the [`Condition`] operator and set the `Value` property to `True`
@@ -175,8 +180,63 @@ In order to translate our simple reaction time task in the previous exercises in
 
 _Describe in your own words what the above modified workflow is doing._
 
+### Exercise 6: Specifying conditional task outcomes
+
+We will now modify our workflow to set up a transition to the next state.
+
+:::workflow
+![Stimulus response outcomes](../workflows/hobgoblin-reactiontime-stimulus-response-outcomes.bonsai)
+:::
+
+- Insert a [`Condition`] operator after the `StimOff` node, and set its `Name` property to `Success`.
+- In a new branch from `StimOff`, insert another [`Condition`], and set its `Name` property to `Miss`.
+- Insert a [`SelectMany`] operator after the `Success` condition and change its `Name` property to `Reward`.
+- Insert a [`SelectMany`] operator after the `Miss` condition and change its `Name` property to `Fail`.
+
+We will now implement the task logic inside our nodes.
+
+**`Miss`**:
+:::workflow
+![Stimulus response miss condition](../workflows/hobgoblin-reactiontime-stimulus-response-miss-condition.bonsai)
+:::
+
+- Double-click on the `Miss` node to open up its internal specification.
+- Insert a [`BitwiseNot`] operator after `Source1`.
+
+_Why did we need to specify something for the `Miss` condition?_
+_Why did we not need to specify anything for the `Success` condition?_
+
+> [!Note]
+> The [`Condition`] operator is often used to represent choice points in the task. Other than [`Equal`], you can use operators such as [`NotEqual`], [`GreaterThan`], etc for specifying such tests.
+
+Inside the `Reward` and `Fail` node you can specify your own logic to signal the state of the trial. 
+For example, to make the LED blink three times in rapid succession for the `Reward` node:
+
+**`Reward`**: 
+:::workflow
+![Stimulus response miss condition](../workflows/hobgoblin-reactiontime-stimulus-response-outcomes-reward.bonsai)
+:::
+
+- Delete the `Source1` operator.
+- Copy the fixed-interval blinking LED from [Exercise 1](#exercise-1-generating-a-fixed-interval-stimulus).
+- In the [`Timer`] node, set both the `DueTime` and the `Period` properties to 100ms. 
+- In the [`Delay`] node, set the `DueTime` properties to 100ms.
+- Delete the [`Repeat`] node.
+- Insert a [`RepeatCount`], set the `Count` property to 3.
+- Insert the [`Last`] operator, and connect it to `WorkflowOutput`.
+
+_Try out your state machine and check whether you understand the behavior of the reward signal._
+
+- Copy the workflow in the `Reward` node and paste it into the `Miss` condition.
+- **Optional**: Modify the `Fail` state in some way to signal a different trial outcome (e.g. make the LED blink more times, or move a motor).
+
+- In the top-level workflow, insert a [`Merge`] operator and connect to it the outputs of both conditional branches and before the [`Repeat`] node.
+
+_Try out your state machine and introduce variations to the task behavior and conditions._
+
 <!--Reference Style Links -->
 [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject
+[`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
 [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty
 [`Condition`]: xref:Bonsai.Reactive.Condition
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
@@ -189,12 +249,16 @@ _Describe in your own words what the above modified workflow is doing._
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload
 [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 [`Equal`]: xref:Bonsai.Expressions.EqualBuilder
+[`GreaterThan`]: xref:Bonsai.Expressions.GreaterThanBuilder
 [`HarpMessage`]: xref:Bonsai.Harp.HarpMessage
+[`Last`]: xref:Bonsai.Reactive.Last
 [`Merge`]: xref:Bonsai.Reactive.Merge
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
+[`NotEqual`]: xref:Bonsai.Expressions.NotEqualBuilder
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject
 [`Repeat`]: xref:Bonsai.Reactive.Repeat
+[`RepeatCount`]: xref:Bonsai.Reactive.RepeatCount
 [`SelectMany`]: xref:Bonsai.Reactive.SelectMany
 [`Sink`]: xref:Bonsai.Reactive.Sink
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
