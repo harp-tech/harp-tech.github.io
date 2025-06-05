@@ -1,0 +1,3 @@
+# Close Loop Control
+
+The exercises below will help you become familiar with using the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) device for close-loop experiments. You will also learn how to use the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) to interface with external cameras. Before you begin, it is recommended that you review the Bonsai [Acquisition and Tracking](https://bonsai-rx.org/docs/tutorials/acquisition.html) tutorial, which covers key video concepts.
