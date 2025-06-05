@@ -234,12 +234,61 @@ _Try out your state machine and check whether you understand the behavior of the
 
 _Try out your state machine and introduce variations to the task behavior and conditions._
 
+### Exercise 7: Go/No-Go task
+
+Implement the following trial structure for a Go/No-Go task.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    NoGo: No-Go
+    FalseAlarm: False<br>Alarm
+    CorrectReject: Correct<br>Reject
+    [*] --> ITI
+    ITI --> Go: 50%
+    ITI --> NoGo: 50%
+    Go --> Hit
+    Go --> Miss
+    NoGo --> FalseAlarm
+    NoGo --> CorrectReject
+```
+
+- Trials should be sampled from a uniform distribution using the `Numerics` package (install from `Tools` > `Manage Packages`).
+- Response events should be based on a button press, and reject events on a timeout.
+- Make sure to implement different visual or auditory feedback for either the cue or reward/failure states.
+
+> [!Tip]
+> To sample values from a discrete uniform distribution, you can use the following workflow: 
+> :::workflow
+> ![Sampling Values](../workflows/hobgoblin-reactiontime-samplediscreteuniform.bonsai)
+> :::
+
+- Record a timestamped chronological log of trial types and rewards into a CSV file using a [`BehaviorSubject`].
+
+### Exercise 8: Conditioned place preference
+
+Implement the following trial structure for conditioned place preference. `enter` and `leave` events should be triggered in real-time from the camera, by tracking an object moving in or out of a region of interest (ROI). `Reward` should be triggered once upon entering the ROI, and not repeat again until the object exits the ROI and the ITI has elapsed.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    ITI --> Ready: elapsed
+    Ready --> Reward: enter
+    Reward --> ITI: leave
+```
+
+> [!Tip]
+> There are several ways to implement ROI activation, so feel free to explore different ideas. Consider using either [`Crop`], [`RoiActivity`], or [`ContainsPoint`] as part of different strategies to implement the `enter` and `leave` events.
+
 <!--Reference Style Links -->
 [`BehaviorSubject`]: xref:Bonsai.Reactive.BehaviorSubject
 [`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
 [`Boolean`]: xref:Bonsai.Expressions.BooleanProperty
 [`Condition`]: xref:Bonsai.Reactive.Condition
+[`ContainsPoint`]: xref:Bonsai.Vision.ContainsPoint
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
+[`Crop`]: xref:Bonsai.Vision.Crop
+[`RoiActivity`]: xref:Bonsai.Vision.RoiActivity
 [`Delay`]: xref:Bonsai.Reactive.Delay
 [`Device`]: xref:Harp.Hobgoblin.Device
 [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter
