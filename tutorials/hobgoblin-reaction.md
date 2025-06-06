@@ -115,6 +115,7 @@ for led_on in digital_output_set.index:
         response_time = button_press - led_on
         if 0 < response_time < response_window:
             valid_response_times.append(response_time)
+            break
 
 # Calculate and print hit/miss percentage
 num_valid_responses = len(valid_response_times)
