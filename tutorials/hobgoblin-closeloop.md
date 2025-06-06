@@ -122,7 +122,7 @@ To better understand what each parameter controls, try the following modificatio
 > **Optional** Verify the pulse train by connecting the output to a digital input pin.
 
 >[!TIP]
-> If your cameras support external triggering, you can use pulse trains to trigger frame capture. Recording the same pulse train on a digital input with the `Hobgoblin` allows you to have hardware timestamped images that are automatically aligned with other acquired data.
+> If your camera supports external triggering, you can use pulse trains to trigger frame capture. Recording the same pulse train on a digital input with the `Hobgoblin` allows you to have hardware timestamped images that are automatically aligned with other acquired data.
 
 ### Exercise 4: Triggering a digital line based on region of interest activity
 
@@ -144,8 +144,24 @@ To better understand what each parameter controls, try the following modificatio
 > [!Note]
 > The [`CropPolygon`] operator uses the `Regions` property to define multiple, possibly non-rectangular regions. The visual editor is similar to [`Crop`], where you draw a rectangular box. However, in [`CropPolygon`] you can move the corners of the box by right-clicking _inside_ the box and dragging the cursor to the new position. You can add new points by double-clicking with the left mouse button, and delete points by double-clicking with the right mouse button. You can delete regions by pressing the `Del` key and cycle through selected regions by pressing the `Tab` key.
 
+### Exercise 5: Conditioned place preference
+
+Implement the following trial structure for conditioned place preference. `enter` and `leave` events should be triggered in real-time from the camera, by tracking an object moving in or out of a region of interest (ROI). `Reward` should be triggered once upon entering the ROI, and not repeat again until the object exits the ROI and the ITI has elapsed.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    ITI --> Ready: elapsed
+    Ready --> Reward: enter
+    Reward --> ITI: leave
+```
+
+> [!Tip]
+> There are several ways to implement ROI activation, so feel free to explore different ideas. Consider using either [`Crop`], [`RoiActivity`], or [`ContainsPoint`] as part of different strategies to implement the `enter` and `leave` events.
+
 <!--Reference Style Links -->
 [`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
+[`ContainsPoint`]: xref:Bonsai.Vision.ContainsPoint
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`Crop`]: xref:Bonsai.Vision.Crop
 [`CropPolygon`]: xref:Bonsai.Vision.CropPolygon
@@ -156,24 +172,17 @@ To better understand what each parameter controls, try the following modificatio
 [`DistinctUntilChanged`]: xref:Bonsai.Reactive.DistinctUntilChanged
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
-<!-- [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload -->
 [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 [`GreaterThan`]: xref:Bonsai.Expressions.GreaterThanBuilder
 [`Grayscale`]: xref:Bonsai.Vision.Grayscale
-<!-- [`HarpMessage`]: xref:Bonsai.Harp.HarpMessage -->
 [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown
-<!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject
 [`Parse`]: xref:Harp.Hobgoblin.Parse
-<!-- [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject -->
-<!-- [`RollingGraph`]: xref:Bonsai.Gui.ZedGraph.RollingGraphBuilder -->
+[`RoiActivity`]: xref:Bonsai.Vision.RoiActivity
 [`StartPulseTrainPayload`]: xref:Harp.Hobgoblin.CreateStartPulseTrainPayload
 [`StopPulseTrainPayload`]: xref:Harp.Hobgoblin.CreateStopPulseTrainPayload
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`Sum`]: xref:Bonsai.Dsp.Sum
 [`Threshold`]: xref:Bonsai.Vision.Threshold
 [`TimestampedDigitalOutputTogglePayload`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputToggle
-<!-- [`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet -->
-<!-- [`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputClear -->
 [`VideoCaptureDevice`]: xref:Bonsai.Video.VideoCaptureDevice
-<!-- [`Zip`]: xref:Bonsai.Reactive.Zip -->
