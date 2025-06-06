@@ -48,8 +48,8 @@
       </Expression>
       <Expression xsi:type="p1:CreateMessage">
         <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="p1:CreateDigitalOutputSetPayload">
-          <p1:DigitalOutputSet>GP15</p1:DigitalOutputSet>
+        <harp:Payload xsi:type="p1:CreateDigitalOutputTogglePayload">
+          <p1:DigitalOutputToggle>GP15</p1:DigitalOutputToggle>
         </harp:Payload>
       </Expression>
       <Expression xsi:type="MulticastSubject">

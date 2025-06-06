@@ -136,10 +136,11 @@ To better understand what each parameter controls, try the following modificatio
 - Insert a [`Grayscale`] and a [`Threshold`] transform (or the color segmentation operators).
 - Insert a [`Sum`] transform, and select the `Val0` field from the output.
 - Insert a [`GreaterThan`] transform and configure the `Value` property to an appropriate threshold. Remember you can use the visualizers to see what values are coming through the [`Sum`] and what the result of the [`GreaterThan`] operator is.
-- Insert a [`CreateMessage`] operator, select [`DigitalOutputSetPayload`] for the `Payload`, and `GP15` for the [`DigitalOutputSet`] property.
+- Insert a [`CreateMessage`] operator, select [`DigitalOutputTogglePayload`] for the `Payload`, and `GP15` for the [`DigitalOutputToggle`] property.
 - Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`. 
 - Run the workflow and verify that entering the region of interest turns on the LED.
 - **Optional:** Replace the [`Crop`] transform by a [`CropPolygon`] to allow for non-rectangular regions.
+- **Optional:** Modify the workflow to replace the digital output toggle with a pulse train.
 
 > [!Note]
 > The [`CropPolygon`] operator uses the `Regions` property to define multiple, possibly non-rectangular regions. The visual editor is similar to [`Crop`], where you draw a rectangular box. However, in [`CropPolygon`] you can move the corners of the box by right-clicking _inside_ the box and dragging the cursor to the new position. You can add new points by double-clicking with the left mouse button, and delete points by double-clicking with the right mouse button. You can delete regions by pressing the `Del` key and cycle through selected regions by pressing the `Tab` key.

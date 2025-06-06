@@ -34,7 +34,7 @@
       <tspan dy="8.25pt" id="80">DigitalOutput</tspan>
     </text>
     <text id="82" transform="matrix(1.00 0.00 0.00 1.00 0.00 0.00 ) " x="564.00px" y="63.90px" style="stroke:none;clip-path:url(#84_text_clipper);font-family:Microsoft Sans Serif;font-size:8.25pt;opacity:1;">
-      <tspan dy="8.25pt" id="86">SetPayload</tspan>
+      <tspan dy="8.25pt" id="86">TogglePayload</tspan>
     </text>
     <ellipse id="90" cy="15.00" cx="15.00" transform="matrix(1.00 0.00 0.00 1.00 484.00 4.00 ) " rx="15.00" ry="15.00" style="stroke:none;opacity:1;fill:rgb(68,154,223);" />
     <path style="stroke:rgb(255,255,255);fill:none;stroke-linecap:butt;stroke-miterlimit:9;opacity:1;stroke-width:2;stroke-linejoin:miter;" transform="matrix(1.00 0.00 0.00 1.00 484.00 4.00 ) " id="95" d="M 16.849 10.062 23.4027 10.062 M 16.6038 19.6084 23.3505 19.6084 M 12.3075 17.1615 7.5719 21.8971 M 7.577335 17.152 12.31704 21.8917 M 6.564136 10.0047 13.30904 10.0047 M 9.936636 6.6288 9.936636 13.3806 " />
@@ -92,13 +92,13 @@
       <rect x="644.00" y="51.45" width="61.59" height="27.65" id="59" />
     </clipPath>
     <clipPath id="72_text_clipper">
-      <rect x="564.00" y="39.00" width="69.36" height="41.48" id="73" />
+      <rect x="564.00" y="39.00" width="79.38" height="41.48" id="73" />
     </clipPath>
     <clipPath id="78_text_clipper">
-      <rect x="564.00" y="51.45" width="69.36" height="41.48" id="79" />
+      <rect x="564.00" y="51.45" width="79.38" height="41.48" id="79" />
     </clipPath>
     <clipPath id="84_text_clipper">
-      <rect x="564.00" y="63.90" width="69.36" height="41.48" id="85" />
+      <rect x="564.00" y="63.90" width="79.38" height="41.48" id="85" />
     </clipPath>
     <clipPath id="100_text_clipper">
       <rect x="484.00" y="39.00" width="67.89" height="13.83" id="101" />
