@@ -50,7 +50,7 @@ Lastly, we will use this sequence to toggle the digital output and initialize th
 ### Exercise 2: Measuring video acquisition latency
 
 ![Hobgoblin LED](../images/hobgoblin-acquisition-led.svg){width=400px}
-- Connect a LED module to digital output channel `GP15` on the `Hobgoblin`.
+- Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`.
 
 :::workflow
 ![Hobgoblin Closed-Loop Latency Video](../workflows/hobgoblin-closeloop-latency-video.bonsai)
@@ -102,7 +102,7 @@ In neuroscience, pulse trains are commonly used to deliver precisely timed seque
 ![Hobgoblin Pulse Train](../workflows/hobgoblin-closeloop-pulsetrain.bonsai)
 :::
 
-- Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`. 
+- Connect a LED module to digital output channel `GP15` on the `Hobgoblin`. 
 - Insert a [`KeyDown`] operator and set the `Filter` property to the key `A`.
 - Insert a [`Parse`] operator and select [`StartPulseTrainPayload`] from the `Register` property dropdown menu. Set the `DigitalOutput` property to `GP15`.
 - Set the `PulseCount` property to `0`, `PulsePeriod` to `50000` and `PulseWidth` to `5000`. These parameters correspond to a continuous 20 Hz pulse train with 5 ms pulses.

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.8.5"
+<WorkflowBuilder Version="2.9.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:vid="clr-namespace:Bonsai.Video;assembly=Bonsai.Video"
                  xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
@@ -30,7 +30,7 @@
         <Combinator xsi:type="dsp:Sum" />
       </Expression>
       <Expression xsi:type="MemberSelector">
-        <Selector>Val0</Selector>
+        <Selector>Val2</Selector>
       </Expression>
       <Expression xsi:type="GreaterThan">
         <Operand xsi:type="DoubleProperty">
