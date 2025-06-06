@@ -50,7 +50,7 @@ Lastly, we will use this sequence to toggle the digital output and initialize th
 ### Exercise 2: Measuring video acquisition latency
 
 ![Hobgoblin LED](../images/hobgoblin-acquisition-led.svg){width=400px}
-- Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`.
+- Connect a LED module to digital output channel `GP15` on the `Hobgoblin`.
 
 :::workflow
 ![Hobgoblin Closed-Loop Latency Video](../workflows/hobgoblin-closeloop-latency-video.bonsai)
@@ -96,29 +96,33 @@ _Given the measurements obtained in Exercise 2, what would you estimate is the *
 
 ### Exercise 3: Introduction to pulse trains
 
-In neuroscience, pulse trains are commonly used to deliver precisely timed sequences of electrical states (`LOW` and `HIGH`) to control external devices, such as cameras for synchronization or lasers for optogenetic stimulation. However, due to operating system limitations, generating pulse trains by setting [`DigitalOutputSet`] and [`DigitalOutputClear`] in software like Bonsai can be prone to timing jitter (though this approach is sufficient for the stimuli we have been working with). Fortunately the `Hogoblin` provides dedicated `Registers` that can be used to start or stop hardware-programmed pulse trains. We will use such pulse trains as our close-loop stimuli for the next few exercises.
+In neuroscience, pulse trains are commonly used to deliver precisely timed sequences of electrical states (`LOW` and `HIGH` - otherwise known as transistor-transitor-logic or `TTL`) to control external devices, such as cameras for synchronization or lasers for optogenetic stimulation. However, due to operating system limitations, generating pulse trains in software like Bonsai can be prone to timing jitter (though this approach is sufficient for the stimuli we have been working with). Fortunately the `Hogoblin` provides dedicated `Registers` that can be used to start or stop hardware-programmed pulse trains. 
+
+:::workflow
+![Hobgoblin Pulse Train](../workflows/hobgoblin-closeloop-pulsetrain.bonsai)
+:::
 
 - Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`. 
 - Insert a [`KeyDown`] operator and set the `Filter` property to the key `A`.
 - Insert a [`Parse`] operator and select [`StartPulseTrainPayload`] from the `Register` property dropdown menu. Set the `DigitalOutput` property to `GP15`.
-- Set the `PulseCount` property to `0`, `PulsePeriod` to `50000` and `PulseWidth` to `5000`. These parameters correspond to a continuous 20Hz pulse train with 5 ms pulses.
+- Set the `PulseCount` property to `0`, `PulsePeriod` to `50000` and `PulseWidth` to `5000`. These parameters correspond to a continuous 20 Hz pulse train with 5 ms pulses.
 - Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`. 
 - Insert another [`KeyDown`] operator and set the `Filter` property to the key `S`.
 - Insert a [`Parse`] operator and select [`StopPulseTrainPayload`] from the `Register` property dropdown menu. Set the `StopPulseTrain` property to `GP15`.
-- Run the workflow, use the `A` and `S` keys to start and stop the pulse train.
+- Run the workflow, use the `A` and `S` keys to start and stop the pulse train.  
 **What do you observe?**
 
 To better understand what each parameter controls, try the following modifications. Reset the values to the parameters above after each step.
 
-- Increase the `PulsePeriod` to `200000`. What is the frequency of this stimulation? How would you increase the frequency of the pulses to 40Hz?
+- Increase the `PulsePeriod` to `200000`. What is the frequency of this stimulation? How would you increase the frequency of the pulses to 40 Hz?
 - Increase the `PulseWidth` to `40000`. What do you observe?
 - How would you deliver a 2 second pulse train? (Hint: Use `PulseCount`)
 
 >[!NOTE]
-> **Optional** Verify the pulse train by connecting the output to a digital input pin. How would you visualize the results using what you've learned?
+> **Optional** Verify the pulse train by connecting the output to a digital input pin.
 
->[!NOTE]
-> **Optional** If you have cameras that support external hardware triggering, use what you have learned in this exercise to trigger frame capture.
+>[!TIP]
+> If your cameras support external triggering, you can use pulse trains to trigger frame capture. Recording the same pulse train on a digital input with the `Hobgoblin` allows you to have hardware timestamped images that are automatically aligned with other acquired data.
 
 <!--Reference Style Links -->
 [`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
@@ -129,7 +133,6 @@ To better understand what each parameter controls, try the following modificatio
 [`DigitalOutputToggle`]: xref:Harp.Hobgoblin.DigitalOutputToggle
 [`DigitalOutputTogglePayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputTogglePayload
 [`DistinctUntilChanged`]: xref:Bonsai.Reactive.DistinctUntilChanged
-<!-- [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter -->
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 <!-- [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload -->
@@ -142,6 +145,8 @@ To better understand what each parameter controls, try the following modificatio
 [`Parse`]: xref:Harp.Hobgoblin.Parse
 <!-- [`PublishSubject`]: xref:Bonsai.Reactive.PublishSubject -->
 <!-- [`RollingGraph`]: xref:Bonsai.Gui.ZedGraph.RollingGraphBuilder -->
+[`StartPulseTrainPayload`]: xref:Harp.Hobgoblin.CreateStartPulseTrainPayload
+[`StopPulseTrainPayload`]: xref:Harp.Hobgoblin.CreateStopPulseTrainPayload
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`Sum`]: xref:Bonsai.Dsp.Sum
 [`TimestampedDigitalOutputTogglePayload`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputToggle
