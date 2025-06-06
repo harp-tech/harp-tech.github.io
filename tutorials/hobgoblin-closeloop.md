@@ -1,6 +1,6 @@
 # Close-Loop Systems
 
-The exercises below will help you become familiar with using the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) device for close-loop experiments. You will also learn how to use the `Hobgoblin` to interface with external cameras. Before you begin, it is recommended that you review the Bonsai [Acquisition and Tracking](https://bonsai-rx.org/docs/tutorials/acquisition.html) tutorial, which covers key video concepts.
+The exercises below will help you become familiar with using the [Harp Hobgoblin](https://github.com/harp-tech/device.hobgoblin) device for close-loop experiments. You will also learn how to interface with external cameras. Before you begin, it is recommended that you review the Bonsai [Acquisition and Tracking](https://bonsai-rx.org/docs/tutorials/acquisition.html) tutorial, which covers key video concepts.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ Lastly, we will use this sequence to toggle the digital output and initialize th
 ### Exercise 2: Measuring video acquisition latency
 
 ![Hobgoblin LED](../images/hobgoblin-acquisition-led.svg){width=400px}
-- Connect a blue LED module to digital output channel `GP15` on the `Hobgoblin`.
+- Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`.
 
 :::workflow
 ![Hobgoblin Closed-Loop Latency Video](../workflows/hobgoblin-closeloop-latency-video.bonsai)
@@ -63,10 +63,10 @@ Lastly, we will use this sequence to toggle the digital output and initialize th
 > [!Tip]
 > You can use the visual editor for an easier calibration. While the workflow is running, right-click on the [`Crop`] transform and select `Show Default Editor` from the context menu or click in the small button with ellipsis that appears when you select the `RegionOfInterest` property.
 
-- Insert a [`Sum`] transform and select the `Val0` field from the output.
+- Insert a [`Sum`] transform and select the `Val2` field from the output.
 
 > [!Note]
-> The [`Sum`] operator adds the value of all the pixels in the image together, across all the color channels. Assuming the default BGR format, the result of summing all the pixels in the `Blue` channel of the image will be stored in `Val0`. `Val1` and `Val2` would store the `Green` and `Red` values, respectively. If you are using an LED with a color other than blue, please select the output field accordingly.
+> The [`Sum`] operator adds the value of all the pixels in the image together, across all the color channels. Assuming the default BGR format, the result of summing all the pixels in the `Red` channel of the image will be stored in `Val2`. `Val0` and `Val1` would store the `Blue` and `Green` values, respectively. If you are using an LED with a color other than red, please select the output field accordingly.
 
 - Insert a [`GreaterThan`] transform.
 - Insert a [`BitwiseNot`] transform.
@@ -92,6 +92,34 @@ In order to measure the round-trip time between the LED toggle:
 
 _Given the measurements obtained in Exercise 2, what would you estimate is the **input** latency for video acquisition?_
 
+## Closed-Loop Control
+
+### Exercise 3: Introduction to pulse trains
+
+In neuroscience, pulse trains are commonly used to deliver precisely timed sequences of electrical states (`LOW` and `HIGH`) to control external devices, such as cameras for synchronization or lasers for optogenetic stimulation. However, due to operating system limitations, generating pulse trains by setting [`DigitalOutputSet`] and [`DigitalOutputClear`] in software like Bonsai can be prone to timing jitter (though this approach is sufficient for the stimuli we have been working with). Fortunately the `Hogoblin` provides dedicated `Registers` that can be used to start or stop hardware-programmed pulse trains. We will use such pulse trains as our close-loop stimuli for the next few exercises.
+
+- Connect a red LED module to digital output channel `GP15` on the `Hobgoblin`. 
+- Insert a [`KeyDown`] operator and set the `Filter` property to the key `A`.
+- Insert a [`Parse`] operator and select [`StartPulseTrainPayload`] from the `Register` property dropdown menu. Set the `DigitalOutput` property to `GP15`.
+- Set the `PulseCount` property to `0`, `PulsePeriod` to `50000` and `PulseWidth` to `5000`. These parameters correspond to a continuous 20Hz pulse train with 5 ms pulses.
+- Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`. 
+- Insert another [`KeyDown`] operator and set the `Filter` property to the key `S`.
+- Insert a [`Parse`] operator and select [`StopPulseTrainPayload`] from the `Register` property dropdown menu. Set the `StopPulseTrain` property to `GP15`.
+- Run the workflow, use the `A` and `S` keys to start and stop the pulse train.
+**What do you observe?**
+
+To better understand what each parameter controls, try the following modifications. Reset the values to the parameters above after each step.
+
+- Increase the `PulsePeriod` to `200000`. What is the frequency of this stimulation? How would you increase the frequency of the pulses to 40Hz?
+- Increase the `PulseWidth` to `40000`. What do you observe?
+- How would you deliver a 2 second pulse train? (Hint: Use `PulseCount`)
+
+>[!NOTE]
+> **Optional** Verify the pulse train by connecting the output to a digital input pin. How would you visualize the results using what you've learned?
+
+>[!NOTE]
+> **Optional** If you have cameras that support external hardware triggering, use what you have learned in this exercise to trigger frame capture.
+
 <!--Reference Style Links -->
 [`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
@@ -102,8 +130,8 @@ _Given the measurements obtained in Exercise 2, what would you estimate is the *
 [`DigitalOutputTogglePayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputTogglePayload
 [`DistinctUntilChanged`]: xref:Bonsai.Reactive.DistinctUntilChanged
 <!-- [`DeviceDataWriter`]: xref:Harp.Hobgoblin.DeviceDataWriter -->
-<!-- [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet -->
-<!-- [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear -->
+[`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
+[`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 <!-- [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload -->
 <!-- [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload -->
 [`GreaterThan`]: xref:Bonsai.Expressions.GreaterThanBuilder
