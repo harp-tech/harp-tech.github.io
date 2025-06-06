@@ -19,6 +19,10 @@ stateDiagram-v2
 
 The task begins with an inter-trial interval (`ITI`), followed by stimulus presentation (`ON`). After stimulus onset, advancement to the next state can happen only when the subject presses the button (`success`) or a timeout elapses (`miss`). Depending on which event is triggered first, the task advances either to the `Reward` state, or `Fail` state. At the end, the task goes back to the beginning of the ITI state for the next trial.
 
+## Prerequisites
+
+- Install the [`Bonsai.Numerics`](https://bonsai-rx.org/numerics/) package from the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html).
+
 ### Exercise 1: Generating a fixed-interval stimulus
 
 In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. Connect the LED to digital output channel `GP15` on the `Hobgoblin`. Connect the push button to digital input channel `GP2` on the `Hobgoblin`. 
@@ -96,7 +100,7 @@ digital_input_state = device.DigitalInputState.read()
 print(digital_output_set.head())
 print(digital_input_state.head())
 
-# Discard_unused_channels
+# Discard unused channels
 digital_output_set = digital_output_set["GP15"]
 digital_input_state = digital_input_state["GP2"]
 
@@ -119,7 +123,7 @@ hit_percentage = num_valid_responses / num_total_trials * 100
 print(f"There were {num_valid_responses} valid responses out of {num_total_trials} trials, giving a hit rate of {hit_percentage}%")
 
 # Plot valid response times
-pd.Series(valid_response_times).plot(kind="box", ylim=(0,1))
+pd.Series(valid_response_times).plot(kind="hist")
 ```
 
 ### Exercise 4: Driving state transitions with external behaviour events
@@ -155,13 +159,13 @@ In order to translate our simple reaction time task in the previous exercises in
 - Insert a [`SubscribeSubject`] operator. Configure the `Name` property to `Hobgoblin Events`.
 - Insert a [`Parse`] operator after `Hobgoblin Events`. Configure the `Register` property to [`DigitalInputState`].
 - Insert a [`Condition`] operator after the [`Parse`] operator. 
-- Double-click on the [`Condition`] operator and add an [`Equal`] operator after the `Source1` operator. Set the `Value` property to `GP2`.
+- Double-click on the [`Condition`] operator and add a [`HasFlag`] operator after the `Source1` operator. Set the `Value` property to `GP2`.
 - Insert a [`Take`] operator and set its `Count` property to 1.
 - Connect the [`Take`] operator to `WorkflowOutput`.
 - Run the workflow a couple of times and validate the state machine is responding to the button press.
 
 > [!Note]
-> The [`Condition`] operator allows you to specify arbitrary rules for accepting or rejecting inputs. The `WorkflowOutput` node always needs to be specified with a `bool` input, the result of whether the input is accepted (`True`) or rejected (`False`). Only inputs which pass the filter specified inside the [`Condition`] are allowed to proceed. Using an [`Equal`] operator here allows us to filter only messages from that pin and also has the beneficial side effect of only detecting a button press (when the value changes fron `None` > `GP2`) instead of a button release (`GP2`>`None`).
+> The [`Condition`] operator allows you to specify arbitrary rules for accepting or rejecting inputs. The `WorkflowOutput` node always needs to be specified with a `bool` input, the result of whether the input is accepted (`True`) or rejected (`False`). Only inputs which pass the filter specified inside the [`Condition`] are allowed to proceed. Using a [`HasFlag`] operator here allows us to filter only messages from that pin and also has the beneficial side effect of only detecting a button press (when the value changes fron `None` > `GP2`) instead of a button release (`GP2`>`None`).
 
 ### Exercise 5: Timeout and choice
 
@@ -207,7 +211,7 @@ _Why did we need to specify something for the `Miss` condition?_
 _Why did we not need to specify anything for the `Success` condition?_
 
 > [!Note]
-> The [`Condition`] operator is often used to represent choice points in the task. Other than [`Equal`], you can use operators such as [`NotEqual`], [`GreaterThan`], etc for specifying such tests.
+> The [`Condition`] operator is often used to represent choice points in the task. You can use operators such as [`Equal`], [`NotEqual`], [`GreaterThan`], etc for specifying such tests.
 
 Inside the `Reward` and `Fail` node you can specify your own logic to signal the state of the trial. 
 For example, to make the LED blink three times in rapid succession for the `Reward` node:
@@ -253,7 +257,7 @@ stateDiagram-v2
     NoGo --> CorrectReject
 ```
 
-- Trials should be sampled from a uniform distribution using the `Numerics` package (install from `Tools` > `Manage Packages`).
+- Trials should be sampled from a uniform distribution using the `Bonsai.Numerics` package.
 - Response events should be based on a button press, and reject events on a timeout.
 - Make sure to implement different visual or auditory feedback for either the cue or reward/failure states.
 
@@ -300,6 +304,7 @@ stateDiagram-v2
 [`Equal`]: xref:Bonsai.Expressions.EqualBuilder
 [`GreaterThan`]: xref:Bonsai.Expressions.GreaterThanBuilder
 [`HarpMessage`]: xref:Bonsai.Harp.HarpMessage
+[`HasFlag`]: xref:Bonsai.Expressions.HasFlagBuilder
 [`Last`]: xref:Bonsai.Reactive.Last
 [`Merge`]: xref:Bonsai.Reactive.Merge
 [`MulticastSubject`]: xref:Bonsai.Expressions.MulticastSubject

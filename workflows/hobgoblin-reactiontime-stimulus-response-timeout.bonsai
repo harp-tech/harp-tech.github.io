@@ -19,7 +19,7 @@
             <Expression xsi:type="WorkflowInput">
               <Name>Source1</Name>
             </Expression>
-            <Expression xsi:type="Equal">
+            <Expression xsi:type="HasFlag">
               <Operand xsi:type="WorkflowProperty" TypeArguments="p1:DigitalInputs">
                 <Value>GP2</Value>
               </Operand>
