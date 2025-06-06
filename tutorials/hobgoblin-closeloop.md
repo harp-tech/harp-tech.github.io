@@ -56,7 +56,7 @@ Lastly, we will use this sequence to toggle the digital output and initialize th
 ![Hobgoblin Closed-Loop Latency Video](../workflows/hobgoblin-closeloop-latency-video.bonsai)
 :::
 
-- Insert a [`VideoCaptureDevice`] operator.
+- Insert a [`VideoCaptureDevice`] operator. Set the `Index` property to the right camera.
 - Insert a [`Crop`] transform.
 - Run the workflow and set the `RegionOfInterest` property to a small area around the LED.
 
@@ -124,10 +124,31 @@ To better understand what each parameter controls, try the following modificatio
 >[!TIP]
 > If your cameras support external triggering, you can use pulse trains to trigger frame capture. Recording the same pulse train on a digital input with the `Hobgoblin` allows you to have hardware timestamped images that are automatically aligned with other acquired data.
 
+### Exercise 4: Triggering a digital line based on region of interest activity
+
+:::workflow
+![Hobgoblin Pulse Train](../workflows/hobgoblin-closeloop-roi.bonsai)
+:::
+
+- Insert a [`VideoCaptureDevice`] operator. Set the `Index` property to the right camera.
+- Insert a [`Crop`] transform.
+- Run the workflow and set the `RegionOfInterest` property to specify the desired area.
+- Insert a [`Grayscale`] and a [`Threshold`] transform (or the color segmentation operators).
+- Insert a [`Sum`] transform, and select the `Val0` field from the output.
+- Insert a [`GreaterThan`] transform and configure the `Value` property to an appropriate threshold. Remember you can use the visualizers to see what values are coming through the [`Sum`] and what the result of the [`GreaterThan`] operator is.
+- Insert a [`CreateMessage`] operator, select [`DigitalOutputSetPayload`] for the `Payload`, and `GP15` for the [`DigitalOutputSet`] property.
+- Insert a [`MulticastSubject`] operator and configure the `Name` property to `Hobgoblin Commands`. 
+- Run the workflow and verify that entering the region of interest turns on the LED.
+- **Optional:** Replace the [`Crop`] transform by a [`CropPolygon`] to allow for non-rectangular regions.
+
+> [!Note]
+> The [`CropPolygon`] operator uses the `Regions` property to define multiple, possibly non-rectangular regions. The visual editor is similar to [`Crop`], where you draw a rectangular box. However, in [`CropPolygon`] you can move the corners of the box by right-clicking _inside_ the box and dragging the cursor to the new position. You can add new points by double-clicking with the left mouse button, and delete points by double-clicking with the right mouse button. You can delete regions by pressing the `Del` key and cycle through selected regions by pressing the `Tab` key.
+
 <!--Reference Style Links -->
 [`BitwiseNot`]: xref:Bonsai.Expressions.BitwiseNotBuilder
 [`CreateMessage`]: xref:Harp.Hobgoblin.CreateMessage
 [`Crop`]: xref:Bonsai.Vision.Crop
+[`CropPolygon`]: xref:Bonsai.Vision.CropPolygon
 [`Device`]: xref:Harp.Hobgoblin.Device
 [`Difference`]: xref:Bonsai.Dsp.Difference
 [`DigitalOutputToggle`]: xref:Harp.Hobgoblin.DigitalOutputToggle
@@ -136,8 +157,9 @@ To better understand what each parameter controls, try the following modificatio
 [`DigitalOutputSet`]: xref:Harp.Hobgoblin.DigitalOutputSet
 [`DigitalOutputClear`]: xref:Harp.Hobgoblin.DigitalOutputClear
 <!-- [`DigitalOutputClearPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputSetPayload -->
-<!-- [`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload -->
+[`DigitalOutputSetPayload`]: xref:Harp.Hobgoblin.CreateDigitalOutputClearPayload
 [`GreaterThan`]: xref:Bonsai.Expressions.GreaterThanBuilder
+[`Grayscale`]: xref:Bonsai.Vision.Grayscale
 <!-- [`HarpMessage`]: xref:Bonsai.Harp.HarpMessage -->
 [`KeyDown`]: xref:Bonsai.Windows.Input.KeyDown
 <!-- [`Merge`]: xref:Bonsai.Reactive.Merge -->
@@ -149,6 +171,7 @@ To better understand what each parameter controls, try the following modificatio
 [`StopPulseTrainPayload`]: xref:Harp.Hobgoblin.CreateStopPulseTrainPayload
 [`SubscribeSubject`]: xref:Bonsai.Expressions.SubscribeSubject
 [`Sum`]: xref:Bonsai.Dsp.Sum
+[`Threshold`]: xref:Bonsai.Vision.Threshold
 [`TimestampedDigitalOutputTogglePayload`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputToggle
 <!-- [`TimestampedDigitalOutputSet`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputSet -->
 <!-- [`TimestampedDigitalOutputClear`]: xref:Harp.Hobgoblin.TimestampedDigitalOutputClear -->
