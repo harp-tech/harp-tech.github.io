@@ -34,6 +34,9 @@
 [submodule "src/device.stepperdriver"]
 	path = src/device.stepperdriver
 	url = https://github.com/harp-tech/device.stepperdriver.git
+[submodule "src/device.hobgoblin"]
+	path = src/device.hobgoblin
+	url = https://github.com/harp-tech/device.hobgoblin
 [submodule "protocol"]
 	path = protocol
 	url = https://github.com/harp-tech/protocol.git
@@ -43,6 +46,6 @@
 [submodule "docfx-tools"]
 	path = docfx-tools
 	url = https://github.com/bonsai-rx/docfx-tools.git
-[submodule "src/device.hobgoblin"]
-	path = src/device.hobgoblin
-	url = https://github.com/harp-tech/device.hobgoblin
+[submodule "whoami"]
+	path = whoami
+	url = https://github.com/harp-tech/whoami.git
