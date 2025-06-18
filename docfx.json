@@ -35,6 +35,7 @@
           "tutorials/**.md",
           "tutorials/**/toc.yml",
           "protocol/**.md",
+          "whoami/whoami.md",
           "toc.yml",
           "*.md"
         ],

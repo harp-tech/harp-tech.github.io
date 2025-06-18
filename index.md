@@ -6,7 +6,7 @@ Harp is a standardized solution for:
   - A [binary protocol](./protocol/BinaryProtocol-8bit.md) for communication between devices and PC
   - [Hardware templates](./protocol/Device.md) for developing new devices
 
-All [Harp Devices](./protocol/whoami.md) implement the [Harp Protocol](./protocol/BinaryProtocol-8bit.md) to communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
+All [Harp Devices](./whoami/whoami.md) implement the [Harp Protocol](./protocol/BinaryProtocol-8bit.md) to communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
 
 ## How to install
 
