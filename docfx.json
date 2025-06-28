@@ -59,6 +59,11 @@
         "files": "schema/*.json",
         "src": "protocol",
         "dest": "draft-02"
+      },
+      {
+        "files": "whoami.yml",
+        "src": "whoami",
+        "dest": "."
       }
     ],
     "overwrite": [
