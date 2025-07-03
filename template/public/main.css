@@ -1,1 +1,6 @@
 @import "workflow.css";
+
+[data-bs-theme=dark] .display-light,
+[data-bs-theme=light] .display-dark {
+    display: none;
+}
