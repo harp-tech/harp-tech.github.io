@@ -47,7 +47,7 @@
 <text x="704" y="289" text-anchor="end" font-size="12" font-weight="700" fill="currentColor">34</text>
 <line x1="452" y1="298" x2="708" y2="298" stroke="currentColor" stroke-opacity="0.15"/>
 <text x="456" y="317" font-size="12" opacity="0.7" fill="currentColor">Payload</text>
-<text x="704" y="317" text-anchor="end" font-size="12" font-weight="700" fill="currentColor">DI0</text>
+<text x="704" y="317" text-anchor="end" font-size="12" font-weight="700" fill="currentColor">High = DI0, Low = DI1</text>
 <line x1="452" y1="326" x2="708" y2="326" stroke="currentColor" stroke-opacity="0.15"/>
 <text x="456" y="345" font-size="12" opacity="0.7" fill="currentColor">Timestamp</text>
 <text x="704" y="345" text-anchor="end" font-size="12" font-weight="700" fill="currentColor">131.9 s</text>
