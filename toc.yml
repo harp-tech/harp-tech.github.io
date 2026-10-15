@@ -1,8 +1,10 @@
-- name: Documentation
+- name: Use
   href: articles/
-- name: API
-  href: api/
-- name: Tutorials
+- name: Build
+  href: platform/
+- name: Learn
   href: tutorials/
+- name: Connect
+  href: connect.md
 - name: About
   href: about.md

@@ -33,8 +33,10 @@
           "articles/**.md",
           "articles/**/toc.yml",
           "tutorials/**.md",
-          "tutorials/**/toc.yml",
+          "tutorials/toc.yml",
           "protocol/**.md",
+          "platform/**.md",
+          "platform/**/toc.yml",
           "whoami/whoami.md",
           "toc.yml",
           "*.md"

@@ -1,29 +1,11 @@
-Quick Start
-===========
+# What is Harp
 
-Harp is a standardized solution for:
-  - Automatic [sub-millisecond synchronization](./protocol/SynchronizationClock.md) across devices
-  - A [binary protocol](./protocol/BinaryProtocol-8bit.md) for communication between devices and PC
-  - [Hardware templates](./protocol/Device.md) for developing new devices
+Harp is a standard for asynchronous real-time data acquisition and experimental control in neuroscience. It includes specifications for a lightweight and versatile binary communication protocol, a set of common registers for microcontroller firmware, and a clock synchronization protocol.
 
-All [Harp Devices](./whoami/whoami.md) implement the [Harp Protocol](./protocol/BinaryProtocol-8bit.md) to communicate with an host PC. The `Bonsai.Harp` library provides an implementation of the Harp protocol that can be used to interface with any Harp device.
+:::wrap-right
+![Behavior Peripherals](~/images/behavior-peripherals.jpg)
+:::
 
-## How to install
+Commands and events processed by all Harp devices are hardware timestamped and streamed back to the host computer over USB with a one millisecond latency. The stateless and symmetric communication protocol allows temporally accurate logging while avoiding the need for fixed sampling rates and redundant processing. Harp devices can be connected to a shared clock line and continuously self-synchronise their clocks to a precision of tens of microseconds. This means that all experimental events are timestamped on the same clock and no post-hoc alignment of timing is necessary.
 
-1. [Install Bonsai](https://bonsai-rx.org)
-2. [Install FTDI D2XX Drivers](https://ftdichip.com/wp-content/uploads/2021/08/CDM212364_Setup.zip)
-3. Install `Bonsai.Harp.Design` using the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html).
-
-## Device specific packages
-
-A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the [Harp Behavior](xref:Harp.Behavior) board, you should find the following package:
-
-<p><img alt="Installing a Harp device package" src="~/images/behavior-package.png" style="max-height:450px;object-fit:contain" /></p>
-
-The device nodes should now be available in the Bonsai Toolbox and you can start using them in your workflows. See [Operators](./articles/operators.md) for examples of how to manipulate and control Harp devices.
-
-## Next Steps
-
-- [Logging](./articles/logging.md)
-- [Firmware](./articles/firmware.md)
-- [Data Interface](./articles/python.md)
+The Harp ecosystem currently includes devices to configure, control, and collect data from a wide range of peripheral devices such as cameras, LEDs, nosepokes, and motors. Combining Harp devices is an easy way to extend experimental setup functionality with integrated timestamp synchronisation across devices.

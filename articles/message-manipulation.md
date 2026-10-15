@@ -1,4 +1,4 @@
-# Manipulating Harp Messages
+# Message Manipulation
 
 This section covers advanced message manipulation techniques that allow destructuring and constructing Harp messages at will from their essential elements. It is useful mostly for applications where routing of Harp messages is dynamic, when we need to build new commands based on previous responses, or when manipulating timestamped sequences for reactive computations that require keeping the original hardware timestamp of the result.
 

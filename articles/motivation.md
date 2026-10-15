@@ -1,12 +1,4 @@
----
-uid: about
----
-
-# What is Harp
-
-[!include[what-is-harp](./what-is-harp.md)]
-
-## Why Harp was developed
+# Motivation
 
 Time is a critical variable in systems neuroscience experiments. As setups increase in complexity, temporally aligning multiple datastreams acquired from different devices rapidly becomes more difficult. Exploring how neural circuit activity relates to animal behaviour requires precise timestamping of experimental events, so that neural and behavioural data can be accurately ordered in time.
 

@@ -4,3 +4,150 @@
 [data-bs-theme=light] .display-dark {
     display: none;
 }
+
+/* Allow long URLs in table links to wrap so wide tables do not overflow
+   the page horizontally. Scoped to links only, so plain text columns keep
+   normal word wrapping and are not broken mid-word. */
+.table td a {
+    overflow-wrap: anywhere;
+}
+
+/* Connect page: two columns, each with a large brand icon above a link
+   and a short description. Icons are drawn by CSS so one SVG serves both
+   themes: the GitHub mark is a mask filled black or white per theme, the
+   Discord mark is the official blurple symbol, which works on either. */
+.connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.connect-links > div {
+    flex: 1 1 16rem;
+    max-width: 24rem;
+    text-align: center;
+}
+
+.connect-links > div > p:first-child {
+    margin-bottom: 0.75rem;
+}
+
+.connect-links > div > p:first-child > a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Hide the external-link arrow the template appends to outbound links. */
+.connect-links > div > p:first-child > a > svg {
+    display: none;
+}
+
+.connect-links > div > p:first-child > a::before {
+    content: "";
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 1rem;
+    transition: transform 0.15s ease;
+}
+
+.connect-links > div > p:first-child > a:hover::before {
+    transform: scale(1.05);
+}
+
+.connect-github > p:first-child > a::before {
+    background-color: #000;
+    -webkit-mask: url(../images/logo-github.svg) center / contain no-repeat;
+    mask: url(../images/logo-github.svg) center / contain no-repeat;
+}
+
+[data-bs-theme=dark] .connect-github > p:first-child > a::before {
+    background-color: #fff;
+}
+
+.connect-discord > p:first-child > a::before {
+    background: url(../images/logo-discord.svg) center / contain no-repeat;
+}
+
+/* Device grid: three-column photo listing used on author pages. Each card
+   is a photo, a linked device name, and a one-sentence description. */
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 767.98px) {
+    .device-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.device-card {
+    text-align: center;
+}
+
+.device-card p {
+    margin-bottom: 0.5rem;
+}
+
+.device-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+}
+
+.device-card > p:nth-child(2) > a {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+/* Harp Framework page: two-by-two grid of cards, one per Build section. */
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 767.98px) {
+    .framework-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.framework-card {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.framework-card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+/* Figures in articles: a light and a dark image (switched by the theme
+   classes above) followed by a caption paragraph. */
+.harp-figure {
+    margin: 1.5rem 0 2rem;
+}
+
+.harp-figure img {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.harp-figure > p:last-child {
+    max-width: 760px;
+    margin: 0.75rem auto 0;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}

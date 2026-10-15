@@ -1,4 +1,8 @@
-- name: Harp Hobgoblin
+- name: How Harp Works
+- href: harp-communication-protocol.md
+- href: harp-synchronization-clock.md
+- name: Tutorials
+- href: hobgoblin.md
 - href: hobgoblin-setup.md
 - href: hobgoblin-acquisition.md
 - href: hobgoblin-reaction.md
