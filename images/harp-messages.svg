@@ -1,24 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img" aria-label="A controller sends Write and Read messages to a Harp device, and the device sends Event messages back" style="max-width:100%;height:auto;font-size:12px">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img" aria-label="A controller and a device exchange Harp messages in a loop; the controller holds a register map of names to addresses, the device holds the registers with their values" style="max-width:100%;height:auto;font-size:12px">
 <style>svg { color: #212529; font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; } @media (prefers-color-scheme: dark) { svg { color: #dee2e6; } }</style>
-<rect x="40" y="46" width="160" height="110" rx="8" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.6"/>
-<rect x="108" y="156" width="24" height="14" fill="#3b82f6"/>
-<rect x="78" y="170" width="84" height="8" rx="3" fill="#3b82f6"/>
-<text x="120" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Controller</text>
-<rect x="560" y="46" width="160" height="132" rx="10" fill="#f0883e" fill-opacity="0.12" stroke="#f0883e" stroke-width="1.6"/>
-<rect x="586" y="70" width="44" height="30" rx="4" fill="#f0883e" fill-opacity="0.35" stroke="#f0883e" stroke-width="1.2"/>
-<rect x="650" y="70" width="44" height="30" rx="4" fill="#f0883e" fill-opacity="0.35" stroke="#f0883e" stroke-width="1.2"/>
-<rect x="586" y="124" width="108" height="26" rx="4" fill="none" stroke="#f0883e" stroke-width="1.2"/>
-<rect x="596" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<rect x="613" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<rect x="630" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<rect x="647" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<rect x="664" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<rect x="681" y="131" width="6" height="12" rx="1" fill="#f0883e" fill-opacity="0.6"/>
-<text x="640" y="208" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Device</text>
-<polygon points="240,65 496,65 496,58 520,76 496,94 496,87 240,87" fill="#3b82f6" stroke="none"/>
-<text x="380" y="81" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Commands</text>
-<polygon points="520,107 264,107 264,100 240,118 264,136 264,129 520,129" fill="#f0883e" stroke="none"/>
-<text x="380" y="123" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Replies</text>
-<polygon points="520,149 264,149 264,142 240,160 264,178 264,171 520,171" fill="#f0883e" stroke="none"/>
-<text x="380" y="165" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Events</text>
+<text x="16" y="58" font-size="11" font-weight="700" fill="#3b82f6">Device interface</text>
+<rect x="16" y="66" width="140" height="90" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+<rect x="16" y="66" width="140" height="24" rx="6" fill="#3b82f6" fill-opacity="0.12"/>
+<text x="26" y="82" font-size="10.5" font-weight="700" opacity="0.75" fill="currentColor">Name</text>
+<text x="146" y="82" text-anchor="end" font-size="10.5" font-weight="700" opacity="0.75" fill="currentColor">Address</text>
+<line x1="16" y1="90" x2="156" y2="90" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="26" y="105" font-size="11" fill="currentColor">StartSound</text>
+<text x="146" y="105" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">32</text>
+<line x1="16" y1="112" x2="156" y2="112" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="26" y="127" font-size="11" fill="currentColor">DigitalInputs</text>
+<text x="146" y="127" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">34</text>
+<line x1="16" y1="134" x2="156" y2="134" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="26" y="149" font-size="11" fill="currentColor">AnalogInput</text>
+<text x="146" y="149" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">35</text>
+<text x="604" y="58" font-size="11" font-weight="700" fill="#f0883e">Registers</text>
+<rect x="604" y="66" width="140" height="90" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.35"/>
+<rect x="604" y="66" width="140" height="24" rx="6" fill="#f0883e" fill-opacity="0.12"/>
+<text x="614" y="82" font-size="10.5" font-weight="700" opacity="0.75" fill="currentColor">Address</text>
+<text x="734" y="82" text-anchor="end" font-size="10.5" font-weight="700" opacity="0.75" fill="currentColor">Value</text>
+<line x1="604" y1="90" x2="744" y2="90" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="614" y="105" font-size="11" fill="currentColor">32</text>
+<text x="734" y="105" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">3</text>
+<line x1="604" y1="112" x2="744" y2="112" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="614" y="127" font-size="11" fill="currentColor">34</text>
+<text x="734" y="127" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">0b01</text>
+<line x1="604" y1="134" x2="744" y2="134" stroke="currentColor" stroke-opacity="0.2"/>
+<text x="614" y="149" font-size="11" fill="currentColor">35</text>
+<text x="734" y="149" text-anchor="end" font-size="11" font-weight="700" fill="currentColor">2.47 V</text>
+<rect x="172.0" y="64" width="120" height="84" rx="8" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.6"/>
+<rect x="222" y="148" width="20" height="12" fill="#3b82f6"/>
+<rect x="198" y="160" width="68" height="7" rx="3" fill="#3b82f6"/>
+<rect x="468.0" y="60" width="120" height="100" rx="10" fill="#f0883e" fill-opacity="0.12" stroke="#f0883e" stroke-width="1.6"/>
+<rect x="486.0" y="78" width="34" height="24" rx="4" fill="#f0883e" fill-opacity="0.35" stroke="#f0883e" stroke-width="1.2"/>
+<rect x="536.0" y="78" width="34" height="24" rx="4" fill="#f0883e" fill-opacity="0.35" stroke="#f0883e" stroke-width="1.2"/>
+<rect x="486.0" y="120" width="84" height="22" rx="4" fill="none" stroke="#f0883e" stroke-width="1.2"/>
+<rect x="493.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<rect x="506.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<rect x="519.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<rect x="532.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<rect x="545.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<rect x="558.0" y="126" width="5" height="10" rx="1" fill="#f0883e" fill-opacity="0.6"/>
+<text x="232" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Controller</text>
+<text x="528" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Device</text>
+<text x="380" y="46" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">Harp messages</text>
+<path d="M340.16283142591584,99.0 A46,46 0 0 1 419.83716857408416,99.0" fill="none" stroke="#3b82f6" stroke-width="20" stroke-linecap="butt"/>
+<polygon points="430.83716857408416,118.05255888325766 405.98076211353316,107.0 433.69357503463516,91.0" fill="#3b82f6"/>
+<path d="M419.83716857408416,145.0 A46,46 0 0 1 340.16283142591584,145.0" fill="none" stroke="#f0883e" stroke-width="20" stroke-linecap="butt"/>
+<polygon points="329.16283142591584,125.94744111674234 354.01923788646684,137.0 326.30642496536484,153.0" fill="#f0883e"/>
 </svg>

@@ -2,13 +2,18 @@
 
 The Harp standard has two parts: a communication protocol that allows devices and controllers to speak the same language, and a [synchronization clock](harp-synchronization-clock.md) protocol that governs how devices in a setup keep the same time. This article covers the communication protocol.
 
-A Harp device is controlled by a computer, which we call the controller. The device exposes its configuration settings and functions through numbered addresses called **registers**. Every exchange between the two is a **Harp message** that targets a register and carries a value, called the **payload**. It also includes other kinds of metadata, like the timestamp on the clock or the length of the message. There are three different groups of Harp messages: **Commands**, **Replies** and **Events**.
+A Harp device is controlled by a computer, which we call the controller. The device exposes its configuration settings and functions through numbered addresses called **registers**.  The controller uses a **device interface** that tells it the address of each register as well as how to access it, much like a map or manual.
+
+Every exchange between the two is a **Harp message** that targets a register. It can carry a value, called the **payload**, for the register to act on or a reading from that register. It can also include other kinds of metadata, like the timestamp on the clock or the length of the message.
 
 ::: harp-figure
 ![Harp messages between a controller and a device](~/images/harp-messages.svg)
 
-Commands go from the controller to the device, and the device answers each one with a reply. Events come from the device on its own.
+Harp messages flow in both directions. Blue is the controller sending to the device, orange is the device sending back to the controller.
 :::
+
+We will now take a closer look at how this works in 
+
 
 ## Command-Reply
 
@@ -27,7 +32,7 @@ A Write to the StartSound register carries the sound index to play, and a Read o
 
 ## Events
 
-The third type of message is an **Event**, which the device sends on its own without instruction from the controller. For example, the device might broadcast a stream of analog input readings without an explicit Read command from the device. Events carry a hardware timestamp in the same way as replies.
+The third type of message is an **Event**, which the device sends on its own without instruction from the controller. For example, the device might broadcast a stream of analog input readings without an explicit Read command from the controller. Events carry a hardware timestamp in the same way as replies.
 
 ::: harp-figure
 ![An Event message from the device](~/images/harp-event.svg)
