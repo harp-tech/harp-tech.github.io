@@ -1,6 +1,8 @@
 - name: Get started
 - href: about.md
 - href: ../index.md
+- name: Devices
+- href: harp-tech-devices.md
 - name: Protocol
 - name: Binary Protocol
   href: ../protocol/BinaryProtocol-8bit.md

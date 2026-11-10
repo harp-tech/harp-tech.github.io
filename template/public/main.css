@@ -4,3 +4,44 @@
 [data-bs-theme=light] .display-dark {
     display: none;
 }
+
+/* Device grid: three-column photo listing used on device index pages. Each
+   card is a photo, a linked device name, and a one-sentence description. */
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 767.98px) {
+    .device-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.device-card {
+    text-align: center;
+}
+
+.device-card p {
+    margin-bottom: 0.5rem;
+}
+
+/* The image box is a fixed 4:3 white tile. The photo is fitted inside it,
+   so every card looks the same in both themes whatever the photo's shape. */
+.device-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 0.375rem;
+    margin-bottom: 0.75rem;
+}
+
+.device-card > p:nth-child(2) > a {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
