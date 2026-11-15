@@ -1,0 +1,5 @@
+# ATxmega core
+
+The [Harp core for the ATxmega](https://harp-tech.org/core.atxmega/) implements the Harp standard on the Microchip ATxmega family of microcontrollers. It is distributed as a static library, built for each supported microcontroller, that the firmware of each device links against. The core handles serial communication with the controller, parses requests and sends replies and events, implements the common registers and device operation, and keeps the device timestamp synchronized to the synchronization clock. Device firmware adds only the registers and logic specific to the device.
+
+Devices built on this core include the [Harp Behavior](https://harp-tech.org/device.behavior/), the [Harp Sound Card](https://harp-tech.org/device.soundcard/) and the [Harp Timestamp Generator Gen3](https://harp-tech.org/device.timestampgeneratorgen3/). The source is in the [harp-tech/core.atxmega](https://github.com/harp-tech/core.atxmega) repository, and the [core documentation](https://harp-tech.org/core.atxmega/) covers how to build device firmware with it.

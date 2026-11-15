@@ -1,6 +1,6 @@
-- name: Documentation
+- name: Use
   href: articles/
-- name: API
-  href: api/
-- name: About
-  href: about.md
+- name: Build
+  href: build/
+- name: Connect
+  href: connect/index.md

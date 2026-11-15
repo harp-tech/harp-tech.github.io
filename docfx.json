@@ -59,6 +59,9 @@
         "files": [
           "articles/**.md",
           "articles/**/toc.yml",
+          "build/**.md",
+          "build/**/toc.yml",
+          "connect/**.md",
           "tutorials/**.md",
           "protocol/**.md",
           "whoami/whoami.md",

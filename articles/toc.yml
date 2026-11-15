@@ -1,19 +1,12 @@
-- name: Get started
-- href: about.md
-- href: ../index.md
 - name: Devices
 - href: harp-tech-devices.md
-- name: Protocol
-- name: Binary protocol
-  href: ../protocol/BinaryProtocol-8bit.md
-- name: Common registers
-  href: ../protocol/Device.md
-- name: Synchronization clock
-  href: ../protocol/SynchronizationClock.md
-- name: Control interface
+- name: Bonsai interface
+- href: installation.md
 - href: operators.md
 - href: firmware.md
 - href: logging.md
 - href: message-manipulation.md
+- name: API reference
+  href: ../api/
 - name: Python interface
 - href: python.md

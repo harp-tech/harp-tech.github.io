@@ -45,3 +45,120 @@
     font-size: 1.125rem;
     font-weight: 600;
 }
+
+/* Landing page: the introduction and section cards on the left, the device
+   photo on the right, collapsing to one column on narrow screens. */
+.landing {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 767.98px) {
+    .landing {
+        grid-template-columns: 1fr;
+    }
+}
+
+.landing-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Landing actions: one clickable card per site section, each a title with an
+   icon above a one-line description, stacked under the introduction. */
+.landing-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.landing-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.5rem;
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-body-color);
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.landing-card:hover,
+.landing-card:focus {
+    border-color: var(--bs-primary);
+    color: var(--bs-body-color);
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.landing-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--bs-primary);
+}
+
+.landing-card-title::after {
+    content: " \2192";
+    transition: margin-left 0.15s ease;
+}
+
+.landing-card:hover .landing-card-title::after {
+    margin-left: 0.25rem;
+}
+
+/* Connect links: one button per community channel, in the colors of each
+   service, following the bonsai-rx.org community page. */
+.connect-links {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* The buttons carry their own icons, so drop the external-link arrow. */
+.connect-links a.external[href]::after {
+    display: none;
+}
+
+.btn-discord,
+.btn-discord:visited {
+    background-color: #5865f2;
+    color: #fff;
+}
+
+.btn-discord:hover,
+.btn-discord:focus {
+    background-color: #4651c2;
+    color: #fff;
+}
+
+.btn-github,
+.btn-github:visited {
+    background-color: #24292f;
+    color: #fff;
+}
+
+.btn-github:hover,
+.btn-github:focus {
+    background-color: #424a53;
+    color: #fff;
+}
+
+/* The dark GitHub button would disappear against the dark theme, so invert it. */
+[data-bs-theme=dark] .btn-github,
+[data-bs-theme=dark] .btn-github:visited {
+    background-color: #f0f6fc;
+    color: #24292f;
+}
+
+[data-bs-theme=dark] .btn-github:hover,
+[data-bs-theme=dark] .btn-github:focus {
+    background-color: #d0d7de;
+    color: #24292f;
+}
