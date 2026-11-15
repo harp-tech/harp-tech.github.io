@@ -12,7 +12,7 @@ To update the device's firmware version:
 
 1. Click `Bootloader`;
 2. Click `Open`;
-3. Select a `.hex` file containing the new firmware. These files should be available on the device's releases page (e.g.: [Harp Behavior](https://github.com/harp-tech/device.behavior/releases) under the `fwX.Y-harpV.W` release name). Importantly, as stated in the dialog window, please ensure the the new firmware is compatible with the targeted device;
+3. Select a `.hex` file containing the new firmware. These files should be available on the device's releases page (e.g.: [Harp Behavior](https://github.com/harp-tech/device.behavior/releases) under the `fwX.Y-harpV.W` release name). Importantly, as stated in the dialog window, please ensure the new firmware is compatible with the targeted device;
 4. Click `Update`.
 
 ![firmware update step2](~/images/fw-update_hex.png){height=200px}

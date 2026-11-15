@@ -8,7 +8,7 @@ It is fundamental to understand the function of each of these operators as they 
 
 Together, these operators provide all core functionality for generating and processing [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) sequences. These operators allow issuing commands to, and handling sequences of notifications from, the [Device](#device) node.
 
-In order to generate messages and issue commands to the device two core operators are provided: [CreateMessage](#createmessage) and [Format](#format). Both operators receive a single input and are able to generate a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) object. However, they differ on how the message is generated.
+To generate messages and issue commands to the device two core operators are provided: [CreateMessage](#createmessage) and [Format](#format). Both operators receive a single input and are able to generate a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) object. However, they differ on how the message is generated.
 
 Conversely, the [FilterRegister](#filterregister), [FilterMessageType](#filtermessagetype), and [Parse](#parse) operators can be used to filter and convert incoming messages.
 
@@ -25,7 +25,7 @@ The [`Device`](xref:Bonsai.Harp.Device) operator is the first node you will prob
 The current specification of the [Harp Protocol](https://harp-tech.org/About/How-HARP-works/index.html) defines three [Harp Message Types](xref:Bonsai.Harp.MessageType):
 
 - `Read`: A command from the host to the device requesting a read from a register. The device should respond with a [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) object containing the value stored in the specified register. All registers are expected to allow read access, as by protocol specification.
-- `Write`: A command issued by the host to the device to request the update of a particular register value. As per the protocol standard, if the write operation is completed successfully, the device should return a timestamped [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) of the `Write` type indicating the moment when the register was set to the new value.
+- `Write`: A command issued by the host to the device to request the update of a particular register value. According to the protocol standard, if the write operation is completed successfully, the device should return a timestamped [`HarpMessage`](xref:Bonsai.Harp.HarpMessage) of the `Write` type indicating the moment when the register was set to the new value.
 - `Event`: The only message type that is emitted by the device to the host without a corresponding request command. These messages are used to notify the host of events that occur on the device, such as periodic computations (*e.g.* ADC reads), or other sporadic events (*e.g.* toggle on a digital input pin).
 
 ## CreateMessage
@@ -94,7 +94,7 @@ For instance, if the `PayloadType` is `U16`, the operator will return a sequence
 :::
 
 > [!Note]
-> If the [`Address`](xref:Bonsai.Harp.ParseMessagePayload.Address) property is specified, the `Parse` operator will filter the incoming sequence for matching messages prior to applying the conversion operation.
+> If the [`Address`](xref:Bonsai.Harp.ParseMessagePayload.Address) property is specified, the `Parse` operator will filter the incoming sequence for matching messages before applying the conversion operation.
 
 ## High-level device interfaces
 
