@@ -1,5 +1,4 @@
-- name: Devices
-- href: harp-tech-devices.md
+- href: ../use/devices.md
 - name: Bonsai interface
 - href: installation.md
 - href: operators.md

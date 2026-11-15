@@ -59,6 +59,11 @@
     .landing {
         grid-template-columns: 1fr;
     }
+
+    /* Narrow screens keep only the opening paragraph above the cards. */
+    .landing-detail {
+        display: none;
+    }
 }
 
 .landing-image img {
