@@ -40,9 +40,6 @@
 [submodule "protocol"]
 	path = protocol
 	url = https://github.com/harp-tech/protocol.git
-[submodule "python"]
-	path = python
-	url = https://github.com/harp-tech/harp-python.git
 [submodule "docfx-tools"]
 	path = docfx-tools
 	url = https://github.com/bonsai-rx/docfx-tools.git

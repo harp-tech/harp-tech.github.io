@@ -14,6 +14,5 @@
 - href: logging.md
 - name: Message Manipulation
   href: message-manipulation.md
-- name: Data Interface
-- name: Python
-  href: python.md
+- name: Python interface
+- href: python.md

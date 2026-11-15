@@ -26,4 +26,4 @@ The device nodes should now be available in the Bonsai Toolbox and you can start
 
 - [Logging](./articles/logging.md)
 - [Firmware](./articles/firmware.md)
-- [Data Interface](./articles/python.md)
+- [Harp Python](./articles/python.md)

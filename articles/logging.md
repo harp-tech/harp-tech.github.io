@@ -29,7 +29,7 @@ Since the payload stored in any single register always has the same format and s
 ![LogDemux](~/workflows/log-demux.bonsai)
 :::
 
-These single-register log files can then be loaded using the [Data Interface](python.md). The `device.yml` metadata file for each device is always available in the root folder of its source repository.
+These single-register log files can be read into pandas data frames with Harp Python, as shown in [Read a dataset folder](https://harp-tech.org/python/examples/dataset/). The `device.yml` metadata file for each device is always available in the root folder of its source repository.
 
 > [!Tip]
 > The `device.yml` metadata file for each device can also be recovered at runtime using the `GetMetadata` operator included with most device packages and saved using the [`WriteAllText`](xref:Bonsai.IO.WriteAllText) operator.
