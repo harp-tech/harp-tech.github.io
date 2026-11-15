@@ -1,4 +1,4 @@
-Quick Start
+Quick start
 ===========
 
 Harp is a standardized solution for:
@@ -14,7 +14,7 @@ All [Harp Devices](./whoami/whoami.md) implement the [Harp Protocol](./protocol/
 2. [Install FTDI D2XX Drivers](https://ftdichip.com/wp-content/uploads/2021/08/CDM212364_Setup.zip)
 3. Install `Bonsai.Harp.Design` using the [Bonsai package manager](https://bonsai-rx.org/docs/articles/packages.html).
 
-## Device specific packages
+## Device-specific packages
 
 A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the [Harp Behavior](https://harp-tech.org/device.behavior/) board, you should find the following package:
 
@@ -22,7 +22,7 @@ A high-level interface will usually be available for the specific Harp device yo
 
 The device nodes should now be available in the Bonsai Toolbox and you can start using them in your workflows. See [Operators](./articles/operators.md) for examples of how to manipulate and control Harp devices.
 
-## Next Steps
+## Next steps
 
 - [Logging](./articles/logging.md)
 - [Firmware](./articles/firmware.md)

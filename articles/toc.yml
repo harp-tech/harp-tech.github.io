@@ -4,17 +4,16 @@
 - name: Devices
 - href: harp-tech-devices.md
 - name: Protocol
-- name: Binary Protocol
+- name: Binary protocol
   href: ../protocol/BinaryProtocol-8bit.md
-- name: Common Registers
+- name: Common registers
   href: ../protocol/Device.md
-- name: Synchronization Clock
+- name: Synchronization clock
   href: ../protocol/SynchronizationClock.md
-- name: Control Interface
+- name: Control interface
 - href: operators.md
 - href: firmware.md
 - href: logging.md
-- name: Message Manipulation
-  href: message-manipulation.md
+- href: message-manipulation.md
 - name: Python interface
 - href: python.md

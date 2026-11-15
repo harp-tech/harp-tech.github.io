@@ -1,4 +1,4 @@
-# harp-tech
+# harp-tech devices
 
 These devices are maintained by the harp-tech GitHub organization. All of them are open-source hardware and can be built from the published designs or purchased from a partner distributor.
 
