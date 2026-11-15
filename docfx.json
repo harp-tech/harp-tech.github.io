@@ -4,8 +4,7 @@
       "src": [
         {
           "files": [
-            "src/harp/**.csproj",
-            "src/device.*/Interface/Harp.*/**.csproj"
+            "src/harp/**.csproj"
           ],
           "exclude": [
             "**/bin/**",
@@ -18,6 +17,24 @@
       "filter": "filter.yml",
       "enumSortOrder": "declaringOrder",
       "memberLayout": "separatePages"
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/device.*/Interface/Harp.*/**.csproj"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**",
+            "**/**.Tests/**"
+          ]
+        }
+      ],
+      "dest": "obj/api-devices",
+      "filter": "filter.yml",
+      "enumSortOrder": "declaringOrder",
+      "memberLayout": "separatePages"
     }
   ],
   "build": {
@@ -26,6 +43,16 @@
         "files": [
           "api/**.yml",
           "api/index.md"
+        ]
+      },
+      {
+        "src": "obj/api-devices",
+        "dest": "api",
+        "files": [
+          "**.yml"
+        ],
+        "exclude": [
+          "toc.yml"
         ]
       },
       {
