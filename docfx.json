@@ -5,7 +5,7 @@
         {
           "files": [
             "src/harp/**.csproj",
-            "src/device.*/Interface/Harp.*/**.csproj"
+            "src/device.hobgoblin/Interface/Harp.*/**.csproj"
           ],
           "exclude": [
             "**/bin/**",
@@ -47,8 +47,6 @@
     "resource": [
       {
         "files": [
-          "src/device.*/Assets/*.png",
-          "src/device.*/Assets/*.jpg",
           "protocol/assets/**",
           "protocol/*.pdf",
           "images/**",

@@ -16,7 +16,7 @@ All [Harp Devices](./whoami/whoami.md) implement the [Harp Protocol](./protocol/
 
 ## Device specific packages
 
-A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the [Harp Behavior](xref:Harp.Behavior) board, you should find the following package:
+A high-level interface will usually be available for the specific Harp device you are using. To install them, first change the package manager **Package source** to `nuget.org`. Then, in the search bar, look for your device by typing: `harp.<device>`. For instance, for the [Harp Behavior](https://harp-tech.org/device.behavior/) board, you should find the following package:
 
 <p><img alt="Installing a Harp device package" src="~/images/behavior-package.png" style="max-height:450px;object-fit:contain" /></p>
 
