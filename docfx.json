@@ -115,7 +115,7 @@
     "template": [
       "default",
       "modern",
-      "docfx-tools/template",
+      "harp-docfx/template",
       "template"
     ],
     "markdownEngineName": "markdig",

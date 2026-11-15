@@ -40,9 +40,9 @@
 [submodule "protocol"]
 	path = protocol
 	url = https://github.com/harp-tech/protocol.git
-[submodule "docfx-tools"]
-	path = docfx-tools
-	url = https://github.com/bonsai-rx/docfx-tools.git
 [submodule "whoami"]
 	path = whoami
 	url = https://github.com/harp-tech/whoami.git
+[submodule "harp-docfx"]
+	path = harp-docfx
+	url = https://github.com/harp-tech/docfx-tools
