@@ -17,26 +17,21 @@ permissions:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         name: Checkout
         with:
           submodules: recursive
 
       - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 8.x
 
       - name: Custom Build Steps
-        run: .\build.ps1
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
-
-      - name: Restore NuGet Packages
-        run: msbuild -t:restore src\harp\Bonsai.Harp.sln
+        shell: pwsh
+        run: ./build.ps1
 
       - name: Setup DocFX
         run: dotnet tool restore
@@ -45,7 +40,7 @@ jobs:
         run: dotnet docfx docfx.json
 
       - name: Upload GitHub Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
