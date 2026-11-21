@@ -1,46 +1,58 @@
-# Builds and publishes the documentation website
-name: Build docs
+
+name: "Publish the documentation website"
 
 on:
   push:
-    branches: [ main ]
+    branches: ['**']
+  pull_request:
   workflow_dispatch:
 
-concurrency:
-  group: build
-  cancel-in-progress: true
-
-permissions:
-  # Both required by actions/deploy-pages
-  pages: write
-  id-token: write
-
 jobs:
-  build:
+  build-documentation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-        name: Checkout
+      - name: Checkout
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
-      - name: Setup .NET Core SDK
+      - name: Set up .NET
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 8.x
 
-      - name: Custom Build Steps
+      - name: Generate the device schema tables
         shell: pwsh
         run: ./build.ps1
 
-      - name: Setup DocFX
+      - name: Set up .NET tools
         run: dotnet tool restore
 
-      - name: Build Documentation
+      - name: Build documentation
+        id: build-documentation
         run: dotnet docfx docfx.json
 
-      - name: Upload GitHub Pages Artifact
+      - name: Collect documentation website artifact
         uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
 
-      - name: Deploy to GitHub Pages
+  publish-documentation:
+    needs: build-documentation
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    concurrency:
+      # Pages refuses a deployment while another is in progress
+      group: publish-documentation
+      cancel-in-progress: false
+    permissions:
+      # Both required by actions/deploy-pages
+      pages: write
+      id-token: write
+    environment:
+      name: documentation-website
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: publish
         uses: actions/deploy-pages@v5
