@@ -1,6 +1,6 @@
 # Devices
 
-These devices are maintained by the harp-tech GitHub organization. All of them are open-source hardware and can be built from the published designs or purchased from a partner distributor. Harp devices maintained by other organizations are listed in the [device registry](../build/whoami.md).
+These devices are maintained by the harp-tech GitHub organization. All of them are open-source hardware and can be built from the published designs or purchased from a partner distributor. Harp devices maintained by other organizations are listed in the [device registry](/whoami/).
 
 :::: device-grid
 

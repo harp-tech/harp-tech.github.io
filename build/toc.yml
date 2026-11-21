@@ -7,7 +7,8 @@
 - name: Device contract
 - name: Common registers
   href: ../protocol/Device.md
-- href: whoami.md
+- name: WhoAmI registry
+  href: /whoami/
 - name: Firmware cores
 - href: core-atxmega.md
 - href: core-pico.md
